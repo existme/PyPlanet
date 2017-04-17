@@ -1,5 +1,0 @@
-Models
-======
-
-.. automodule:: apps.mails.models
-    :members:
