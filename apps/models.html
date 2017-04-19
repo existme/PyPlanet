@@ -154,6 +154,80 @@
             
   <div class="section" id="models">
 <h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
+<p>Models are defined in either the <code class="docutils literal"><span class="pre">app/models.py</span></code> file or the <code class="docutils literal"><span class="pre">app/models/</span></code> folder (with loading from the <code class="docutils literal"><span class="pre">app/models/__init__.py</span></code>)</p>
+<p>Models tables are created at the moment PyPlanet starts for the first time as it sees your model, and not yet have a table.
+To adjust models you should create migrations.</p>
+<div class="section" id="define-models">
+<h2>Define models<a class="headerlink" href="#define-models" title="Permalink to this headline">¶</a></h2>
+<p>You have two base classes where your model class could inherit from, we recommend to use the <code class="docutils literal"><span class="pre">TimedModel</span></code> most of the times.
+There are a few exceptions where we recommend the base <code class="docutils literal"><span class="pre">Model</span></code>, for example glue models. Or very data-intensive or data where
+you don&#8217;t need to know when it&#8217;s created or updated.</p>
+<p>The <code class="docutils literal"><span class="pre">TimedModel</span></code> includes these two fields for every model: <code class="docutils literal"><span class="pre">created_at</span></code> and <code class="docutils literal"><span class="pre">updated_at</span></code>. Those two fields will
+be filled and adjusted automatically when saving/updating.</p>
+<p>The <code class="docutils literal"><span class="pre">Model</span></code> includes no fields and is the very base of the model declaration inherit tree.</p>
+<p>For defining fields you can use the asterisk import from peewee to have all Fields available in your file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">peewee</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>Examples of model declaration:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Permission</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">namespace</span> <span class="o">=</span> <span class="n">CharField</span><span class="p">(</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span>
+        <span class="n">null</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">help_text</span><span class="o">=</span><span class="s1">&#39;Namespace of the permission. Mostly the app.label.&#39;</span>
+    <span class="p">)</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="n">CharField</span><span class="p">(</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span>
+        <span class="n">null</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">help_text</span><span class="o">=</span><span class="s1">&#39;Name of permission, in format {app_name|core}:{name}&#39;</span>
+    <span class="p">)</span>
+
+    <span class="n">description</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span>
+        <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s1">&#39;Description of permission.&#39;</span>
+    <span class="p">)</span>
+
+    <span class="n">min_level</span> <span class="o">=</span> <span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s1">&#39;Minimum required player level to be able to use this permission.&#39;</span>
+    <span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">indexes</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">((</span><span class="s1">&#39;namespace&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">),</span> <span class="bp">True</span><span class="p">),</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+<p>For more examples take a look at: <code class="docutils literal"><span class="pre">pyplanet/apps/core/maniaplanet/models/*.py</span></code>. You will find the player and map model
+here with lots of examples.</p>
+<p>For more information about fields please refer to the Peewee documentation: <a class="reference external" href="http://peewee.readthedocs.io/en/latest/">http://peewee.readthedocs.io/en/latest/</a>.</p>
+<p>For more information about operations on models, <strong>don&#8217;t look at the Peewee documentation at first</strong>, but look further in this document.</p>
+</div>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<p>Please take a look at: <a class="reference external" href="http://peewee.readthedocs.io/en/latest/peewee/models.html#fields">http://peewee.readthedocs.io/en/latest/peewee/models.html#fields</a></p>
+</div>
+<div class="section" id="operations">
+<h2>Operations<a class="headerlink" href="#operations" title="Permalink to this headline">¶</a></h2>
+<p><strong>Create new object instance in the database</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">instance</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">second_col</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">await</span> <span class="n">instance</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Delete instance from database</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">await</span> <span class="n">instance</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Find instance by id or other unique value (search for one instance)</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">instance</span> <span class="o">=</span> <span class="n">await</span> <span class="n">Model</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">instance</span> <span class="o">=</span> <span class="n">await</span> <span class="n">Model</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">=</span><span class="s1">&#39;toffe&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Find instances (query) by executing query with where condition</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">instances</span> <span class="o">=</span> <span class="n">await</span> <span class="n">Model</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Model</span><span class="o">.</span><span class="n">select</span><span class="p">()</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Model</span><span class="o">.</span><span class="n">column</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><cite>More examples will follow, feel free to ask for help on this topic in the meantime</cite>.</p>
+</div>
 </div>
 
 
