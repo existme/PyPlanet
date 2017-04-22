@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.apps &mdash; PyPlanet  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
+        <link rel="up" title="API Documentation" href="index.html"/>
+        <link rel="next" title="pyplanet.views" href="views.html"/>
+        <link rel="prev" title="API Documentation" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/index.html">Apps</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pyplanet.apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">pyplanet.views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_exceptions.html">pyplanet.core.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_instance.html">pyplanet.core.instance</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">API Documentation</a> &raquo;</li>
+        
+      <li>pyplanet.apps</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/apps.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyplanet.apps">
+<span id="pyplanet-apps"></span><h1>pyplanet.apps<a class="headerlink" href="#module-pyplanet.apps" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyplanet.apps.Apps">
+<em class="property">class </em><code class="descclassname">pyplanet.apps.</code><code class="descname">Apps</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.Apps" title="Permalink to this definition">¶</a></dt>
+<dd><p>The apps class contains the context applications, loaded or not loaded in order of declaration or requirements
+if given by app configuration.</p>
+<p>The apps should contain a configuration class that could be loaded for reading out metadata, options and other
+useful information such as description, author, version and more.</p>
+<dl class="method">
+<dt id="pyplanet.apps.Apps.discover">
+<code class="descname">discover</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.Apps.discover" title="Permalink to this definition">¶</a></dt>
+<dd><p>The discover function will discover all models, signals and more
+from apps in the right order.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.apps.Apps.init">
+<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.Apps.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.apps.Apps.populate">
+<code class="descname">populate</code><span class="sig-paren">(</span><em>apps</em>, <em>in_order=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.Apps.populate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads application into the apps registry. Once you populate, the order isn&#8217;t yet been decided.
+After all imports are done you should shuffle the apps list so it&#8217;s in the right order of execution!</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>apps</strong> (<a class="reference internal" href="views.html#module-pyplanet.views.generics.list" title="pyplanet.views.generics.list"><em>list</em></a>) &#8211; Apps list.</li>
+<li><strong>in_order</strong> &#8211; Is the list already in order?</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.apps.Apps.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.Apps.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyplanet.apps.AppConfig">
+<em class="property">class </em><code class="descclassname">pyplanet.apps.</code><code class="descname">AppConfig</code><span class="sig-paren">(</span><em>app_name</em>, <em>app_module</em>, <em>instance</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is the base class for the Applications metadata class. The class holds information and hooks
+that will be executed after initiation for example.</p>
+<dl class="attribute">
+<dt id="pyplanet.apps.AppConfig.app_dependencies">
+<code class="descname">app_dependencies</code><em class="property"> = None</em><a class="headerlink" href="#pyplanet.apps.AppConfig.app_dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyplanet.apps.AppConfig.game_dependencies">
+<code class="descname">game_dependencies</code><em class="property"> = None</em><a class="headerlink" href="#pyplanet.apps.AppConfig.game_dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyplanet.apps.AppConfig.human_name">
+<code class="descname">human_name</code><em class="property"> = None</em><a class="headerlink" href="#pyplanet.apps.AppConfig.human_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="pyplanet.apps.AppConfig.import_app">
+<em class="property">static </em><code class="descname">import_app</code><span class="sig-paren">(</span><em>entry</em>, <em>instance</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig.import_app" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.apps.AppConfig.is_game_supported">
+<code class="descname">is_game_supported</code><span class="sig-paren">(</span><em>game</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig.is_game_supported" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.apps.AppConfig.is_mode_supported">
+<code class="descname">is_mode_supported</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig.is_mode_supported" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyplanet.apps.AppConfig.label">
+<code class="descname">label</code><em class="property"> = None</em><a class="headerlink" href="#pyplanet.apps.AppConfig.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyplanet.apps.AppConfig.mode_dependencies">
+<code class="descname">mode_dependencies</code><em class="property"> = None</em><a class="headerlink" href="#pyplanet.apps.AppConfig.mode_dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyplanet.apps.AppConfig.name">
+<code class="descname">name</code><em class="property"> = None</em><a class="headerlink" href="#pyplanet.apps.AppConfig.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.apps.AppConfig.on_destroy">
+<code class="descname">on_destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig.on_destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>On destroy is being called when unloading the app from the memory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.apps.AppConfig.on_init">
+<code class="descname">on_init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig.on_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>The on_init will be called before all apps are started (just before the on_ready). This will allow the app
+to register things like commands, permissions and other things that are important and don&#8217;t require other
+apps to be ready.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.apps.AppConfig.on_start">
+<code class="descname">on_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig.on_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>The on_start call is being called after all apps has been started successfully. You should register any stuff 
+that is related to any other apps and signals like your <cite>self</cite> context for signals if they are classmethods.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.apps.AppConfig.on_stop">
+<code class="descname">on_stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig.on_stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>The on_stop will be called before stopping the app.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyplanet.apps.AppConfig.path">
+<code class="descname">path</code><em class="property"> = None</em><a class="headerlink" href="#pyplanet.apps.AppConfig.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="views.html" class="btn btn-neutral float-right" title="pyplanet.views" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="API Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Tom Valk.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
