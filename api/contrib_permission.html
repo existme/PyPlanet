@@ -37,6 +37,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
         <link rel="up" title="API Documentation" href="index.html"/>
+        <link rel="next" title="pyplanet.contrib.setting" href="contrib_setting.html"/>
         <link rel="prev" title="pyplanet.contrib.command" href="contrib_command.html"/> 
 
   
@@ -86,11 +87,20 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/index.html">Apps</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">API Documentation</a><ul class="current">
@@ -102,8 +112,13 @@
 <li class="toctree-l2"><a class="reference internal" href="contrib_player.html">pyplanet.contrib.player</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_command.html">pyplanet.contrib.command</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">pyplanet.contrib.permission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_setting.html">pyplanet.contrib.setting</a></li>
 </ul>
 </li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
 </ul>
 
             
@@ -172,6 +187,81 @@
   <div class="section" id="module-pyplanet.contrib.permission">
 <span id="pyplanet-contrib-permission"></span><h1>pyplanet.contrib.permission<a class="headerlink" href="#module-pyplanet.contrib.permission" title="Permalink to this headline">¶</a></h1>
 <p>The permission contrib will provide permission abilities to players and admin levels.</p>
+<dl class="class">
+<dt id="pyplanet.contrib.permission.PermissionManager">
+<em class="property">class </em><code class="descclassname">pyplanet.contrib.permission.</code><code class="descname">PermissionManager</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.permission.PermissionManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Permission Manager manges the permissions of all apps and players.</p>
+<dl class="method">
+<dt id="pyplanet.contrib.permission.PermissionManager.get_perm">
+<code class="descname">get_perm</code><span class="sig-paren">(</span><em>namespace</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.permission.PermissionManager.get_perm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get permission by namespace and name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>namespace</strong> (<em>str</em>) &#8211; Namespace of the permission</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Name of the permission.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.permission.PermissionManager.has_permission">
+<code class="descname">has_permission</code><span class="sig-paren">(</span><em>player</em>, <em>permission</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.permission.PermissionManager.has_permission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the player has the right permission.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>player</strong> &#8211; player instance.</li>
+<li><strong>permission</strong> &#8211; permission name.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean if player is allowed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.permission.PermissionManager.on_start">
+<code class="descname">on_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.permission.PermissionManager.on_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle startup, just before the apps will start. We will make sure we are ready to get requests for permissions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.permission.PermissionManager.register">
+<code class="descname">register</code><span class="sig-paren">(</span><em>name</em>, <em>description=''</em>, <em>app=None</em>, <em>min_level=1</em>, <em>namespace=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.permission.PermissionManager.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a new permission.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> &#8211; Name of permission</li>
+<li><strong>description</strong> &#8211; Description in english.</li>
+<li><strong>app</strong> &#8211; App instance to retrieve the label.</li>
+<li><strong>min_level</strong> &#8211; Minimum level required.</li>
+<li><strong>namespace</strong> &#8211; Namespace, only for core usage!</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Permission instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -183,6 +273,8 @@
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="contrib_setting.html" class="btn btn-neutral float-right" title="pyplanet.contrib.setting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="contrib_command.html" class="btn btn-neutral" title="pyplanet.contrib.command" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

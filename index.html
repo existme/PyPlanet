@@ -36,7 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="PyPlanet  documentation" href="#"/>
-        <link rel="next" title="Introduction" href="intro/index.html"/> 
+        <link rel="next" title="Getting Started" href="intro/index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -85,14 +85,27 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro/index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro/index.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps/contrib/players.html">Players</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="core/index.html">Core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps/index.html">Apps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog (PyPlanet)</a></li>
 </ul>
 
             
@@ -159,20 +172,43 @@
   <div class="section" id="welcome-to-pyplanet-s-documentation">
 <h1>Welcome to PyPlanet&#8217;s documentation!<a class="headerlink" href="#welcome-to-pyplanet-s-documentation" title="Permalink to this headline">¶</a></h1>
 <a class="reference internal image-reference" href="_images/pyplanet-sm.png"><img alt="_images/pyplanet-sm.png" class="align-right" src="_images/pyplanet-sm.png" style="width: 200.0px; height: 204.0px;" /></a>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p>PyPlanet is a Maniaplanet Dedicated Server Controller that works on Python 3.5 and later.
+Because Maniaplanet is using an system that can be event based we use AsyncIO to provide
+a event loop and have simultaneously processing of received events from the dedicated server.</p>
+<p>The code is open source, and <a class="reference external" href="https://github.com/PyPlanet">available on GitHub</a>.</p>
+<p>The main documentation for the site is organized into a couple sections:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#user-docs"><span class="std std-ref">User Documentation</span></a></li>
+<li><a class="reference internal" href="#app-docs"><span class="std std-ref">Apps Documentation</span></a></li>
+<li><a class="reference internal" href="#about-docs"><span class="std std-ref">About PyPlanet</span></a></li>
+</ul>
+<p>Information about development of apps and the core is also available under:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#dev-docs"><span class="std std-ref">Developer Documentation</span></a></li>
+</ul>
+<div class="toctree-wrapper compound" id="user-docs">
+<p class="caption"><span class="caption-text">User Documentation</span><a class="headerlink" href="#user-docs" title="Permalink to this toctree">¶</a></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro/index.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro/index.html#general-information">General Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro/index.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/index.html#configuration">Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-pyplanet">Installing PyPlanet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#setup-project">Setup Project</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+</div>
+<div class="toctree-wrapper compound" id="app-docs">
+<p class="caption"><span class="caption-text">Apps Documentation</span><a class="headerlink" href="#app-docs" title="Permalink to this toctree">¶</a></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps/contrib/players.html">Players</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound" id="dev-docs">
+<p class="caption"><span class="caption-text">Developer Documentation</span><a class="headerlink" href="#dev-docs" title="Permalink to this toctree">¶</a></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="core/index.html">Core</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="core/index.html#architecture">Architecture</a></li>
 </ul>
@@ -192,13 +228,16 @@
 <li class="toctree-l2"><a class="reference internal" href="api/contrib_player.html">pyplanet.contrib.player</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/contrib_command.html">pyplanet.contrib.command</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/contrib_permission.html">pyplanet.contrib.permission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/contrib_setting.html">pyplanet.contrib.setting</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The documentation is still not completed.</p>
+<div class="toctree-wrapper compound" id="about-docs">
+<p class="caption"><span class="caption-text">About PyPlanet</span><a class="headerlink" href="#about-docs" title="Permalink to this toctree">¶</a></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog (PyPlanet)</a></li>
+</ul>
 </div>
 </div>
 <div class="section" id="indices-and-tables">
@@ -228,7 +267,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="intro/index.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="intro/index.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>

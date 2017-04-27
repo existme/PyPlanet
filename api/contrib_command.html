@@ -87,11 +87,20 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/index.html">Apps</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">API Documentation</a><ul class="current">
@@ -103,8 +112,13 @@
 <li class="toctree-l2"><a class="reference internal" href="contrib_player.html">pyplanet.contrib.player</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">pyplanet.contrib.command</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_permission.html">pyplanet.contrib.permission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_setting.html">pyplanet.contrib.setting</a></li>
 </ul>
 </li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
 </ul>
 
             
@@ -196,7 +210,7 @@ Your app needs to use this manager to register any custom commands you want to p
 
 <dl class="class">
 <dt id="pyplanet.contrib.command.Command">
-<em class="property">class </em><code class="descclassname">pyplanet.contrib.command.</code><code class="descname">Command</code><span class="sig-paren">(</span><em>command</em>, <em>target</em>, <em>aliases=None</em>, <em>admin=False</em>, <em>namespace=None</em>, <em>parser=None</em>, <em>perms=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.command.Command" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyplanet.contrib.command.</code><code class="descname">Command</code><span class="sig-paren">(</span><em>command</em>, <em>target</em>, <em>aliases=None</em>, <em>admin=False</em>, <em>namespace=None</em>, <em>parser=None</em>, <em>perms=None</em>, <em>description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.command.Command" title="Permalink to this definition">¶</a></dt>
 <dd><p>The command instance describes the command itself, the target to fire and all other related information, like
 admin command or aliases.</p>
 <dl class="method">
