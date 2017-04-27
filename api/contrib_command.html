@@ -90,6 +90,7 @@
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Apps Documentation</span></p>
 <ul>
@@ -118,7 +119,9 @@
 </ul>
 <p class="caption"><span class="caption-text">About PyPlanet</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog (PyPlanet)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
 </ul>
 
             
@@ -194,6 +197,14 @@
 <em class="property">class </em><code class="descclassname">pyplanet.contrib.command.</code><code class="descname">CommandManager</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.command.CommandManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Command Manager contributed extension is a manager that controls all chat-commands in the game.
 Your app needs to use this manager to register any custom commands you want to provide.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Write introduction.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Don&#8217;t initiate this class yourself.</p>
+</div>
 <dl class="method">
 <dt id="pyplanet.contrib.command.CommandManager.register">
 <code class="descname">register</code><span class="sig-paren">(</span><em>*commands</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.command.CommandManager.register" title="Permalink to this definition">¶</a></dt>
@@ -215,6 +226,10 @@ Your app needs to use this manager to register any custom commands you want to p
 <em class="property">class </em><code class="descclassname">pyplanet.contrib.command.</code><code class="descname">Command</code><span class="sig-paren">(</span><em>command</em>, <em>target</em>, <em>aliases=None</em>, <em>admin=False</em>, <em>namespace=None</em>, <em>parser=None</em>, <em>perms=None</em>, <em>description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.command.Command" title="Permalink to this definition">¶</a></dt>
 <dd><p>The command instance describes the command itself, the target to fire and all other related information, like
 admin command or aliases.</p>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">Write introduction + examples</p>
+</div>
 <dl class="method">
 <dt id="pyplanet.contrib.command.Command.add_param">
 <code class="descname">add_param</code><span class="sig-paren">(</span><em>name: str</em>, <em>nargs=1</em>, <em>type=&lt;class 'str'&gt;</em>, <em>default=None</em>, <em>required: bool = True</em>, <em>help: str = None</em>, <em>dest: str = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.command.Command.add_param" title="Permalink to this definition">¶</a></dt>
@@ -308,6 +323,10 @@ admin command or aliases.</p>
 <dt id="pyplanet.contrib.command.ParameterParser">
 <em class="property">class </em><code class="descclassname">pyplanet.contrib.command.</code><code class="descname">ParameterParser</code><span class="sig-paren">(</span><em>prog=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.command.ParameterParser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parameter Parser.</p>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<p class="last">Write introduction + examples.</p>
+</div>
 <dl class="method">
 <dt id="pyplanet.contrib.command.ParameterParser.add_param">
 <code class="descname">add_param</code><span class="sig-paren">(</span><em>name: str</em>, <em>nargs=1</em>, <em>type=&lt;class 'str'&gt;</em>, <em>default=None</em>, <em>required: bool = True</em>, <em>help: str = None</em>, <em>dest: str = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.command.ParameterParser.add_param" title="Permalink to this definition">¶</a></dt>
@@ -403,6 +422,18 @@ admin command or aliases.</p>
 </table>
 </dd></dl>
 
+</dd></dl>
+
+<span class="target" id="module-pyplanet.contrib.command.exceptions"></span><dl class="exception">
+<dt id="pyplanet.contrib.command.exceptions.InvalidParamException">
+<em class="property">exception </em><code class="descclassname">pyplanet.contrib.command.exceptions.</code><code class="descname">InvalidParamException</code><a class="headerlink" href="#pyplanet.contrib.command.exceptions.InvalidParamException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invalid parameter arguments given!</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyplanet.contrib.command.exceptions.NotValidated">
+<em class="property">exception </em><code class="descclassname">pyplanet.contrib.command.exceptions.</code><code class="descname">NotValidated</code><a class="headerlink" href="#pyplanet.contrib.command.exceptions.NotValidated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Your parser hasn&#8217;t been called with .parse() before, so no parsing took place!</p>
 </dd></dl>
 
 </div>

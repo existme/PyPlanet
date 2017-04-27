@@ -90,6 +90,7 @@
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Apps Documentation</span></p>
 <ul>
@@ -118,7 +119,9 @@
 </ul>
 <p class="caption"><span class="caption-text">About PyPlanet</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog (PyPlanet)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
 </ul>
 
             
@@ -192,8 +195,15 @@
 <dl class="class">
 <dt id="pyplanet.contrib.player.PlayerManager">
 <em class="property">class </em><code class="descclassname">pyplanet.contrib.player.</code><code class="descname">PlayerManager</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.player.PlayerManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Player Manager.
-Todo: Write introduction.</p>
+<dd><p>Player Manager.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Write introduction.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Don&#8217;t initiate this class yourself.</p>
+</div>
 <dl class="method">
 <dt id="pyplanet.contrib.player.PlayerManager.get_player">
 <code class="descname">get_player</code><span class="sig-paren">(</span><em>login=None</em>, <em>pk=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.player.PlayerManager.get_player" title="Permalink to this definition">¶</a></dt>
@@ -267,6 +277,13 @@ current playing players are also initiated correctly!</p>
 <dd><p>Online player list.</p>
 </dd></dl>
 
+</dd></dl>
+
+<span class="target" id="module-pyplanet.contrib.player.exceptions"></span><p>Exceptions for Map Manager.</p>
+<dl class="exception">
+<dt id="pyplanet.contrib.player.exceptions.PlayerNotFound">
+<em class="property">exception </em><code class="descclassname">pyplanet.contrib.player.exceptions.</code><code class="descname">PlayerNotFound</code><a class="headerlink" href="#pyplanet.contrib.player.exceptions.PlayerNotFound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Player not found</p>
 </dd></dl>
 
 </div>

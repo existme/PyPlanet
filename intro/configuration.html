@@ -87,6 +87,7 @@
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Apps Documentation</span></p>
 <ul>
@@ -104,7 +105,9 @@
 </ul>
 <p class="caption"><span class="caption-text">About PyPlanet</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog (PyPlanet)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
 </ul>
 
             
@@ -170,8 +173,196 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="configuration">
+  <div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="section" id="configuration">
 <h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<p><strong>Settings module</strong> is where the PyPlanet settings are stored. You provide the settings module by providing the
+environment variable <code class="docutils literal"><span class="pre">PYPLANET_SETTINGS_MODULE</span></code>. Most of the times this is set in the <code class="docutils literal"><span class="pre">manage.py</span></code>.</p>
+<p>In most cases this settings module is <code class="docutils literal"><span class="pre">settings</span></code> and is located at the project root subfolder <code class="docutils literal"><span class="pre">settings</span></code>.</p>
+<p><strong>Split files</strong> is the default, based on the CLI project generation. This will create two files inside of the settings module,
+the one is for apps (<code class="docutils literal"><span class="pre">apps.py</span></code>) and the other for all base configuration (<code class="docutils literal"><span class="pre">base.py</span></code>).</p>
+<p><strong>Pools</strong> are the different instances that will be running from PyPlanet. PyPlanet supports multiple controllers from a
+single setup and project, and even a start command. We are just spawning subprocesses when you start PyPlanet.
+More information about this setup and architecture on the <a class="reference external" href="../core/architecture">Architecture</a> overview.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>In the examples in this document you often find an dictionary with the key being <code class="docutils literal"><span class="pre">default</span></code>. This is a <strong>Pool aware setting</strong>
+and is different for every pool.</p>
+<p class="last">If you are going to add another pool, you should add the pool name to the keys of the dictionary, and fill the value like it
+is in the examples given here.</p>
+</div>
+<div class="section" id="debug-mode-base-py">
+<h2>Debug Mode (base.py)<a class="headerlink" href="#debug-mode-base-py" title="Permalink to this headline">¶</a></h2>
+<p>In most cases you don&#8217;t have to use this setting. This setting is only here for developers.
+While you are in debug mode, there will be <strong>More verbose output, no reporting of exceptions, and debugging of SQL queries</strong>.</p>
+<p>When generating a project with the CLI, you will find this setting to be looking at your environment variable <code class="docutils literal"><span class="pre">PYPLANET_DEBUG</span></code>.
+Therefor, enable debug by starting PyPlanet with <code class="docutils literal"><span class="pre">PYPLANET_DEBUG=1</span></code>. Or changing the setting to <code class="docutils literal"><span class="pre">DEBUG</span> <span class="pre">=</span> <span class="pre">True</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please enable <code class="docutils literal"><span class="pre">DEBUG</span></code> when developing, as it won&#8217;t send reports to the PyPlanet developers, which needs time to investigate
+and cleanup.</p>
+</div>
+</div>
+<div class="section" id="pool-defining-base-py">
+<h2>Pool defining (base.py)<a class="headerlink" href="#pool-defining-base-py" title="Permalink to this headline">¶</a></h2>
+<p>You need to define the pools you want to start and have activated with the <code class="docutils literal"><span class="pre">POOLS</span></code> list.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">POOLS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">]</span> <span class="c1"># Add more identifiers to start more controller instances.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="owners-base-py">
+<h2>Owners (base.py)<a class="headerlink" href="#owners-base-py" title="Permalink to this headline">¶</a></h2>
+<p>Because you want to have admin access at the first boot, you have to define a few master admin logins here. This is optional
+but will help you to get started directly after starting. This setting is pool aware.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">OWNERS</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;your-maniaplanet-login&#39;</span><span class="p">,</span> <span class="s1">&#39;second-login&#39;</span> <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="database-configuration-base-py">
+<h2>Database configuration (base.py)<a class="headerlink" href="#database-configuration-base-py" title="Permalink to this headline">¶</a></h2>
+<p>The database configuration is mostly the first setting you will adjust to your needs. Currently PyPlanet has support for
+these <em>database drivers</em>:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">peewee.SqliteDatabase</span></code>: Using SQLite from Python. This can reduce the performance as it&#8217;s not using async calls!</li>
+<li><code class="docutils literal"><span class="pre">peewee_async.MySQLDatabase</span></code>: Using PyMySQL, a full Python based driver. (Supports MariaDB and PerconaDB).</li>
+<li><code class="docutils literal"><span class="pre">peewee_async.PostgresqlDatabase</span></code>: Using a full native Python driver.</li>
+</ul>
+<p>Configuration can follow the following examples:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># Using PostgreSQL.</span>
+<span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;peewee_async.PostgresqlDatabase&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;pyplanet&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;pyplanet&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;pyplanet&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;autocommit&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># Using MySQL (or MariaDB, PerconaDB, etc).</span>
+  <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;peewee_async.MySQLDatabase&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;pyplanet&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;pyplanet&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;pyplanet&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;charset&#39;</span><span class="p">:</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># Using SQLite, not recommended for large installations.</span>
+  <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;peewee.SqliteDatabase&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;database.db&#39;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dedicated-server-base-py">
+<h2>Dedicated Server (base.py)<a class="headerlink" href="#dedicated-server-base-py" title="Permalink to this headline">¶</a></h2>
+<p>This one is pretty important, and pretty simple too. Look at the examples bellow, and you know how to set this up!</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">DEDICATED</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">&#39;HOST&#39;</span><span class="p">:</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;PORT&#39;</span><span class="p">:</span> <span class="s1">&#39;5000&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;USER&#39;</span><span class="p">:</span> <span class="s1">&#39;SuperAdmin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;PASSWORD&#39;</span><span class="p">:</span> <span class="s1">&#39;SuperAdmin&#39;</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="storage-base-py">
+<h2>Storage (base.py)<a class="headerlink" href="#storage-base-py" title="Permalink to this headline">¶</a></h2>
+<p>This may need some explanation, why is this here? We wanted to be able to run PyPlanet on a separate machine as the dedicated
+is. But also access files from the dedicated for investigating maps, loading and writing maps and settings.</p>
+<p>To be able to make this simple, and robust, we will implement several so called <em>storage drivers</em> that will work local or remote.
+For example: <em>SFTP</em>, <em>FTP</em>, etc.</p>
+<p><strong>Local Dedicated</strong></p>
+<p>If you run your dedicated server locally, you should use the following setting:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">STORAGE</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">&#39;DRIVER&#39;</span><span class="p">:</span> <span class="s1">&#39;pyplanet.core.storage.drivers.local.LocalDriver&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Using SFTP/SCP/SSH</strong></p>
+<p>If your dedicated server is remote, and you want to give access, you can use the SFTP driver (that works over SSH).</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">STORAGE</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">&#39;DRIVER&#39;</span><span class="p">:</span> <span class="s1">&#39;pyplanet.core.storage.drivers.asyncssh.SFTPDriver&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s1">&#39;HOST&#39;</span><span class="p">:</span> <span class="s1">&#39;remote-hostname.com&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;PORT&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+      <span class="s1">&#39;USERNAME&#39;</span><span class="p">:</span> <span class="s1">&#39;maniaplanet&#39;</span><span class="p">,</span>
+
+      <span class="c1"># Using password:</span>
+      <span class="s1">&#39;PASSWORD&#39;</span><span class="p">:</span> <span class="s1">&#39;only-when-using-password&#39;</span><span class="p">,</span>
+
+      <span class="c1"># Using private/public keys:</span>
+      <span class="s1">&#39;CLIENT_KEYS&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;/home/mp/.ssh/id_rsa&#39;</span>
+      <span class="p">],</span>
+      <span class="s1">&#39;PASSPHRASE&#39;</span><span class="p">:</span> <span class="s1">&#39;optional&#39;</span><span class="p">,</span>
+
+      <span class="c1"># Optional:</span>
+      <span class="s1">&#39;KNOWN_HOSTS&#39;</span><span class="p">:</span> <span class="s1">&#39;~/.ssh/known_hosts&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;KWARGS&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;CUSTOM_OPTIONS&#39;</span><span class="p">:</span> <span class="s1">&#39;http://asyncssh.readthedocs.io/en/latest/#sftp-client&#39;</span><span class="p">,</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The SFTP driver has not yet been fully tested.
+Documentation is available on: <a class="reference external" href="http://asyncssh.readthedocs.io/en/latest/#sftp-client">http://asyncssh.readthedocs.io/en/latest/#sftp-client</a></p>
+</div>
+</div>
+<div class="section" id="cache-base-py">
+<h2>Cache (base.py)<a class="headerlink" href="#cache-base-py" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This functionality is not yet implemented. Please don&#8217;t define <code class="docutils literal"><span class="pre">CACHE</span></code> setting.</p>
+</div>
+</div>
+<div class="section" id="enabling-apps-apps-py">
+<h2>Enabling apps (apps.py)<a class="headerlink" href="#enabling-apps-apps-py" title="Permalink to this headline">¶</a></h2>
+<p>You can enable apps in the <code class="docutils literal"><span class="pre">APPS</span></code> setting. This is pretty simple and straight forward.
+The order doesn&#8217;t make a difference when starting/loading PyPlanet.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">APPS</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s1">&#39;pyplanet.apps.contrib.local_records.app.LocalRecordsConfig&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pyplanet.apps.contrib.jukebox.app.JukeboxConfig&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pyplanet.apps.contrib.karma.app.KarmaConfig&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pyplanet.apps.contrib.admin.app.AdminConfig&#39;</span><span class="p">,</span>
+  <span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When new contributed apps will come available, you have to manually enable it in your settings.</p>
+</div>
+</div>
 </div>
 
 

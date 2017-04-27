@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Migrations &mdash; PyPlanet  documentation</title>
+  <title>Starting PyPlanet &mdash; PyPlanet  documentation</title>
   
 
   
@@ -84,11 +84,30 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/index.html">Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
 </ul>
 
             
@@ -133,13 +152,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Migrations</li>
+      <li>Starting PyPlanet</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/core/migrations.rst.txt" rel="nofollow"> View page source</a>
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/intro/starting.rst" class="fa fa-github"> Edit on GitHub</a>
+            
           
         
       </li>
@@ -152,40 +173,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="migrations">
-<h1>Migrations<a class="headerlink" href="#migrations" title="Permalink to this headline">¶</a></h1>
-<p>Migrations of models are handled with the .migrations module contents. It works quite like <cite>Django</cite> migrations work,
-except it automatically executes the migrations at first boot.</p>
-<div class="section" id="create-migrations">
-<h2>Create migrations<a class="headerlink" href="#create-migrations" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">To create a migration, go to your app base folder and create a folder (if not yet exist), name the folder <code class="docutils literal"><span class="pre">'migrations'</span></code>.</p>
-</li>
-<li><p class="first">You should create a new python file with the following name pattern:</p>
-<p><code class="docutils literal"><span class="pre">001_name.py</span></code> Where 001 is the migration number, this should be unique and the <cite>name</cite> is a name to represent to the developer.</p>
-</li>
-<li><p class="first">Past the following snippet and change it like you want.</p>
-</li>
-</ol>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">sample_field</span> <span class="o">=</span> <span class="n">CharField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">)</span>
+  <div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="section" id="starting-pyplanet">
+<h1>Starting PyPlanet<a class="headerlink" href="#starting-pyplanet" title="Permalink to this headline">¶</a></h1>
+<p>After following the instructions on how to <a class="reference external" href="installation">install</a> and <a class="reference external" href="configuration">configure</a> PyPlanet you are
+ready to start up the controller itself.</p>
+<div class="section" id="activate-virtualenv">
+<h2>Activate virtualenv<a class="headerlink" href="#activate-virtualenv" title="Permalink to this headline">¶</a></h2>
+<p>You always have to be in the projects virtualenv if you have enabled this during the installation.</p>
+<p><strong>virtualenv</strong>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Linux / Mac OS</span>
+<span class="nb">source</span> env/bin/activate
 
-<span class="k">def</span> <span class="nf">upgrade</span><span class="p">(</span><span class="n">migrator</span><span class="p">:</span> <span class="n">SchemaMigrator</span><span class="p">):</span>
-    <span class="n">migrate</span><span class="p">(</span>
-        <span class="n">migrator</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="n">TestModel</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">db_table</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="n">sample_field</span><span class="p">)</span>
-    <span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">downgrade</span><span class="p">(</span><span class="n">migrator</span><span class="p">:</span> <span class="n">SchemaMigrator</span><span class="p">):</span>
-    <span class="k">pass</span>
+<span class="c1"># Windows</span>
+env<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.bat
 </pre></div>
 </div>
-<ol class="arabic simple" start="4">
-<li>Change code as you need, but make sure you define defaults or nullable fields, and make sure you use the <code class="docutils literal"><span class="pre">db_table</span></code>
-from the meta class of the model.</li>
-<li>Make sure you can upgrade at least. Downgrading is not yet included in the scope, but it&#8217;s better to implement the
-downgrade as well.</li>
-<li>Test, make sure it&#8217;s able to migrate on at least these engines: MySQL, SQLite, PostgreSQL.</li>
-</ol>
-<p><cite>More information about migrations will appear here as it develops.</cite></p>
+<p><strong>pyenv</strong>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pyenv activate my-virtual-env
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-pyplanet">
+<h2>Start PyPlanet<a class="headerlink" href="#start-pyplanet" title="Permalink to this headline">¶</a></h2>
+<p>Head to your projects folder where the file <code class="docutils literal"><span class="pre">manage.py</span></code> is located in your terminal and execute the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./manage.py start
+</pre></div>
+</div>
+<p>This will start your PyPlanet setup.</p>
 </div>
 </div>
 
