@@ -95,7 +95,20 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="admin.html">Admin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jukebox.html">Jukebox</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Karma</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Karma</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#information">Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#display-votes">Display votes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#signal-handlers">Signal handlers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#map-begin">Map begin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#player-chat">Player chat</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="local_records.html">Local Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 </ul>
@@ -177,9 +190,57 @@
             
   <div class="section" id="karma">
 <h1>Karma<a class="headerlink" href="#karma" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Documentation is not yet complete for this app.</p>
+<div class="section" id="information">
+<h2>Information<a class="headerlink" href="#information" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Name:</dt>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.contrib.karma</span></code></dd>
+<dt>Depends on:</dt>
+<dd><code class="docutils literal"><span class="pre">core.maniaplanet</span></code></dd>
+<dt>Game:</dt>
+<dd>TrackMania, ShootMania</dd>
+</dl>
+</div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<p>This app enables players to vote on maps.</p>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="display-votes">
+<h3>Display votes<a class="headerlink" href="#display-votes" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">/whokarma</span></code></dd>
+<dt>Parameters:</dt>
+<dd>None.</dd>
+<dt>Functionality:</dt>
+<dd>Displays a list of votes cast on the current map.</dd>
+<dt>Required permission:</dt>
+<dd>None.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="signal-handlers">
+<h2>Signal handlers<a class="headerlink" href="#signal-handlers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="map-begin">
+<h3>Map begin<a class="headerlink" href="#map-begin" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Signal:</dt>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.maniaplanet.callbacks.map.map_begin</span></code></dd>
+<dt>Functionality:</dt>
+<dd>Retrieve votes for the new map.</dd>
+</dl>
+</div>
+<div class="section" id="player-chat">
+<h3>Player chat<a class="headerlink" href="#player-chat" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Signal:</dt>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.maniaplanet.callbacks.player.player_chat</span></code></dd>
+<dt>Functionality:</dt>
+<dd>Handles chat-based voting (<code class="docutils literal"><span class="pre">++</span></code> or <code class="docutils literal"><span class="pre">--</span></code>).</dd>
+</dl>
+</div>
 </div>
 </div>
 

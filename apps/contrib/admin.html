@@ -93,7 +93,33 @@
 </ul>
 <p class="caption"><span class="caption-text">Apps Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Admin</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Admin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#information">Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#maps">Maps</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#skip-map">Skip map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restart-map">Restart map</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#players">Players</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mute-player">Mute player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unmute-player">Unmute player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kick-player">Kick player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ban-player">Ban player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unban-player">Unban player</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#server">Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-server-password">Set server password</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Set server password</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#signal-handlers">Signal handlers</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="jukebox.html">Jukebox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="karma.html">Karma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="local_records.html">Local Records</a></li>
@@ -177,9 +203,180 @@
             
   <div class="section" id="admin">
 <h1>Admin<a class="headerlink" href="#admin" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Documentation is not yet complete for this app.</p>
+<div class="section" id="information">
+<h2>Information<a class="headerlink" href="#information" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Name:</dt>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.contrib.admin</span></code></dd>
+<dt>Depends on:</dt>
+<dd><code class="docutils literal"><span class="pre">core.maniaplanet</span></code></dd>
+<dt>Game:</dt>
+<dd>TrackMania, ShootMania</dd>
+</dl>
+</div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<p>This app includes the main admin features PyPlanet has to offer.
+It&#8217;s features can be seperated in to these three areas:</p>
+<ul class="simple">
+<li>Maps: skip, restart</li>
+<li>Players: mute, kick, ban</li>
+<li>Server: set server/spectator password</li>
+</ul>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="maps">
+<h3>Maps<a class="headerlink" href="#maps" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="skip-map">
+<h4>Skip map<a class="headerlink" href="#skip-map" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">next</span></code></dd>
+<dt>Parameters:</dt>
+<dd>None.</dd>
+<dt>Functionality:</dt>
+<dd>Skips to the next map.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:next</span></code>, requires admin level 1.</dd>
+</dl>
+</div>
+<div class="section" id="restart-map">
+<h4>Restart map<a class="headerlink" href="#restart-map" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">restart</span></code> / <code class="docutils literal"><span class="pre">/admin</span> <span class="pre">res</span></code> / <code class="docutils literal"><span class="pre">/admin</span> <span class="pre">rs</span></code></dd>
+<dt>Parameters:</dt>
+<dd>None.</dd>
+<dt>Functionality:</dt>
+<dd>Restarts the current map.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:restart</span></code>, requires admin level 1.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="players">
+<h3>Players<a class="headerlink" href="#players" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="mute-player">
+<h4>Mute player<a class="headerlink" href="#mute-player" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">mute</span></code> / <code class="docutils literal"><span class="pre">/admin</span> <span class="pre">ignore</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Player login.</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Mutes the player, messages won&#8217;t appear in server chat.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:ignore</span></code>, requires admin level 1.</dd>
+</dl>
+</div>
+<div class="section" id="unmute-player">
+<h4>Unmute player<a class="headerlink" href="#unmute-player" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">unmute</span></code> / <code class="docutils literal"><span class="pre">/admin</span> <span class="pre">unignore</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Player login.</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Unmutes the player, messages will appear in server chat again.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:unignore</span></code>, requires admin level 1.</dd>
+</dl>
+</div>
+<div class="section" id="kick-player">
+<h4>Kick player<a class="headerlink" href="#kick-player" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">kick</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Player login.</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Kicks the player from the server.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:kick</span></code>, requires admin level 1.</dd>
+</dl>
+</div>
+<div class="section" id="ban-player">
+<h4>Ban player<a class="headerlink" href="#ban-player" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">ban</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Player login.</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Bans the player from the server.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:ban</span></code>, requires admin level 2.</dd>
+</dl>
+</div>
+<div class="section" id="unban-player">
+<h4>Unban player<a class="headerlink" href="#unban-player" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">unban</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Player login.</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Unbans the player from the server.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:unban</span></code>, requires admin level 2.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="server">
+<h3>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="set-server-password">
+<h4>Set server password<a class="headerlink" href="#set-server-password" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">setpassword</span></code> / <code class="docutils literal"><span class="pre">/admin</span> <span class="pre">srvpass</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Server password (none or empty for no password).</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Changes the server password.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:password</span></code>, requires admin level 2.</dd>
+</dl>
+</div>
+<div class="section" id="id1">
+<h4>Set server password<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">setspecpassword</span></code> / <code class="docutils literal"><span class="pre">/admin</span> <span class="pre">spectpass</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Spectator password (none or empty for no password).</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Changes the spectator password.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:password</span></code>, requires admin level 2.</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="signal-handlers">
+<h2>Signal handlers<a class="headerlink" href="#signal-handlers" title="Permalink to this headline">¶</a></h2>
+<p>None.</p>
 </div>
 </div>
 
