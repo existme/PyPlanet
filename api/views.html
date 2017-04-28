@@ -113,6 +113,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="core_exceptions.html">pyplanet.core.exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_instance.html">pyplanet.core.instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_ui.html">pyplanet.core.ui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_map.html">pyplanet.contrib.map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_player.html">pyplanet.contrib.player</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_command.html">pyplanet.contrib.command</a></li>
@@ -201,6 +202,118 @@
 <dt id="pyplanet.views.base.View">
 <em class="property">class </em><code class="descclassname">pyplanet.views.base.</code><code class="descname">View</code><span class="sig-paren">(</span><em>manager=None</em>, <em>id=None</em>, <em>version='3'</em>, <em>body=None</em>, <em>template=None</em>, <em>timeout=0</em>, <em>hide_click=False</em>, <em>data=None</em>, <em>player_data=None</em>, <em>throw_exceptions=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.base.View" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base view. The base view will inherit from <code class="docutils literal"><span class="pre">StaticManiaLink</span></code> class.</p>
+<dl class="method">
+<dt id="pyplanet.views.base.View.destroy">
+<code class="descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.base.View.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroy the Manialink with it&#8217;s handlers and references.
+Will also hide the Manialink for all users!</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.views.base.View.destroy_sync">
+<code class="descname">destroy_sync</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.base.View.destroy_sync" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroy the Manialink with it&#8217;s handlers and references.
+Will also hide the Manialink for all users!</p>
+<p>This method is sync and will call a async method (destroying of the manialink at our players) async but will not
+be executed at the same time. Be aware with this one!</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.views.base.View.display">
+<code class="descname">display</code><span class="sig-paren">(</span><em>player_logins=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.base.View.display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the manialink. Will also render if no body is given. Will show per player or global. depending on 
+the data given and stored!</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>player_logins</strong> &#8211; Only display to the list of player logins given.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.views.base.View.handle_catch_all">
+<code class="descname">handle_catch_all</code><span class="sig-paren">(</span><em>player</em>, <em>action</em>, <em>values</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.base.View.handle_catch_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override this class to handle all other actions related to this view/manialink.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>player</strong> &#8211; Player instance.</li>
+<li><strong>action</strong> &#8211; Action name/string</li>
+<li><strong>values</strong> &#8211; Values provided by the user client.</li>
+<li><strong>kwargs</strong> &#8211; <ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.views.base.View.hide">
+<code class="descname">hide</code><span class="sig-paren">(</span><em>player_logins=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.base.View.hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide manialink globally of only for the logins given in parameter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>player_logins</strong> &#8211; Only hide for list of players, None for all players on the server.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.views.base.View.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>player_login=None</em>, <em>data=None</em>, <em>player_data=None</em>, <em>template=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.base.View.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render template. Will render template and return body.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>player_login</strong> &#8211; Render data only for player, set to None to globally render (and ignore player_data).</li>
+<li><strong>data</strong> &#8211; Data to append.</li>
+<li><strong>player_data</strong> &#8211; Data to append.</li>
+<li><strong>template</strong> (<a class="reference internal" href="core_ui.html#pyplanet.core.ui.template.Template" title="pyplanet.core.ui.template.Template"><em>pyplanet.core.ui.template.Template</em></a>) &#8211; Template instance to use.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Body, rendered manialink + script.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.views.base.View.subscribe">
+<code class="descname">subscribe</code><span class="sig-paren">(</span><em>action</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.base.View.subscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to a action given by the manialink.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>action</strong> &#8211; Action name.</li>
+<li><strong>target</strong> &#8211; Target method.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <span class="target" id="module-pyplanet.views.template"></span><dl class="class">
@@ -246,8 +359,15 @@ Return dict with player as key and value should contain the data dict.</td>
 </table>
 <p><strong>Example usage:</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AlertView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>  
-        <span class="n">template_package</span> <span class="o">=</span> <span class="s1">&#39;my_app&#39;</span>
-        <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;test.xml&#39;</span> <span class="c1"># template should be in: ./my_app/templates/test.xml         </span>
+        <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;my_app/test.xml&#39;</span> <span class="c1"># template should be in: ./my_app/templates/test.xml</span>
+        <span class="c1"># Some prefixes that can be used in the template_name:</span>
+        <span class="c1">#</span>
+        <span class="c1"># - core.views: ``pyplanet.views.templates``.</span>
+        <span class="c1"># - core.pyplanet: ``pyplanet.apps.core.pyplanet.templates``.</span>
+        <span class="c1"># - core.maniaplanet: ``pyplanet.apps.core.pyplanet.templates``.</span>
+        <span class="c1"># - core.trackmania: ``pyplanet.apps.core.trackmania.templates``.</span>
+        <span class="c1"># - core.shootmania: ``pyplanet.apps.core.shootmania.templates``.</span>
+        <span class="c1"># - [app_label]: ``[app path]/templates``.</span>
 
         <span class="n">async</span> <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
                 <span class="n">context</span> <span class="o">=</span> <span class="n">await</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">()</span>
@@ -255,6 +375,37 @@ Return dict with player as key and value should contain the data dict.</td>
                 <span class="k">return</span> <span class="n">context</span>
 </pre></div>
 </div>
+<dl class="method">
+<dt id="pyplanet.views.template.TemplateView.destroy">
+<code class="descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.template.TemplateView.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroy the Manialink with it&#8217;s handlers and references.
+Will also hide the Manialink for all users!</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.views.template.TemplateView.destroy_sync">
+<code class="descname">destroy_sync</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.template.TemplateView.destroy_sync" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroy the Manialink with it&#8217;s handlers and references.
+Will also hide the Manialink for all users!</p>
+<p>This method is sync and will call a async method (destroying of the manialink at our players) async but will not
+be executed at the same time. Be aware with this one!</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.views.template.TemplateView.display">
+<code class="descname">display</code><span class="sig-paren">(</span><em>player_logins=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.template.TemplateView.display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the manialink. Will also render if no body is given. Will show per player or global. depending on 
+the data given and stored!</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>player_logins</strong> &#8211; Only display to the list of player logins given.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="pyplanet.views.template.TemplateView.get_context_data">
 <code class="descname">get_context_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.template.TemplateView.get_context_data" title="Permalink to this definition">¶</a></dt>
@@ -268,6 +419,43 @@ Return dict with player as key and value should contain the data dict.</td>
 </dd></dl>
 
 <dl class="method">
+<dt id="pyplanet.views.template.TemplateView.handle_catch_all">
+<code class="descname">handle_catch_all</code><span class="sig-paren">(</span><em>player</em>, <em>action</em>, <em>values</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.template.TemplateView.handle_catch_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override this class to handle all other actions related to this view/manialink.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>player</strong> &#8211; Player instance.</li>
+<li><strong>action</strong> &#8211; Action name/string</li>
+<li><strong>values</strong> &#8211; Values provided by the user client.</li>
+<li><strong>kwargs</strong> &#8211; <ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.views.template.TemplateView.hide">
+<code class="descname">hide</code><span class="sig-paren">(</span><em>player_logins=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.template.TemplateView.hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide manialink globally of only for the logins given in parameter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>player_logins</strong> &#8211; Only hide for list of players, None for all players on the server.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="pyplanet.views.template.TemplateView.render">
 <code class="descname">render</code><span class="sig-paren">(</span><em>*args</em>, <em>player_login=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.template.TemplateView.render" title="Permalink to this definition">¶</a></dt>
 <dd><p>Render template for player. This will only render the body and return it. Not send it!</p>
@@ -278,6 +466,27 @@ Return dict with player as key and value should contain the data dict.</td>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>player_login</strong> &#8211; Render data only for player, set to None to globally render (and ignore player_data).</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Body, rendered manialink + script.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.views.template.TemplateView.subscribe">
+<code class="descname">subscribe</code><span class="sig-paren">(</span><em>action</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.views.template.TemplateView.subscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to a action given by the manialink.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>action</strong> &#8211; Action name.</li>
+<li><strong>target</strong> &#8211; Target method.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -449,7 +658,7 @@ enough time to provide a transition time, we are going to create a separate solu
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Tom Valk.
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
 
     </p>
   </div>

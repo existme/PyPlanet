@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.core.ui &mdash; PyPlanet  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
+        <link rel="up" title="API Documentation" href="index.html"/>
+        <link rel="next" title="pyplanet.contrib.map" href="contrib_map.html"/>
+        <link rel="prev" title="pyplanet.core.instance" href="core_instance.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/index.html">Apps</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="apps.html">pyplanet.apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">pyplanet.views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_exceptions.html">pyplanet.core.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_instance.html">pyplanet.core.instance</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pyplanet.core.ui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_map.html">pyplanet.contrib.map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_player.html">pyplanet.contrib.player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_command.html">pyplanet.contrib.command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_permission.html">pyplanet.contrib.permission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_setting.html">pyplanet.contrib.setting</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">API Documentation</a> &raquo;</li>
+        
+      <li>pyplanet.core.ui</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/api/core_ui.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyplanet.core.ui.template">
+<span id="pyplanet-core-ui"></span><h1>pyplanet.core.ui<a class="headerlink" href="#module-pyplanet.core.ui.template" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyplanet.core.ui.template.Template">
+<em class="property">class </em><code class="descclassname">pyplanet.core.ui.template.</code><code class="descname">Template</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.template.Template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Template class manages the template file source and the rendering of it.</p>
+<p>Will also take care of the loader of the Jinja2 template engine.</p>
+<p>Some notable prefixes:</p>
+<ul class="simple">
+<li>core.views: <code class="docutils literal"><span class="pre">pyplanet.views.templates</span></code>.</li>
+<li>core.pyplanet: <code class="docutils literal"><span class="pre">pyplanet.apps.core.pyplanet.templates</span></code>.</li>
+<li>core.maniaplanet: <code class="docutils literal"><span class="pre">pyplanet.apps.core.pyplanet.templates</span></code>.</li>
+<li>core.trackmania: <code class="docutils literal"><span class="pre">pyplanet.apps.core.trackmania.templates</span></code>.</li>
+<li>core.shootmania: <code class="docutils literal"><span class="pre">pyplanet.apps.core.shootmania.templates</span></code>.</li>
+<li>[app_label]: <code class="docutils literal"><span class="pre">[app</span> <span class="pre">path]/templates</span></code>.</li>
+</ul>
+</dd></dl>
+
+<span class="target" id="module-pyplanet.core.ui"></span><span class="target" id="module-pyplanet.core.ui.components"></span><dl class="class">
+<dt id="pyplanet.core.ui.components.StaticManiaLink">
+<em class="property">class </em><code class="descclassname">pyplanet.core.ui.components.</code><code class="descname">StaticManiaLink</code><span class="sig-paren">(</span><em>manager=None</em>, <em>id=None</em>, <em>version='3'</em>, <em>body=None</em>, <em>template=None</em>, <em>timeout=0</em>, <em>hide_click=False</em>, <em>data=None</em>, <em>player_data=None</em>, <em>throw_exceptions=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.StaticManiaLink" title="Permalink to this definition">¶</a></dt>
+<dd><p>The StaticManiaLink is mostly used in PyPlanet for general views. Please use the <code class="docutils literal"><span class="pre">View</span></code> classes instead of this
+core ui component!</p>
+<dl class="method">
+<dt id="pyplanet.core.ui.components.StaticManiaLink.destroy">
+<code class="descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.StaticManiaLink.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroy the Manialink with it&#8217;s handlers and references.
+Will also hide the Manialink for all users!</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.ui.components.StaticManiaLink.destroy_sync">
+<code class="descname">destroy_sync</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.StaticManiaLink.destroy_sync" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroy the Manialink with it&#8217;s handlers and references.
+Will also hide the Manialink for all users!</p>
+<p>This method is sync and will call a async method (destroying of the manialink at our players) async but will not
+be executed at the same time. Be aware with this one!</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.ui.components.StaticManiaLink.display">
+<code class="descname">display</code><span class="sig-paren">(</span><em>player_logins=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.StaticManiaLink.display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the manialink. Will also render if no body is given. Will show per player or global. depending on 
+the data given and stored!</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>player_logins</strong> &#8211; Only display to the list of player logins given.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.ui.components.StaticManiaLink.handle_catch_all">
+<code class="descname">handle_catch_all</code><span class="sig-paren">(</span><em>player</em>, <em>action</em>, <em>values</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.StaticManiaLink.handle_catch_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override this class to handle all other actions related to this view/manialink.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>player</strong> &#8211; Player instance.</li>
+<li><strong>action</strong> &#8211; Action name/string</li>
+<li><strong>values</strong> &#8211; Values provided by the user client.</li>
+<li><strong>kwargs</strong> &#8211; <ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.ui.components.StaticManiaLink.hide">
+<code class="descname">hide</code><span class="sig-paren">(</span><em>player_logins=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.StaticManiaLink.hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide manialink globally of only for the logins given in parameter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>player_logins</strong> &#8211; Only hide for list of players, None for all players on the server.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.ui.components.StaticManiaLink.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>player_login=None</em>, <em>data=None</em>, <em>player_data=None</em>, <em>template=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.StaticManiaLink.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render template. Will render template and return body.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>player_login</strong> &#8211; Render data only for player, set to None to globally render (and ignore player_data).</li>
+<li><strong>data</strong> &#8211; Data to append.</li>
+<li><strong>player_data</strong> &#8211; Data to append.</li>
+<li><strong>template</strong> (<a class="reference internal" href="#pyplanet.core.ui.template.Template" title="pyplanet.core.ui.template.Template"><em>pyplanet.core.ui.template.Template</em></a>) &#8211; Template instance to use.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Body, rendered manialink + script.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.ui.components.StaticManiaLink.subscribe">
+<code class="descname">subscribe</code><span class="sig-paren">(</span><em>action</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.StaticManiaLink.subscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to a action given by the manialink.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>action</strong> &#8211; Action name.</li>
+<li><strong>target</strong> &#8211; Target method.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyplanet.core.ui.components.DynamicManiaLink">
+<em class="property">class </em><code class="descclassname">pyplanet.core.ui.components.</code><code class="descname">DynamicManiaLink</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.DynamicManiaLink" title="Permalink to this definition">¶</a></dt>
+<dd><p>The DynamicManiaLink is a special manialink with data-bindings and automatically updates via maniascript.
+Please use the <code class="docutils literal"><span class="pre">View</span></code> classes instead!</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This feature is not yet implemented.</p>
+</div>
+<dl class="method">
+<dt id="pyplanet.core.ui.components.DynamicManiaLink.destroy">
+<code class="descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.DynamicManiaLink.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroy the Manialink with it&#8217;s handlers and references.
+Will also hide the Manialink for all users!</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.ui.components.DynamicManiaLink.destroy_sync">
+<code class="descname">destroy_sync</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.DynamicManiaLink.destroy_sync" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroy the Manialink with it&#8217;s handlers and references.
+Will also hide the Manialink for all users!</p>
+<p>This method is sync and will call a async method (destroying of the manialink at our players) async but will not
+be executed at the same time. Be aware with this one!</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.ui.components.DynamicManiaLink.display">
+<code class="descname">display</code><span class="sig-paren">(</span><em>player_logins=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.DynamicManiaLink.display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the manialink. Will also render if no body is given. Will show per player or global. depending on 
+the data given and stored!</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>player_logins</strong> &#8211; Only display to the list of player logins given.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.ui.components.DynamicManiaLink.handle_catch_all">
+<code class="descname">handle_catch_all</code><span class="sig-paren">(</span><em>player</em>, <em>action</em>, <em>values</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.DynamicManiaLink.handle_catch_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override this class to handle all other actions related to this view/manialink.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>player</strong> &#8211; Player instance.</li>
+<li><strong>action</strong> &#8211; Action name/string</li>
+<li><strong>values</strong> &#8211; Values provided by the user client.</li>
+<li><strong>kwargs</strong> &#8211; <ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.ui.components.DynamicManiaLink.hide">
+<code class="descname">hide</code><span class="sig-paren">(</span><em>player_logins=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.DynamicManiaLink.hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide manialink globally of only for the logins given in parameter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>player_logins</strong> &#8211; Only hide for list of players, None for all players on the server.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.ui.components.DynamicManiaLink.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>player_login=None</em>, <em>data=None</em>, <em>player_data=None</em>, <em>template=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.DynamicManiaLink.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render template. Will render template and return body.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>player_login</strong> &#8211; Render data only for player, set to None to globally render (and ignore player_data).</li>
+<li><strong>data</strong> &#8211; Data to append.</li>
+<li><strong>player_data</strong> &#8211; Data to append.</li>
+<li><strong>template</strong> (<a class="reference internal" href="#pyplanet.core.ui.template.Template" title="pyplanet.core.ui.template.Template"><em>pyplanet.core.ui.template.Template</em></a>) &#8211; Template instance to use.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Body, rendered manialink + script.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.ui.components.DynamicManiaLink.subscribe">
+<code class="descname">subscribe</code><span class="sig-paren">(</span><em>action</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.ui.components.DynamicManiaLink.subscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to a action given by the manialink.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>action</strong> &#8211; Action name.</li>
+<li><strong>target</strong> &#8211; Target method.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-pyplanet.core.ui.filters"></span><span class="target" id="module-pyplanet.core.ui.exceptions"></span><dl class="exception">
+<dt id="pyplanet.core.ui.exceptions.ManialinkMemoryLeakException">
+<em class="property">exception </em><code class="descclassname">pyplanet.core.ui.exceptions.</code><code class="descname">ManialinkMemoryLeakException</code><a class="headerlink" href="#pyplanet.core.ui.exceptions.ManialinkMemoryLeakException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is thrown when a memory leak is detected in a view. Raised when a manialink responds to a view, but the view is 
+vanished for the specified player(s).</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyplanet.core.ui.exceptions.UIException">
+<em class="property">exception </em><code class="descclassname">pyplanet.core.ui.exceptions.</code><code class="descname">UIException</code><a class="headerlink" href="#pyplanet.core.ui.exceptions.UIException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base exception for UI core component.</p>
+</dd></dl>
+
+<span class="target" id="module-pyplanet.core.ui.loader"></span><dl class="class">
+<dt id="pyplanet.core.ui.loader.PyPlanetLoader">
+<em class="property">class </em><code class="descclassname">pyplanet.core.ui.loader.</code><code class="descname">PyPlanetLoader</code><a class="headerlink" href="#pyplanet.core.ui.loader.PyPlanetLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lazy loader for the pyplanet jinja2 loader.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="contrib_map.html" class="btn btn-neutral float-right" title="pyplanet.contrib.map" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="core_instance.html" class="btn btn-neutral" title="pyplanet.core.instance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
