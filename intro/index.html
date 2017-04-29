@@ -105,6 +105,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#owners-base-py">Owners (base.py)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#database-configuration-base-py">Database configuration (base.py)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dedicated-server-base-py">Dedicated Server (base.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#map-settings-base-py">Map settings (base.py)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#storage-base-py">Storage (base.py)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cache-base-py">Cache (base.py)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#enabling-apps-apps-py">Enabling apps (apps.py)</a></li>
@@ -397,6 +398,18 @@ these <em>database drivers</em>:</p>
     <span class="s1">&#39;PASSWORD&#39;</span><span class="p">:</span> <span class="s1">&#39;SuperAdmin&#39;</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="map-settings-base-py">
+<h3>Map settings (base.py)<a class="headerlink" href="#map-settings-base-py" title="Permalink to this headline">¶</a></h3>
+<p>Some of these settings are required to be able to save match settings for example.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Map configuration is a set of configuration options related to match settings etc.</span>
+<span class="c1"># Matchsettings filename.</span>
+<span class="n">MAP_MATCHSETTINGS</span> <span class="o">=</span> <span class="s1">&#39;autosave.txt&#39;</span>
+
+<span class="c1"># You can set this to a automatically generated name:</span>
+<span class="n">MAP_MATCHSETTINGS</span> <span class="o">=</span> <span class="s1">&#39;{server_login}.txt&#39;</span>
 </pre></div>
 </div>
 </div>

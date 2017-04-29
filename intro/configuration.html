@@ -286,6 +286,18 @@ these <em>database drivers</em>:</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="map-settings-base-py">
+<h2>Map settings (base.py)<a class="headerlink" href="#map-settings-base-py" title="Permalink to this headline">¶</a></h2>
+<p>Some of these settings are required to be able to save match settings for example.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Map configuration is a set of configuration options related to match settings etc.</span>
+<span class="c1"># Matchsettings filename.</span>
+<span class="n">MAP_MATCHSETTINGS</span> <span class="o">=</span> <span class="s1">&#39;autosave.txt&#39;</span>
+
+<span class="c1"># You can set this to a automatically generated name:</span>
+<span class="n">MAP_MATCHSETTINGS</span> <span class="o">=</span> <span class="s1">&#39;{server_login}.txt&#39;</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="storage-base-py">
 <h2>Storage (base.py)<a class="headerlink" href="#storage-base-py" title="Permalink to this headline">¶</a></h2>
 <p>This may need some explanation, why is this here? We wanted to be able to run PyPlanet on a separate machine as the dedicated

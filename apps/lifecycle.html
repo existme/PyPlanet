@@ -173,9 +173,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="life-cycle">
+  <div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="section" id="life-cycle">
 <h1>Life Cycle<a class="headerlink" href="#life-cycle" title="Permalink to this headline">¶</a></h1>
 <img alt="../_images/lifecycle.png" src="../_images/lifecycle.png" />
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Currently the life cycle <strong>isn&#8217;t fully implemented</strong>. Only the <code class="docutils literal"><span class="pre">on_init</span></code> and <code class="docutils literal"><span class="pre">on_start</span></code> will be called, but please
+prepare your app to support the following life cycle methods.</p>
+</div>
 <div class="section" id="on-init">
 <h2>on_init<a class="headerlink" href="#on-init" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">on_init()</span></code> is called the moment after the apps have been ordered at the dependency trees. This means, there is not
