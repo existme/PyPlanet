@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Search &mdash; PyPlanet  documentation</title>
+  <title>Privacy &mdash; PyPlanet  documentation</title>
   
 
   
@@ -34,8 +34,10 @@
   
         <link rel="index" title="Index"
               href="genindex.html"/>
-        <link rel="search" title="Search" href="#"/>
-    <link rel="top" title="PyPlanet  documentation" href="index.html"/> 
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="PyPlanet  documentation" href="index.html"/>
+        <link rel="next" title="Changelog" href="changelog.html"/>
+        <link rel="prev" title="Support, Bug report &amp; Contact" href="support.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -67,7 +69,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -104,9 +106,12 @@
 <li class="toctree-l1"><a class="reference internal" href="api/index.html">API Documentation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">About PyPlanet</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support, Bug report &amp; Contact</a></li>
-<li class="toctree-l1"><a class="reference internal" href="privacy.html">Privacy</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Privacy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#error-reports">Error reports</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="todo.html">Todo (docs)</a></li>
 </ul>
@@ -153,10 +158,16 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Search</li>
+      <li>Privacy</li>
     
     
       <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/privacy.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
         
       </li>
     
@@ -168,19 +179,59 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="privacy">
+<h1>Privacy<a class="headerlink" href="#privacy" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="error-reports">
+<h2>Error reports<a class="headerlink" href="#error-reports" title="Permalink to this headline">¶</a></h2>
+<p>We have an automated error reporting system in place that tells the developers or PyPlanet when there are instabilities in
+the core code or in one of the contributed and bundled apps.</p>
+<p><strong>What are we catching and reporting</strong></p>
+<p>We will catch so called uncaught exceptions, these are mostly not handled by one of the functions inside of the code.
+When it&#8217;s not handled, the whole function or call to that function is halt and stopped. When this happends, we send
+an report with the full traceback (all the touched lines of code in order) with the data of the exception.</p>
+<p>We also have some specific messages we forward towards the error reporting service. For this kind of messages it&#8217;s really
+important we get to know them. For example a memory leak in one of the apps or contributed apps. Or a captured exception
+but it&#8217;s not known or handled right.</p>
+<p><strong>What data are we sending with the report</strong></p>
+<p>Depending on the setting we send minimum of full data about your installation and server. By default you will contribute
+with the full data option.</p>
+<p>Full (level 2 or 3):</p>
+<ul class="simple">
+<li>Server dedicated login, paths to maps, scripts, modes, all kind of dedicated configuration.</li>
+<li>Variable data in local method, inside of the exception call.</li>
+<li>Exception with trace or error message including module and line.</li>
+<li>Share information (filtered to only the basic information, <em>no user specific data!!</em>) to app developers (must be level 3)</li>
+</ul>
+<p>Minimum (level 1):</p>
+<ul class="simple">
+<li>Exception with basic trace or error message.</li>
+</ul>
+<p><strong>Where will the data be stored</strong></p>
+<p>All the data will be stored in an analyse and reporting tool that is fully self hosted by Toffe. We protect the installation
+with HTTPS and don&#8217;t allow unauthorized or non-pyplanet team members to access the data.</p>
+<p><strong>What about sensitive information</strong></p>
+<p>We will replace any sensitive information that seems to be either a key, serial or password by asterisk. This is done in
+the reporting process.</p>
+<p><strong>How to change the behaviour of reporting</strong></p>
+<p>You can add this line to your <cite>base.py</cite> file to change the behaviour.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Error reporting</span>
+<span class="c1"># See documentation for the options, (docs =&gt; privacy).</span>
+<span class="c1"># Options:</span>
+<span class="c1"># 0 = Don&#39;t report any errors or messages.</span>
+<span class="c1"># 1 = Report errors with only traces.</span>
+<span class="c1"># 2 = Report errors with traces and server data.</span>
+<span class="c1"># 3 = Report errors with traces and server data, provide data to contributed apps (only pyplanet team has access).</span>
+<span class="n">LOGGING_REPORTING</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>We really like to improve the stability of PyPlanet</strong>, therefor we kindly ask you to keep the setting on, or at least
+at level <code class="docutils literal"><span class="pre">2</span></code>.</p>
+</div>
+</div>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
            <div class="articleComments">
@@ -188,6 +239,15 @@
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="support.html" class="btn btn-neutral" title="Support, Bug report &amp; Contact" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -226,7 +286,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/searchtools.js"></script>
 
   
 
@@ -242,14 +301,7 @@
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>
