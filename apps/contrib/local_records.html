@@ -36,7 +36,7 @@
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="PyPlanet  documentation" href="../../index.html"/>
-        <link rel="next" title="Players" href="players.html"/>
+        <link rel="next" title="Map Info" href="mapinfo.html"/>
         <link rel="prev" title="Karma" href="karma.html"/> 
 
   
@@ -105,11 +105,13 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#signal-handlers">Signal handlers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#map-begin">Map begin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#player-connect">Player connect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#player-finish">Player finish</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="mapinfo.html">Map Info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
@@ -121,6 +123,7 @@
 <p class="caption"><span class="caption-text">About PyPlanet</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../privacy.html">Privacy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">Todo (docs)</a></li>
 </ul>
@@ -203,7 +206,7 @@
 </div>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
-<p>This app enables players to have their map records stored.</p>
+<p>This app enables players to have their map records stored and displays the records in a widget.</p>
 </div>
 <div class="section" id="commands">
 <h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
@@ -229,7 +232,16 @@
 <dt>Signal:</dt>
 <dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.maniaplanet.callbacks.map.map_begin</span></code></dd>
 <dt>Functionality:</dt>
-<dd>Retrieve records for the new map.</dd>
+<dd>Retrieves records for the new map and updates the widget.</dd>
+</dl>
+</div>
+<div class="section" id="player-connect">
+<h3>Player connect<a class="headerlink" href="#player-connect" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Signal:</dt>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.maniaplanet.callbacks.player.player_connect</span></code></dd>
+<dt>Functionality:</dt>
+<dd>Displays the records widget for the connecting player.</dd>
 </dl>
 </div>
 <div class="section" id="player-finish">
@@ -254,7 +266,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="players.html" class="btn btn-neutral float-right" title="Players" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mapinfo.html" class="btn btn-neutral float-right" title="Map Info" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="karma.html" class="btn btn-neutral" title="Karma" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
