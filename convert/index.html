@@ -89,7 +89,10 @@
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Migrating from old controller</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Migrating from old controller</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#migrating-from-xaseco2">Migrating from Xaseco2</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Apps Documentation</span></p>
 <ul>
@@ -97,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/jukebox.html">Jukebox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/karma.html">Karma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mapinfo.html">Map Info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
@@ -108,6 +112,7 @@
 <p class="caption"><span class="caption-text">About PyPlanet</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
 </ul>
@@ -177,9 +182,28 @@
             
   <div class="section" id="migrating-from-old-controller">
 <h1>Migrating from old controller<a class="headerlink" href="#migrating-from-old-controller" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">This topic and feature is currently <strong>Planned</strong></p>
+<div class="section" id="migrating-from-xaseco2">
+<h2>Migrating from Xaseco2<a class="headerlink" href="#migrating-from-xaseco2" title="Permalink to this headline">¶</a></h2>
+<p>We provide a basic convert procedure to convert your database from XAseco2 to PyPlanet. You will keep these data:</p>
+<ul class="simple">
+<li>Player basic information. (<strong>Not statistics!</strong>).</li>
+<li>Map basic information.</li>
+<li>Local records. (<code class="docutils literal"><span class="pre">records</span></code> table).</li>
+<li>Karma.</li>
+</ul>
+<p>As we don&#8217;t have anything yet that can hold statistics, we cannot convert these unfortunately.</p>
+<p>Command to convert, Change the parameters:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./manage.py db_convert --pool default --source-format xaseco2 --source-db-username root --source-db-name xaseco2
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For additional arguments, see ./manage.py db_convert &#8211;help</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This has not yet been fully tested with several installations. <strong>Make sure your source is utf8</strong>.</p>
+</div>
 </div>
 </div>
 
