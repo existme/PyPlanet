@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.contrib.mode &mdash; PyPlanet  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
+        <link rel="up" title="API Documentation" href="index.html"/>
+        <link rel="next" title="Support, Bug report &amp; Contact" href="../support.html"/>
+        <link rel="prev" title="pyplanet.contrib.setting" href="contrib_setting.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/index.html">Apps</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="apps.html">pyplanet.apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">pyplanet.views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_exceptions.html">pyplanet.core.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_instance.html">pyplanet.core.instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_ui.html">pyplanet.core.ui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_map.html">pyplanet.contrib.map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_player.html">pyplanet.contrib.player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_command.html">pyplanet.contrib.command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_permission.html">pyplanet.contrib.permission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_setting.html">pyplanet.contrib.setting</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pyplanet.contrib.mode</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">API Documentation</a> &raquo;</li>
+        
+      <li>pyplanet.contrib.mode</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/api/contrib_mode.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyplanet.contrib.mode">
+<span id="pyplanet-contrib-mode"></span><h1>pyplanet.contrib.mode<a class="headerlink" href="#module-pyplanet.contrib.mode" title="Permalink to this headline">¶</a></h1>
+<p>Mode contrib is managing mode settings and ui settings for the script mode.</p>
+<dl class="class">
+<dt id="pyplanet.contrib.mode.ModeManager">
+<em class="property">class </em><code class="descclassname">pyplanet.contrib.mode.</code><code class="descname">ModeManager</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.mode.ModeManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mode Manager manges the script, script settings and the mode UI settings of the current game mode.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Don&#8217;t initiate this class yourself. Use <code class="docutils literal"><span class="pre">instance.mode_manager</span></code> for an static instance.</p>
+</div>
+<dl class="method">
+<dt id="pyplanet.contrib.mode.ModeManager.get_current_script">
+<code class="descname">get_current_script</code><span class="sig-paren">(</span><em>refresh=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.mode.ModeManager.get_current_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current script name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>refresh</strong> &#8211; Refresh from server.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.mode.ModeManager.get_current_script_info">
+<code class="descname">get_current_script_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.mode.ModeManager.get_current_script_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the script info as a structure containing: Name, CompatibleTypes, Description, Version and the settings available.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.mode.ModeManager.get_next_script">
+<code class="descname">get_next_script</code><span class="sig-paren">(</span><em>refresh=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.mode.ModeManager.get_next_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the next script name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>refresh</strong> &#8211; Refresh from server.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.mode.ModeManager.get_settings">
+<code class="descname">get_settings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.mode.ModeManager.get_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current mode settings as a dictionary.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.mode.ModeManager.get_variables">
+<code class="descname">get_variables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.mode.ModeManager.get_variables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the mode script variables.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.mode.ModeManager.on_start">
+<code class="descname">on_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.mode.ModeManager.on_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle startup, just before the apps will start. We will make sure we are ready to get requests for permissions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.mode.ModeManager.set_next_script">
+<code class="descname">set_next_script</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.mode.ModeManager.set_next_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the next played script name (after map restart/skip).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; Name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.mode.ModeManager.update_next_settings">
+<code class="descname">update_next_settings</code><span class="sig-paren">(</span><em>update_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.mode.ModeManager.update_next_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queue setting changes for the next script (that will be active after restart).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>update_dict</strong> &#8211; The dictionary with the partial updated keys and values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.mode.ModeManager.update_next_variables">
+<code class="descname">update_next_variables</code><span class="sig-paren">(</span><em>update_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.mode.ModeManager.update_next_variables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queue variable changes for the next script (that will be active after restart).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>update_dict</strong> &#8211; The dictionary with the partial updated keys and values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.mode.ModeManager.update_settings">
+<code class="descname">update_settings</code><span class="sig-paren">(</span><em>update_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.mode.ModeManager.update_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the current settings, merges current settings with the provided settings. Replaces by the keys you give
+if the data already exists.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>update_dict</strong> &#8211; The dictionary with the partial updated keys and values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.mode.ModeManager.update_variables">
+<code class="descname">update_variables</code><span class="sig-paren">(</span><em>update_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.mode.ModeManager.update_variables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the current variables, merges current vars with the provided vars. Replaces by the keys you give
+if the data already exists.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>update_dict</strong> &#8211; The dictionary with the partial updated keys and values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../support.html" class="btn btn-neutral float-right" title="Support, Bug report &amp; Contact" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="contrib_setting.html" class="btn btn-neutral" title="pyplanet.contrib.setting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

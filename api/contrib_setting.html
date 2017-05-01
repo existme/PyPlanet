@@ -37,7 +37,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
         <link rel="up" title="API Documentation" href="index.html"/>
-        <link rel="next" title="Support, Bug report &amp; Contact" href="../support.html"/>
+        <link rel="next" title="pyplanet.contrib.mode" href="contrib_mode.html"/>
         <link rel="prev" title="pyplanet.contrib.permission" href="contrib_permission.html"/> 
 
   
@@ -98,6 +98,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/jukebox.html">Jukebox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/karma.html">Karma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mapinfo.html">Map Info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
@@ -115,12 +116,14 @@
 <li class="toctree-l2"><a class="reference internal" href="contrib_command.html">pyplanet.contrib.command</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_permission.html">pyplanet.contrib.permission</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">pyplanet.contrib.setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_mode.html">pyplanet.contrib.mode</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">About PyPlanet</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
 </ul>
@@ -515,6 +518,109 @@ request of data.</p>
 
 </dd></dl>
 
+<dl class="class">
+<dt id="pyplanet.contrib.setting.GlobalSettingManager">
+<em class="property">class </em><code class="descclassname">pyplanet.contrib.setting.</code><code class="descname">GlobalSettingManager</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Global Setting manager is available at the instance. <code class="docutils literal"><span class="pre">instance.setting_manager</span></code>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Don&#8217;t use the setting_manager for registering app settings! Use the app setting manager instead!</p>
+<p class="last">Don&#8217;t initiate this class yourself.</p>
+</div>
+<dl class="method">
+<dt id="pyplanet.contrib.setting.GlobalSettingManager.create_app_manager">
+<code class="descname">create_app_manager</code><span class="sig-paren">(</span><em>app_config</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.create_app_manager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create app setting manager.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app_config</strong> (<em>pyplanet.apps.config.AppConfig</em>) &#8211; App Config instance.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Setting Manager</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#pyplanet.contrib.setting.manager.AppSettingManager" title="pyplanet.contrib.setting.manager.AppSettingManager">pyplanet.contrib.setting.manager.AppSettingManager</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.setting.GlobalSettingManager.get_all">
+<code class="descname">get_all</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a list of settings, with prefetched values, so get_value is almost instant (or use ._value, not recommended).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prefetch_values</strong> &#8211; Prefetch the values in this call. Defaults to True.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">List with setting objects.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.setting.GlobalSettingManager.get_app_manager">
+<code class="descname">get_app_manager</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.get_app_manager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the app manager for a specified app label or config instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> &#8211; App label in string or the app config instance.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">App manager instance.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#pyplanet.contrib.setting.manager.AppSettingManager" title="pyplanet.contrib.setting.manager.AppSettingManager">pyplanet.contrib.setting.manager.AppSettingManager</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.setting.GlobalSettingManager.get_apps">
+<code class="descname">get_apps</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.get_apps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all the app label + names for all the settings we can find in our registry.
+Returns a dict with label as key, and count + name as values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prefetch_values</strong> &#8211; Prefetch the values in this call. Defaults to True.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">List with setting objects.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.setting.GlobalSettingManager.get_categories">
+<code class="descname">get_categories</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.get_categories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all the categories we have registered.
+Returns a dict with label as key, and count + name as values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prefetch_values</strong> &#8211; Prefetch the values in this call. Defaults to True.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">List with setting objects.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyplanet.contrib.setting.GlobalSettingManager.recursive_settings">
+<code class="descname">recursive_settings</code><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.recursive_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve all settings, of all submanagers.</p>
+</dd></dl>
+
+</dd></dl>
+
 <span class="target" id="module-pyplanet.contrib.setting.exceptions"></span><p>Exceptions for Setting Manager.</p>
 <dl class="exception">
 <dt id="pyplanet.contrib.setting.exceptions.SerializationException">
@@ -546,7 +652,7 @@ request of data.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../support.html" class="btn btn-neutral float-right" title="Support, Bug report &amp; Contact" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="contrib_mode.html" class="btn btn-neutral float-right" title="pyplanet.contrib.mode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="contrib_permission.html" class="btn btn-neutral" title="pyplanet.contrib.permission" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
