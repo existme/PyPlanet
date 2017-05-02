@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.utils &mdash; PyPlanet  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
+        <link rel="up" title="API Documentation" href="index.html"/>
+        <link rel="next" title="Support, Bug report &amp; Contact" href="../support.html"/>
+        <link rel="prev" title="pyplanet.contrib.converter" href="contrib_converter.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/index.html">Apps</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="apps.html">pyplanet.apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">pyplanet.views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_exceptions.html">pyplanet.core.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_instance.html">pyplanet.core.instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_ui.html">pyplanet.core.ui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="god.html">pyplanet.god</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_map.html">pyplanet.contrib.map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_player.html">pyplanet.contrib.player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_command.html">pyplanet.contrib.command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_permission.html">pyplanet.contrib.permission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_setting.html">pyplanet.contrib.setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_mode.html">pyplanet.contrib.mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_converter.html">pyplanet.contrib.converter</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pyplanet.utils</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.utils.gbxparser">pyplanet.utils.gbxparser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.utils.style">pyplanet.utils.style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.utils.times">pyplanet.utils.times</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">API Documentation</a> &raquo;</li>
+        
+      <li>pyplanet.utils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/api/utils.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyplanet-utils">
+<h1>pyplanet.utils<a class="headerlink" href="#pyplanet-utils" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-pyplanet.utils.gbxparser">
+<span id="pyplanet-utils-gbxparser"></span><h2>pyplanet.utils.gbxparser<a class="headerlink" href="#module-pyplanet.utils.gbxparser" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="pyplanet.utils.gbxparser.GbxException">
+<em class="property">exception </em><code class="descclassname">pyplanet.utils.gbxparser.</code><code class="descname">GbxException</code><a class="headerlink" href="#pyplanet.utils.gbxparser.GbxException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception with parsing the Gbx file.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyplanet.utils.gbxparser.GbxParser">
+<em class="property">class </em><code class="descclassname">pyplanet.utils.gbxparser.</code><code class="descname">GbxParser</code><span class="sig-paren">(</span><em>file=None</em>, <em>buffer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.utils.gbxparser.GbxParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Async GBX Map Information Parser.</p>
+<p>Author: Toffe.</p>
+<dl class="method">
+<dt id="pyplanet.utils.gbxparser.GbxParser.seek">
+<code class="descname">seek</code><span class="sig-paren">(</span><em>offset</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.utils.gbxparser.GbxParser.seek" title="Permalink to this definition">¶</a></dt>
+<dd><p>We need to override the second param to move from the current position.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>offset</strong> (<em>int</em>) &#8211; offset to move away.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyplanet.utils.style">
+<span id="pyplanet-utils-style"></span><h2>pyplanet.utils.style<a class="headerlink" href="#module-pyplanet.utils.style" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="pyplanet.utils.style.STRIP_ALL">
+<code class="descclassname">pyplanet.utils.style.</code><code class="descname">STRIP_ALL</code><em class="property"> = {'letters': 'wnoitsgz&lt;&gt;', 'part': '\\$[lh]\\[.+\\]|\\$[lh]|\\$[0-9a-f]{3}'}</em><a class="headerlink" href="#pyplanet.utils.style.STRIP_ALL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Strip all custom maniaplanet styles + formatting.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.utils.style.STRIP_CAPITALS">
+<code class="descclassname">pyplanet.utils.style.</code><code class="descname">STRIP_CAPITALS</code><em class="property"> = {'letters': 't'}</em><a class="headerlink" href="#pyplanet.utils.style.STRIP_CAPITALS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Strip capital style ($t).</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.utils.style.STRIP_COLORS">
+<code class="descclassname">pyplanet.utils.style.</code><code class="descname">STRIP_COLORS</code><em class="property"> = {'letters': 'g', 'part': '\\$[0-9a-f]{3}'}</em><a class="headerlink" href="#pyplanet.utils.style.STRIP_COLORS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Strip colors from your input (including $g, color reset).</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.utils.style.STRIP_LINKS">
+<code class="descclassname">pyplanet.utils.style.</code><code class="descname">STRIP_LINKS</code><em class="property"> = {'part': '\\$[lh]\\[.+\\]|\\$[lh]'}</em><a class="headerlink" href="#pyplanet.utils.style.STRIP_LINKS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Strip links ($h and $l).</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.utils.style.STRIP_SHADOWS">
+<code class="descclassname">pyplanet.utils.style.</code><code class="descname">STRIP_SHADOWS</code><em class="property"> = {'letters': 's'}</em><a class="headerlink" href="#pyplanet.utils.style.STRIP_SHADOWS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Strip shadow style ($s).</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.utils.style.STRIP_SIZES">
+<code class="descclassname">pyplanet.utils.style.</code><code class="descname">STRIP_SIZES</code><em class="property"> = {'letters': 'wnoiz'}</em><a class="headerlink" href="#pyplanet.utils.style.STRIP_SIZES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Strip all size and adjustments styles ($w $n $o $i $z).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyplanet.utils.style.style_strip">
+<code class="descclassname">pyplanet.utils.style.</code><code class="descname">style_strip</code><span class="sig-paren">(</span><em>text</em>, <em>*strip_methods</em>, <em>strip_styling_blocks=True</em>, <em>keep_reset=False</em>, <em>keep_color_reset=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.utils.style.style_strip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Strip styles from the Maniaplanet universe.</p>
+<p>Examples:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;--- Strip: colours ---&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">style_strip</span><span class="p">(</span><span class="s2">&quot;$i$fffMax$06fSmurf$f00.$fffes$$l$09f.$fffm$08f$a5x$n$w$o&quot;</span><span class="p">,</span> <span class="n">STRIP_COLORS</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">style_strip</span><span class="p">(</span><span class="s2">&quot;$l[some link]$i$FFFMax$06fSmurf$f00.$fffesl$09f.$fffm$08fx$l&quot;</span><span class="p">,</span> <span class="n">STRIP_COLORS</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">style_strip</span><span class="p">(</span><span class="s2">&quot;$l[some link]$i$fffMax$06fSmurf$f00.$fffesl$09f.$fffm$08fx&quot;</span><span class="p">,</span> <span class="n">STRIP_COLORS</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;--- Strip: links ---&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">style_strip</span><span class="p">(</span><span class="s2">&quot;$l$i$fffMax$06fSmurf$f00.$fffesl$09f.$fffm$08f$a5x$l&quot;</span><span class="p">,</span> <span class="n">STRIP_LINKS</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">style_strip</span><span class="p">(</span><span class="s2">&quot;$i$fffMax$06fSmurf$f00.$fffesl$09f.$fffm$08f$a5x&quot;</span><span class="p">,</span> <span class="n">STRIP_LINKS</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">style_strip</span><span class="p">(</span><span class="s2">&quot;$l[some link]$i$fffMax$06fSmurf$f00.$fffes$$l$09f.$fffm$08fx$l&quot;</span><span class="p">,</span> <span class="n">STRIP_LINKS</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">style_strip</span><span class="p">(</span><span class="s2">&quot;$l[some link]$i$fffMax$06fSmurf$f00.$fffesl$09f.$fffm$08fx&quot;</span><span class="p">,</span> <span class="n">STRIP_LINKS</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;--- Strip: sizes ---&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">style_strip</span><span class="p">(</span><span class="s2">&quot;$i$n$fffMax$06fSmurf$f00.$w$o$fffe$$nsl$09f.$w$fffm$08f$a5$ox&quot;</span><span class="p">,</span> <span class="n">STRIP_SIZES</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;--- Strip: everything ---&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">style_strip</span><span class="p">(</span><span class="s2">&quot;$h$i$fffMax$06fSmurf$f00.$fffesl$09f.$fffm$08f$a5x$h&quot;</span><span class="p">,</span> <span class="n">STRIP_ALL</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">style_strip</span><span class="p">(</span><span class="s2">&quot;$l[some link]$i$fffMax$06fSmur$$f$f00.$fffesl$09f.$fffm$08fx$l&quot;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">style_strip</span><span class="p">(</span><span class="s2">&quot;$l[some link]$i$fffMax$06fSmu$nrf$f00.$fffesl$09f.$fffm$08fx&quot;</span><span class="p">))</span>
+<span class="c1"># Other stuff.:</span>
+<span class="k">print</span><span class="p">(</span><span class="n">style_strip</span><span class="p">(</span><span class="s2">&quot;$l[some link]$i$fffMax$06fSmu$nrf$f00.$fffesl$09f.$fffm$08fx&quot;</span><span class="p">,</span> <span class="n">STRIP_CAPITALS</span><span class="p">,</span> <span class="n">STRIP_SHADOWS</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>text</strong> (<em>str</em>) &#8211; The input string text.</li>
+<li><strong>strip_methods</strong> &#8211; Methods for stripping, use one of the STRIP_* constants or leave undefined to strip everything.</li>
+<li><strong>strip_styling_blocks</strong> (<em>bool</em>) &#8211; Strip all styling blocks ($&gt; and $&lt;)</li>
+<li><strong>keep_reset</strong> (<em>bool</em>) &#8211; Keep full resets ($z).</li>
+<li><strong>keep_color_reset</strong> (<em>bool</em>) &#8211; Keep color resets ($g).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Stripped style string.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">str</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyplanet.utils.times">
+<span id="pyplanet-utils-times"></span><h2>pyplanet.utils.times<a class="headerlink" href="#module-pyplanet.utils.times" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pyplanet.utils.times.format_time">
+<code class="descclassname">pyplanet.utils.times.</code><code class="descname">format_time</code><span class="sig-paren">(</span><em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.utils.times.format_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format time from integer milliseconds to string format that could be displayed to the end-user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> (<em>int</em>) &#8211; Integer time in milliseconds.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">String output</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../support.html" class="btn btn-neutral float-right" title="Support, Bug report &amp; Contact" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="contrib_converter.html" class="btn btn-neutral" title="pyplanet.contrib.converter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,590 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.core.events &mdash; PyPlanet  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
+        <link rel="up" title="API Documentation" href="index.html"/>
+        <link rel="next" title="pyplanet.god" href="god.html"/>
+        <link rel="prev" title="pyplanet.core.storage" href="core_storage.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/index.html">Apps</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="apps.html">pyplanet.apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">pyplanet.views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_exceptions.html">pyplanet.core.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_instance.html">pyplanet.core.instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_ui.html">pyplanet.core.ui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_storage.html">pyplanet.core.storage</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pyplanet.core.events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.core.events.callback">pyplanet.core.events.callback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.core.events.dispatcher">pyplanet.core.events.dispatcher</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="god.html">pyplanet.god</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_map.html">pyplanet.contrib.map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_player.html">pyplanet.contrib.player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_command.html">pyplanet.contrib.command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_permission.html">pyplanet.contrib.permission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_setting.html">pyplanet.contrib.setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_mode.html">pyplanet.contrib.mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_converter.html">pyplanet.contrib.converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">pyplanet.utils</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">API Documentation</a> &raquo;</li>
+        
+      <li>pyplanet.core.events</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/api/core_events.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyplanet.core.events.manager">
+<span id="pyplanet-core-events"></span><h1>pyplanet.core.events<a class="headerlink" href="#module-pyplanet.core.events.manager" title="Permalink to this headline">¶</a></h1>
+<p>The events manager contains the class that manages custom and abstract callbacks into the system callbacks.
+Once a signals is registered here it could be used by string reference. This makes it easy to have dynamically signals
+being created by other apps in a single place so it could be used over all apps.</p>
+<p>For example you would create your own custom signal if you have a app for your own created game mode script that abstracts
+all the raw XML-RPC events into nice structured and maybe even including fetched data from external sources.</p>
+<dl class="class">
+<dt id="pyplanet.core.events.manager._SignalManager">
+<em class="property">class </em><code class="descclassname">pyplanet.core.events.manager.</code><code class="descname">_SignalManager</code><a class="headerlink" href="#pyplanet.core.events.manager._SignalManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal Manager class.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Access this via <code class="docutils literal"><span class="pre">instance.signal_manager</span></code>.</p>
+</div>
+<dl class="method">
+<dt id="pyplanet.core.events.manager._SignalManager.finish_reservations">
+<code class="descname">finish_reservations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.manager._SignalManager.finish_reservations" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method will copy all reservations to the actual signals. (PRIVATE)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.events.manager._SignalManager.finish_start">
+<code class="descname">finish_start</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.manager._SignalManager.finish_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finish startup the core, this will copy reservations. (PRIVATE).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.events.manager._SignalManager.get_callback">
+<code class="descname">get_callback</code><span class="sig-paren">(</span><em>call_name</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.manager._SignalManager.get_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get signal by XML-RPC (script) callback.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>call_name</strong> &#8211; Callback name.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Signal class or nothing.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">pyplanet.core.events.Signal</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.events.manager._SignalManager.get_signal">
+<code class="descname">get_signal</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.manager._SignalManager.get_signal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get signal by key (namespace:code).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> &#8211; namespace:code key.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">signal or none</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">pyplanet.core.events.Signal</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.events.manager._SignalManager.init_app">
+<code class="descname">init_app</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.manager._SignalManager.init_app" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initiate app, load all signal/callbacks files. (just import, they should register with decorators).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> (<a class="reference internal" href="apps.html#pyplanet.apps.AppConfig" title="pyplanet.apps.AppConfig"><em>pyplanet.apps.AppConfig</em></a>) &#8211; App instance</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.events.manager._SignalManager.listen">
+<code class="descname">listen</code><span class="sig-paren">(</span><em>signal</em>, <em>target</em>, <em>conditions=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.manager._SignalManager.listen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a listing client to the signal given (signal instance or string).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>signal</strong> &#8211; Signal instance or string: &#8220;namespace:code&#8221;</li>
+<li><strong>target</strong> &#8211; Target method to call.</li>
+<li><strong>conditions</strong> &#8211; Reserved for future purposes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.events.manager._SignalManager.register_signal">
+<code class="descname">register_signal</code><span class="sig-paren">(</span><em>signal</em>, <em>app=None</em>, <em>callback=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.manager._SignalManager.register_signal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a signal to be known in the signalling system.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>signal</strong> &#8211; Signal(s)</li>
+<li><strong>app</strong> &#8211; App context/instance.</li>
+<li><strong>callback</strong> &#8211; Will a callback handle the response (mostly raw callbacks).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="module-pyplanet.core.events.callback">
+<span id="pyplanet-core-events-callback"></span><h2>pyplanet.core.events.callback<a class="headerlink" href="#module-pyplanet.core.events.callback" title="Permalink to this headline">¶</a></h2>
+<p>This file contains a glue between core callbacks and desired callbacks.</p>
+<dl class="class">
+<dt id="pyplanet.core.events.callback.Callback">
+<em class="property">class </em><code class="descclassname">pyplanet.core.events.callback.</code><code class="descname">Callback</code><span class="sig-paren">(</span><em>call</em>, <em>namespace</em>, <em>code</em>, <em>target=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.callback.Callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>A callback signal is an double signal. Once for the GBX Callback itself (the Gbx callback named). And the destination
+Between those two signals is a sort of <cite>processor</cite> that confirms it into the PyPlanet style objects.</p>
+<p>For example, a player connect will result in a player database object instead of the plain Maniaplanet payload.
+This will make it possible to develop your app as fast as possible, without any overhead and make it better
+with callback payload changes!</p>
+<dl class="method">
+<dt id="pyplanet.core.events.callback.Callback.glue">
+<code class="descname">glue</code><span class="sig-paren">(</span><em>signal</em>, <em>source</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.callback.Callback.glue" title="Permalink to this definition">¶</a></dt>
+<dd><p>The glue method converts the source signal (gbx callback) into the pyplanet signal.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="pyplanet.core.events.callback.handle_generic">
+<code class="descclassname">pyplanet.core.events.callback.</code><code class="descname">handle_generic</code><span class="sig-paren">(</span><em>source</em>, <em>signal</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.callback.handle_generic" title="Permalink to this definition">¶</a></dt>
+<dd><p>The handle_generic is a simple handle (<cite>processing glue</cite>) for just forwarding the payload from the maniaplanet
+server into the signal payload.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyplanet.core.events.dispatcher">
+<span id="pyplanet-core-events-dispatcher"></span><h2>pyplanet.core.events.dispatcher<a class="headerlink" href="#module-pyplanet.core.events.dispatcher" title="Permalink to this headline">¶</a></h2>
+<p>This file has been forked from Django and PyDispatcher.
+The PyDispatcher is licensed under BSD.</p>
+<dl class="class">
+<dt id="pyplanet.core.events.dispatcher.Signal">
+<em class="property">class </em><code class="descclassname">pyplanet.core.events.dispatcher.</code><code class="descname">Signal</code><span class="sig-paren">(</span><em>code=None</em>, <em>namespace=None</em>, <em>process_target=None</em>, <em>use_caching=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.dispatcher.Signal" title="Permalink to this definition">¶</a></dt>
+<dd><p>A signal is a destination tho distribute to where multiple listeners get the message. (event distribution).</p>
+<dl class="class">
+<dt id="pyplanet.core.events.dispatcher.Signal.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="headerlink" href="#pyplanet.core.events.dispatcher.Signal.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>The meta-class contains the code of the signal, used for string notation.
+An optional namespace could be given to override the app label namespace.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Only change or access this if you override the <code class="docutils literal"><span class="pre">Signal</span></code> class in your own class.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.events.dispatcher.Signal.has_listeners">
+<code class="descname">has_listeners</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.dispatcher.Signal.has_listeners" title="Permalink to this definition">¶</a></dt>
+<dd><p>Has the signal listeners.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.events.dispatcher.Signal.process">
+<code class="descname">process</code><span class="sig-paren">(</span><em>**data</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.dispatcher.Signal.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method processed data into abstract data. You can give your own function in the init of the Signal or
+override the method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> &#8211; Raw data input</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Parsed data output</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.events.dispatcher.Signal.register">
+<code class="descname">register</code><span class="sig-paren">(</span><em>receiver</em>, <em>weak=True</em>, <em>dispatch_uid=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.dispatcher.Signal.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect receiver to sender for signal.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>receiver</strong> &#8211; A function or an instance method which is to receive signals. Receivers must be hashable objects.
+If weak is True, then receiver must be weak referenceable.Receivers must be able to accept keyword arguments.
+If a receiver is connected with a dispatch_uid argument, it
+will not be added if another receiver was already connected with that dispatch_uid.</li>
+<li><strong>weak</strong> &#8211; Whether to use weak references to the receiver. By default, the
+module will attempt to use weak references to the receiver
+objects. If this parameter is false, then strong references will
+be used.</li>
+<li><strong>dispatch_uid</strong> &#8211; An identifier used to uniquely identify a particular instance of
+a receiver. This will usually be a string, though it may be anything hashable.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.events.dispatcher.Signal.send">
+<code class="descname">send</code><span class="sig-paren">(</span><em>source</em>, <em>raw=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.dispatcher.Signal.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send signal with source.
+If any receiver raises an error, the error propagates back through send,
+terminating the dispatch loop. So it&#8217;s possible that all receivers
+won&#8217;t be called if an error is raised.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>source</strong> &#8211; The data to be send to the processor which produces data that will be send to the receivers.</li>
+<li><strong>raw</strong> &#8211; Optional bool parameter to just send the source to the receivers without any processing.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Return a list of tuple pairs [(receiver, response), ... ].</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.events.dispatcher.Signal.send_robust">
+<code class="descname">send_robust</code><span class="sig-paren">(</span><em>source=None</em>, <em>raw=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.dispatcher.Signal.send_robust" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send signal from sender to all connected receivers catching errors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>source</strong> &#8211; The data to be send to the processor which produces data that will be send to the receivers.</li>
+<li><strong>raw</strong> &#8211; Optional bool parameter to just send the source to the receivers without any processing.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Return a list of tuple pairs [(receiver, response), ... ].
+If any receiver raises an error (specifically any subclass of Exception), 
+return the error instance as the result for that receiver.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.events.dispatcher.Signal.set_self">
+<code class="descname">set_self</code><span class="sig-paren">(</span><em>receiver</em>, <em>slf</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.dispatcher.Signal.set_self" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the self instance on a receiver.</p>
+<div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 0.0.1.</span></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>receiver</strong> &#8211; Receiver function.</li>
+<li><strong>slf</strong> &#8211; Self instance</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.events.dispatcher.Signal.unregister">
+<code class="descname">unregister</code><span class="sig-paren">(</span><em>receiver=None</em>, <em>dispatch_uid=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.events.dispatcher.Signal.unregister" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disconnect receiver from sender for signal.
+If weak references are used, disconnect need not be called. The receiver
+will be removed from dispatch automatically.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>receiver</strong> &#8211; The registered receiver to disconnect. May be none if dispatch_uid is specified.</li>
+<li><strong>dispatch_uid</strong> &#8211; the unique identifier of the receiver to disconnect</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="god.html" class="btn btn-neutral float-right" title="pyplanet.god" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="core_storage.html" class="btn btn-neutral" title="pyplanet.core.storage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

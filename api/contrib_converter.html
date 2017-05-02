@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyplanet.core.instance &mdash; PyPlanet  documentation</title>
+  <title>pyplanet.contrib.converter &mdash; PyPlanet  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
         <link rel="up" title="API Documentation" href="index.html"/>
-        <link rel="next" title="pyplanet.core.ui" href="core_ui.html"/>
-        <link rel="prev" title="pyplanet.core.exceptions" href="core_exceptions.html"/> 
+        <link rel="next" title="pyplanet.utils" href="utils.html"/>
+        <link rel="prev" title="pyplanet.contrib.mode" href="contrib_mode.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -109,10 +109,8 @@
 <li class="toctree-l2"><a class="reference internal" href="apps.html">pyplanet.apps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">pyplanet.views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_exceptions.html">pyplanet.core.exceptions</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">pyplanet.core.instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_instance.html">pyplanet.core.instance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_ui.html">pyplanet.core.ui</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_storage.html">pyplanet.core.storage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_events.html">pyplanet.core.events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="god.html">pyplanet.god</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_map.html">pyplanet.contrib.map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_player.html">pyplanet.contrib.player</a></li>
@@ -120,7 +118,7 @@
 <li class="toctree-l2"><a class="reference internal" href="contrib_permission.html">pyplanet.contrib.permission</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_setting.html">pyplanet.contrib.setting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_mode.html">pyplanet.contrib.mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contrib_converter.html">pyplanet.contrib.converter</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pyplanet.contrib.converter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">pyplanet.utils</a></li>
 </ul>
 </li>
@@ -177,14 +175,14 @@
         
           <li><a href="index.html">API Documentation</a> &raquo;</li>
         
-      <li>pyplanet.core.instance</li>
+      <li>pyplanet.contrib.converter</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/api/core_instance.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/api/contrib_converter.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -198,49 +196,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-pyplanet.core.instance">
-<span id="pyplanet-core-instance"></span><h1>pyplanet.core.instance<a class="headerlink" href="#module-pyplanet.core.instance" title="Permalink to this headline">¶</a></h1>
-<dl class="data">
-<dt id="pyplanet.core.instance.Controller">
-<code class="descclassname">pyplanet.core.instance.</code><code class="descname">Controller</code><em class="property"> = &lt;pyplanet.core.instance._Controller object&gt;</em><a class="headerlink" href="#pyplanet.core.instance.Controller" title="Permalink to this definition">¶</a></dt>
-<dd><p>Controller access point to prevent circular imports. This is a lazy provided way to get the instance from anywhere!</p>
+  <div class="section" id="module-pyplanet.contrib.converter">
+<span id="pyplanet-contrib-converter"></span><h1>pyplanet.contrib.converter<a class="headerlink" href="#module-pyplanet.contrib.converter" title="Permalink to this headline">¶</a></h1>
+<p>Converter contrib is managing migrating from another controller.</p>
+<span class="target" id="module-pyplanet.contrib.converter.base"></span><dl class="class">
+<dt id="pyplanet.contrib.converter.base.BaseConverter">
+<em class="property">class </em><code class="descclassname">pyplanet.contrib.converter.base.</code><code class="descname">BaseConverter</code><span class="sig-paren">(</span><em>instance</em>, <em>db_type</em>, <em>db_host</em>, <em>db_name</em>, <em>db_user=None</em>, <em>db_password=None</em>, <em>db_port=None</em>, <em>prefix=None</em>, <em>charset='utf8'</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.converter.base.BaseConverter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base Converter is the abstract converter class.</p>
+<p>Please take a look at the other classes bellow.</p>
 </dd></dl>
 
-<dl class="class">
-<dt id="pyplanet.core.instance.Instance">
-<em class="property">class </em><code class="descclassname">pyplanet.core.instance.</code><code class="descname">Instance</code><span class="sig-paren">(</span><em>process_name</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.instance.Instance" title="Permalink to this definition">¶</a></dt>
-<dd><p>Controller Instance. The very base of the controller, containing class instances of all core components.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
-<li><strong>process_name</strong> &#8211; Process and pool name.</li>
-<li><strong>loop</strong> &#8211; AsyncIO Event Loop.</li>
-<li><strong>game</strong> &#8211; Game Information class.</li>
-<li><a class="reference internal" href="apps.html#module-pyplanet.apps" title="pyplanet.apps"><strong>apps</strong></a> &#8211; Apps component.</li>
-<li><strong>gbx</strong> &#8211; Gbx component.</li>
-<li><strong>db</strong> &#8211; Database component.</li>
-<li><a class="reference internal" href="core_storage.html#module-pyplanet.core.storage" title="pyplanet.core.storage"><strong>storage</strong></a> &#8211; Storage component.</li>
-<li><strong>signal_manager</strong> &#8211; Signal Manager.</li>
-<li><strong>ui_manager</strong> &#8211; UI Manager (global). Please use the APP context UI manager instead!</li>
-<li><strong>map_manager</strong> &#8211; Contrib: Map Manager.</li>
-<li><strong>player_manager</strong> &#8211; Contrib: Player Manager.</li>
-<li><strong>permission_manager</strong> &#8211; Contrib: Permission Manager.</li>
-<li><strong>command_manager</strong> &#8211; Contrib: Command Manager.</li>
-<li><strong>setting_manager</strong> &#8211; Contrib: Setting Manager. Please use the APP context setting manager instead!</li>
-<li><strong>mode_manager</strong> &#8211; Contrib. Mode Manager.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="pyplanet.core.instance.Instance.start">
-<code class="descname">start</code><span class="sig-paren">(</span><em>run_forever=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.instance.Instance.start" title="Permalink to this definition">¶</a></dt>
-<dd><p>Start wrapper.</p>
-</dd></dl>
-
+<span class="target" id="module-pyplanet.contrib.converter.xaseco2"></span><dl class="class">
+<dt id="pyplanet.contrib.converter.xaseco2.Xaseco2Converter">
+<em class="property">class </em><code class="descclassname">pyplanet.contrib.converter.xaseco2.</code><code class="descname">Xaseco2Converter</code><span class="sig-paren">(</span><em>instance</em>, <em>db_type</em>, <em>db_host</em>, <em>db_name</em>, <em>db_user=None</em>, <em>db_password=None</em>, <em>db_port=None</em>, <em>prefix=None</em>, <em>charset='utf8'</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.converter.xaseco2.Xaseco2Converter" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Xaseco2 Converter uses MySQL to convert the data to the new PyPlanet structure.</p>
+<p>Please take a look at <a class="reference internal" href="../convert/index.html"><span class="doc">Migrating from other controllers</span></a> pages for information on how to use
+this.</p>
 </dd></dl>
 
 </div>
@@ -255,10 +226,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="core_ui.html" class="btn btn-neutral float-right" title="pyplanet.core.ui" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="utils.html" class="btn btn-neutral float-right" title="pyplanet.utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="core_exceptions.html" class="btn btn-neutral" title="pyplanet.core.exceptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="contrib_mode.html" class="btn btn-neutral" title="pyplanet.contrib.mode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

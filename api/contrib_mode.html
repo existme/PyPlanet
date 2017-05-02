@@ -37,7 +37,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
         <link rel="up" title="API Documentation" href="index.html"/>
-        <link rel="next" title="Support, Bug report &amp; Contact" href="../support.html"/>
+        <link rel="next" title="pyplanet.contrib.converter" href="contrib_converter.html"/>
         <link rel="prev" title="pyplanet.contrib.setting" href="contrib_setting.html"/> 
 
   
@@ -111,12 +111,18 @@
 <li class="toctree-l2"><a class="reference internal" href="core_exceptions.html">pyplanet.core.exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_instance.html">pyplanet.core.instance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_ui.html">pyplanet.core.ui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="god.html">pyplanet.god</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_map.html">pyplanet.contrib.map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_player.html">pyplanet.contrib.player</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_command.html">pyplanet.contrib.command</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_permission.html">pyplanet.contrib.permission</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_setting.html">pyplanet.contrib.setting</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">pyplanet.contrib.mode</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pyplanet.contrib.mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.contrib.mode.signals">Signals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_converter.html">pyplanet.contrib.converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">pyplanet.utils</a></li>
 </ul>
 </li>
 </ul>
@@ -330,6 +336,28 @@ if the data already exists.</p>
 
 </dd></dl>
 
+<div class="section" id="module-pyplanet.contrib.mode.signals">
+<span id="signals"></span><h2>Signals<a class="headerlink" href="#module-pyplanet.contrib.mode.signals" title="Permalink to this headline">¶</a></h2>
+<p>This file contains the contrib mode signals, related to the current script/mode.</p>
+<dl class="data">
+<dt id="pyplanet.contrib.mode.signals.script_mode_changed">
+<code class="descclassname">pyplanet.contrib.mode.signals.</code><code class="descname">script_mode_changed</code><em class="property"> = &lt;pyplanet.core.events.dispatcher.Signal object&gt;</em><a class="headerlink" href="#pyplanet.contrib.mode.signals.script_mode_changed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is called after a new script has been loaded and became active!. Reporting two parameters:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>unloaded_script</strong> &#8211; Old script name.</li>
+<li><strong>loaded_script</strong> &#8211; New and just loaded script.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 </div>
 
 
@@ -342,7 +370,7 @@ if the data already exists.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../support.html" class="btn btn-neutral float-right" title="Support, Bug report &amp; Contact" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="contrib_converter.html" class="btn btn-neutral float-right" title="pyplanet.contrib.converter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="contrib_setting.html" class="btn btn-neutral" title="pyplanet.contrib.setting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

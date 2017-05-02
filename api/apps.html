@@ -98,6 +98,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/jukebox.html">Jukebox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/karma.html">Karma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mapinfo.html">Map Info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
@@ -110,17 +111,24 @@
 <li class="toctree-l2"><a class="reference internal" href="core_exceptions.html">pyplanet.core.exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_instance.html">pyplanet.core.instance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_ui.html">pyplanet.core.ui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_storage.html">pyplanet.core.storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_events.html">pyplanet.core.events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="god.html">pyplanet.god</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_map.html">pyplanet.contrib.map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_player.html">pyplanet.contrib.player</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_command.html">pyplanet.contrib.command</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_permission.html">pyplanet.contrib.permission</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_setting.html">pyplanet.contrib.setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_mode.html">pyplanet.contrib.mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_converter.html">pyplanet.contrib.converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">pyplanet.utils</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">About PyPlanet</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
 </ul>
@@ -322,7 +330,29 @@ that is related to any other apps and signals like your <cite>self</cite> contex
 <dl class="attribute">
 <dt id="pyplanet.apps.AppConfig.ui">
 <code class="descname">ui</code><a class="headerlink" href="#pyplanet.apps.AppConfig.ui" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 0.0.1: </span>Use <code class="docutils literal"><span class="pre">context.ui</span></code> instead.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyplanet.apps.config._AppContext">
+<em class="property">class </em><code class="descclassname">pyplanet.apps.config.</code><code class="descname">_AppContext</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.config._AppContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>The app context holds instances of core/contrib components that must be managed on a per app base. Such as the UI
+registration and distribution.</p>
+<dl class="attribute">
+<dt id="pyplanet.apps.config._AppContext.setting">
+<code class="descname">setting</code><em class="property"> = None</em><a class="headerlink" href="#pyplanet.apps.config._AppContext.setting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setting Contrib Component. See <a class="reference internal" href="contrib_setting.html"><span class="doc">Setting Classes</span></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyplanet.apps.config._AppContext.ui">
+<code class="descname">ui</code><em class="property"> = None</em><a class="headerlink" href="#pyplanet.apps.config._AppContext.ui" title="Permalink to this definition">¶</a></dt>
+<dd><p>UI Component. See <a class="reference internal" href="core_ui.html"><span class="doc">UI Classes</span></a>.</p>
+</dd></dl>
 
 </dd></dl>
 

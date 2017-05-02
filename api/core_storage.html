@@ -1,0 +1,461 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.core.storage &mdash; PyPlanet  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
+        <link rel="up" title="API Documentation" href="index.html"/>
+        <link rel="next" title="pyplanet.core.events" href="core_events.html"/>
+        <link rel="prev" title="pyplanet.core.ui" href="core_ui.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/index.html">Apps</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="apps.html">pyplanet.apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">pyplanet.views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_exceptions.html">pyplanet.core.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_instance.html">pyplanet.core.instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_ui.html">pyplanet.core.ui</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pyplanet.core.storage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.core.storage.drivers">pyplanet.core.storage.drivers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="core_events.html">pyplanet.core.events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="god.html">pyplanet.god</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_map.html">pyplanet.contrib.map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_player.html">pyplanet.contrib.player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_command.html">pyplanet.contrib.command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_permission.html">pyplanet.contrib.permission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_setting.html">pyplanet.contrib.setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_mode.html">pyplanet.contrib.mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_converter.html">pyplanet.contrib.converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">pyplanet.utils</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">API Documentation</a> &raquo;</li>
+        
+      <li>pyplanet.core.storage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/api/core_storage.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyplanet.core.storage">
+<span id="pyplanet-core-storage"></span><h1>pyplanet.core.storage<a class="headerlink" href="#module-pyplanet.core.storage" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-pyplanet.core.storage.exceptions"></span><dl class="exception">
+<dt id="pyplanet.core.storage.exceptions.StorageException">
+<em class="property">exception </em><code class="descclassname">pyplanet.core.storage.exceptions.</code><code class="descname">StorageException</code><a class="headerlink" href="#pyplanet.core.storage.exceptions.StorageException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base storage exception.</p>
+</dd></dl>
+
+<span class="target" id="module-pyplanet.core.storage.storage"></span><dl class="class">
+<dt id="pyplanet.core.storage.storage.Storage">
+<em class="property">class </em><code class="descclassname">pyplanet.core.storage.storage.</code><code class="descname">Storage</code><span class="sig-paren">(</span><em>instance</em>, <em>driver: pyplanet.core.storage.interface.StorageDriver</em>, <em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.storage.storage.Storage" title="Permalink to this definition">¶</a></dt>
+<dd><p>The storage component manager is managing the storage access trough drivers that can be customized.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Some drivers are work in progress!</p>
+</div>
+<dl class="attribute">
+<dt id="pyplanet.core.storage.storage.Storage.driver">
+<code class="descname">driver</code><a class="headerlink" href="#pyplanet.core.storage.storage.Storage.driver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the raw driver. Be careful with this!</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Driver Instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">pyplanet.core.storage.interface.StorageDriver</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.storage.storage.Storage.open">
+<code class="descname">open</code><span class="sig-paren">(</span><em>file: str</em>, <em>mode: str = 'rb'</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.storage.storage.Storage.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open a file on the server. Use relative path to the dedicated root. Use the other open methods to relative
+from another base path.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file</strong> &#8211; Filename/path, relative to the dedicated root path.</li>
+<li><strong>mode</strong> &#8211; Mode to open, see the python <cite>open</cite> manual for supported modes.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File handler.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.storage.storage.Storage.open_map">
+<code class="descname">open_map</code><span class="sig-paren">(</span><em>file: str</em>, <em>mode: str = 'rb'</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.storage.storage.Storage.open_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open a file on the server. Relative to the Maps folder (UserData/Maps).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file</strong> &#8211; Filename/path, relative to the dedicated maps folder.</li>
+<li><strong>mode</strong> &#8211; Mode to open, see the python <cite>open</cite> manual for supported modes.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File handler.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.storage.storage.Storage.open_match_settings">
+<code class="descname">open_match_settings</code><span class="sig-paren">(</span><em>file: str</em>, <em>mode: str = 'r'</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.storage.storage.Storage.open_match_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open a file on the server. Relative to the MatchSettings folder (UserData/Maps/MatchSettings).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file</strong> &#8211; Filename/path, relative to the dedicated matchsettings folder.</li>
+<li><strong>mode</strong> &#8211; Mode to open, see the python <cite>open</cite> manual for supported modes.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File handler.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.core.storage.storage.Storage.remove_map">
+<code class="descname">remove_map</code><span class="sig-paren">(</span><em>file: str</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.storage.storage.Storage.remove_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a map file with filename given.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> &#8211; Filename, relative to Maps folder.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="module-pyplanet.core.storage.drivers">
+<span id="pyplanet-core-storage-drivers"></span><h2>pyplanet.core.storage.drivers<a class="headerlink" href="#module-pyplanet.core.storage.drivers" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-pyplanet.core.storage.drivers.local"></span><dl class="class">
+<dt id="pyplanet.core.storage.drivers.local.LocalDriver">
+<em class="property">class </em><code class="descclassname">pyplanet.core.storage.drivers.local.</code><code class="descname">LocalDriver</code><span class="sig-paren">(</span><em>instance</em>, <em>config: dict = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.storage.drivers.local.LocalDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Local storage driver is using the Python build-in file access utilities for accessing a local storage-like system.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Option BASE_PATH:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Override the maniaplanet given base path.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="module-pyplanet.core.storage.drivers.asyncssh"></span><dl class="class">
+<dt id="pyplanet.core.storage.drivers.asyncssh.SFTPDriver">
+<em class="property">class </em><code class="descclassname">pyplanet.core.storage.drivers.asyncssh.</code><code class="descname">SFTPDriver</code><span class="sig-paren">(</span><em>instance</em>, <em>config: dict = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.storage.drivers.asyncssh.SFTPDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>SFTP storage driver is using the asyncssh module to access storage that is situated remotely.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This driver is not ready for production use!!</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Option HOST:</th><td class="field-body">Hostname of destinotion server.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Option PORT:</th><td class="field-body">Port destinotion server.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Option USERNAME:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Username of the user account.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Option PASSWORD:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Password of the user account. (optional if you use public/private keys).</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Option KNOWN_HOSTS:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">File to the Known Hosts file.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Option CLIENT_KEYS:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Array with client private keys.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Option PASSPHRASE:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Passphrase to unlock private key(s).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Option KWARGS:</th><td class="field-body">Any other options that will be passed to <code class="docutils literal"><span class="pre">asyncssh</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pyplanet.core.storage.drivers.asyncssh.SFTPDriver.connect_sftp">
+<code class="descname">connect_sftp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.storage.drivers.asyncssh.SFTPDriver.connect_sftp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get sftp client.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Sftp client.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">asyncssh.SFTPClient</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="core_events.html" class="btn btn-neutral float-right" title="pyplanet.core.events" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="core_ui.html" class="btn btn-neutral" title="pyplanet.core.ui" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
