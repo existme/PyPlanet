@@ -91,12 +91,9 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#installing-pyplanet">Installing PyPlanet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#virtual-environment">Virtual Environment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#system-installation">System Installation</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#setup-project">Setup Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system-cli-installation">1. System (CLI) Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#virtual-environment-in-your-project">2. Virtual Environment in your project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-project">2. Setup Project</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
@@ -227,15 +224,24 @@ preinstalled. To be 100% sure you have to check if you have Python 3 and your ve
 <p>If your OS does&#8217;t have Python 3.5 or older provided. You could either compile Python for yourself or use PyEnv.
 Instructions on how to install PyEnv are in the github page &lt;<a class="reference external" href="https://github.com/pyenv/pyenv-installer#github-way-recommended">https://github.com/pyenv/pyenv-installer#github-way-recommended</a>&gt;.</p>
 <p class="last">After installing you can install the desired python version with: <code class="docutils literal"><span class="pre">pyenv</span> <span class="pre">install</span> <span class="pre">3.6.1</span></code>.
-Also, you can&#8217;t use <cite>virtualenv</cite> when using PyEnv. Use its alternative: <code class="docutils literal"><span class="pre">pyenv</span> <span class="pre">virtualenv</span> <span class="pre">3.6.1</span> <span class="pre">env</span></code></p>
+Also, you can&#8217;t use <cite>virtualenv</cite> when using PyEnv. Use its alternative: <code class="docutils literal"><span class="pre">pyenv</span> <span class="pre">virtualenv</span> <span class="pre">3.6.1</span> <span class="pre">pyplanet</span></code></p>
 </div>
 </div>
-<div class="section" id="installing-pyplanet">
-<h3>Installing PyPlanet<a class="headerlink" href="#installing-pyplanet" title="Permalink to this headline">¶</a></h3>
-<p>We recommend using a virtualenv to manage multiple versions at the same time. Virtual environments are basically abstracting
-the global module installations of python, and doesn&#8217;t require root rights on some platforms.</p>
-<div class="section" id="virtual-environment">
-<h4>Virtual Environment<a class="headerlink" href="#virtual-environment" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="system-cli-installation">
+<h3>1. System (CLI) Installation<a class="headerlink" href="#system-cli-installation" title="Permalink to this headline">¶</a></h3>
+<p>PyPlanet is published through the Python Package Index (PyPi) and is easy to install with <code class="docutils literal"><span class="pre">pip</span></code>. To install PyPlanet
+on your system you need root rights. You can however install PyPlanet in the users pip context.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Install as root:</span>
+sudo -H pip install PyPlanet -U
+
+<span class="c1"># Install in ~/.local</span>
+pip --user install PyPlanet -U
+</pre></div>
+</div>
+<p>After installing it on your system you can use the pyplanet cli commands. To get help about commands, use <code class="docutils literal"><span class="pre">pyplanet</span> <span class="pre">help</span></code>.</p>
+</div>
+<div class="section" id="virtual-environment-in-your-project">
+<h3>2. Virtual Environment in your project<a class="headerlink" href="#virtual-environment-in-your-project" title="Permalink to this headline">¶</a></h3>
 <p>We recommend using a <cite>virtualenv</cite> to install PyPlanet, and keep the version separate for multiple projects/dedicated servers.
 With this method you won&#8217;t have to upgrade all servers at the same time and don&#8217;t have any issues with system managed python
 packages.</p>
@@ -257,27 +263,16 @@ To activate, use the following commands:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Linux</span>
 <span class="nb">source</span> env/bin/activate
 
+<span class="c1"># PyEnv</span>
+pyenv activate pyplanet
+
 <span class="c1"># Windows (cmd)</span>
 env<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.bat
 </pre></div>
 </div>
 </div>
-<div class="section" id="system-installation">
-<h4>System Installation<a class="headerlink" href="#system-installation" title="Permalink to this headline">¶</a></h4>
-<p>PyPlanet is published through the Python Package Index (PyPi) and is easy to install with <code class="docutils literal"><span class="pre">pip</span></code>. To install PyPlanet
-on your system you need root rights. You can however install PyPlanet in the users pip context.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Install as root:</span>
-sudo -H pip install PyPlanet -U
-
-<span class="c1"># Install in ~/.local</span>
-pip --user install PyPlanet -U
-</pre></div>
-</div>
-<p>After installing it on your system you can use the pyplanet cli commands. To get help about commands, use <code class="docutils literal"><span class="pre">pyplanet</span> <span class="pre">help</span></code>.</p>
-</div>
-</div>
 <div class="section" id="setup-project">
-<h3>Setup Project<a class="headerlink" href="#setup-project" title="Permalink to this headline">¶</a></h3>
+<h3>2. Setup Project<a class="headerlink" href="#setup-project" title="Permalink to this headline">¶</a></h3>
 <p>After installing PyPlanet on your system, you can&#8217;t yet start any instances because starting requires you to give up an
 settings module. You could either provide this with the start command or create a project directory with skeleton files.</p>
 <p>We recommend using the <code class="docutils literal"><span class="pre">init_project</span></code> command to create a local project installation where you can install apps, keep
@@ -288,7 +283,16 @@ and skeleton files will be copied.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>pyplanet init_project canyon_server
 </pre></div>
 </div>
-<p>After setting up your project environment your ready to <a class="reference internal" href="configuration.html"><span class="doc">configure your application</span></a>.</p>
+<p>After setup your project, you have to install or update your dependencies from your local <code class="docutils literal"><span class="pre">requirements.txt</span></code>.
+You should also use this command to <strong>upgrade your installation</strong>.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install -r requirements.txt --upgrade
+</pre></div>
+</div>
+<p>After setting up your project environment your ready to go the the next section bellow.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you use <cite>virtualenv</cite> or <cite>pyenv</cite>, make sure you activate it <strong>before you install or update dependencies</strong>!</p>
+</div>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -476,17 +480,21 @@ Documentation is available on: <a class="reference external" href="http://asyncs
 The order doesn&#8217;t make a difference when starting/loading PyPlanet.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">APPS</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s1">&#39;pyplanet.apps.contrib.local_records.app.LocalRecordsConfig&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;pyplanet.apps.contrib.jukebox.app.JukeboxConfig&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;pyplanet.apps.contrib.karma.app.KarmaConfig&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;pyplanet.apps.contrib.admin.app.AdminConfig&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pyplanet.apps.contrib.admin.app.Admin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pyplanet.apps.contrib.jukebox.app.Jukebox&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pyplanet.apps.contrib.karma.app.Karma&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pyplanet.apps.contrib.local_records.app.LocalRecords&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pyplanet.apps.contrib.players.app.Players&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pyplanet.apps.contrib.mapinfo.app.MapInfo&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pyplanet.apps.contrib.mx.app.MX&#39;</span><span class="p">,</span>
   <span class="p">],</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">When new contributed apps will come available, you have to manually enable it in your settings.</p>
+<p class="last">When new contributed apps will come available, you have to manually enable it in your settings.
+Please take a look at our <a class="reference internal" href="../changelog.html"><span class="doc">Change Log</span></a> for details on changes.</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
