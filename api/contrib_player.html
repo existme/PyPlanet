@@ -100,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mapinfo.html">Map Info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mx.html">ManiaExchange</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
 <ul class="current">
@@ -215,7 +216,7 @@
 </div>
 <dl class="method">
 <dt id="pyplanet.contrib.player.PlayerManager.get_player">
-<code class="descname">get_player</code><span class="sig-paren">(</span><em>login=None</em>, <em>pk=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.player.PlayerManager.get_player" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_player</code><span class="sig-paren">(</span><em>login=None</em>, <em>pk=None</em>, <em>lock=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.player.PlayerManager.get_player" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get player by login or primary key.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -224,6 +225,7 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>login</strong> &#8211; Login.</li>
 <li><strong>pk</strong> &#8211; Primary Key identifier.</li>
+<li><strong>lock</strong> &#8211; Lock for a sec when receiving.</li>
 </ul>
 </td>
 </tr>
