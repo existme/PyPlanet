@@ -100,6 +100,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#maps">Maps</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#skip-map">Skip map</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#restart-map">Restart map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-local-map">Add Local map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#write-map-list">Write Map list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-map">Remove Map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#erase-map">Erase Map</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#players">Players</a><ul>
@@ -123,6 +127,7 @@
 <li class="toctree-l1"><a class="reference internal" href="jukebox.html">Jukebox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="karma.html">Karma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapinfo.html">Map Info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
@@ -134,6 +139,7 @@
 <p class="caption"><span class="caption-text">About PyPlanet</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../privacy.html">Privacy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">Todo (docs)</a></li>
 </ul>
@@ -232,7 +238,7 @@ It&#8217;s features can be seperated in to these three areas:</p>
 <h4>Skip map<a class="headerlink" href="#skip-map" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
 <dt>Command:</dt>
-<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">next</span></code></dd>
+<dd><code class="docutils literal"><span class="pre">//next</span></code></dd>
 <dt>Parameters:</dt>
 <dd>None.</dd>
 <dt>Functionality:</dt>
@@ -245,13 +251,77 @@ It&#8217;s features can be seperated in to these three areas:</p>
 <h4>Restart map<a class="headerlink" href="#restart-map" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
 <dt>Command:</dt>
-<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">restart</span></code> / <code class="docutils literal"><span class="pre">/admin</span> <span class="pre">res</span></code> / <code class="docutils literal"><span class="pre">/admin</span> <span class="pre">rs</span></code></dd>
+<dd><code class="docutils literal"><span class="pre">//restart</span></code> / <code class="docutils literal"><span class="pre">//res</span></code> / <code class="docutils literal"><span class="pre">//rs</span></code></dd>
 <dt>Parameters:</dt>
 <dd>None.</dd>
 <dt>Functionality:</dt>
 <dd>Restarts the current map.</dd>
 <dt>Required permission:</dt>
 <dd><code class="docutils literal"><span class="pre">admin:restart</span></code>, requires admin level 1.</dd>
+</dl>
+</div>
+<div class="section" id="add-local-map">
+<h4>Add Local map<a class="headerlink" href="#add-local-map" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">//add</span> <span class="pre">local</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Local file name or path.</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Add map from local server disk.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:add_local</span></code>, requires admin level 2.</dd>
+</dl>
+</div>
+<div class="section" id="write-map-list">
+<h4>Write Map list<a class="headerlink" href="#write-map-list" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">//writemaplist</span></code> / <code class="docutils literal"><span class="pre">//wml</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Optional match settings file. Will use the file from your settings if not provided!</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Write maplist to match settings file.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:write_map_list</span></code>, requires admin level 2.</dd>
+</dl>
+</div>
+<div class="section" id="remove-map">
+<h4>Remove Map<a class="headerlink" href="#remove-map" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">//remove</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Map number given, the ID column from database. If not given, the current map will be removed!</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Remove map from loadedd map list. (Doesn&#8217;t write the maplist to disk!). This command doesn&#8217;t remove the actual map file!</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:remove_map</span></code>, requires admin level 2.</dd>
+</dl>
+</div>
+<div class="section" id="erase-map">
+<h4>Erase Map<a class="headerlink" href="#erase-map" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">//erase</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Map number given, the ID column from database. If not given, the current map will be removed!</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Remove map from loadedd map list. (Doesn&#8217;t write the maplist to disk!). Also removes the map file from the disk!</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:remove_map</span></code>, requires admin level 2.</dd>
 </dl>
 </div>
 </div>
@@ -261,7 +331,7 @@ It&#8217;s features can be seperated in to these three areas:</p>
 <h4>Mute player<a class="headerlink" href="#mute-player" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
 <dt>Command:</dt>
-<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">mute</span></code> / <code class="docutils literal"><span class="pre">/admin</span> <span class="pre">ignore</span></code></dd>
+<dd><code class="docutils literal"><span class="pre">//mute</span></code> / <code class="docutils literal"><span class="pre">//ignore</span></code></dd>
 <dt>Parameters:</dt>
 <dd><ul class="first last simple">
 <li>Player login.</li>
@@ -277,7 +347,7 @@ It&#8217;s features can be seperated in to these three areas:</p>
 <h4>Unmute player<a class="headerlink" href="#unmute-player" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
 <dt>Command:</dt>
-<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">unmute</span></code> / <code class="docutils literal"><span class="pre">/admin</span> <span class="pre">unignore</span></code></dd>
+<dd><code class="docutils literal"><span class="pre">//unmute</span></code> / <code class="docutils literal"><span class="pre">//unignore</span></code></dd>
 <dt>Parameters:</dt>
 <dd><ul class="first last simple">
 <li>Player login.</li>
@@ -293,7 +363,7 @@ It&#8217;s features can be seperated in to these three areas:</p>
 <h4>Kick player<a class="headerlink" href="#kick-player" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
 <dt>Command:</dt>
-<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">kick</span></code></dd>
+<dd><code class="docutils literal"><span class="pre">//kick</span></code></dd>
 <dt>Parameters:</dt>
 <dd><ul class="first last simple">
 <li>Player login.</li>
@@ -309,7 +379,7 @@ It&#8217;s features can be seperated in to these three areas:</p>
 <h4>Ban player<a class="headerlink" href="#ban-player" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
 <dt>Command:</dt>
-<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">ban</span></code></dd>
+<dd><code class="docutils literal"><span class="pre">//ban</span></code></dd>
 <dt>Parameters:</dt>
 <dd><ul class="first last simple">
 <li>Player login.</li>
@@ -325,7 +395,7 @@ It&#8217;s features can be seperated in to these three areas:</p>
 <h4>Unban player<a class="headerlink" href="#unban-player" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
 <dt>Command:</dt>
-<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">unban</span></code></dd>
+<dd><code class="docutils literal"><span class="pre">//unban</span></code></dd>
 <dt>Parameters:</dt>
 <dd><ul class="first last simple">
 <li>Player login.</li>
@@ -344,7 +414,7 @@ It&#8217;s features can be seperated in to these three areas:</p>
 <h4>Set server password<a class="headerlink" href="#set-server-password" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
 <dt>Command:</dt>
-<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">setpassword</span></code> / <code class="docutils literal"><span class="pre">/admin</span> <span class="pre">srvpass</span></code></dd>
+<dd><code class="docutils literal"><span class="pre">//setpassword</span></code> / <code class="docutils literal"><span class="pre">//srvpass</span></code></dd>
 <dt>Parameters:</dt>
 <dd><ul class="first last simple">
 <li>Server password (none or empty for no password).</li>
@@ -360,7 +430,7 @@ It&#8217;s features can be seperated in to these three areas:</p>
 <h4>Set server password<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
 <dt>Command:</dt>
-<dd><code class="docutils literal"><span class="pre">/admin</span> <span class="pre">setspecpassword</span></code> / <code class="docutils literal"><span class="pre">/admin</span> <span class="pre">spectpass</span></code></dd>
+<dd><code class="docutils literal"><span class="pre">//setspecpassword</span></code> / <code class="docutils literal"><span class="pre">//spectpass</span></code></dd>
 <dt>Parameters:</dt>
 <dd><ul class="first last simple">
 <li>Spectator password (none or empty for no password).</li>

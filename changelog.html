@@ -37,7 +37,7 @@
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="PyPlanet  documentation" href="index.html"/>
         <link rel="next" title="Todo (docs)" href="todo.html"/>
-        <link rel="prev" title="Support, Bug report &amp; Contact" href="support.html"/> 
+        <link rel="prev" title="Privacy" href="privacy.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -97,6 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/jukebox.html">Jukebox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/karma.html">Karma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps/contrib/mapinfo.html">Map Info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/players.html">Players</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
@@ -108,6 +109,7 @@
 <p class="caption"><span class="caption-text">About PyPlanet</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="privacy.html">Privacy</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#unreleased">0.0.1 (unreleased)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#core">Core</a></li>
@@ -189,14 +191,15 @@
 <div class="section" id="core">
 <h3>Core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>First release.</li>
+<li>First implementation of the core.</li>
+<li>First implementation of the CLI tool.</li>
 </ul>
 </div>
 <div class="section" id="contrib-apps">
 <h3>Contrib Apps<a class="headerlink" href="#contrib-apps" title="Permalink to this headline">¶</a></h3>
 <p><strong>Admin</strong> <cite>pyplanet.apps.contrib.admin</cite></p>
 <ul class="simple">
-<li>Feature: Basic map functions: skip / restart</li>
+<li>Feature: Basic map functions: skip / restart / add local / remove / erase / writemaplist</li>
 <li>Feature: Basic player functions: ignore / kick / ban / blacklist</li>
 <li>Feature: Basic server functions: set passwords (play / spectator)</li>
 </ul>
@@ -217,6 +220,14 @@
 <li>Feature: Display list of records</li>
 </ul>
 <p><strong>Playerlist</strong> <cite>pyplanet.apps.contrib.players</cite></p>
+<ul class="simple">
+<li>Feature: Add join/leave messages.</li>
+</ul>
+<p><strong>MX</strong> <cite>pyplanet.apps.contrib.mx</cite></p>
+<ul class="simple">
+<li>Feature: Add MX maps (//add mx [id(s]).</li>
+<li>Feature: Implement MX API Client.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -234,7 +245,7 @@
         <a href="todo.html" class="btn btn-neutral float-right" title="Todo (docs)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="support.html" class="btn btn-neutral" title="Support, Bug report &amp; Contact" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="privacy.html" class="btn btn-neutral" title="Privacy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
