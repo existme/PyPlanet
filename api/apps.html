@@ -104,7 +104,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Architecture &amp; Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/index.html">Apps</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">API Documentation</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">pyplanet.apps</a></li>
@@ -208,6 +208,12 @@
 if given by app configuration.</p>
 <p>The apps should contain a configuration class that could be loaded for reading out metadata, options and other
 useful information such as description, author, version and more.</p>
+<dl class="method">
+<dt id="pyplanet.apps.Apps.check">
+<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.Apps.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check and remove unsupported apps based on the current game and script mode.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="pyplanet.apps.Apps.discover">
 <code class="descname">discover</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.Apps.discover" title="Permalink to this definition">¶</a></dt>

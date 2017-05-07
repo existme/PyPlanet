@@ -1,0 +1,643 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Trackmania &mdash; PyPlanet  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
+        <link rel="up" title="Signals (callbacks)" href="index.html"/>
+        <link rel="next" title="API Documentation" href="../api/index.html"/>
+        <link rel="prev" title="Maniaplanet" href="maniaplanet.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mx.html">ManiaExchange</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/index.html">App Development</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Signals (callbacks)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="maniaplanet.html">Maniaplanet</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Trackmania</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Signals (callbacks)</a> &raquo;</li>
+        
+      <li>Trackmania</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/signals/trackmania.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyplanet.apps.core.trackmania.callbacks">
+<span id="trackmania"></span><h1>Trackmania<a class="headerlink" href="#module-pyplanet.apps.core.trackmania.callbacks" title="Permalink to this headline">¶</a></h1>
+<dl class="data">
+<dt id="pyplanet.apps.core.trackmania.callbacks.finish">
+<code class="descclassname">pyplanet.apps.core.trackmania.callbacks.</code><code class="descname">finish</code><em class="property"> = &lt;pyplanet.core.events.dispatcher.Signal object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.trackmania.callbacks.finish" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player finishes a lap or the race.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">trackmania:finish</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Player finishes a lap or the complete race. Custom signal!.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><em>None</em></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance.</li>
+<li><strong>race_time</strong> (<em>int</em>) &#8211; Time in milliseconds of the complete race.</li>
+<li><strong>lap_time</strong> (<em>int</em>) &#8211; Time in milliseconds of the current lap.</li>
+<li><strong>cps</strong> &#8211; Deprecated!</li>
+<li><strong>lap_cps</strong> (<a class="reference internal" href="../api/views.html#module-pyplanet.views.generics.list" title="pyplanet.views.generics.list"><em>list</em></a>) &#8211; Current lap checkpoint times.</li>
+<li><strong>race_cps</strong> (<a class="reference internal" href="../api/views.html#module-pyplanet.views.generics.list" title="pyplanet.views.generics.list"><em>list</em></a>) &#8211; Complete race checkpoint times.</li>
+<li><strong>flow</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.PlayerFlow</em>) &#8211; Flow instance.</li>
+<li><strong>is_end_race</strong> (<em>bool</em>) &#8211; Is this the finish and end of race.</li>
+<li><strong>is_end_lap</strong> (<em>bool</em>) &#8211; Is this the finish and end of current lap.</li>
+<li><strong>raw</strong> &#8211; Prevent to use this!</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.trackmania.callbacks.give_up">
+<code class="descclassname">pyplanet.apps.core.trackmania.callbacks.</code><code class="descname">give_up</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.trackmania.callbacks.give_up" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player gives up.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">trackmania:give_up</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player gives up his current run/round.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Trackmania.Event.GiveUp</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance</li>
+<li><strong>flow</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.PlayerFlow</em>) &#8211; Flow class instance.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.trackmania.callbacks.respawn">
+<code class="descclassname">pyplanet.apps.core.trackmania.callbacks.</code><code class="descname">respawn</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.trackmania.callbacks.respawn" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player respawn at cp.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">trackmania:respawn</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player respawns at the last checkpoint/start.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Trackmania.Event.Respawn</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance</li>
+<li><strong>flow</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.PlayerFlow</em>) &#8211; Flow class instance.</li>
+<li><strong>race_cp</strong> &#8211; Checkpoint times in current <strong>race</strong>.</li>
+<li><strong>lap_cp</strong> &#8211; Checkpoint times in current <strong>lap</strong>.</li>
+<li><strong>race_time</strong> &#8211; Total race time in milliseconds.</li>
+<li><strong>lap_time</strong> &#8211; Current lap time in milliseconds.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.trackmania.callbacks.scores">
+<code class="descclassname">pyplanet.apps.core.trackmania.callbacks.</code><code class="descname">scores</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.trackmania.callbacks.scores" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Score callback, called after the map. (Around the podium time).</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">trackmania:scores</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Teams and players scores.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Trackmania.Scores</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>players</strong> (<a class="reference internal" href="../api/views.html#module-pyplanet.views.generics.list" title="pyplanet.views.generics.list"><em>list</em></a>) &#8211; Player score payload. Including player instance etc.</li>
+<li><strong>teams</strong> (<a class="reference internal" href="../api/views.html#module-pyplanet.views.generics.list" title="pyplanet.views.generics.list"><em>list</em></a>) &#8211; Team score payload.</li>
+<li><strong>winner_team</strong> &#8211; The winning team.</li>
+<li><strong>use_teams</strong> &#8211; Use teams.</li>
+<li><strong>winner_player</strong> &#8211; The winning player.</li>
+<li><strong>section</strong> &#8211; Section, current progress of match. Important to check before you save results!!</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.trackmania.callbacks.start_countdown">
+<code class="descclassname">pyplanet.apps.core.trackmania.callbacks.</code><code class="descname">start_countdown</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.trackmania.callbacks.start_countdown" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player starts his round, the countdown starts right now.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">trackmania:start_countdown</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player see the 3,2,1,Go! countdown.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Trackmania.Event.StartCountdown</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance</li>
+<li><strong>flow</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.PlayerFlow</em>) &#8211; Flow class instance.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.trackmania.callbacks.start_line">
+<code class="descclassname">pyplanet.apps.core.trackmania.callbacks.</code><code class="descname">start_line</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.trackmania.callbacks.start_line" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player drives off from the start line.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">trackmania:start_line</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player starts to race (at the end of the 3,2,1,GO! sequence).</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Trackmania.Event.StartLine</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance</li>
+<li><strong>flow</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.PlayerFlow</em>) &#8211; Flow class instance.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.trackmania.callbacks.stunt">
+<code class="descclassname">pyplanet.apps.core.trackmania.callbacks.</code><code class="descname">stunt</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.trackmania.callbacks.stunt" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player did a stunt.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">trackmania:stunt</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player did a stunt.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Trackmania.Event.Stunt</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance</li>
+<li><strong>race_time</strong> &#8211; Total race time in milliseconds.</li>
+<li><strong>lap_time</strong> &#8211; Current lap time in milliseconds.</li>
+<li><strong>stunt_score</strong> &#8211; Current stunt score.</li>
+<li><strong>figure</strong> &#8211; Figure of stunt.</li>
+<li><strong>angle</strong> &#8211; Angle of stunt.</li>
+<li><strong>points</strong> &#8211; Points got by figure.</li>
+<li><strong>combo</strong> &#8211; Combo counter</li>
+<li><strong>is_straight</strong> &#8211; Is the jump/stunt straight.</li>
+<li><strong>is_reverse</strong> &#8211; Is jump/stunt reversed.</li>
+<li><strong>is_master_jump</strong> &#8211; Is master jump.</li>
+<li><strong>factor</strong> &#8211; Factor multiplier of points (figure).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.trackmania.callbacks.warmup_end">
+<code class="descclassname">pyplanet.apps.core.trackmania.callbacks.</code><code class="descname">warmup_end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.trackmania.callbacks.warmup_end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Warmup Ends</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">trackmania:warmup_end</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent when the warmup ends.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Trackmania.WarmUp.End</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.trackmania.callbacks.warmup_end_round">
+<code class="descclassname">pyplanet.apps.core.trackmania.callbacks.</code><code class="descname">warmup_end_round</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.trackmania.callbacks.warmup_end_round" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Warmup Round Ends.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">trackmania:warmup_end_round</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a warm up round ends.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Trackmania.WarmUp.EndRound</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>current</strong> &#8211; Current round number.</li>
+<li><strong>total</strong> &#8211; Total warm up rounds.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.trackmania.callbacks.warmup_start">
+<code class="descclassname">pyplanet.apps.core.trackmania.callbacks.</code><code class="descname">warmup_start</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.trackmania.callbacks.warmup_start" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Warmup Starts</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">trackmania:warmup_start</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent when the warmup starts.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Trackmania.WarmUp.Start</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.trackmania.callbacks.warmup_start_round">
+<code class="descclassname">pyplanet.apps.core.trackmania.callbacks.</code><code class="descname">warmup_start_round</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.trackmania.callbacks.warmup_start_round" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Warmup Round Starts.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">trackmania:warmup_start_round</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a warm up round start.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Trackmania.WarmUp.StartRound</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>current</strong> &#8211; Current round number.</li>
+<li><strong>total</strong> &#8211; Total warm up rounds.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.trackmania.callbacks.waypoint">
+<code class="descclassname">pyplanet.apps.core.trackmania.callbacks.</code><code class="descname">waypoint</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.trackmania.callbacks.waypoint" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Player crosses a checkpoint.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">trackmania:waypoint</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent when a player crosses a checkpoint.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Trackmania.Event.WayPoint</td>
+</tr>
+</tbody>
+</table>
+<p>player=player, race_time=source[&#8216;racetime&#8217;], flow=flow, raw=source</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>race_time</strong> &#8211; Total race time in milliseconds.</li>
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance</li>
+<li><strong>flow</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.PlayerFlow</em>) &#8211; Flow class instance.</li>
+<li><strong>raw</strong> &#8211; Raw data, prevent to use this!</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This signal is not called when the player finishes or passes finish line during laps map.</p>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../api/index.html" class="btn btn-neutral float-right" title="API Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="maniaplanet.html" class="btn btn-neutral" title="Maniaplanet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,1093 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Shootmania &mdash; PyPlanet  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
+        <link rel="up" title="Signals (callbacks)" href="index.html"/>
+        <link rel="next" title="Trackmania" href="trackmania.html"/>
+        <link rel="prev" title="Maniaplanet" href="maniaplanet.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mx.html">ManiaExchange</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/index.html">App Development</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Signals (callbacks)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="maniaplanet.html">Maniaplanet</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Shootmania</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.apps.core.shootmania.callbacks.base">Base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.apps.core.shootmania.callbacks.elite">Elite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.apps.core.shootmania.callbacks.joust">Joust</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.apps.core.shootmania.callbacks.royal">Royal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="trackmania.html">Trackmania</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Signals (callbacks)</a> &raquo;</li>
+        
+      <li>Shootmania</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/signals/shootmania.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="shootmania">
+<h1>Shootmania<a class="headerlink" href="#shootmania" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-pyplanet.apps.core.shootmania.callbacks.base">
+<span id="base"></span><h2>Base<a class="headerlink" href="#module-pyplanet.apps.core.shootmania.callbacks.base" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Weapons:</th><td class="field-body">[1-Laser, 2-Rocket, 3-Nucleus, 5-Arrow]</td>
+</tr>
+</tbody>
+</table>
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.action_custom_event">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">action_custom_event</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.action_custom_event" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Handle Action Custom Event.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:action_custom_event</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when an action triggers a custom event.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnActionCustomEvent</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>shooter</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Shooter player instance if any</li>
+<li><strong>victim</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Victim player instance if any</li>
+<li><strong>actionid</strong> &#8211; Action Identifier.</li>
+<li><strong>*</strong> &#8211; Any other params, like <code class="docutils literal"><span class="pre">param1</span></code>, <code class="docutils literal"><span class="pre">param2</span></code>, etc...</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.action_event">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">action_event</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.action_event" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Handle Action Event.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:action_event</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when an action triggers an event.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnActionEvent</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>login</strong> &#8211; Player login</li>
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance.</li>
+<li><strong>action_input</strong> &#8211; Action input.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.on_armor_empty">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">on_armor_empty</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.on_armor_empty" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Armor empty, player eliminated.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:on_armor_empty</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player is eliminated.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnArmorEmpty</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>shooter</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; shooter, Player instance</li>
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>weapon</strong> &#8211; Weapon number.</li>
+<li><strong>victim</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; victim, Player instance</li>
+<li><strong>distance</strong> &#8211; Distance between victim and shooter.</li>
+<li><strong>shooter_position</strong> &#8211; Position of shooter.</li>
+<li><strong>victim_position</strong> &#8211; Position of victim.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.on_capture">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">on_capture</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.on_capture" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Landmark has been captured</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">shootmania:on_capture</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent when a landmark is captured.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Shootmania.Event.OnCapture</td>
+</tr>
+</tbody>
+</table>
+<p>time=source[&#8216;time&#8217;], players=players, landmark=source[&#8216;landmark&#8217;]</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>players</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em><em>[</em><em></em><em>]</em><em></em>) &#8211; Player list (instances).</li>
+<li><strong>landmark</strong> &#8211; Landmark information, raw!</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.on_command">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">on_command</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.on_command" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">On Command</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:on_command</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a command is executed on the server.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnCommand</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>name</strong> &#8211; Name of the command</li>
+<li><strong>value</strong> (<em>dict</em>) &#8211; Value in dictionary of the command.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.on_fall_damage">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">on_fall_damage</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.on_fall_damage" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Fall Damage</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:on_fall_damage</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player suffers fall damage.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnFallDamage</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>victim</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; victim, Player instance</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.on_hit">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">on_hit</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.on_hit" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player hit.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:on_hit</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player is hit.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnHit</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>shooter</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; shooter, Player instance</li>
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>weapon</strong> &#8211; Weapon number.</li>
+<li><strong>victim</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; victim, Player instance</li>
+<li><strong>damage</strong> &#8211; Damage done.</li>
+<li><strong>points</strong> &#8211; Points scored by hit.</li>
+<li><strong>distance</strong> &#8211; Distance between victim and shooter.</li>
+<li><strong>shooter_position</strong> &#8211; Position of shooter.</li>
+<li><strong>victim_position</strong> &#8211; Position of victim.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.on_near_miss">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">on_near_miss</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.on_near_miss" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Near Miss.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:on_near_miss</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player dodges a projectile.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnNearMiss</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>shooter</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; shooter, Player instance</li>
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>weapon</strong> &#8211; Weapon number.</li>
+<li><strong>victim</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; victim, Player instance</li>
+<li><strong>distance</strong> &#8211; Distance between victim and shooter.</li>
+<li><strong>shooter_position</strong> &#8211; Position of shooter.</li>
+<li><strong>victim_position</strong> &#8211; Position of victim.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.on_shoot">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">on_shoot</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.on_shoot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player shoot.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:on_shoot</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player shoots.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnShoot</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>shooter</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Shooter, Player instance</li>
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>weapon</strong> &#8211; Weapon number.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.on_shot_deny">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">on_shot_deny</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.on_shot_deny" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player denies a projectile.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:on_shot_deny</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player denies a projectile.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnShotDeny</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>shooter</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; shooter, Player instance</li>
+<li><strong>victim</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; victim, Player instance</li>
+<li><strong>shooter_weapon</strong> &#8211; Weapon number of shooter.</li>
+<li><strong>victim_weapon</strong> &#8211; Weapon number of victim that denied the shot.</li>
+<li><strong>distance</strong> &#8211; Distance between victim and shooter.</li>
+<li><strong>shooter_position</strong> &#8211; Position of shooter.</li>
+<li><strong>victim_position</strong> &#8211; Position of victim.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.player_added">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">player_added</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.player_added" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">On player added.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:player_added</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player joins the server.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnPlayerAdded</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance</li>
+<li><strong>team</strong> &#8211; Team nr.</li>
+<li><strong>language</strong> &#8211; Language code, like &#8216;en&#8217;.</li>
+<li><strong>ladder_rank</strong> &#8211; Current ladder rank.</li>
+<li><strong>ladder_points</strong> &#8211; Current ladder points.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.player_removed">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">player_removed</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.player_removed" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">On player removed.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:player_removed</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player leaves the server.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnPlayerRemoved</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>login</strong> &#8211; Player login string</li>
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.player_request_action_change">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">player_request_action_change</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.player_request_action_change" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player requests action change.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:player_request_action_change</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player requests to use another action.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnPlayerRequestActionChange</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance.</li>
+<li><strong>action_change</strong> &#8211; Can be -1 (request previous action) or 1 (request next action)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.player_request_respawn">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">player_request_respawn</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.player_request_respawn" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">On player request respawn.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:player_request_respawn</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player presses the respawn button.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnPlayerRequestRespawn</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>login</strong> &#8211; Player login string</li>
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.player_throws_object">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">player_throws_object</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.player_throws_object" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player Throws an object.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:player_touch_object</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player throws an object.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnPlayerThrowsObject</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance.</li>
+<li><strong>object_id</strong> &#8211; Object Identifier.</li>
+<li><strong>model_id</strong> &#8211; Model identifier.</li>
+<li><strong>model_name</strong> &#8211; Model name.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.player_touches_object">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">player_touches_object</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.player_touches_object" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player Touches Object.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:player_touches_object</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player touches an object.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnPlayerTouchesObject</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance.</li>
+<li><strong>object_id</strong> &#8211; Object Identifier.</li>
+<li><strong>model_id</strong> &#8211; Model identifier.</li>
+<li><strong>model_name</strong> &#8211; Model name.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.player_triggers_sector">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">player_triggers_sector</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.player_triggers_sector" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player Triggers Sector.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:player_triggers_sector</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player triggers a sector.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Event.OnPlayerTriggersSector</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Time of server when callback is sent.</li>
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance.</li>
+<li><strong>sector_id</strong> &#8211; Sector Identifier.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.base.scores">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.base.</code><code class="descname">scores</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.base.scores" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Score callback, called after the map. (Around the podium time).</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:scores</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Teams and players scores.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Scores</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>players</strong> (<a class="reference internal" href="../api/views.html#module-pyplanet.views.generics.list" title="pyplanet.views.generics.list"><em>list</em></a>) &#8211; Player score payload. Including player instance etc.</li>
+<li><strong>teams</strong> (<a class="reference internal" href="../api/views.html#module-pyplanet.views.generics.list" title="pyplanet.views.generics.list"><em>list</em></a>) &#8211; Team score payload.</li>
+<li><strong>winner_team</strong> &#8211; The winning team.</li>
+<li><strong>use_teams</strong> &#8211; Use teams.</li>
+<li><strong>winner_player</strong> &#8211; The winning player.</li>
+<li><strong>section</strong> &#8211; Section, current progress of match. Important to check before you save results!!</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyplanet.apps.core.shootmania.callbacks.elite">
+<span id="elite"></span><h2>Elite<a class="headerlink" href="#module-pyplanet.apps.core.shootmania.callbacks.elite" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Victory Types:</th><td class="field-body">1 = time limit reached, 2 = capture, 3 = attacker eliminated, 4 = defenders eliminated.</td>
+</tr>
+</tbody>
+</table>
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.elite.turn_end">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.elite.</code><code class="descname">turn_end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.elite.turn_end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Elite turn start.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">shootmania:elite_turn_end</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Information about the ending turn.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Shootmania.Elite.EndTurn</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>victory_type</strong> &#8211; Describe how the turn was won. 1 = time limit, 2 = capture, 3 = attacker eliminated, 4 = defenders eliminated</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.elite.turn_start">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.elite.</code><code class="descname">turn_start</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.elite.turn_start" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Elite turn start.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:elite_turn_start</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Information about the starting turn.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Elite.StartTurn</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>attacker</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance of attacker.</li>
+<li><strong>defenders</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em><em>[</em><em></em><em>]</em><em></em>) &#8211; List with player instances of defenders.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyplanet.apps.core.shootmania.callbacks.joust">
+<span id="joust"></span><h2>Joust<a class="headerlink" href="#module-pyplanet.apps.core.shootmania.callbacks.joust" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.joust.player_reload">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.joust.</code><code class="descname">player_reload</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.joust.player_reload" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player reloads its weapon and capture pole.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:joust_player_reload</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player capture a pole to reload its weapons.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Joust.OnReload</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>login</strong> &#8211; Player login.</li>
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.joust.results">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.joust.</code><code class="descname">results</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.joust.results" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">End of round with results of Joust round.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">shootmania:joust_results</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent at the end of the round with the scores of the two players.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Shootmania.Joust.RoundResult</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>players</strong> (<a class="reference internal" href="../api/views.html#module-pyplanet.views.generics.list" title="pyplanet.views.generics.list"><em>list</em></a>) &#8211; Player score list, contains player + score.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.joust.selected_players">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.joust.</code><code class="descname">selected_players</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.joust.selected_players" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Round starts with selected players.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">shootmania:joust_selected_players</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent at the beginning of the round with the logins of the players selected to play the round.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Shootmania.Joust.SelectedPlayers</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>players</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em><em>[</em><em></em><em>]</em><em></em>) &#8211; Player list (instances).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyplanet.apps.core.shootmania.callbacks.royal">
+<span id="royal"></span><h2>Royal<a class="headerlink" href="#module-pyplanet.apps.core.shootmania.callbacks.royal" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.royal.player_score_points">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.royal.</code><code class="descname">player_score_points</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.royal.player_score_points" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player score points.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">shootmania:royal_player_score_points</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player scores some points.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Shootmania.Royal.Points</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance.</li>
+<li><strong>type</strong> &#8211; Type of score, like &#8216;Pole&#8217;, &#8216;Hit&#8217;, or &#8216;Survival&#8217;.</li>
+<li><strong>points</strong> &#8211; Points that the player gains.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.royal.player_spawn">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.royal.</code><code class="descname">player_spawn</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.royal.player_spawn" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Player spawns.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">shootmania:royal_player_spawn</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent when a player is spawned.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Shootmania.Royal.PlayerSpawn</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.shootmania.callbacks.royal.results">
+<code class="descclassname">pyplanet.apps.core.shootmania.callbacks.royal.</code><code class="descname">results</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.shootmania.callbacks.royal.results" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">End of round with the winner of the Royal round.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">shootmania:royal_results</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent at the end of the round with the player instance of the winner.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Shootmania.Royal.RoundWinner</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance that won the round.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="trackmania.html" class="btn btn-neutral float-right" title="Trackmania" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="maniaplanet.html" class="btn btn-neutral" title="Maniaplanet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

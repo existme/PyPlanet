@@ -35,7 +35,10 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet  documentation" href="../index.html"/> 
+    <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
+        <link rel="up" title="App Development" href="index.html"/>
+        <link rel="next" title="Models" href="models.html"/>
+        <link rel="prev" title="Life Cycle" href="lifecycle.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -100,9 +103,20 @@
 <li class="toctree-l1"><a class="reference internal" href="contrib/mx.html">ManiaExchange</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Apps</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">App Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="access_instance.html">Contrib + Core access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Apps Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context (UI + Settings)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lifecycle.html">Life Cycle</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Migrations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-migrations">Create migrations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Documentation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">About PyPlanet</span></p>
@@ -154,6 +168,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">App Development</a> &raquo;</li>
         
       <li>Migrations</li>
     
@@ -216,7 +232,6 @@ from the meta class of the model.</li>
 downgrade as well.</li>
 <li>Test, make sure it&#8217;s able to migrate on at least these engines: MySQL or PostgreSQL.</li>
 </ol>
-<p><cite>More information about migrations will appear here as it develops.</cite></p>
 </div>
 </div>
 
@@ -227,6 +242,15 @@ downgrade as well.</li>
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="models.html" class="btn btn-neutral float-right" title="Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lifecycle.html" class="btn btn-neutral" title="Life Cycle" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

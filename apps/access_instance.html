@@ -35,7 +35,10 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet  documentation" href="../index.html"/> 
+    <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
+        <link rel="up" title="App Development" href="index.html"/>
+        <link rel="next" title="Apps Architecture" href="architecture.html"/>
+        <link rel="prev" title="App Development" href="index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -100,9 +103,17 @@
 <li class="toctree-l1"><a class="reference internal" href="contrib/mx.html">ManiaExchange</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Apps</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">App Development</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Contrib + Core access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Apps Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context (UI + Settings)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lifecycle.html">Life Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrations.html">Migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Documentation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">About PyPlanet</span></p>
@@ -155,6 +166,8 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="index.html">App Development</a> &raquo;</li>
+        
       <li>Contrib + Core access</li>
     
     
@@ -176,14 +189,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-<div class="section" id="contrib-core-access">
+  <div class="section" id="contrib-core-access">
 <h1>Contrib + Core access<a class="headerlink" href="#contrib-core-access" title="Permalink to this headline">¶</a></h1>
 <p>Inside of your app you can access the instance and it&#8217;s contribution- and core components.
 To access the instance you can simply use this code statement:</p>
@@ -201,6 +207,15 @@ For the full list of the properties of the <code class="docutils literal"><span 
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="architecture.html" class="btn btn-neutral float-right" title="Apps Architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="App Development" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

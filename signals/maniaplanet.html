@@ -1,0 +1,1361 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Maniaplanet &mdash; PyPlanet  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
+        <link rel="up" title="Signals (callbacks)" href="index.html"/>
+        <link rel="next" title="Trackmania" href="trackmania.html"/>
+        <link rel="prev" title="Signals (callbacks)" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mx.html">ManiaExchange</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/index.html">App Development</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Signals (callbacks)</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Maniaplanet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.apps.core.maniaplanet.callbacks.flow">Flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.apps.core.maniaplanet.callbacks.map">Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.apps.core.maniaplanet.callbacks.player">Player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.apps.core.maniaplanet.callbacks.ui">User Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyplanet.apps.core.maniaplanet.callbacks.other">Other</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="trackmania.html">Trackmania</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Signals (callbacks)</a> &raquo;</li>
+        
+      <li>Maniaplanet</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/signals/maniaplanet.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="maniaplanet">
+<h1>Maniaplanet<a class="headerlink" href="#maniaplanet" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-pyplanet.apps.core.maniaplanet.callbacks.flow">
+<span id="flow"></span><h2>Flow<a class="headerlink" href="#module-pyplanet.apps.core.maniaplanet.callbacks.flow" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.loading_map_end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">loading_map_end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.loading_map_end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Loading Map end.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">maniaplanet:loading_map_end</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent when the server finishes to load the map.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Maniaplanet.LoadingMap_End</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>map</strong> (<em>pyplanet.core.maniaplanet.models.map.Map</em>) &#8211; Map instance from database. Updated with the provided data.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.loading_map_start">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">loading_map_start</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.loading_map_start" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Loading Map start.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">maniaplanet:loading_map_start</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent when the server starts loading the map.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Maniaplanet.LoadingMap_Start</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> &#8211; Server time when callback has been sent.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.match_end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">match_end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.match_end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Match End.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:match_end</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when the &#8220;EndMatch&#8221; section start.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.EndMatch_Start</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; Each time this section is played, this number is incremented by one.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.match_end__end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">match_end__end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.match_end__end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Match End. (End event)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:match_end__end</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when the &#8220;EndMatch&#8221; section ends.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.EndMatch_End</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; Each time this section is played, this number is incremented by one.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.match_start">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">match_start</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.match_start" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Match Start.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:match_start</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when the &#8220;StartMatch&#8221; section start.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.StartMatch_Start</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; Each time this section is played, this number is incremented by one.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.match_start__end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">match_start__end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.match_start__end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Match Start. (End event)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:match_start__end</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when the &#8220;StartMatch&#8221; section end.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.StartMatch_End</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; Each time this section is played, this number is incremented by one.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.play_loop_end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">play_loop_end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.play_loop_end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Play Loop End.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:play_loop_end</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when the &#8220;PlayLoop&#8221; section ends.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.EndPlayLoop</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; Each time this section is played, this number is incremented by one.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.play_loop_start">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">play_loop_start</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.play_loop_start" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Play Loop Start.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:play_loop_start</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when the &#8220;PlayLoop&#8221; section starts.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.StartPlayLoop</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; Each time this section is played, this number is incremented by one.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.podium_end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">podium_end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.podium_end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Podium end.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">maniaplanet:podium_end</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent when the podium sequence ends.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Maniaplanet.Podium_End</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> &#8211; Server time when callback has been sent.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.podium_start">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">podium_start</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.podium_start" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Podium start.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">maniaplanet:podium_start</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent when the podium sequence starts.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Maniaplanet.Podium_Start</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> &#8211; Server time when callback has been sent.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.round_end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">round_end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.round_end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Round Start.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:round_end</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when the &#8220;EndRound&#8221; section starts.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.EndRound_Start</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; Each time this section is played, this number is incremented by one.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.round_end__end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">round_end__end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.round_end__end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Round Start. (End event)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:round_end__end</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when the &#8220;EndRound&#8221; section ends.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.EndRound_End</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; Each time this section is played, this number is incremented by one.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.round_start">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">round_start</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.round_start" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Round Start.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:round_start</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when the &#8220;StartRound&#8221; section starts.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.StartRound_Start</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; Each time this section is played, this number is incremented by one.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.round_start__end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">round_start__end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.round_start__end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Round Start. (End event)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:round_start__end</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when the &#8220;StartRound&#8221; section ends.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.StartRound_End</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; Each time this section is played, this number is incremented by one.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.server_end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">server_end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.server_end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Server End signal</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:server_end</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">This callback is called when the server script is end. The begin of the event.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.EndServer_Start</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>restarted</strong> &#8211; Boolean giving information if the script has restarted.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.server_end__end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">server_end__end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.server_end__end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Server End signal (end event)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:server_end__end</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">This callback is called when the server script is end. The end of the event.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.EndServer_End</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>restarted</strong> &#8211; Boolean giving information if the script has restarted.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.server_start">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">server_start</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.server_start" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Server Start signal</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:server_start</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">This callback is called when the server script is (re)started. The begin of the event.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.StartServer_Start</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>restarted</strong> &#8211; Boolean giving information if the script has restarted.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.server_start__end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">server_start__end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.server_start__end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Server Start signal (end of event).</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:server_start__end</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">This callback is called when the server script is (re)started. The end of the event.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.StartServer_End</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>restarted</strong> &#8211; Boolean giving information if the script has restarted.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.status_changed">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">status_changed</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.status_changed" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Server Status Changed.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:status_changed</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when the podium sequence ends.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Native</cite> Maniaplanet.Podium_End</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>1</strong> (<em>int</em>) &#8211; Status Code.</li>
+<li><strong>2</strong> (<em>str</em>) &#8211; Status Name.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.turn_end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">turn_end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.turn_end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Turn End.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:turn_end</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when the &#8220;EndTurn&#8221; section starts.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.EndTurn_Start</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; Each time this section is played, this number is incremented by one.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.turn_end__end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">turn_end__end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.turn_end__end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Turn End. (End event)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:turn_end__end</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when the &#8220;EndTurn&#8221; section ends.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.EndTurn_End</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; Each time this section is played, this number is incremented by one.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.turn_start">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">turn_start</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.turn_start" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Turn Start.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:turn_start</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when the &#8220;StartTurn&#8221; section starts.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.StartTurn_Start</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; Each time this section is played, this number is incremented by one.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.turn_start__end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">turn_start__end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.turn_start__end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Turn Start. (End event).</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:turn_start__end</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when the &#8220;StartTurn&#8221; section ends.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.StartTurn_End</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; Each time this section is played, this number is incremented by one.</li>
+<li><strong>time</strong> &#8211; Server time when callback has been sent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.unloading_map_end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">unloading_map_end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.unloading_map_end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Unloading of the Map ends.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">maniaplanet:unloading_map_end</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent when the server finishes to unload a map.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Maniaplanet.UnloadingMap_End</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>map</strong> (<em>pyplanet.core.maniaplanet.models.map.Map</em>) &#8211; Map instance from database. Updated with the provided data.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.flow.unloading_map_start">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.flow.</code><code class="descname">unloading_map_start</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.flow.unloading_map_start" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Unloading of the Map starts.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">maniaplanet:unloading_map_start</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent when the server starts to unload a map.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Maniaplanet.UnloadingMap_Start</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>map</strong> (<em>pyplanet.core.maniaplanet.models.map.Map</em>) &#8211; Map instance from database. Updated with the provided data.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyplanet.apps.core.maniaplanet.callbacks.map">
+<span id="map"></span><h2>Map<a class="headerlink" href="#module-pyplanet.apps.core.maniaplanet.callbacks.map" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.map.map_begin">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.map.</code><code class="descname">map_begin</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.map.map_begin" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Begin of map.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">maniaplanet:map_begin</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent when map begins.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Native</cite> Maniaplanet.BeginMap</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>map</strong> (<em>pyplanet.apps.core.maniaplanet.models.map.Map</em>) &#8211; Map instance.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.map.map_end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.map.</code><code class="descname">map_end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.map.map_end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">End of map.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">maniaplanet:map_end</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent when map ends.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Native</cite> Maniaplanet.EndMap</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>map</strong> (<em>pyplanet.apps.core.maniaplanet.models.map.Map</em>) &#8211; Map instance.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.map.map_start">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.map.</code><code class="descname">map_start</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.map.map_start" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Begin of map. (Scripted!)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:map_begin</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when map starts (same as begin, but scripted).</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.StartMap_Start</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Time when callback has been sent.</li>
+<li><strong>count</strong> &#8211; Counts of the callback that was sent.</li>
+<li><strong>restarted</strong> &#8211; Is the map restarted.</li>
+<li><strong>map</strong> (<em>pyplanet.apps.core.maniaplanet.models.map.Map</em>) &#8211; Map instance.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.map.map_start__end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.map.</code><code class="descname">map_start__end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.map.map_start__end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Begin of map, end of event. (Scripted!)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:map_start__end</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when map starts (same as begin, but scripted). End of the event</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Script</cite> Maniaplanet.StartMap_End</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; Time when callback has been sent.</li>
+<li><strong>count</strong> &#8211; Counts of the callback that was sent.</li>
+<li><strong>restarted</strong> &#8211; Is the map restarted.</li>
+<li><strong>map</strong> (<em>pyplanet.apps.core.maniaplanet.models.map.Map</em>) &#8211; Map instance.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.map.playlist_modified">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.map.</code><code class="descname">playlist_modified</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.map.playlist_modified" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Maplist changes.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:playlist_modified</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when map list changes.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Native</cite> Maniaplanet.MapListModified</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>1</strong> (<em>int</em>) &#8211; Current map index.</li>
+<li><strong>2</strong> (<em>int</em>) &#8211; Next map index.</li>
+<li><strong>3</strong> (<em>bool</em>) &#8211; Is List Modified.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyplanet.apps.core.maniaplanet.callbacks.player">
+<span id="player"></span><h2>Player<a class="headerlink" href="#module-pyplanet.apps.core.maniaplanet.callbacks.player" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.player.player_chat">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.player.</code><code class="descname">player_chat</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.player.player_chat" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player has been writing a chat entry. When the server writes something we <strong>wont</strong> inform it in here!</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:player_chat</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player chats.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Native</cite> Maniaplanet.PlayerChat</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance</li>
+<li><strong>text</strong> &#8211; Text of chat</li>
+<li><strong>cmd</strong> &#8211; Boolean if it&#8217;s a command. Be aware, you should use the <code class="docutils literal"><span class="pre">command</span></code> manager for commands!</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.player.player_connect">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.player.</code><code class="descname">player_connect</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.player.player_connect" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player has been connected.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:player_connect</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player connects and we fetched our data.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Native</cite> Maniaplanet.PlayerConnect</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance</li>
+<li><strong>is_spectator</strong> &#8211; Boolean determinating if the player joined as spectator.</li>
+<li><strong>source</strong> &#8211; Raw payload, best to not use!</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.player.player_disconnect">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.player.</code><code class="descname">player_disconnect</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.player.player_disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player has been disconnected.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:player_disconnect</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player disconnects.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Native</cite> Maniaplanet.PlayerDisconnect</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance</li>
+<li><strong>reason</strong> &#8211; Reason of leave</li>
+<li><strong>source</strong> &#8211; Raw payload, best to not use!</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.player.player_info_changed">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.player.</code><code class="descname">player_info_changed</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.player.player_info_changed" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player has changed status.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:player_info_changed</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player changes from state or information.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Native</cite> Maniaplanet.PlayerInfoChanged</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance (COULD BE NONE SOMETIMES!).</li>
+<li><strong>player_login</strong> &#8211; Player login string.</li>
+<li><strong>is_spectator</strong> &#8211; Is player spectator (bool).</li>
+<li><strong>is_temp_spectator</strong> &#8211; Is player temporary spectator (bool).</li>
+<li><strong>is_pure_spectator</strong> &#8211; Is player pure spectator (bool).</li>
+<li><strong>auto_target</strong> &#8211; Player using auto target.</li>
+<li><strong>target_id</strong> &#8211; The target player id (not login!).</li>
+<li><strong>target</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; The target player instance or None if not found/none spectating.</li>
+<li><strong>flags</strong> &#8211; Raw flags.</li>
+<li><strong>spectator_status</strong> &#8211; Raw spectator status.</li>
+<li><strong>team_id</strong> &#8211; Team ID of player.</li>
+<li><strong>player_id</strong> &#8211; Player ID (server id).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyplanet.apps.core.maniaplanet.callbacks.ui">
+<span id="user-interface"></span><h2>User Interface<a class="headerlink" href="#module-pyplanet.apps.core.maniaplanet.callbacks.ui" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.ui.manialink_answer">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.ui.</code><code class="descname">manialink_answer</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.ui.manialink_answer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Player has raised an action on the Manialink.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:manialink_answer</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a player clicks on an event of a manialink.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Native</cite> Maniaplanet.PlayerManialinkPageAnswer</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance</li>
+<li><strong>action</strong> &#8211; Action name</li>
+<li><strong>values</strong> &#8211; Values (in dictionary).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>Don&#8217;t use this callback directly, use the abstraction of ``View`` and ``StaticManialink`` to handle events of your
+manialink</strong>!</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyplanet.apps.core.maniaplanet.callbacks.other">
+<span id="other"></span><h2>Other<a class="headerlink" href="#module-pyplanet.apps.core.maniaplanet.callbacks.other" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.other.bill_updated">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.other.</code><code class="descname">bill_updated</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.other.bill_updated" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Bill has been updated.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:bill_updated</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a bill has been updated.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Native</cite> Maniaplanet.BillUpdated</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>1</strong> (<em>int</em>) &#8211; Bill id.</li>
+<li><strong>2</strong> (<em>int</em>) &#8211; State.</li>
+<li><strong>3</strong> (<em>str</em>) &#8211; State name.</li>
+<li><strong>4</strong> (<em>int</em>) &#8211; Transaction id.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.other.vote_updated">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.other.</code><code class="descname">vote_updated</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.other.vote_updated" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body"><p class="first">Vote has been updated.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">maniaplanet:vote_updated</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"><p class="first">Callback sent when a call vote has been updated.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><cite>Native</cite> Maniaplanet.VoteUpdated</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>player</strong> (<em>pyplanet.apps.core.maniaplanet.models.player.Player</em>) &#8211; Player instance</li>
+<li><strong>state</strong> &#8211; State name</li>
+<li><strong>cmd_name</strong> &#8211; Command name</li>
+<li><strong>cmd_param</strong> &#8211; Parameter given with command.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="trackmania.html" class="btn btn-neutral float-right" title="Trackmania" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Signals (callbacks)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

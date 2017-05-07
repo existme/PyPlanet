@@ -35,7 +35,10 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet  documentation" href="../index.html"/> 
+    <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
+        <link rel="up" title="App Development" href="index.html"/>
+        <link rel="next" title="API Documentation" href="../api/index.html"/>
+        <link rel="prev" title="Migrations" href="migrations.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -100,9 +103,24 @@
 <li class="toctree-l1"><a class="reference internal" href="contrib/mx.html">ManiaExchange</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Apps</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">App Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="access_instance.html">Contrib + Core access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Apps Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context (UI + Settings)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lifecycle.html">Life Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrations.html">Migrations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#define-models">Define models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#operations-on-models">Operations on models</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Documentation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">About PyPlanet</span></p>
@@ -155,6 +173,8 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="index.html">App Development</a> &raquo;</li>
+        
       <li>Models</li>
     
     
@@ -176,14 +196,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-<div class="section" id="models">
+  <div class="section" id="models">
 <h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
 <p>Models are defined in either the <code class="docutils literal"><span class="pre">app/models.py</span></code> file or the <code class="docutils literal"><span class="pre">app/models/</span></code> folder (with loading from the <code class="docutils literal"><span class="pre">app/models/__init__.py</span></code>)</p>
 <p>Models tables are created at the moment PyPlanet starts for the first time as it sees your model, and not yet have a table.
@@ -232,13 +245,13 @@ be filled and adjusted automatically when saving/updating.</p>
 here with lots of examples.</p>
 <p>For more information about fields please refer to the Peewee documentation: <a class="reference external" href="http://peewee.readthedocs.io/en/latest/">http://peewee.readthedocs.io/en/latest/</a>.</p>
 <p>For more information about operations on models, <strong>don&#8217;t look at the Peewee documentation at first</strong>, but look further in this document.</p>
-</div>
 <div class="section" id="fields">
-<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<h3>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h3>
 <p>Please take a look at: <a class="reference external" href="http://peewee.readthedocs.io/en/latest/peewee/models.html#fields">http://peewee.readthedocs.io/en/latest/peewee/models.html#fields</a></p>
 </div>
-<div class="section" id="operations">
-<h2>Operations<a class="headerlink" href="#operations" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="operations-on-models">
+<h2>Operations on models<a class="headerlink" href="#operations-on-models" title="Permalink to this headline">¶</a></h2>
 <p><strong>Create new object instance in the database</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">instance</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">second_col</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">await</span> <span class="n">instance</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
@@ -258,6 +271,14 @@ here with lots of examples.</p>
 </pre></div>
 </div>
 <p><cite>More examples will follow, feel free to ask for help on this topic in the meantime</cite>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>We use a customized version of the <cite>Peewee</cite> library to have support for async access to database.
+Because this reason we had to override some methods or create our own. Please don&#8217;t take not that if you get a
+sync code exception that it&#8217;s not <em>yet</em> supported by PyPlanet async wrapper.</p>
+<p class="last">Please contact us on Github if you think you have an issue with the Database Layer. It&#8217;s one of the most important
+parts of PyPlanet!</p>
+</div>
 </div>
 </div>
 
@@ -268,6 +289,15 @@ here with lots of examples.</p>
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../api/index.html" class="btn btn-neutral float-right" title="API Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="migrations.html" class="btn btn-neutral" title="Migrations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

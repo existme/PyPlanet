@@ -35,7 +35,10 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet  documentation" href="../index.html"/> 
+    <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
+        <link rel="up" title="App Development" href="index.html"/>
+        <link rel="next" title="Migrations" href="migrations.html"/>
+        <link rel="prev" title="Context (UI + Settings)" href="context.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -100,9 +103,23 @@
 <li class="toctree-l1"><a class="reference internal" href="contrib/mx.html">ManiaExchange</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../core/index.html">Core</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Apps</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">App Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="access_instance.html">Contrib + Core access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Apps Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context (UI + Settings)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Life Cycle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#on-init">on_init</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#on-start">on_start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#on-stop">on_stop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#on-destroy">on_destroy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="migrations.html">Migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Documentation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">About PyPlanet</span></p>
@@ -155,6 +172,8 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="index.html">App Development</a> &raquo;</li>
+        
       <li>Life Cycle</li>
     
     
@@ -176,14 +195,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-<div class="section" id="life-cycle">
+  <div class="section" id="life-cycle">
 <h1>Life Cycle<a class="headerlink" href="#life-cycle" title="Permalink to this headline">¶</a></h1>
 <img alt="../_images/lifecycle.png" src="../_images/lifecycle.png" />
 <div class="admonition warning">
@@ -230,6 +242,15 @@ app could start at any time, meaning that some context would not be valid anymor
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="migrations.html" class="btn btn-neutral float-right" title="Migrations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="context.html" class="btn btn-neutral" title="Context (UI + Settings)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

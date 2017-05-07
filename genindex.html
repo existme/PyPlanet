@@ -102,8 +102,9 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="core/index.html">Core</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apps/index.html">Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signals/index.html">Signals (callbacks)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/index.html">API Documentation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">About PyPlanet</span></p>
@@ -228,6 +229,10 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.action_custom_event">action_custom_event (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.action_event">action_event (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
       <li><a href="api/contrib_map.html#pyplanet.contrib.map.MapManager.add_map">add_map() (pyplanet.contrib.map.MapManager method)</a>
 </li>
       <li><a href="api/contrib_command.html#pyplanet.contrib.command.Command.add_param">add_param() (pyplanet.contrib.command.Command method)</a>
@@ -236,10 +241,10 @@
         <li><a href="api/contrib_command.html#pyplanet.contrib.command.ParameterParser.add_param">(pyplanet.contrib.command.ParameterParser method)</a>
 </li>
       </ul></li>
-      <li><a href="api/views.html#pyplanet.views.generics.alert.AlertView">AlertView (class in pyplanet.views.generics.alert)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/views.html#pyplanet.views.generics.alert.AlertView">AlertView (class in pyplanet.views.generics.alert)</a>
+</li>
       <li><a href="api/apps.html#pyplanet.apps.AppConfig.app_dependencies">app_dependencies (pyplanet.apps.AppConfig attribute)</a>
 </li>
       <li><a href="api/apps.html#pyplanet.apps.AppConfig">AppConfig (class in pyplanet.apps)</a>
@@ -259,12 +264,18 @@
       <li><a href="api/contrib_converter.html#pyplanet.contrib.converter.base.BaseConverter">BaseConverter (class in pyplanet.contrib.converter.base)</a>
 </li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.other.bill_updated">bill_updated (in module pyplanet.apps.core.maniaplanet.callbacks.other)</a>
+</li>
+  </ul></td>
 </tr></table>
 
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/core_events.html#pyplanet.core.events.callback.Callback">Callback (class in pyplanet.core.events.callback)</a>
+</li>
+      <li><a href="api/apps.html#pyplanet.apps.Apps.check">check() (pyplanet.apps.Apps method)</a>
 </li>
       <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.Setting.clear">clear() (pyplanet.contrib.setting.Setting method)</a>
 </li>
@@ -358,6 +369,8 @@
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="signals/trackmania.html#pyplanet.apps.core.trackmania.callbacks.finish">finish (in module pyplanet.apps.core.trackmania.callbacks)</a>
+</li>
       <li><a href="api/core_events.html#pyplanet.core.events.manager._SignalManager.finish_reservations">finish_reservations() (pyplanet.core.events.manager._SignalManager method)</a>
 </li>
   </ul></td>
@@ -439,6 +452,8 @@
       <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.Setting.get_value">get_value() (pyplanet.contrib.setting.Setting method)</a>
 </li>
       <li><a href="api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.get_variables">get_variables() (pyplanet.contrib.mode.ModeManager method)</a>
+</li>
+      <li><a href="signals/trackmania.html#pyplanet.apps.core.trackmania.callbacks.give_up">give_up (in module pyplanet.apps.core.trackmania.callbacks)</a>
 </li>
       <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.GlobalSettingManager">GlobalSettingManager (class in pyplanet.contrib.setting)</a>
 
@@ -536,9 +551,13 @@
 </li>
       <li><a href="api/core_events.html#pyplanet.core.events.manager._SignalManager.listen">listen() (pyplanet.core.events.manager._SignalManager method)</a>
 </li>
+      <li><a href="api/views.html#pyplanet.views.generics.list.ListView">ListView (class in pyplanet.views.generics.list)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/views.html#pyplanet.views.generics.list.ListView">ListView (class in pyplanet.views.generics.list)</a>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.loading_map_end">loading_map_end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.loading_map_start">loading_map_start (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
 </li>
       <li><a href="api/core_storage.html#pyplanet.core.storage.drivers.local.LocalDriver">LocalDriver (class in pyplanet.core.storage.drivers.local)</a>
 </li>
@@ -548,23 +567,41 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.ui.manialink_answer">manialink_answer (in module pyplanet.apps.core.maniaplanet.callbacks.ui)</a>
+</li>
       <li><a href="api/core_ui.html#pyplanet.core.ui.exceptions.ManialinkMemoryLeakException">ManialinkMemoryLeakException</a>
 </li>
       <li><a href="api/views.html#pyplanet.views.generics.list.ManualListView">ManualListView (class in pyplanet.views.generics.list)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.map.map_begin">map_begin (in module pyplanet.apps.core.maniaplanet.callbacks.map)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.map.map_end">map_end (in module pyplanet.apps.core.maniaplanet.callbacks.map)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.map.map_start">map_start (in module pyplanet.apps.core.maniaplanet.callbacks.map)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.map.map_start__end">map_start__end (in module pyplanet.apps.core.maniaplanet.callbacks.map)</a>
 </li>
       <li><a href="api/contrib_map.html#pyplanet.contrib.map.exceptions.MapException">MapException</a>
 </li>
       <li><a href="api/contrib_map.html#pyplanet.contrib.map.exceptions.MapIncompatible">MapIncompatible</a>
 </li>
-      <li><a href="api/contrib_map.html#pyplanet.contrib.map.MapManager">MapManager (class in pyplanet.contrib.map)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/contrib_map.html#pyplanet.contrib.map.MapManager">MapManager (class in pyplanet.contrib.map)</a>
+</li>
       <li><a href="api/contrib_map.html#pyplanet.contrib.map.exceptions.MapNotFound">MapNotFound</a>
 </li>
       <li><a href="api/contrib_map.html#pyplanet.contrib.map.MapManager.maps">maps (pyplanet.contrib.map.MapManager attribute)</a>
 </li>
       <li><a href="api/contrib_command.html#pyplanet.contrib.command.Command.match">match() (pyplanet.contrib.command.Command method)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.match_end">match_end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.match_end__end">match_end__end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.match_start">match_start (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.match_start__end">match_start__end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
 </li>
       <li><a href="api/apps.html#pyplanet.apps.AppConfig.mode_dependencies">mode_dependencies (pyplanet.apps.AppConfig attribute)</a>
 </li>
@@ -590,9 +627,27 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.on_armor_empty">on_armor_empty (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.on_capture">on_capture (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.on_command">on_command (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
       <li><a href="api/apps.html#pyplanet.apps.AppConfig.on_destroy">on_destroy() (pyplanet.apps.AppConfig method)</a>
 </li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.on_fall_damage">on_fall_damage (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.on_hit">on_hit (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
       <li><a href="api/apps.html#pyplanet.apps.AppConfig.on_init">on_init() (pyplanet.apps.AppConfig method)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.on_near_miss">on_near_miss (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.on_shoot">on_shoot (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.on_shot_deny">on_shot_deny (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
 </li>
       <li><a href="api/apps.html#pyplanet.apps.AppConfig.on_start">on_start() (pyplanet.apps.AppConfig method)</a>
 
@@ -604,8 +659,6 @@
         <li><a href="api/contrib_player.html#pyplanet.contrib.player.PlayerManager.on_start">(pyplanet.contrib.player.PlayerManager method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/apps.html#pyplanet.apps.AppConfig.on_stop">on_stop() (pyplanet.apps.AppConfig method)</a>
 </li>
       <li><a href="api/contrib_player.html#pyplanet.contrib.player.PlayerManager.online">online (pyplanet.contrib.player.PlayerManager attribute)</a>
@@ -632,11 +685,49 @@
 </li>
       <li><a href="api/contrib_permission.html#pyplanet.contrib.permission.PermissionManager">PermissionManager (class in pyplanet.contrib.permission)</a>
 </li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.play_loop_end">play_loop_end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.play_loop_start">play_loop_start (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.player_added">player_added (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.player.player_chat">player_chat (in module pyplanet.apps.core.maniaplanet.callbacks.player)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.player.player_connect">player_connect (in module pyplanet.apps.core.maniaplanet.callbacks.player)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.player.player_disconnect">player_disconnect (in module pyplanet.apps.core.maniaplanet.callbacks.player)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.player.player_info_changed">player_info_changed (in module pyplanet.apps.core.maniaplanet.callbacks.player)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.joust.player_reload">player_reload (in module pyplanet.apps.core.shootmania.callbacks.joust)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.player_removed">player_removed (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.player_request_action_change">player_request_action_change (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.player_request_respawn">player_request_respawn (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.royal.player_score_points">player_score_points (in module pyplanet.apps.core.shootmania.callbacks.royal)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.royal.player_spawn">player_spawn (in module pyplanet.apps.core.shootmania.callbacks.royal)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.player_throws_object">player_throws_object (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.player_touches_object">player_touches_object (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.player_triggers_sector">player_triggers_sector (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+</li>
       <li><a href="api/contrib_player.html#pyplanet.contrib.player.PlayerManager">PlayerManager (class in pyplanet.contrib.player)</a>
 </li>
       <li><a href="api/contrib_player.html#pyplanet.contrib.player.exceptions.PlayerNotFound">PlayerNotFound</a>
 </li>
       <li><a href="api/contrib_map.html#pyplanet.contrib.map.MapManager.playlist_has_map">playlist_has_map() (pyplanet.contrib.map.MapManager method)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.map.playlist_modified">playlist_modified (in module pyplanet.apps.core.maniaplanet.callbacks.map)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.podium_end">podium_end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.podium_start">podium_start (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
 </li>
       <li><a href="api/apps.html#pyplanet.apps.Apps.populate">populate() (pyplanet.apps.Apps method)</a>
 
@@ -650,6 +741,28 @@
 </li>
       <li><a href="api/apps.html#module-pyplanet.apps">pyplanet.apps (module)</a>
 </li>
+      <li><a href="signals/maniaplanet.html#module-pyplanet.apps.core.maniaplanet.callbacks.flow">pyplanet.apps.core.maniaplanet.callbacks.flow (module)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#module-pyplanet.apps.core.maniaplanet.callbacks.map">pyplanet.apps.core.maniaplanet.callbacks.map (module)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#module-pyplanet.apps.core.maniaplanet.callbacks.other">pyplanet.apps.core.maniaplanet.callbacks.other (module)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#module-pyplanet.apps.core.maniaplanet.callbacks.player">pyplanet.apps.core.maniaplanet.callbacks.player (module)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#module-pyplanet.apps.core.maniaplanet.callbacks.ui">pyplanet.apps.core.maniaplanet.callbacks.ui (module)</a>
+</li>
+      <li><a href="signals/shootmania.html#module-pyplanet.apps.core.shootmania.callbacks.base">pyplanet.apps.core.shootmania.callbacks.base (module)</a>
+</li>
+      <li><a href="signals/shootmania.html#module-pyplanet.apps.core.shootmania.callbacks.elite">pyplanet.apps.core.shootmania.callbacks.elite (module)</a>
+</li>
+      <li><a href="signals/shootmania.html#module-pyplanet.apps.core.shootmania.callbacks.joust">pyplanet.apps.core.shootmania.callbacks.joust (module)</a>
+</li>
+      <li><a href="signals/shootmania.html#module-pyplanet.apps.core.shootmania.callbacks.royal">pyplanet.apps.core.shootmania.callbacks.royal (module)</a>
+</li>
+      <li><a href="signals/trackmania.html#module-pyplanet.apps.core.trackmania.callbacks">pyplanet.apps.core.trackmania.callbacks (module)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/contrib_command.html#module-pyplanet.contrib.command">pyplanet.contrib.command (module)</a>
 </li>
       <li><a href="api/contrib_command.html#module-pyplanet.contrib.command.exceptions">pyplanet.contrib.command.exceptions (module)</a>
@@ -680,8 +793,6 @@
 </li>
       <li><a href="api/contrib_setting.html#module-pyplanet.contrib.setting.exceptions">pyplanet.contrib.setting.exceptions (module)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/contrib_setting.html#module-pyplanet.contrib.setting.manager">pyplanet.contrib.setting.manager (module)</a>
 </li>
       <li><a href="api/core_events.html#module-pyplanet.core.events.callback">pyplanet.core.events.callback (module)</a>
@@ -762,8 +873,6 @@
         <li><a href="api/core_events.html#pyplanet.core.events.dispatcher.Signal.register">(pyplanet.core.events.dispatcher.Signal method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/core_events.html#pyplanet.core.events.manager._SignalManager.register_signal">register_signal() (pyplanet.core.events.manager._SignalManager method)</a>
 </li>
       <li><a href="api/contrib_map.html#pyplanet.contrib.map.MapManager.remove_map">remove_map() (pyplanet.contrib.map.MapManager method)</a>
@@ -782,7 +891,25 @@
         <li><a href="api/views.html#pyplanet.views.template.TemplateView.render">(pyplanet.views.template.TemplateView method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="signals/trackmania.html#pyplanet.apps.core.trackmania.callbacks.respawn">respawn (in module pyplanet.apps.core.trackmania.callbacks)</a>
+</li>
       <li><a href="api/god.html#pyplanet.god.pool.EnvironmentPool.restart">restart() (pyplanet.god.pool.EnvironmentPool method)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.joust.results">results (in module pyplanet.apps.core.shootmania.callbacks.joust)</a>
+
+      <ul>
+        <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.royal.results">(in module pyplanet.apps.core.shootmania.callbacks.royal)</a>
+</li>
+      </ul></li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.round_end">round_end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.round_end__end">round_end__end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.round_start">round_start (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.round_start__end">round_start__end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -792,9 +919,17 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/contrib_map.html#pyplanet.contrib.map.MapManager.save_matchsettings">save_matchsettings() (pyplanet.contrib.map.MapManager method)</a>
 </li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.base.scores">scores (in module pyplanet.apps.core.shootmania.callbacks.base)</a>
+
+      <ul>
+        <li><a href="signals/trackmania.html#pyplanet.apps.core.trackmania.callbacks.scores">(in module pyplanet.apps.core.trackmania.callbacks)</a>
+</li>
+      </ul></li>
       <li><a href="api/contrib_mode.html#pyplanet.contrib.mode.signals.script_mode_changed">script_mode_changed (in module pyplanet.contrib.mode.signals)</a>
 </li>
       <li><a href="api/utils.html#pyplanet.utils.gbxparser.GbxParser.seek">seek() (pyplanet.utils.gbxparser.GbxParser method)</a>
+</li>
+      <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.joust.selected_players">selected_players (in module pyplanet.apps.core.shootmania.callbacks.joust)</a>
 </li>
       <li><a href="api/core_events.html#pyplanet.core.events.dispatcher.Signal.send">send() (pyplanet.core.events.dispatcher.Signal method)</a>
 </li>
@@ -803,6 +938,14 @@
       <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.exceptions.SerializationException">SerializationException</a>
 </li>
       <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.Setting.serialize_value">serialize_value() (pyplanet.contrib.setting.Setting method)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.server_end">server_end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.server_end__end">server_end__end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.server_start">server_start (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.server_start__end">server_start__end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
 </li>
       <li><a href="api/contrib_map.html#pyplanet.contrib.map.MapManager.set_current_map">set_current_map() (pyplanet.contrib.map.MapManager method)</a>
 </li>
@@ -830,10 +973,10 @@
       </ul></li>
       <li><a href="api/core_events.html#pyplanet.core.events.dispatcher.Signal">Signal (class in pyplanet.core.events.dispatcher)</a>
 </li>
-      <li><a href="api/core_events.html#pyplanet.core.events.dispatcher.Signal.Meta">Signal.Meta (class in pyplanet.core.events.dispatcher)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/core_events.html#pyplanet.core.events.dispatcher.Signal.Meta">Signal.Meta (class in pyplanet.core.events.dispatcher)</a>
+</li>
       <li><a href="api/core_exceptions.html#pyplanet.core.exceptions.SignalException">SignalException</a>
 </li>
       <li><a href="api/core_exceptions.html#pyplanet.core.exceptions.SignalGlueStop">SignalGlueStop</a>
@@ -850,7 +993,13 @@
         <li><a href="api/god.html#pyplanet.god.process.InstanceProcess.start">(pyplanet.god.process.InstanceProcess method)</a>
 </li>
       </ul></li>
+      <li><a href="signals/trackmania.html#pyplanet.apps.core.trackmania.callbacks.start_countdown">start_countdown (in module pyplanet.apps.core.trackmania.callbacks)</a>
+</li>
+      <li><a href="signals/trackmania.html#pyplanet.apps.core.trackmania.callbacks.start_line">start_line (in module pyplanet.apps.core.trackmania.callbacks)</a>
+</li>
       <li><a href="api/core_ui.html#pyplanet.core.ui.components.StaticManiaLink">StaticManiaLink (class in pyplanet.core.ui.components)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.status_changed">status_changed (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
 </li>
       <li><a href="api/core_storage.html#pyplanet.core.storage.storage.Storage">Storage (class in pyplanet.core.storage.storage)</a>
 </li>
@@ -867,6 +1016,8 @@
       <li><a href="api/utils.html#pyplanet.utils.style.STRIP_SHADOWS">STRIP_SHADOWS (in module pyplanet.utils.style)</a>
 </li>
       <li><a href="api/utils.html#pyplanet.utils.style.STRIP_SIZES">STRIP_SIZES (in module pyplanet.utils.style)</a>
+</li>
+      <li><a href="signals/trackmania.html#pyplanet.apps.core.trackmania.callbacks.stunt">stunt (in module pyplanet.apps.core.trackmania.callbacks)</a>
 </li>
       <li><a href="api/utils.html#pyplanet.utils.style.style_strip">style_strip() (in module pyplanet.utils.style)</a>
 </li>
@@ -890,9 +1041,25 @@
 </li>
       <li><a href="api/views.html#pyplanet.views.template.TemplateView">TemplateView (class in pyplanet.views.template)</a>
 </li>
+      <li><a href="api/core_exceptions.html#pyplanet.core.exceptions.TransportException">TransportException</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.turn_end">turn_end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+
+      <ul>
+        <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.elite.turn_end">(in module pyplanet.apps.core.shootmania.callbacks.elite)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/core_exceptions.html#pyplanet.core.exceptions.TransportException">TransportException</a>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.turn_end__end">turn_end__end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.turn_start">turn_start (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+
+      <ul>
+        <li><a href="signals/shootmania.html#pyplanet.apps.core.shootmania.callbacks.elite.turn_start">(in module pyplanet.apps.core.shootmania.callbacks.elite)</a>
+</li>
+      </ul></li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.turn_start__end">turn_start__end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
 </li>
       <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.Setting.type_name">type_name (pyplanet.contrib.setting.Setting attribute)</a>
 </li>
@@ -912,12 +1079,16 @@
       </ul></li>
       <li><a href="api/core_ui.html#pyplanet.core.ui.exceptions.UIException">UIException</a>
 </li>
-      <li><a href="api/core_events.html#pyplanet.core.events.dispatcher.Signal.unregister">unregister() (pyplanet.core.events.dispatcher.Signal method)</a>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.unloading_map_end">unloading_map_end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
 </li>
-      <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.Setting.unserialize_value">unserialize_value() (pyplanet.contrib.setting.Setting method)</a>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.unloading_map_start">unloading_map_start (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="api/core_events.html#pyplanet.core.events.dispatcher.Signal.unregister">unregister() (pyplanet.core.events.dispatcher.Signal method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.Setting.unserialize_value">unserialize_value() (pyplanet.contrib.setting.Setting method)</a>
+</li>
       <li><a href="api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.update_next_settings">update_next_settings() (pyplanet.contrib.mode.ModeManager method)</a>
 </li>
       <li><a href="api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.update_next_variables">update_next_variables() (pyplanet.contrib.mode.ModeManager method)</a>
@@ -939,6 +1110,10 @@
       <li><a href="api/views.html#pyplanet.views.base.View">View (class in pyplanet.views.base)</a>
 </li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.other.vote_updated">vote_updated (in module pyplanet.apps.core.maniaplanet.callbacks.other)</a>
+</li>
+  </ul></td>
 </tr></table>
 
 <h2 id="W">W</h2>
@@ -946,9 +1121,19 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/views.html#pyplanet.views.generics.alert.PromptView.wait_for_input">wait_for_input() (pyplanet.views.generics.alert.PromptView method)</a>
 </li>
+      <li><a href="signals/trackmania.html#pyplanet.apps.core.trackmania.callbacks.warmup_end">warmup_end (in module pyplanet.apps.core.trackmania.callbacks)</a>
+</li>
+      <li><a href="signals/trackmania.html#pyplanet.apps.core.trackmania.callbacks.warmup_end_round">warmup_end_round (in module pyplanet.apps.core.trackmania.callbacks)</a>
+</li>
+      <li><a href="signals/trackmania.html#pyplanet.apps.core.trackmania.callbacks.warmup_start">warmup_start (in module pyplanet.apps.core.trackmania.callbacks)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="signals/trackmania.html#pyplanet.apps.core.trackmania.callbacks.warmup_start_round">warmup_start_round (in module pyplanet.apps.core.trackmania.callbacks)</a>
+</li>
       <li><a href="api/god.html#pyplanet.god.pool.EnvironmentPool.watchdog">watchdog() (pyplanet.god.pool.EnvironmentPool method)</a>
+</li>
+      <li><a href="signals/trackmania.html#pyplanet.apps.core.trackmania.callbacks.waypoint">waypoint (in module pyplanet.apps.core.trackmania.callbacks)</a>
 </li>
       <li><a href="api/god.html#pyplanet.god.process.InstanceProcess.will_restart">will_restart (pyplanet.god.process.InstanceProcess attribute)</a>
 </li>
