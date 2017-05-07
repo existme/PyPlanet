@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Create app &mdash; PyPlanet  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PyPlanet  documentation" href="../index.html"/>
+        <link rel="up" title="App Development" href="index.html"/>
+        <link rel="next" title="Context (UI + Settings)" href="context.html"/>
+        <link rel="prev" title="Life Cycle" href="lifecycle.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib/mx.html">ManiaExchange</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">App Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Apps Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lifecycle.html">Life Cycle</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Create app</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-config">1. Create Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-models">2. Create models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-to-configuration">3. Add to configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enable-debug">4. Enable debug</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-pyplanet">5. Start PyPlanet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context (UI + Settings)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_instance.html">Contrib + Core access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrations.html">Migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#useful-references">Useful references</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">App Development</a> &raquo;</li>
+        
+      <li>Create app</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/apps/create.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="create-app">
+<h1>Create app<a class="headerlink" href="#create-app" title="Permalink to this headline">¶</a></h1>
+<p>You can create an app in different places. For private apps we recommend using the <code class="docutils literal"><span class="pre">apps</span></code> folder in your root project
+directory.</p>
+<p>If you are planning to develop an app for other servers and you want to publish it on PyPi for example, we advise to create
+your own module folder in your development project root.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>You can use the CLI tool to generate an API module for you.</p>
+<p class="last"><strong class="command">pyplanet init_app app_module</strong></p>
+</div>
+<div class="section" id="create-config">
+<h2>1. Create Config<a class="headerlink" href="#create-config" title="Permalink to this headline">¶</a></h2>
+<p>The main entry is the applications config class itself. It is an extended class of the base <a class="reference internal" href="../api/apps.html#pyplanet.apps.AppConfig" title="pyplanet.apps.AppConfig"><code class="xref py py-class docutils literal"><span class="pre">pyplanet.apps.AppConfig</span></code></a>.</p>
+<p>You have to create a file named <code class="docutils literal"><span class="pre">app.py</span></code> in your app module containing the implementation of the config class. Example is bellow.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Admin</span><span class="p">(</span><span class="n">AppConfig</span><span class="p">):</span>
+  <span class="n">game_dependencies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;trackmania&#39;</span><span class="p">,</span> <span class="s1">&#39;shootmania&#39;</span><span class="p">]</span>
+  <span class="c1"># Game dependencies. We will check if the current game is in the list (or).</span>
+  <span class="c1"># Leave undeclared for everything</span>
+
+  <span class="n">mode_dependencies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;TimeAttack&#39;</span><span class="p">]</span>
+  <span class="c1"># All the scripted mode file names that are supported by this app.</span>
+  <span class="c1"># Leave undeclared for everything</span>
+
+  <span class="n">app_dependencies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;core.maniaplanet&#39;</span><span class="p">]</span>
+  <span class="c1"># Dependencies to other apps.</span>
+  <span class="c1"># We will make sure that the dependent apps are started first!</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">property</span> <span class="o">=</span> <span class="s1">&#39;anything here&#39;</span>
+
+  <span class="c1"># Implement the life cycle method if you need them. Make sure you call the super in the methods!</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-models">
+<h2>2. Create models<a class="headerlink" href="#create-models" title="Permalink to this headline">¶</a></h2>
+<p>In the same App module you can either create a single models file calling <code class="docutils literal"><span class="pre">models.py</span></code> or a module <code class="docutils literal"><span class="pre">models</span></code>. When
+you are using the module method, you need to import all the model files in the <code class="docutils literal"><span class="pre">models/__init__.py</span></code>.</p>
+<p>Please take a look at the page <a class="reference internal" href="models.html"><span class="doc">Define models</span></a> on how to create model declarations.</p>
+</div>
+<div class="section" id="add-to-configuration">
+<h2>3. Add to configuration<a class="headerlink" href="#add-to-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you add your new App to your configuration.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">APPS</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;my_app.app.MyApp&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="enable-debug">
+<h2>4. Enable debug<a class="headerlink" href="#enable-debug" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you enable the <cite>DEBUG</cite> mode during development, this prevents the PyPlanet team from thinking that your App
+is giving issues in production environments.</p>
+<p>You can enable debug either with using the environment variable <code class="docutils literal"><span class="pre">PYPLANET_DEBUG</span></code> or by editing the configuration:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">DEBUG</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-pyplanet">
+<h2>5. Start PyPlanet<a class="headerlink" href="#start-pyplanet" title="Permalink to this headline">¶</a></h2>
+<p>Your ready to get started. Start PyPlanet!</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="context.html" class="btn btn-neutral float-right" title="Context (UI + Settings)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lifecycle.html" class="btn btn-neutral" title="Life Cycle" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
