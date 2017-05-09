@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Admin &mdash; PyPlanet 0.0.3 documentation</title>
+  <title>Admin &mdash; PyPlanet 0.1.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PyPlanet 0.0.3 documentation" href="../../index.html"/>
+    <link rel="top" title="PyPlanet 0.1.0 documentation" href="../../index.html"/>
         <link rel="next" title="Jukebox" href="jukebox.html"/>
         <link rel="prev" title="Migrating from old controller" href="../../convert/index.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.0.3
+                0.1.0
               </div>
             
           
@@ -116,6 +116,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#kick-player">Kick player</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ban-player">Ban player</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#unban-player">Unban player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#change-user-admin-level">Change user admin level</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#server">Server</a><ul>
@@ -131,6 +132,7 @@
 <li class="toctree-l1"><a class="reference internal" href="jukebox.html">Jukebox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="karma.html">Karma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dedimania.html">Dedimania Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mapinfo.html">Map Info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mx.html">ManiaExchange</a></li>
@@ -413,6 +415,23 @@ It&#8217;s features can be seperated in to these three areas:</p>
 <dd><code class="docutils literal"><span class="pre">admin:unban</span></code>, requires admin level 2.</dd>
 </dl>
 </div>
+<div class="section" id="change-user-admin-level">
+<h4>Change user admin level<a class="headerlink" href="#change-user-admin-level" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">//level</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Player login.</li>
+<li>(Optional) Level: 0 = player, 1 = operator, 2 = admin, 3 = master admin. Leave empty to remove level (0).</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Changes the admin permission level of the player.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:manage_admins</span></code>, requires admin level 2.</dd>
+</dl>
+</div>
 </div>
 <div class="section" id="server">
 <h3>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h3>
@@ -500,7 +519,7 @@ It&#8217;s features can be seperated in to these three areas:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.0.3',
+            VERSION:'0.1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

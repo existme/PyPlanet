@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; PyPlanet 0.0.3 documentation</title>
+  <title>Changelog &mdash; PyPlanet 0.1.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="PyPlanet 0.0.3 documentation" href="index.html"/>
+    <link rel="top" title="PyPlanet 0.1.0 documentation" href="index.html"/>
         <link rel="next" title="Todo (docs)" href="todo.html"/>
         <link rel="prev" title="Privacy" href="privacy.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.0.3
+                0.1.0
               </div>
             
           
@@ -101,6 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/jukebox.html">Jukebox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/karma.html">Karma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps/contrib/dedimania.html">Dedimania Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/mapinfo.html">Map Info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/mx.html">ManiaExchange</a></li>
@@ -117,17 +118,22 @@
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support, Bug report &amp; Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="privacy.html">Privacy</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">0.0.3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#unreleased">0.1.0 (unreleased)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#core">Core</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#contrib-apps">Contrib Apps</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">0.0.2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Contrib Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">0.0.3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Contrib Apps</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">0.0.1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#core">Core</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Contrib Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">0.0.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Contrib Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">0.0.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Contrib Apps</a></li>
 </ul>
 </li>
 </ul>
@@ -200,37 +206,54 @@
             
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id1">
-<h2>0.0.3<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="unreleased">
+<h2>0.1.0 (unreleased)<a class="headerlink" href="#unreleased" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="core">
+<h3>Core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Add new fields to the <code class="docutils literal"><span class="pre">game</span></code> state class.</li>
+<li>Refresh the <code class="docutils literal"><span class="pre">game</span></code> infos every minute.</li>
+</ul>
+</div>
 <div class="section" id="contrib-apps">
 <h3>Contrib Apps<a class="headerlink" href="#contrib-apps" title="Permalink to this headline">¶</a></h3>
+<p><strong>Dedimania</strong> <cite>pyplanet.apps.contrib.dedimania</cite></p>
+<ul class="simple">
+<li>Adding dedimania integration and widget.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>0.0.3<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Contrib Apps<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p><strong>Local records</strong> <cite>pyplanet.apps.contrib.local_records</cite></p>
 <ul class="simple">
 <li>Bugfix #107: Widget showing wrong offset of records. (Not showing own record if just in the first part of &gt;5 recs).</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>0.0.2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
-<h3>Contrib Apps<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h2>0.0.2<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>Contrib Apps<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p><strong>Local records</strong> <cite>pyplanet.apps.contrib.local_records</cite></p>
 <ul class="simple">
 <li>Bugfix #106: Widget not updating when map changed. Login not found exception.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>0.0.1<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="core">
-<h3>Core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h2>0.0.1<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>Core<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>First implementation of the core.</li>
 <li>First implementation of the CLI tool.</li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h3>Contrib Apps<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>Contrib Apps<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p><strong>Admin</strong> <cite>pyplanet.apps.contrib.admin</cite></p>
 <ul class="simple">
 <li>Feature: Basic map functions: skip / restart / add local / remove / erase / writemaplist</li>
@@ -310,7 +333,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.0.3',
+            VERSION:'0.1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

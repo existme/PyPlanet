@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Karma &mdash; PyPlanet 0.1.0 documentation</title>
+  <title>Dedimania Records &mdash; PyPlanet 0.1.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="PyPlanet 0.1.0 documentation" href="../../index.html"/>
-        <link rel="next" title="Local Records" href="local_records.html"/>
-        <link rel="prev" title="Jukebox" href="jukebox.html"/> 
+        <link rel="next" title="Map Info" href="mapinfo.html"/>
+        <link rel="prev" title="Local Records" href="local_records.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -99,23 +99,23 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="admin.html">Admin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jukebox.html">Jukebox</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Karma</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local_records.html">Local Records</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dedimania Records</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#information">Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#display-votes">Display votes</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#signal-handlers">Signal handlers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#map-begin">Map begin</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#player-chat">Player chat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#map-start">Map start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#map-end">Map end</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#player-connect">Player connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#player-disconnect">Player disconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#player-finish">Player finish</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="local_records.html">Local Records</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dedimania.html">Dedimania Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mapinfo.html">Map Info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mx.html">ManiaExchange</a></li>
@@ -177,14 +177,14 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>Karma</li>
+      <li>Dedimania Records</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/apps/contrib/karma.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/apps/contrib/dedimania.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -198,38 +198,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="karma">
-<h1>Karma<a class="headerlink" href="#karma" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="dedimania-records">
+<h1>Dedimania Records<a class="headerlink" href="#dedimania-records" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="information">
 <h2>Information<a class="headerlink" href="#information" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>Name:</dt>
-<dd><code class="docutils literal"><span class="pre">pyplanet.apps.contrib.karma</span></code></dd>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.contrib.dedimania</span></code></dd>
 <dt>Depends on:</dt>
 <dd><code class="docutils literal"><span class="pre">core.maniaplanet</span></code></dd>
 <dt>Game:</dt>
-<dd>TrackMania, ShootMania</dd>
+<dd>TrackMania</dd>
+<dt>Mode:</dt>
+<dd>TimeAttack + Rounds</dd>
 </dl>
 </div>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
-<p>This app enables players to vote on maps and provides a karma widget.</p>
+<p>This app enables players to have their map records stored at Dedimania.net. Displays widget + list for records.</p>
+<p><strong>Setup:</strong></p>
+<ol class="arabic simple">
+<li>Make sure you generate a Dedimania Code for your server.</li>
+<li>Start PyPlanet with this app enabled.</li>
+<li>Type //settings and edit the two settings for dedimania, paste the code in the code entry.</li>
+<li>Save and restart PyPlanet.</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The Dedimania App has not yet been fully tested with Rounds and Laps modes.</p>
+</div>
 </div>
 <div class="section" id="commands">
 <h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="display-votes">
-<h3>Display votes<a class="headerlink" href="#display-votes" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt>Command:</dt>
-<dd><code class="docutils literal"><span class="pre">/whokarma</span></code></dd>
-<dt>Parameters:</dt>
-<dd>None.</dd>
-<dt>Functionality:</dt>
-<dd>Displays a list of votes cast on the current map.</dd>
-<dt>Required permission:</dt>
-<dd>None.</dd>
-</dl>
-</div>
 </div>
 <div class="section" id="signal-handlers">
 <h2>Signal handlers<a class="headerlink" href="#signal-handlers" title="Permalink to this headline">¶</a></h2>
@@ -239,16 +239,25 @@
 <dt>Signal:</dt>
 <dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.maniaplanet.callbacks.map.map_begin</span></code></dd>
 <dt>Functionality:</dt>
-<dd>Retrieves votes for the new map and updates the karma widget.</dd>
+<dd>Retrieves records for the new map and updates the widget.</dd>
 </dl>
 </div>
-<div class="section" id="player-chat">
-<h3>Player chat<a class="headerlink" href="#player-chat" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="map-start">
+<h3>Map start<a class="headerlink" href="#map-start" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>Signal:</dt>
-<dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.maniaplanet.callbacks.player.player_chat</span></code></dd>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.maniaplanet.callbacks.map.map_start</span></code></dd>
 <dt>Functionality:</dt>
-<dd>Handles chat-based voting (<code class="docutils literal"><span class="pre">++</span></code> or <code class="docutils literal"><span class="pre">--</span></code>).</dd>
+<dd>Used to handle map restarts with saving of dedimania records.</dd>
+</dl>
+</div>
+<div class="section" id="map-end">
+<h3>Map end<a class="headerlink" href="#map-end" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Signal:</dt>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.maniaplanet.callbacks.map.map_end</span></code></dd>
+<dt>Functionality:</dt>
+<dd>Used to save dedimania records.</dd>
 </dl>
 </div>
 <div class="section" id="player-connect">
@@ -257,7 +266,25 @@
 <dt>Signal:</dt>
 <dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.maniaplanet.callbacks.player.player_connect</span></code></dd>
 <dt>Functionality:</dt>
-<dd>Displays the karma widget for the connecting player.</dd>
+<dd>Displaying widget + sending dedimania request.</dd>
+</dl>
+</div>
+<div class="section" id="player-disconnect">
+<h3>Player disconnect<a class="headerlink" href="#player-disconnect" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Signal:</dt>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.maniaplanet.callbacks.player.player_connect</span></code></dd>
+<dt>Functionality:</dt>
+<dd>Sending dedimania request.</dd>
+</dl>
+</div>
+<div class="section" id="player-finish">
+<h3>Player finish<a class="headerlink" href="#player-finish" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Signal:</dt>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.trackmania.finish</span></code></dd>
+<dt>Functionality:</dt>
+<dd>Registers new records.</dd>
 </dl>
 </div>
 </div>
@@ -273,10 +300,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="local_records.html" class="btn btn-neutral float-right" title="Local Records" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mapinfo.html" class="btn btn-neutral float-right" title="Map Info" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="jukebox.html" class="btn btn-neutral" title="Jukebox" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="local_records.html" class="btn btn-neutral" title="Local Records" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
