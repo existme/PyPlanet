@@ -91,6 +91,7 @@
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading.html">Upgrading PyPlanet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Apps Documentation</span></p>
@@ -190,7 +191,7 @@
 preinstalled. To be 100% sure you have to check if you have Python 3 and your version is above 3.5.</p>
 <p><strong>Summary of requirements:</strong></p>
 <ul class="simple">
-<li>Python 3.5+ and pip 9+</li>
+<li>Python 3.5+ and pip 9+ (see bellow for upgrading pip).</li>
 <li>Virtualenv (see: <a class="reference external" href="http://pythoncentral.io/how-to-install-virtualenv-python/">http://pythoncentral.io/how-to-install-virtualenv-python/</a> )</li>
 <li>MySQL Server or PostgreSQL Server.</li>
 <li>Maniaplanet Dedicated MP4+, local or remote.</li>
@@ -202,6 +203,17 @@ Instructions on how to install PyEnv are in the github page &lt;<a class="refere
 <p class="last">After installing you can install the desired python version with: <code class="docutils literal"><span class="pre">pyenv</span> <span class="pre">install</span> <span class="pre">3.6.1</span></code>.
 Also, you can&#8217;t use <cite>virtualenv</cite> when using PyEnv. Use its alternative: <code class="docutils literal"><span class="pre">pyenv</span> <span class="pre">virtualenv</span> <span class="pre">3.6.1</span> <span class="pre">pyplanet</span></code></p>
 </div>
+<p><strong>Installing operating system requirements</strong></p>
+<p>For some libraries, like crypto are some native libraries and build tools required.</p>
+<ul class="simple">
+<li>Ubuntu: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">build-essential</span> <span class="pre">libssl-dev</span> <span class="pre">libffi-dev</span> <span class="pre">python3-dev</span></code></li>
+<li>Fedora/RHEL: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">install</span> <span class="pre">gcc</span> <span class="pre">libffi-devel</span> <span class="pre">python-devel</span> <span class="pre">openssl-devel</span></code> maybe you have to use <code class="docutils literal"><span class="pre">python34-devel</span></code> and <code class="docutils literal"><span class="pre">python34-pip</span></code> as well.</li>
+<li>Windows: Run as Admin: <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">cryptography</span></code></li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If you still get errors with installing with pip, please take a look at: <a class="reference external" href="https://cryptography.io/en/latest/installation/#building-cryptography-on-linux">https://cryptography.io/en/latest/installation/#building-cryptography-on-linux</a></p>
+</div>
 </div>
 <div class="section" id="system-cli-installation">
 <h2>1. System (CLI) Installation<a class="headerlink" href="#system-cli-installation" title="Permalink to this headline">¶</a></h2>
@@ -211,8 +223,13 @@ on your system you need root rights. You can however install PyPlanet in the use
 sudo -H pip install PyPlanet -U
 
 <span class="c1"># Install in ~/.local</span>
-pip --user install PyPlanet -U
+pip install --user PyPlanet -U
 </pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>If you are on Debian or Ubuntu you can also use our wrapper bash script that automatically installs required os packages.</p>
+<p class="last"><code class="docutils literal"><span class="pre">bash</span> <span class="pre">&lt;(curl</span> <span class="pre">-s</span> <span class="pre">https://raw.githubusercontent.com/PyPlanet/PyPlanet/master/docs/scripts/setup.sh)</span></code></p>
 </div>
 <p>After installing it on your system you can use the pyplanet cli commands. To get help about commands, use <code class="docutils literal"><span class="pre">pyplanet</span> <span class="pre">help</span></code>.</p>
 </div>

@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Upgrading PyPlanet &mdash; PyPlanet 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PyPlanet 0.1.0 documentation" href="../index.html"/>
+        <link rel="next" title="Migrating from old controller" href="../convert/index.html"/>
+        <link rel="prev" title="Getting Started" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Upgrading PyPlanet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#check-requirements-txt">1. Check requirements.txt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#activate-env">2. Activate env</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upgrade-pyplanet-core">3. Upgrade PyPlanet core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upgrade-settings">4. Upgrade settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upgrade-apps-setting">5. Upgrade apps setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#start-pyplanet">6. Start PyPlanet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mx.html">ManiaExchange</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Upgrading PyPlanet</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/intro/upgrading.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="section" id="upgrading-pyplanet">
+<h1>Upgrading PyPlanet<a class="headerlink" href="#upgrading-pyplanet" title="Permalink to this headline">¶</a></h1>
+<p>Upgrading an existing installation isn&#8217;t difficult at all. The only thing you really need to be careful about is the
+breaking changes.</p>
+<p>Before upgrading, please check your existing version, and check the <a class="reference internal" href="../changelog.html"><span class="doc">Change Log Document</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We assume you installed PyPlanet with PyPi and initiated your project folder with <code class="docutils literal"><span class="pre">init_project</span></code>.
+If you installed directly from Git, this document may not be suited for you.</p>
+</div>
+<div class="section" id="check-requirements-txt">
+<h2>1. Check requirements.txt<a class="headerlink" href="#check-requirements-txt" title="Permalink to this headline">¶</a></h2>
+<p>In your project root you will find a file called <code class="docutils literal"><span class="pre">requirements.txt</span></code>. This file is the input of the <code class="docutils literal"><span class="pre">pip</span></code> manager in the
+next commands. So it needs to be well maintained.</p>
+<p>By default you will see something like this:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>pyplanet&gt;=0.0.1,&lt;1.0.0
+</pre></div>
+</div>
+<p>This will tell <code class="docutils literal"><span class="pre">pip</span></code> to install a PyPlanet version above 0.0.1, but under 1.0.0. This way you will prevent sudden breaking
+changes that may occur in big new releases, or breaking changes that were introduced to a major Maniaplanet update.</p>
+<p>If you want to upgrade to a newer major version, for example 1.2.0 to 2.0.0. you have to change these numbers here. If not, continue
+to the next step</p>
+</div>
+<div class="section" id="activate-env">
+<h2>2. Activate env<a class="headerlink" href="#activate-env" title="Permalink to this headline">¶</a></h2>
+<p>If you use <code class="docutils literal"><span class="pre">virtualenv</span></code> or <code class="docutils literal"><span class="pre">pyenv</span></code> it&#8217;s now time to activate your virtual environment. Do so with the commands.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Linux</span>
+<span class="nb">source</span> env/bin/activate
+
+<span class="c1"># PyEnv</span>
+pyenv activate pyplanet
+
+<span class="c1"># Windows</span>
+env<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.bat
+</pre></div>
+</div>
+</div>
+<div class="section" id="upgrade-pyplanet-core">
+<h2>3. Upgrade PyPlanet core<a class="headerlink" href="#upgrade-pyplanet-core" title="Permalink to this headline">¶</a></h2>
+<p>Now you can run the <code class="docutils literal"><span class="pre">pip</span></code> command that will upgrade your installation.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install -r requirements.txt --upgrade
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">You may find errors during installation, make sure you have <code class="docutils literal"><span class="pre">openssl,</span> <span class="pre">gcc,</span> <span class="pre">python</span> <span class="pre">development</span></code> installed on your os!</p>
+</div>
+</div>
+<div class="section" id="upgrade-settings">
+<h2>4. Upgrade settings<a class="headerlink" href="#upgrade-settings" title="Permalink to this headline">¶</a></h2>
+<p>See the changelog for new or updated settings and apply the changes now.</p>
+</div>
+<div class="section" id="upgrade-apps-setting">
+<h2>5. Upgrade apps setting<a class="headerlink" href="#upgrade-apps-setting" title="Permalink to this headline">¶</a></h2>
+<p>It can be possible that we introduced new apps in the update. You will find this in the changelog, and all newest apps
+will always be provided in the documentation.</p>
+<p>On the <a class="reference internal" href="configuration.html"><span class="doc">configuration page</span></a> you will always find the latest apps settings entries.</p>
+</div>
+<div class="section" id="start-pyplanet">
+<h2>6. Start PyPlanet<a class="headerlink" href="#start-pyplanet" title="Permalink to this headline">¶</a></h2>
+<p>At the next start it will apply any database migrations automatically.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../convert/index.html" class="btn btn-neutral float-right" title="Migrating from old controller" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
