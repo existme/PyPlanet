@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting Started &mdash; PyPlanet 0.1.0 documentation</title>
+  <title>Getting Started &mdash; PyPlanet 0.1.2 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet 0.1.0 documentation" href="../index.html"/>
+    <link rel="top" title="PyPlanet 0.1.2 documentation" href="../index.html"/>
         <link rel="next" title="Upgrading PyPlanet" href="upgrading.html"/>
         <link rel="prev" title="Welcome to PyPlanet’s documentation!" href="../index.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.1.2
               </div>
             
           
@@ -95,9 +95,10 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#system-cli-installation">1. System (CLI) Installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#virtual-environment-in-your-project">2. Virtual Environment in your project</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#setup-project">2. Setup Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-your-python-and-pip-version">1. Check your Python and PIP version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#virtual-environment-for-your-installation">2. Virtual Environment for your installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyplanet-installation">3. PyPlanet Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-project">4. Setup Project</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
@@ -226,50 +227,64 @@ preinstalled. To be 100% sure you have to check if you have Python 3 and your ve
 <li>MySQL Server or PostgreSQL Server.</li>
 <li>Maniaplanet Dedicated MP4+, local or remote.</li>
 </ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>If your OS does&#8217;t have Python 3.5 or older provided. You could either compile Python for yourself or use PyEnv.
-Instructions on how to install PyEnv are in the github page &lt;<a class="reference external" href="https://github.com/pyenv/pyenv-installer#github-way-recommended">https://github.com/pyenv/pyenv-installer#github-way-recommended</a>&gt;.</p>
-<p class="last">After installing you can install the desired python version with: <code class="docutils literal"><span class="pre">pyenv</span> <span class="pre">install</span> <span class="pre">3.6.1</span></code>.
-Also, you can&#8217;t use <cite>virtualenv</cite> when using PyEnv. Use its alternative: <code class="docutils literal"><span class="pre">pyenv</span> <span class="pre">virtualenv</span> <span class="pre">3.6.1</span> <span class="pre">pyplanet</span></code></p>
-</div>
 <p><strong>Installing operating system requirements</strong></p>
 <p>For some libraries, like crypto are some native libraries and build tools required.</p>
 <ul class="simple">
-<li>Ubuntu: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">build-essential</span> <span class="pre">libssl-dev</span> <span class="pre">libffi-dev</span> <span class="pre">python3-dev</span></code></li>
-<li>Fedora/RHEL: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">install</span> <span class="pre">gcc</span> <span class="pre">libffi-devel</span> <span class="pre">python-devel</span> <span class="pre">openssl-devel</span></code> maybe you have to use <code class="docutils literal"><span class="pre">python34-devel</span></code> and <code class="docutils literal"><span class="pre">python34-pip</span></code> as well.</li>
+<li>Ubuntu: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">build-essential</span> <span class="pre">libssl-dev</span> <span class="pre">libffi-dev</span> <span class="pre">python3-dev</span> <span class="pre">zlib1g-dev</span></code></li>
+<li>Fedora/RHEL: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">install</span> <span class="pre">gcc</span> <span class="pre">libffi-devel</span> <span class="pre">python3-devel</span> <span class="pre">openssl-devel</span> <span class="pre">zlib</span></code>.</li>
 <li>Windows: Run as Admin: <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">cryptography</span></code></li>
 </ul>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">If you still get errors with installing with pip, please take a look at: <a class="reference external" href="https://cryptography.io/en/latest/installation/#building-cryptography-on-linux">https://cryptography.io/en/latest/installation/#building-cryptography-on-linux</a></p>
-</div>
-</div>
-<div class="section" id="system-cli-installation">
-<h3>1. System (CLI) Installation<a class="headerlink" href="#system-cli-installation" title="Permalink to this headline">¶</a></h3>
-<p>PyPlanet is published through the Python Package Index (PyPi) and is easy to install with <code class="docutils literal"><span class="pre">pip</span></code>. To install PyPlanet
-on your system you need root rights. You can however install PyPlanet in the users pip context.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Install as root:</span>
-sudo -H pip install PyPlanet -U
-
-<span class="c1"># Install in ~/.local</span>
-pip install --user PyPlanet -U
-</pre></div>
-</div>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p>If you are on Debian or Ubuntu you can also use our wrapper bash script that automatically installs required os packages.</p>
+<p>If you still get errors with installing with pip, please take a look at: <a class="reference external" href="https://cryptography.io/en/latest/installation/#building-cryptography-on-linux">https://cryptography.io/en/latest/installation/#building-cryptography-on-linux</a></p>
+<p>If you are on Ubuntu 16.04 or later you can also use our wrapper bash script that automatically installs required os packages.</p>
 <p class="last"><code class="docutils literal"><span class="pre">bash</span> <span class="pre">&lt;(curl</span> <span class="pre">-s</span> <span class="pre">https://raw.githubusercontent.com/PyPlanet/PyPlanet/master/docs/scripts/setup.sh)</span></code></p>
 </div>
-<p>After installing it on your system you can use the pyplanet cli commands. To get help about commands, use <code class="docutils literal"><span class="pre">pyplanet</span> <span class="pre">help</span></code>.</p>
 </div>
-<div class="section" id="virtual-environment-in-your-project">
-<h3>2. Virtual Environment in your project<a class="headerlink" href="#virtual-environment-in-your-project" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="check-your-python-and-pip-version">
+<h3>1. Check your Python and PIP version<a class="headerlink" href="#check-your-python-and-pip-version" title="Permalink to this headline">¶</a></h3>
+<p>First of all you have to check if your operating system has Python 3.5 or higher installed. To find out, type the following
+commands in the command shell.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>python3 --version
+<span class="c1"># OR</span>
+python --version
+</pre></div>
+</div>
+<p>The output should show this <code class="docutils literal"><span class="pre">Python</span> <span class="pre">3.5.2</span></code> and the version number should be <strong>3.5 or higher</strong>!
+If this is not the case you could check if your operating system has Python 3.5 support from it&#8217;s package manager.
+Ubuntu 16.04 and higher has Python 3.5, Debian 8 has no 3.5.</p>
+<p>Windows, download Python 3.6 from the site: <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
+<p><strong>PyEnv</strong></p>
+<p>If your operating system doesn&#8217;t provide you 3.5 or higher, you have to use PyEnv. To install PyEnv execute the following
+commands:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Execute this as the user you want to install PyPlanet for</span>
+curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer <span class="p">|</span> bash
+</pre></div>
+</div>
+<p>After installing you would have to edit your ~/.bashrc file and add the following lines:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;~/.pyenv/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>pyenv init -<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>pyenv virtualenv-init -<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Restart your SSH session right now to activate the PyEnv installation.</p>
+<p>Next up is the installation of Python 3.6 with PyEnv, you can do this by executing the following shell commands.
+This can take some time</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pyenv install <span class="m">3</span>.6.1
+</pre></div>
+</div>
+</div>
+<div class="section" id="virtual-environment-for-your-installation">
+<h3>2. Virtual Environment for your installation<a class="headerlink" href="#virtual-environment-for-your-installation" title="Permalink to this headline">¶</a></h3>
 <p>We recommend using a <cite>virtualenv</cite> to install PyPlanet, and keep the version separate for multiple projects/dedicated servers.
 With this method you won&#8217;t have to upgrade all servers at the same time and don&#8217;t have any issues with system managed python
 packages.</p>
 <p>In order to create a virtualenv you need to have the virtualenv tools installed. To install virtualenv, execute the following command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Linux</span>
+<p><strong>Using `virtualenv`</strong>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Ubuntu + Debian</span>
+sudo apt-get install virtualenv
+
+<span class="c1"># Generic Other Linux</span>
 sudo -H pip install virtualenv
 
 <span class="c1"># Windows (run cmd as administrator)</span>
@@ -293,9 +308,33 @@ pyenv activate pyplanet
 env<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.bat
 </pre></div>
 </div>
+<p><strong>Using PyEnv</strong></p>
+<p>With PyEnv it&#8217;s slightly different, you have to create a virtualenv, but this virtualenv is not located in the same
+folder as you are in now.</p>
+<p>Create virtualenv with the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pyenv virtualenv <span class="m">3</span>.6.1 pyplanet
+<span class="c1"># 3.6.1 = your installed python version</span>
+<span class="c1"># pyplanet = name you will give your virtualenv. Can be anything. remember it of course!</span>
+</pre></div>
+</div>
+<p>Activating the virtualenv is pretty easy with PyEnv:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pyenv activate pyplanet
+<span class="c1"># Where pyplanet is your virtualenv name.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pyplanet-installation">
+<h3>3. PyPlanet Installation<a class="headerlink" href="#pyplanet-installation" title="Permalink to this headline">¶</a></h3>
+<p>PyPlanet is published through the Python Package Index (PyPi) and is easy to install with <code class="docutils literal"><span class="pre">pip</span></code>. <strong>Make sure you activated
+your virtualenv first!</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Install as root:</span>
+pip install pyplanet -U
+</pre></div>
+</div>
+<p>After installing it on your system you can use the pyplanet cli commands. To get help about commands, use <code class="docutils literal"><span class="pre">pyplanet</span> <span class="pre">help</span></code>.</p>
 </div>
 <div class="section" id="setup-project">
-<h3>2. Setup Project<a class="headerlink" href="#setup-project" title="Permalink to this headline">¶</a></h3>
+<h3>4. Setup Project<a class="headerlink" href="#setup-project" title="Permalink to this headline">¶</a></h3>
 <p>After installing PyPlanet on your system, you can&#8217;t yet start any instances because starting requires you to give up an
 settings module. You could either provide this with the start command or create a project directory with skeleton files.</p>
 <p>We recommend using the <code class="docutils literal"><span class="pre">init_project</span></code> command to create a local project installation where you can install apps, keep
@@ -380,6 +419,10 @@ these <em>database drivers</em>:</p>
 <li><code class="docutils literal"><span class="pre">peewee_async.MySQLDatabase</span></code>: Using PyMySQL, a full Python based driver. (Supports MariaDB and PerconaDB).</li>
 <li><code class="docutils literal"><span class="pre">peewee_async.PostgresqlDatabase</span></code>: Using a full native Python driver.</li>
 </ul>
+<p><strong>Creating database</strong>:</p>
+<p>You will have to create the database scheme yourself. Make sure you create it with a database collate that is based on
+UTF-8. We recommend for MySQL: <code class="docutils literal"><span class="pre">utf8_generic_ci</span></code>.</p>
+<p><strong>Configuration</strong></p>
 <p>Configuration can follow the following examples:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># Using PostgreSQL.</span>
 <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
@@ -536,7 +579,7 @@ Please take a look at our <a class="reference internal" href="../changelog.html"
 ready to start up the controller itself.</p>
 <div class="section" id="activate-virtualenv">
 <h3>Activate virtualenv<a class="headerlink" href="#activate-virtualenv" title="Permalink to this headline">¶</a></h3>
-<p>You always have to be in the projects virtualenv if you have enabled this during the installation.</p>
+<p>You always have to be in the projects virtualenv!</p>
 <p><strong>virtualenv</strong>:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Linux / Mac OS</span>
 <span class="nb">source</span> env/bin/activate
@@ -545,8 +588,9 @@ ready to start up the controller itself.</p>
 env<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.bat
 </pre></div>
 </div>
-<p><strong>pyenv</strong>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>pyenv activate my-virtual-env
+<p><strong>PyEnv</strong>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pyenv activate pyplanet
+<span class="c1"># pyplanet is your virtualenv name here!</span>
 </pre></div>
 </div>
 </div>
@@ -605,7 +649,7 @@ env<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.bat
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.1.0',
+            VERSION:'0.1.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Configuration &mdash; PyPlanet 0.1.0 documentation</title>
+  <title>Configuration &mdash; PyPlanet 0.1.2 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet 0.1.0 documentation" href="../index.html"/> 
+    <link rel="top" title="PyPlanet 0.1.2 documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.1.2
               </div>
             
           
@@ -91,6 +91,7 @@
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading.html">Upgrading PyPlanet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Apps Documentation</span></p>
@@ -244,6 +245,10 @@ these <em>database drivers</em>:</p>
 <li><code class="docutils literal"><span class="pre">peewee_async.MySQLDatabase</span></code>: Using PyMySQL, a full Python based driver. (Supports MariaDB and PerconaDB).</li>
 <li><code class="docutils literal"><span class="pre">peewee_async.PostgresqlDatabase</span></code>: Using a full native Python driver.</li>
 </ul>
+<p><strong>Creating database</strong>:</p>
+<p>You will have to create the database scheme yourself. Make sure you create it with a database collate that is based on
+UTF-8. We recommend for MySQL: <code class="docutils literal"><span class="pre">utf8_generic_ci</span></code>.</p>
+<p><strong>Configuration</strong></p>
 <p>Configuration can follow the following examples:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># Using PostgreSQL.</span>
 <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
@@ -422,7 +427,7 @@ Please take a look at our <a class="reference internal" href="../changelog.html"
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.1.0',
+            VERSION:'0.1.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

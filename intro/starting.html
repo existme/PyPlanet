@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Starting PyPlanet &mdash; PyPlanet 0.1.0 documentation</title>
+  <title>Starting PyPlanet &mdash; PyPlanet 0.1.2 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet 0.1.0 documentation" href="../index.html"/> 
+    <link rel="top" title="PyPlanet 0.1.2 documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.1.2
               </div>
             
           
@@ -91,6 +91,7 @@
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading.html">Upgrading PyPlanet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Apps Documentation</span></p>
@@ -196,7 +197,7 @@
 ready to start up the controller itself.</p>
 <div class="section" id="activate-virtualenv">
 <h2>Activate virtualenv<a class="headerlink" href="#activate-virtualenv" title="Permalink to this headline">¶</a></h2>
-<p>You always have to be in the projects virtualenv if you have enabled this during the installation.</p>
+<p>You always have to be in the projects virtualenv!</p>
 <p><strong>virtualenv</strong>:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Linux / Mac OS</span>
 <span class="nb">source</span> env/bin/activate
@@ -205,8 +206,9 @@ ready to start up the controller itself.</p>
 env<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.bat
 </pre></div>
 </div>
-<p><strong>pyenv</strong>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>pyenv activate my-virtual-env
+<p><strong>PyEnv</strong>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pyenv activate pyplanet
+<span class="c1"># pyplanet is your virtualenv name here!</span>
 </pre></div>
 </div>
 </div>
@@ -255,7 +257,7 @@ env<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.bat
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.1.0',
+            VERSION:'0.1.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
