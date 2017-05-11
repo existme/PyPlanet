@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting Started &mdash; PyPlanet 0.1.4 documentation</title>
+  <title>Getting Started &mdash; PyPlanet 0.1.5 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet 0.1.4 documentation" href="../index.html"/>
+    <link rel="top" title="PyPlanet 0.1.5 documentation" href="../index.html"/>
         <link rel="next" title="Upgrading PyPlanet" href="upgrading.html"/>
         <link rel="prev" title="Welcome to PyPlanet’s documentation!" href="../index.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.1.4
+                0.1.5
               </div>
             
           
@@ -292,8 +292,11 @@ pip install virtualenv
 </pre></div>
 </div>
 <p>From now on you can create virtualenv environments.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Linux + windows (cmd)</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Linux</span>
 virtualenv -p python3 env
+
+<span class="c1"># Windows:</span>
+virtualenv -p <span class="o">[</span>full path to python3 executable<span class="o">]</span> env
 </pre></div>
 </div>
 <p>From now you have to activate the virtualenv, every time you want to execute operations with PyPlanet (such as starting, installing, updating, etc).
@@ -421,7 +424,7 @@ these <em>database drivers</em>:</p>
 </ul>
 <p><strong>Creating database</strong>:</p>
 <p>You will have to create the database scheme yourself. Make sure you create it with a database collate that is based on
-UTF-8. We recommend for MySQL: <code class="docutils literal"><span class="pre">utf8_generic_ci</span></code>.</p>
+UTF-8. We recommend for MySQL: <code class="docutils literal"><span class="pre">utf8mb4_unicode_ci</span></code> to work with the new symbols in Maniaplanet.</p>
 <p><strong>Configuration</strong></p>
 <p>Configuration can follow the following examples:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># Using PostgreSQL.</span>
@@ -649,7 +652,7 @@ env<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.bat
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.1.4',
+            VERSION:'0.1.5',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

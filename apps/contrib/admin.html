@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Admin &mdash; PyPlanet 0.1.4 documentation</title>
+  <title>Admin &mdash; PyPlanet 0.1.5 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PyPlanet 0.1.4 documentation" href="../../index.html"/>
+    <link rel="top" title="PyPlanet 0.1.5 documentation" href="../../index.html"/>
         <link rel="next" title="Jukebox" href="jukebox.html"/>
         <link rel="prev" title="Migrating from old controller" href="../../convert/index.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.1.4
+                0.1.5
               </div>
             
           
@@ -121,6 +121,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#server">Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-server-name">Set server name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-game-mode">Set game mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#set-server-password">Set server password</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id1">Set server password</a></li>
 </ul>
@@ -436,6 +438,38 @@ It&#8217;s features can be seperated in to these three areas:</p>
 </div>
 <div class="section" id="server">
 <h3>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="set-server-name">
+<h4>Set server name<a class="headerlink" href="#set-server-name" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">//servername</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Server name.</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Changes the server name.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:servername</span></code>, requires admin level 2.</dd>
+</dl>
+</div>
+<div class="section" id="set-game-mode">
+<h4>Set game mode<a class="headerlink" href="#set-game-mode" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">//mode</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Game mode &#8216;ta&#8217;, &#8216;laps&#8217;, &#8216;rounds&#8217;, &#8216;cup&#8217; or any script name (e.g. &#8216;Rounds.Script.txt&#8217;)</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Changes the server game mode script.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:mode</span></code>, requires admin level 2.</dd>
+</dl>
+</div>
 <div class="section" id="set-server-password">
 <h4>Set server password<a class="headerlink" href="#set-server-password" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
@@ -520,7 +554,7 @@ It&#8217;s features can be seperated in to these three areas:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.1.4',
+            VERSION:'0.1.5',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

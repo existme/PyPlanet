@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; PyPlanet 0.1.4 documentation</title>
+  <title>Changelog &mdash; PyPlanet 0.1.5 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="PyPlanet 0.1.4 documentation" href="index.html"/>
+    <link rel="top" title="PyPlanet 0.1.5 documentation" href="index.html"/>
         <link rel="next" title="Todo (docs)" href="todo.html"/>
         <link rel="prev" title="Privacy" href="privacy.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.1.4
+                0.1.5
               </div>
             
           
@@ -119,39 +119,44 @@
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support, Bug report &amp; Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="privacy.html">Privacy</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">0.1.4</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">0.1.5</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#core">Core</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">0.1.3</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#apps">Apps</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">0.1.2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">0.1.4</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Core</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">0.1.3</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id5">Apps</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">0.1.1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id6">0.1.2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id7">Core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Apps</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">0.1.0</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id9">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">0.1.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Core</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">0.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Core</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#contrib-apps">Contrib Apps</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id10">0.0.3</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id11">Contrib Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">0.0.3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id14">Contrib Apps</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id12">0.0.2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id13">Contrib Apps</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#id14">0.0.1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id15">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">0.0.2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id16">Contrib Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">0.0.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">Contrib Apps</a></li>
 </ul>
 </li>
 </ul>
@@ -225,35 +230,53 @@
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>0.1.4<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>0.1.5<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="core">
 <h3>Core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Bugfix: Fixing several issues related to the connection and parsing of the payload.</li>
+<li>Bugfix: Fixing issue with the BeginMatch callback.</li>
+</ul>
+</div>
+<div class="section" id="apps">
+<h3>Apps<a class="headerlink" href="#apps" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Bugfix: Fixing several issues with the dedimania app.</li>
+<li>Bugfix: Fixing issue with local and dedimania records being saved double (2 records for 1 player). (#157).</li>
+<li>Bugfix: Fixing several exception handling in dedimania app.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>0.1.4<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>Core<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Bugfix: Undo locking, causing freeze.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>0.1.3<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="apps">
-<h3>Apps<a class="headerlink" href="#apps" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h2>0.1.3<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>Apps<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Bugfix: Fixing issue in dedimania causing crash.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>0.1.2<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id4">
-<h3>Core<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h2>0.1.2<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>Core<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Bugfix: Filter out XML parse error of Dedicated Server (#121).</li>
 <li>Bugfix: Give copy of connected players instead of a reference to prevent change of list when looping (#117).</li>
 <li>Bugfix: Fixing issue when player rapidly connects and disconnects, giving error (#126 &amp; #116).</li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h3>Apps<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>Apps<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Bugfix Karma: Fixing whokarma list not displaying due to error (#122 &amp; #118).</li>
 <li>Bugfix Dedimania: Reconnection issues (#130).</li>
@@ -263,19 +286,19 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id6">
-<h2>0.1.1<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id7">
-<h3>Core<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h2>0.1.1<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>Core<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Fixing issue with creating migrations folder when no permission.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id8">
-<h2>0.1.0<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id9">
-<h3>Core<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h2>0.1.0<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>Core<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Add new fields to the <code class="docutils literal"><span class="pre">game</span></code> state class.</li>
 <li>Refresh the <code class="docutils literal"><span class="pre">game</span></code> infos every minute.</li>
@@ -288,35 +311,35 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id10">
-<h2>0.0.3<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id11">
-<h3>Contrib Apps<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h2>0.0.3<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h3>Contrib Apps<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Bugfix Local Records: Widget showing wrong offset of records. (Not showing own record if just in the first part of &gt;5 recs) (#107).</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id12">
-<h2>0.0.2<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id13">
-<h3>Contrib Apps<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h2>0.0.2<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id16">
+<h3>Contrib Apps<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Bugfix Local Records: Widget not updating when map changed. Login not found exception. (#106).</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id14">
-<h2>0.0.1<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id15">
-<h3>Core<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h2>0.0.1<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id18">
+<h3>Core<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>First implementation of the core.</li>
 <li>First implementation of the CLI tool.</li>
 </ul>
 </div>
-<div class="section" id="id16">
-<h3>Contrib Apps<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id19">
+<h3>Contrib Apps<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <p><strong>Admin</strong> <cite>pyplanet.apps.contrib.admin</cite></p>
 <ul class="simple">
 <li>Feature: Basic map functions: skip / restart / add local / remove / erase / writemaplist</li>
@@ -396,7 +419,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.1.4',
+            VERSION:'0.1.5',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
