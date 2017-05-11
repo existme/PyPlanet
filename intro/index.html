@@ -425,6 +425,12 @@ these <em>database drivers</em>:</p>
 <p><strong>Creating database</strong>:</p>
 <p>You will have to create the database scheme yourself. Make sure you create it with a database collate that is based on
 UTF-8. We recommend for MySQL: <code class="docutils literal"><span class="pre">utf8mb4_unicode_ci</span></code> to work with the new symbols in Maniaplanet.</p>
+<p>Create MySQL Database by running this command:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">pyplanet</span>
+  <span class="nb">CHARACTER</span> <span class="k">SET</span> <span class="n">utf8mb4</span>
+  <span class="k">COLLATE</span> <span class="n">utf8mb4_unicode_ci</span><span class="p">;</span>
+</pre></div>
+</div>
 <p><strong>Configuration</strong></p>
 <p>Configuration can follow the following examples:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># Using PostgreSQL.</span>
