@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyplanet.contrib.setting &mdash; PyPlanet 0.1.5 documentation</title>
+  <title>pyplanet.contrib.setting &mdash; PyPlanet 0.2.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet 0.1.5 documentation" href="../index.html"/>
+    <link rel="top" title="PyPlanet 0.2.0 documentation" href="../index.html"/>
         <link rel="up" title="API Documentation" href="index.html"/>
         <link rel="next" title="pyplanet.contrib.mode" href="contrib_mode.html"/>
         <link rel="prev" title="pyplanet.contrib.permission" href="contrib_permission.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.1.5
+                0.2.0
               </div>
             
           
@@ -252,6 +252,30 @@ Returns a dict with label as key, and count + name as values.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="pyplanet.contrib.setting.manager.AppSettingManager.get_setting">
+<code class="descname">get_setting</code><span class="sig-paren">(</span><em>key</em>, <em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.manager.AppSettingManager.get_setting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get setting by key and optionally fetch the value if not yet fetched.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>key</strong> &#8211; Key string</li>
+<li><strong>prefetch_values</strong> &#8211; Prefetch the values if not yet fetched?</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Setting instance.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raise:</th><td class="field-body"><p class="first last">SettingException</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="pyplanet.contrib.setting.manager.AppSettingManager.register">
 <code class="descname">register</code><span class="sig-paren">(</span><em>*settings</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.manager.AppSettingManager.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register your setting(s). This will create default values when the setting has not yet been inited before.</p>
@@ -357,6 +381,31 @@ Returns a dict with label as key, and count + name as values.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prefetch_values</strong> &#8211; Prefetch the values in this call. Defaults to True.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">List with setting objects.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyplanet.contrib.setting.manager.GlobalSettingManager.get_setting">
+<code class="descname">get_setting</code><span class="sig-paren">(</span><em>app_label</em>, <em>key</em>, <em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.manager.GlobalSettingManager.get_setting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get setting by key and optionally fetch the value if not yet fetched.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>app_label</strong> &#8211; Namespace (mostly app label).</li>
+<li><strong>key</strong> &#8211; Key string</li>
+<li><strong>prefetch_values</strong> &#8211; Prefetch the values if not yet fetched?</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Setting instance.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raise:</th><td class="field-body"><p class="first last">SettingException</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -626,6 +675,31 @@ Returns a dict with label as key, and count + name as values.</p>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="pyplanet.contrib.setting.GlobalSettingManager.get_setting">
+<code class="descname">get_setting</code><span class="sig-paren">(</span><em>app_label</em>, <em>key</em>, <em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.get_setting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get setting by key and optionally fetch the value if not yet fetched.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>app_label</strong> &#8211; Namespace (mostly app label).</li>
+<li><strong>key</strong> &#8211; Key string</li>
+<li><strong>prefetch_values</strong> &#8211; Prefetch the values if not yet fetched?</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Setting instance.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raise:</th><td class="field-body"><p class="first last">SettingException</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="pyplanet.contrib.setting.GlobalSettingManager.recursive_settings">
 <code class="descname">recursive_settings</code><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.recursive_settings" title="Permalink to this definition">¶</a></dt>
@@ -699,7 +773,7 @@ Returns a dict with label as key, and count + name as values.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.1.5',
+            VERSION:'0.2.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

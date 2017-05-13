@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Admin &mdash; PyPlanet 0.1.5 documentation</title>
+  <title>Admin &mdash; PyPlanet 0.2.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PyPlanet 0.1.5 documentation" href="../../index.html"/>
+    <link rel="top" title="PyPlanet 0.2.0 documentation" href="../../index.html"/>
         <link rel="next" title="Jukebox" href="jukebox.html"/>
         <link rel="prev" title="Migrating from old controller" href="../../convert/index.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.1.5
+                0.2.0
               </div>
             
           
@@ -102,6 +102,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#information">Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pyplanet">PyPlanet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#reboot-pyplanet-pool-process">Reboot PyPlanet Pool Process</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#maps">Maps</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#skip-map">Skip map</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#restart-map">Restart map</a></li>
@@ -123,6 +127,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#server">Server</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#set-server-name">Set server name</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#set-game-mode">Set game mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-set-game-mode-settings">Get/set game mode settings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#set-server-password">Set server password</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id1">Set server password</a></li>
 </ul>
@@ -243,13 +248,29 @@ It&#8217;s features can be seperated in to these three areas:</p>
 </div>
 <div class="section" id="commands">
 <h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pyplanet">
+<h3>PyPlanet<a class="headerlink" href="#pyplanet" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="reboot-pyplanet-pool-process">
+<h4>Reboot PyPlanet Pool Process<a class="headerlink" href="#reboot-pyplanet-pool-process" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">//reboot</span></code></dd>
+<dt>Parameters:</dt>
+<dd>None.</dd>
+<dt>Functionality:</dt>
+<dd>Reboot pyplanet pool process.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:reboot</span></code>, requires admin level 3.</dd>
+</dl>
+</div>
+</div>
 <div class="section" id="maps">
 <h3>Maps<a class="headerlink" href="#maps" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="skip-map">
 <h4>Skip map<a class="headerlink" href="#skip-map" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
 <dt>Command:</dt>
-<dd><code class="docutils literal"><span class="pre">//next</span></code></dd>
+<dd><code class="docutils literal"><span class="pre">//next</span></code> / <code class="docutils literal"><span class="pre">//skip</span></code></dd>
 <dt>Parameters:</dt>
 <dd>None.</dd>
 <dt>Functionality:</dt>
@@ -470,6 +491,21 @@ It&#8217;s features can be seperated in to these three areas:</p>
 <dd><code class="docutils literal"><span class="pre">admin:mode</span></code>, requires admin level 2.</dd>
 </dl>
 </div>
+<div class="section" id="get-set-game-mode-settings">
+<h4>Get/set game mode settings<a class="headerlink" href="#get-set-game-mode-settings" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">//modesettings</span></code></dd>
+<dt>Parameters:</dt>
+<dd>None, or:
+* Setting name
+* New setting value</dd>
+<dt>Functionality:</dt>
+<dd>Displays a list of current mode settings (no parameters) or changes a setting according with the given parameters.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:mode</span></code>, requires admin level 2.</dd>
+</dl>
+</div>
 <div class="section" id="set-server-password">
 <h4>Set server password<a class="headerlink" href="#set-server-password" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
@@ -554,7 +590,7 @@ It&#8217;s features can be seperated in to these three areas:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.1.5',
+            VERSION:'0.2.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
