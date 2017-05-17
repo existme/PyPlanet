@@ -1,0 +1,678 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.views.generics.list &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.views.generics.list</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/views/generics/list" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.views.generics.list</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">asyncio</span> <span class="k">import</span> <span class="n">iscoroutinefunction</span>
+<span class="kn">from</span> <span class="nn">peewee</span> <span class="k">import</span> <span class="n">Field</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.utils</span> <span class="k">import</span> <span class="n">style</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.apps.core.maniaplanet.models</span> <span class="k">import</span> <span class="n">Player</span>
+<span class="kn">from</span> <span class="nn">pyplanet.core.db</span> <span class="k">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">pyplanet.views.template</span> <span class="k">import</span> <span class="n">TemplateView</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ListView"><a class="viewcode-back" href="../../../../api/views.html#pyplanet.views.generics.list.ListView">[docs]</a><span class="k">class</span> <span class="nc">ListView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	The ListView is an abstract list that uses a database query to show and manipulate the list that is presented to the</span>
+<span class="sd">	end-user. The ListView is able to automatically manage the searching, ordering and pagination of your query contents.</span>
+<span class="sd">	</span>
+<span class="sd">	The columns could be specified, for each column you can change behaviour, such as searchable and sortable. But also</span>
+<span class="sd">	custom rendering of the values that will be displayed.</span>
+<span class="sd">	</span>
+<span class="sd">	You can override ``get_fields()``, ``get_actions()``, ``get_query()`` if you need any customization or use a self method</span>
+<span class="sd">	or variable in one of your properties.</span>
+<span class="sd">	</span>
+<span class="sd">	.. note::</span>
+<span class="sd">	</span>
+<span class="sd">		The design and some behaviour can change in updates of PyPlanet. We aim to provide backward compatibility as much</span>
+<span class="sd">		as we can. If we are going to break things we will make it deprecated, or if we are in a situation of not having</span>
+<span class="sd">		enough time to provide a transition time, we are going to create a separate solution (like a second version).</span>
+
+<span class="sd">	.. code-block:: python</span>
+<span class="sd">	</span>
+<span class="sd">		class SampleListView(ListView):</span>
+<span class="sd">			query = Model.select()</span>
+<span class="sd">			model = Model</span>
+<span class="sd">			title = &#39;Select your item&#39;</span>
+<span class="sd">			fields = [</span>
+<span class="sd">				{&#39;name&#39;: &#39;Name&#39;, &#39;index&#39;: &#39;name&#39;, &#39;searching&#39;: True, &#39;sorting&#39;: True},</span>
+<span class="sd">				{&#39;name&#39;: &#39;Author&#39;, &#39;index&#39;: &#39;author&#39;, &#39;searching&#39;: True, &#39;sorting&#39;: True},</span>
+<span class="sd">			]</span>
+<span class="sd">			actions = [</span>
+<span class="sd">				{</span>
+<span class="sd">					&#39;name&#39;: &#39;Delete&#39;,</span>
+<span class="sd">					&#39;action&#39;: self.action_delete,</span>
+<span class="sd">					&#39;style&#39;: &#39;Icons64x64_1&#39;,</span>
+<span class="sd">					&#39;substyle&#39;: &#39;Close&#39;</span>
+<span class="sd">				},</span>
+<span class="sd">			]</span>
+<span class="sd">			</span>
+<span class="sd">			async def action_delete(self, player, values, instance, **kwargs):</span>
+<span class="sd">				print(&#39;Delete value: {}&#39;.format(instance))</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">query</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">model</span> <span class="o">=</span> <span class="kc">None</span>
+
+	<span class="n">title</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">icon_style</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">icon_substyle</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">fields</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">actions</span> <span class="o">=</span> <span class="p">[]</span>
+
+	<span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;core.views/generics/list.xml&#39;</span>
+
+	<span class="n">single_list</span> <span class="o">=</span> <span class="kc">True</span>
+	<span class="sd">&quot;&quot;&quot;Change this to False to have multiple lists open at the same time.&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s1">&#39;pyplanet.views.generics.list.ListView&#39;</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">search_text</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">sort_order</span> <span class="o">=</span> <span class="mi">1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">=</span> <span class="mi">1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">num_per_page</span> <span class="o">=</span> <span class="mi">20</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">provide_search</span> <span class="o">=</span> <span class="kc">True</span>
+
+		<span class="c1">#if self.single_list:</span>
+			<span class="c1">#self.id = &#39;pyplanet__generics_list&#39;</span>
+
+		<span class="c1"># Setup the receivers.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s1">&#39;list_button_close&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s1">&#39;list_button_refresh&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s1">&#39;list_button_search&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_search</span><span class="p">)</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s1">&#39;list_button_first&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_first_page</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s1">&#39;list_button_prev_10&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prev_10_pages</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s1">&#39;list_button_prev&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prev_page</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s1">&#39;list_button_next&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_page</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s1">&#39;list_button_next_10&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_10_pages</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s1">&#39;list_button_last&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_page</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">order</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span><span class="p">,</span> <span class="n">Field</span><span class="p">):</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_order</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span><span class="p">:</span>
+				<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span>
+			<span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_order</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span><span class="p">:</span>
+				<span class="k">return</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span>
+		<span class="k">return</span> <span class="kc">None</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">handle_catch_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="c1"># Sorting the column:</span>
+		<span class="k">if</span> <span class="n">action</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;list_header_&#39;</span><span class="p">):</span>
+			<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;^list_header_([0-9]+)$&#39;</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+				<span class="k">return</span>
+
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">col</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+				<span class="n">fields</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_fields</span><span class="p">()</span>
+				<span class="n">field</span> <span class="o">=</span> <span class="n">fields</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+			<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+				<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Got invalid result in list column click: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+				<span class="k">return</span>
+
+			<span class="c1"># Check if sorting is defined + true.</span>
+			<span class="k">if</span> <span class="s1">&#39;sorting&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">field</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">field</span><span class="p">[</span><span class="s1">&#39;sorting&#39;</span><span class="p">]</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">field</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]:</span>
+				<span class="k">return</span>
+
+			<span class="c1"># Sort on column</span>
+			<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">Model</span><span class="p">):</span>
+				<span class="n">sort_field</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">field</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">])</span>
+				<span class="n">current_field_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span><span class="o">.</span><span class="n">db_column</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span> <span class="k">else</span> <span class="kc">None</span>
+				<span class="n">field_name</span> <span class="o">=</span> <span class="n">sort_field</span><span class="o">.</span><span class="n">db_column</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">sort_field</span> <span class="o">=</span> <span class="n">field</span>
+				<span class="n">current_field_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span> <span class="k">else</span> <span class="kc">None</span>
+				<span class="n">field_name</span> <span class="o">=</span> <span class="n">sort_field</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]</span>
+
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span> <span class="ow">and</span> <span class="n">current_field_name</span> <span class="o">==</span> <span class="n">field_name</span><span class="p">:</span>
+				<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_order</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">sort_order</span> <span class="o">=</span> <span class="mi">0</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="c1"># Unsort. clear sorting</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span> <span class="o">=</span> <span class="kc">None</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">sort_order</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span> <span class="o">=</span> <span class="n">sort_field</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">sort_order</span> <span class="o">=</span> <span class="mi">1</span>
+
+			<span class="c1"># Refresh list</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+
+		<span class="k">elif</span> <span class="n">action</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;list_body_&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">action</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;list_action_&#39;</span><span class="p">):</span>
+			<span class="k">if</span> <span class="n">action</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;list_body_&#39;</span><span class="p">):</span>
+				<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;^list_body_([0-9]+)_([0-9]+)$&#39;</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
+				<span class="n">trigger</span> <span class="o">=</span> <span class="s1">&#39;body&#39;</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;^list_action_([0-9]+)_([0-9]+)$&#39;</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
+				<span class="n">trigger</span> <span class="o">=</span> <span class="s1">&#39;action&#39;</span>
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+				<span class="k">return</span>
+
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+				<span class="n">idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+				<span class="k">if</span> <span class="n">trigger</span> <span class="o">==</span> <span class="s1">&#39;body&#39;</span><span class="p">:</span>
+					<span class="n">field</span> <span class="o">=</span> <span class="p">(</span><span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_fields</span><span class="p">())[</span><span class="n">idx</span><span class="p">]</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">field</span> <span class="o">=</span> <span class="p">(</span><span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_actions</span><span class="p">())[</span><span class="n">idx</span><span class="p">]</span>
+				<span class="n">action</span> <span class="o">=</span> <span class="n">field</span><span class="p">[</span><span class="s1">&#39;action&#39;</span><span class="p">]</span>
+				<span class="n">instance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="n">row</span><span class="p">]</span>
+			<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+				<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Got invalid result in list item click: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+				<span class="k">return</span>
+
+			<span class="c1"># Execute action/target method.</span>
+			<span class="k">if</span> <span class="n">iscoroutinefunction</span><span class="p">(</span><span class="n">action</span><span class="p">):</span>
+				<span class="k">await</span> <span class="n">action</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">instance</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">action</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">instance</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">num_pages</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_per_page</span><span class="p">))</span>
+
+<div class="viewcode-block" id="ListView.close"><a class="viewcode-back" href="../../../../api/views.html#pyplanet.views.generics.list.ListView.close">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Close the link for a specific player. Will hide manialink and destroy data for player specific to save memory.</span>
+<span class="sd">		</span>
+<span class="sd">		:param player: Player model instance.</span>
+<span class="sd">		:type player: pyplanet.apps.core.maniaplanet.models.Player</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_data</span> <span class="ow">and</span> <span class="n">player</span><span class="o">.</span><span class="n">login</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_data</span><span class="p">:</span>
+			<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_data</span><span class="p">[</span><span class="n">player</span><span class="o">.</span><span class="n">login</span><span class="p">]</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="n">player_logins</span><span class="o">=</span><span class="p">[</span><span class="n">player</span><span class="o">.</span><span class="n">login</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="ListView.refresh"><a class="viewcode-back" href="../../../../api/views.html#pyplanet.views.generics.list.ListView.refresh">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Refresh list with current properties for a specific player. Can be used to show new data changes.</span>
+<span class="sd">		</span>
+<span class="sd">		:param player: Player model instance.</span>
+<span class="sd">		:type player: pyplanet.apps.core.maniaplanet.models.Player</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">player</span><span class="o">=</span><span class="n">player</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ListView.display"><a class="viewcode-back" href="../../../../api/views.html#pyplanet.views.generics.list.ListView.display">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Display list to player.</span>
+<span class="sd">		</span>
+<span class="sd">		:param player: Player login or model instance.</span>
+<span class="sd">		:type player: str, pyplanet.apps.core.maniaplanet.models.Player</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">login</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">login</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">Player</span><span class="p">)</span> <span class="k">else</span> <span class="n">player</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">player</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;No player/login given to display the list to!&#39;</span><span class="p">)</span>
+		<span class="k">return</span> <span class="k">await</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">player_logins</span><span class="o">=</span><span class="p">[</span><span class="n">login</span><span class="p">])</span></div>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_actions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">actions</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_query</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span>
+		<span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;get_query() or self.query is empty! It should contain query that is not yet executed!&#39;</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">apply_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_text</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">query</span>
+		<span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
+			<span class="k">if</span> <span class="s1">&#39;searching&#39;</span> <span class="ow">in</span> <span class="n">field</span> <span class="ow">and</span> <span class="n">field</span><span class="p">[</span><span class="s1">&#39;searching&#39;</span><span class="p">]:</span>
+				<span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">orwhere</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">field</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">search_text</span><span class="p">))</span>
+		<span class="k">return</span> <span class="n">query</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">apply_ordering</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">query</span>
+		<span class="k">return</span> <span class="n">query</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">apply_pagination</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+		<span class="c1"># Get count before pagination.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">query</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_per_page</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_object_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">query</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_query</span><span class="p">()</span>
+		<span class="n">query</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_filter</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+		<span class="n">query</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_ordering</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+		<span class="n">query</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_pagination</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
+		<span class="k">return</span> <span class="p">{</span>
+			<span class="s1">&#39;objects&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">,</span>
+			<span class="s1">&#39;search&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_text</span><span class="p">,</span>
+			<span class="s1">&#39;order&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="p">,</span>
+			<span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">,</span>
+		<span class="p">}</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">()</span>
+
+		<span class="c1"># Add dynamic data from query.</span>
+		<span class="n">context</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_object_data</span><span class="p">())</span>
+
+		<span class="n">fields</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_fields</span><span class="p">()</span>
+		<span class="n">actions</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_actions</span><span class="p">()</span>
+
+		<span class="c1"># Process fields + actions (normalize)</span>
+		<span class="c1"># Calculate positions of fields</span>
+		<span class="n">left</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+			<span class="n">field</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">left</span>
+			<span class="n">left</span> <span class="o">+=</span> <span class="n">field</span><span class="p">[</span><span class="s1">&#39;width&#39;</span><span class="p">]</span>
+			<span class="k">if</span> <span class="s1">&#39;type&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">field</span><span class="p">:</span>
+				<span class="n">field</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;label&#39;</span>
+			<span class="k">if</span> <span class="s1">&#39;safe&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">field</span><span class="p">:</span>
+				<span class="n">field</span><span class="p">[</span><span class="s1">&#39;safe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+			<span class="n">field</span><span class="p">[</span><span class="s1">&#39;_sort&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">field</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]:</span>
+				<span class="n">field</span><span class="p">[</span><span class="s1">&#39;_sort&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_order</span>
+		<span class="n">fields_width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">left</span><span class="p">)</span>
+
+		<span class="n">left</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="k">for</span> <span class="n">action</span> <span class="ow">in</span> <span class="n">actions</span><span class="p">:</span>
+			<span class="n">action</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">left</span>
+			<span class="n">left</span> <span class="o">+=</span> <span class="n">action</span><span class="p">[</span><span class="s1">&#39;width&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;width&#39;</span> <span class="ow">in</span> <span class="n">action</span> <span class="k">else</span> <span class="mi">5</span>
+			<span class="k">if</span> <span class="s1">&#39;type&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">action</span><span class="p">:</span>
+				<span class="n">action</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;quad&#39;</span>
+			<span class="k">if</span> <span class="s1">&#39;safe&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">action</span><span class="p">:</span>
+				<span class="n">action</span><span class="p">[</span><span class="s1">&#39;safe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="n">actions_width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">left</span><span class="p">)</span>
+
+		<span class="c1"># Add facts.</span>
+		<span class="n">context</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+			<span class="s1">&#39;field_renderer&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_render_field</span><span class="p">,</span>
+			<span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="p">,</span>
+			<span class="s1">&#39;actions&#39;</span><span class="p">:</span> <span class="n">actions</span><span class="p">,</span>
+			<span class="s1">&#39;provide_search&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">provide_search</span><span class="p">,</span>
+			<span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_title</span><span class="p">(),</span>
+			<span class="s1">&#39;icon_style&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">icon_style</span><span class="p">,</span>
+			<span class="s1">&#39;icon_substyle&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">icon_substyle</span><span class="p">,</span>
+			<span class="s1">&#39;search&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_text</span><span class="p">,</span>
+			<span class="s1">&#39;pages&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_pages</span><span class="p">,</span>
+			<span class="s1">&#39;page&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="p">,</span>
+			<span class="s1">&#39;fields_width&#39;</span><span class="p">:</span> <span class="n">fields_width</span><span class="p">,</span>
+			<span class="s1">&#39;actions_width&#39;</span><span class="p">:</span> <span class="n">actions_width</span><span class="p">,</span>
+		<span class="p">})</span>
+
+		<span class="k">return</span> <span class="n">context</span>
+
+	<span class="k">def</span> <span class="nf">_render_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+		<span class="k">if</span> <span class="s1">&#39;renderer&#39;</span> <span class="ow">in</span> <span class="n">field</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">field</span><span class="p">[</span><span class="s1">&#39;renderer&#39;</span><span class="p">](</span><span class="n">row</span><span class="p">,</span> <span class="n">field</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+			<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">field</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]])</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">field</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]))</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="n">search_text</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="s1">&#39;list_search_field&#39;</span><span class="p">]</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">search_text</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">search_text</span> <span class="o">!=</span> <span class="s1">&#39;Search...&#39;</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">search_text</span> <span class="o">=</span> <span class="n">search_text</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">search_text</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="c1"># Reset page when searching</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">=</span> <span class="mi">1</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">_first_page</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">=</span> <span class="mi">1</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">_last_page</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_pages</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">_next_page</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_pages</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">+=</span> <span class="mi">1</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">_next_10_pages</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_pages</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">+=</span> <span class="mi">10</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">_prev_page</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">-=</span> <span class="mi">1</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">_prev_10_pages</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">-=</span> <span class="mi">10</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">player</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ManualListView"><a class="viewcode-back" href="../../../../api/views.html#pyplanet.views.generics.list.ManualListView">[docs]</a><span class="k">class</span> <span class="nc">ManualListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	The ManualListView will act as a ListView, but not based on a model or query.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">objects_raw</span> <span class="o">=</span> <span class="n">data</span>
+
+<div class="viewcode-block" id="ManualListView.get_data"><a class="viewcode-back" href="../../../../api/views.html#pyplanet.views.generics.list.ManualListView.get_data">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Override this method, return a list with dictionaries inside.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects_raw</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">NotImplementedError</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects_raw</span></div>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_object_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">frame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="p">())</span>
+		<span class="n">frame</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_filter</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+		<span class="n">frame</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_ordering</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+		<span class="n">frame</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_pagination</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">)</span>
+		<span class="k">return</span> <span class="p">{</span>
+			<span class="s1">&#39;objects&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">,</span>
+			<span class="s1">&#39;search&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_text</span><span class="p">,</span>
+			<span class="s1">&#39;order&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span><span class="p">,</span>
+			<span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">,</span>
+		<span class="p">}</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">apply_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_text</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">frame</span>
+		<span class="n">query</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_fields</span><span class="p">():</span>
+			<span class="k">if</span> <span class="s1">&#39;searching&#39;</span> <span class="ow">in</span> <span class="n">field</span> <span class="ow">and</span> <span class="n">field</span><span class="p">[</span><span class="s1">&#39;searching&#39;</span><span class="p">]:</span>
+				<span class="k">if</span> <span class="s1">&#39;search_strip_styles&#39;</span> <span class="ow">in</span> <span class="n">field</span> <span class="ow">and</span> <span class="n">field</span><span class="p">[</span><span class="s1">&#39;search_strip_styles&#39;</span><span class="p">]:</span>
+					<span class="n">query</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+						<span class="n">frame</span><span class="p">[</span><span class="n">field</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">style</span><span class="o">.</span><span class="n">style_strip</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()))</span>
+					<span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">query</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+						<span class="n">frame</span><span class="p">[</span><span class="n">field</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+					<span class="p">)</span>
+		<span class="k">if</span> <span class="n">query</span><span class="p">:</span>
+			<span class="n">query</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+			<span class="k">return</span> <span class="n">frame</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">query</span><span class="p">]</span>
+		<span class="k">return</span> <span class="n">frame</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">apply_ordering</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">frame</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sort_field</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sort_order</span><span class="p">))</span>
+		<span class="k">return</span> <span class="n">frame</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">apply_pagination</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">frame</span><span class="p">[(</span><span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_per_page</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_per_page</span><span class="p">]</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

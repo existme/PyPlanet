@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Create app &mdash; PyPlanet 0.2.1 documentation</title>
+  <title>Create app &mdash; PyPlanet 0.3.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet 0.2.1 documentation" href="../index.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../index.html"/>
         <link rel="up" title="App Development" href="index.html"/>
         <link rel="next" title="Context (UI + Settings)" href="context.html"/>
         <link rel="prev" title="Life Cycle" href="lifecycle.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.3.0
               </div>
             
           
@@ -127,6 +127,8 @@
 <li class="toctree-l2"><a class="reference internal" href="access_instance.html">Contrib + Core access</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="migrations.html">Migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chat.html">Chat Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gbx.html">Dedicated/Script methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#useful-references">Useful references</a></li>
 </ul>
 </li>
@@ -220,7 +222,7 @@ your own module folder in your development project root.</p>
 <div class="section" id="create-config">
 <h2>1. Create Config<a class="headerlink" href="#create-config" title="Permalink to this headline">¶</a></h2>
 <p>The main entry is the applications config class itself. It is an extended class of the base <a class="reference internal" href="../api/apps.html#pyplanet.apps.AppConfig" title="pyplanet.apps.AppConfig"><code class="xref py py-class docutils literal"><span class="pre">pyplanet.apps.AppConfig</span></code></a>.</p>
-<p>You have to create a file named <code class="docutils literal"><span class="pre">app.py</span></code> in your app module containing the implementation of the config class. Example is bellow.</p>
+<p>You have to create a file named <code class="docutils literal"><span class="pre">__init__.py</span></code> in your app module containing the implementation of the config class. Example is bellow.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Admin</span><span class="p">(</span><span class="n">AppConfig</span><span class="p">):</span>
   <span class="n">game_dependencies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;trackmania&#39;</span><span class="p">,</span> <span class="s1">&#39;shootmania&#39;</span><span class="p">]</span>
   <span class="c1"># Game dependencies. We will check if the current game is in the list (or).</span>
@@ -255,7 +257,7 @@ you are using the module method, you need to import all the model files in the <
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">APPS</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">[</span>
     <span class="s1">&#39;...&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;my_app.app.MyApp&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;my_app&#39;</span><span class="p">,</span>
     <span class="s1">&#39;...&#39;</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
@@ -320,7 +322,7 @@ is giving issues in production environments.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.1',
+            VERSION:'0.3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

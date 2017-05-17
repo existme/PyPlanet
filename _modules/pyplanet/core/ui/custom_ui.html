@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.core.ui.custom_ui &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.core.ui.custom_ui</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/core/ui/custom_ui" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.core.ui.custom_ui</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The Custom UI will be set and hold in the class definition bellow. Per player and global!</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.apps.core.maniaplanet.models</span> <span class="k">import</span> <span class="n">Player</span>
+<span class="kn">from</span> <span class="nn">pyplanet.core.signals</span> <span class="k">import</span> <span class="n">pyplanet_start_after</span>
+
+
+<div class="viewcode-block" id="CustomUI"><a class="viewcode-back" href="../../../../api/core_ui.html#pyplanet.core.ui.custom_ui.CustomUI">[docs]</a><span class="k">class</span> <span class="nc">CustomUI</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Access this class with:</span>
+
+<span class="sd">	.. code-block:: python</span>
+
+<span class="sd">		self.instance.ui_manager.custom_ui</span>
+
+<span class="sd">	See: http://undef.name/Development/Manialinks.php#CustomUi</span>
+<span class="sd">	</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">TEMPLATE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">	&lt;custom_ui&gt;</span>
+<span class="s2">		&lt;notice visible=&quot;</span><span class="si">{notice}</span><span class="s2">&quot; /&gt;</span>
+<span class="s2">		&lt;challenge_info visible=&quot;</span><span class="si">{challenge_info}</span><span class="s2">&quot;/&gt;</span>
+<span class="s2">		&lt;net_infos visible=&quot;</span><span class="si">{net_infos}</span><span class="s2">&quot;/&gt;</span>
+<span class="s2">		&lt;chat visible=&quot;</span><span class="si">{chat}</span><span class="s2">&quot;/&gt;</span>
+<span class="s2">		&lt;checkpoint_list visible=&quot;</span><span class="si">{checkpoint_list}</span><span class="s2">&quot;/&gt;</span>
+<span class="s2">		&lt;round_scores visible=&quot;</span><span class="si">{round_scores}</span><span class="s2">&quot;/&gt;</span>
+<span class="s2">		&lt;scoretable visible=&quot;</span><span class="si">{scoretable}</span><span class="s2">&quot;/&gt;</span>
+<span class="s2">		&lt;global visible=&quot;</span><span class="si">{all}</span><span class="s2">&quot;/&gt;</span>
+<span class="s2">	&lt;/custom_ui&gt;</span>
+<span class="s2">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_instance</span> <span class="o">=</span> <span class="n">instance</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">_global_options</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+			<span class="n">notice</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">challenge_info</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">net_infos</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">chat</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">checkpoint_list</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">round_scores</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+			<span class="n">scoretable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="kc">True</span>
+		<span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_player_options</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">on_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">signal_manager</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="s1">&#39;maniaplanet:player_connect&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_connect</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">signal_manager</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="s1">&#39;maniaplanet:player_disconnect&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_disconnect</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">signal_manager</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="n">pyplanet_start_after</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_ready</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">on_ready</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">player_manager</span><span class="o">.</span><span class="n">online</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_player_options</span><span class="p">[</span><span class="n">player</span><span class="o">.</span><span class="n">login</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_global_options</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">()</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">player_connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_player_options</span><span class="p">[</span><span class="n">player</span><span class="o">.</span><span class="n">login</span><span class="p">]</span> <span class="o">=</span> <span class="n">player_ui</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_global_options</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+		<span class="c1"># Send the custom UI props to the player.</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">player_disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">player</span><span class="o">.</span><span class="n">login</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_player_options</span><span class="p">:</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_player_options</span><span class="p">[</span><span class="n">player</span><span class="o">.</span><span class="n">login</span><span class="p">]</span>
+			<span class="k">except</span><span class="p">:</span>
+				<span class="k">pass</span>
+
+<div class="viewcode-block" id="CustomUI.set_global"><a class="viewcode-back" href="../../../../api/core_ui.html#pyplanet.core.ui.custom_ui.CustomUI.set_global">[docs]</a>	<span class="k">def</span> <span class="nf">set_global</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Set a global and default option, for all players.</span>
+<span class="sd">		</span>
+<span class="sd">		:param option: Option name</span>
+<span class="sd">		:param value: Display value</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_global_options</span><span class="p">[</span><span class="n">option</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">for</span> <span class="n">ui</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_player_options</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+			<span class="n">ui</span><span class="p">[</span><span class="n">option</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span></div>
+
+<div class="viewcode-block" id="CustomUI.set"><a class="viewcode-back" href="../../../../api/core_ui.html#pyplanet.core.ui.custom_ui.CustomUI.set">[docs]</a>	<span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Set option for specific player.</span>
+<span class="sd">		</span>
+<span class="sd">		:param player: Player login or instance.</span>
+<span class="sd">		:param option: Option name</span>
+<span class="sd">		:param value: Value</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">Player</span><span class="p">):</span>
+			<span class="n">player</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">login</span>
+		<span class="k">if</span> <span class="n">player</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_player_options</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_player_options</span><span class="p">[</span><span class="n">player</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_global_options</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_player_options</span><span class="p">[</span><span class="n">player</span><span class="p">][</span><span class="n">option</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span></div>
+
+<div class="viewcode-block" id="CustomUI.get_global"><a class="viewcode-back" href="../../../../api/core_ui.html#pyplanet.core.ui.custom_ui.CustomUI.get_global">[docs]</a>	<span class="k">def</span> <span class="nf">get_global</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">option</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get the global option value</span>
+<span class="sd">		</span>
+<span class="sd">		:param option: Option name</span>
+<span class="sd">		:return: Boolean or other value.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_global_options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CustomUI.get"><a class="viewcode-back" href="../../../../api/core_ui.html#pyplanet.core.ui.custom_ui.CustomUI.get">[docs]</a>	<span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">option</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get the player option value</span>
+<span class="sd">		</span>
+<span class="sd">		:param player: Player instance or login string.</span>
+<span class="sd">		:param option: Option name</span>
+<span class="sd">		:return: Boolean or other value.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">Player</span><span class="p">):</span>
+			<span class="n">player</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">login</span>
+		<span class="k">if</span> <span class="n">player</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_player_options</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_player_options</span><span class="p">[</span><span class="n">player</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CustomUI.send"><a class="viewcode-back" href="../../../../api/core_ui.html#pyplanet.core.ui.custom_ui.CustomUI.send">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Send the custom UI to one player or all.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">player</span><span class="p">:</span>
+			<span class="k">return</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_player_options</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+			<span class="p">])</span>
+
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">Player</span><span class="p">):</span>
+			<span class="n">player</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">login</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="k">return</span>
+		<span class="k">if</span> <span class="n">player</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_player_options</span><span class="p">:</span>
+			<span class="k">return</span>
+
+		<span class="n">body</span> <span class="o">=</span> <span class="s1">&#39;&lt;manialinks&gt;</span><span class="si">{}</span><span class="s1">&lt;/manialinks&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">TEMPLATE</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_player_options</span><span class="p">[</span><span class="n">player</span><span class="p">]))</span>
+		<span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="s1">&#39;SendDisplayManialinkPageToLogin&#39;</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

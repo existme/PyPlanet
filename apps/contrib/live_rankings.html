@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Live Rankings &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../index.html"/>
+        <link rel="next" title="Architecture &amp; Design" href="../../architecture/index.html"/>
+        <link rel="prev" title="Transactions" href="transactions.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transactions.html">Transactions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Live Rankings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#information">Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signal-handlers">Signal handlers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#map-begin">Map begin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#player-finish">Player finish</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#player-waypoint">Player waypoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#player-give-up">Player give up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#player-connect">Player connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scores">Scores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Live Rankings</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/apps/contrib/live_rankings.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="live-rankings">
+<h1>Live Rankings<a class="headerlink" href="#live-rankings" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="information">
+<h2>Information<a class="headerlink" href="#information" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Name:</dt>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.contrib.live_rankings</span></code></dd>
+<dt>Depends on:</dt>
+<dd><code class="docutils literal"><span class="pre">core.maniaplanet</span></code></dd>
+<dt>Game:</dt>
+<dd>TrackMania</dd>
+</dl>
+</div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<p>This app enables the live rankings widget for the game modes:</p>
+<ul class="simple">
+<li>Laps (Live cp statistics).</li>
+<li>Rounds (Match sum of points).</li>
+<li>TimeAttack (Top times of players).</li>
+<li>Cup &amp; Team (Points gathered).</li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Just add this line to your <code class="docutils literal"><span class="pre">apps.py</span></code> file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">APPS</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pyplanet.apps.contrib.live_rankings&#39;</span><span class="p">,</span>  <span class="c1"># Add this line.</span>
+    <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li></li>
+</ul>
+</div>
+<div class="section" id="signal-handlers">
+<h2>Signal handlers<a class="headerlink" href="#signal-handlers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="map-begin">
+<h3>Map begin<a class="headerlink" href="#map-begin" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Signal:</dt>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.maniaplanet.callbacks.map.map_start</span></code></dd>
+<dt>Functionality:</dt>
+<dd>Clears rankings and widget</dd>
+</dl>
+</div>
+<div class="section" id="player-finish">
+<h3>Player finish<a class="headerlink" href="#player-finish" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Signal:</dt>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.trackmania.callbacks.finish</span></code></dd>
+<dt>Functionality:</dt>
+<dd>Process and update widget.</dd>
+</dl>
+</div>
+<div class="section" id="player-waypoint">
+<h3>Player waypoint<a class="headerlink" href="#player-waypoint" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Signal:</dt>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.trackmania.callbacks.waypoint</span></code></dd>
+<dt>Functionality:</dt>
+<dd>Process and update widget.</dd>
+</dl>
+</div>
+<div class="section" id="player-give-up">
+<h3>Player give up<a class="headerlink" href="#player-give-up" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Signal:</dt>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.trackmania.callbacks.give_up</span></code></dd>
+<dt>Functionality:</dt>
+<dd>Set the time to DNF in specific modes.</dd>
+</dl>
+</div>
+<div class="section" id="player-connect">
+<h3>Player connect<a class="headerlink" href="#player-connect" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Signal:</dt>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.maniaplanet.callbacks.player.player_connect</span></code></dd>
+<dt>Functionality:</dt>
+<dd>Display widget.</dd>
+</dl>
+</div>
+<div class="section" id="scores">
+<h3>Scores<a class="headerlink" href="#scores" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Signal:</dt>
+<dd><code class="docutils literal"><span class="pre">pyplanet.apps.core.trackmania.callbacks.scores</span></code></dd>
+<dt>Functionality:</dt>
+<dd>Update the widget with the driven scores.</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../architecture/index.html" class="btn btn-neutral float-right" title="Architecture &amp; Design" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="transactions.html" class="btn btn-neutral" title="Transactions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

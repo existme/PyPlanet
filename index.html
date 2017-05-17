@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to PyPlanet’s documentation! &mdash; PyPlanet 0.2.1 documentation</title>
+  <title>Welcome to PyPlanet’s documentation! &mdash; PyPlanet 0.3.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="PyPlanet 0.2.1 documentation" href="#"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="#"/>
         <link rel="next" title="Getting Started" href="intro/index.html"/> 
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.3.0
               </div>
             
           
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/mx.html">ManiaExchange</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps/contrib/live_rankings.html">Live Rankings</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
 <ul>
@@ -197,7 +198,7 @@ a event loop and have simultaneously processing of received events from the dedi
 <li>Core: Stable and well designed core and apps system. (Inspired by Django).</li>
 <li>Core: All apps will handle the game experience.</li>
 <li>Core: Adjustable settings for all your apps.</li>
-<li>Core: Supports Trackmania and Shootmania, Scripted only!</li>
+<li>Core: Supports <strong>Trackmania</strong> and <strong>Shootmania</strong>, <strong>Scripted only!</strong></li>
 <li>App: Local Records, including widget + list.</li>
 <li>App: Dedimania Records, including widget + list.</li>
 <li>App: Admin Commands, Providing with basic commands and control for maintaining your server.</li>
@@ -205,6 +206,8 @@ a event loop and have simultaneously processing of received events from the dedi
 <li>App: Jukebox, Let your players &#8216;juke&#8217; the next map.</li>
 <li>App: ManiaExchange, Simply add your maps directly from Mania-Exchange.</li>
 <li>App: Players, This app shows messages when players join and leave.</li>
+<li>App: Transactions, Donate planets to the server, show number of planets on server and pay out players.</li>
+<li>App: Live Rankings, Show the live rankings of the game mode. (Trackmania).</li>
 </ul>
 <p>Do you want to install PyPlanet, head towards our <a class="reference internal" href="intro/index.html"><span class="doc">Getting Started Manual</span></a></p>
 <p>The code is open source, and <a class="reference external" href="https://github.com/PyPlanet">available on GitHub</a>.</p>
@@ -254,6 +257,7 @@ a event loop and have simultaneously processing of received events from the dedi
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/mx.html">ManiaExchange</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps/contrib/live_rankings.html">Live Rankings</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound" id="dev-docs">
@@ -272,6 +276,8 @@ a event loop and have simultaneously processing of received events from the dedi
 <li class="toctree-l2"><a class="reference internal" href="apps/access_instance.html">Contrib + Core access</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apps/models.html">Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apps/migrations.html">Migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps/chat.html">Chat Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps/gbx.html">Dedicated/Script methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apps/index.html#useful-references">Useful references</a></li>
 </ul>
 </li>
@@ -297,6 +303,7 @@ a event loop and have simultaneously processing of received events from the dedi
 <li class="toctree-l2"><a class="reference internal" href="api/contrib_setting.html">pyplanet.contrib.setting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/contrib_mode.html">pyplanet.contrib.mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/contrib_converter.html">pyplanet.contrib.converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/contrib_chat.html">pyplanet.contrib.chat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/utils.html">pyplanet.utils</a></li>
 </ul>
 </li>
@@ -374,7 +381,7 @@ a event loop and have simultaneously processing of received events from the dedi
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.2.1',
+            VERSION:'0.3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

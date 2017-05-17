@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.contrib.converter.xaseco2 &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.contrib.converter.xaseco2</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/contrib/converter/xaseco2" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.contrib.converter.xaseco2</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.apps.contrib.karma.models</span> <span class="k">import</span> <span class="n">Karma</span>
+<span class="kn">from</span> <span class="nn">pyplanet.apps.contrib.local_records.models</span> <span class="k">import</span> <span class="n">LocalRecord</span>
+<span class="kn">from</span> <span class="nn">pyplanet.apps.core.maniaplanet.models</span> <span class="k">import</span> <span class="n">Player</span><span class="p">,</span> <span class="n">Map</span>
+<span class="kn">from</span> <span class="nn">pyplanet.apps.core.statistics.models</span> <span class="k">import</span> <span class="n">Score</span>
+<span class="kn">from</span> <span class="nn">pyplanet.contrib.converter.base</span> <span class="k">import</span> <span class="n">BaseConverter</span>
+
+
+<div class="viewcode-block" id="Xaseco2Converter"><a class="viewcode-back" href="../../../../api/contrib_converter.html#pyplanet.contrib.converter.xaseco2.Xaseco2Converter">[docs]</a><span class="k">class</span> <span class="nc">Xaseco2Converter</span><span class="p">(</span><span class="n">BaseConverter</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	The XAseco2 Converter uses MySQL to convert the data to the new PyPlanet structure.</span>
+<span class="sd">	</span>
+<span class="sd">	Please take a look at :doc:`Migrating from other controllers &lt;/convert/index&gt;` pages for information on how to use</span>
+<span class="sd">	this.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">player_cache</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">map_cache</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">migrate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Migrating players...&#39;</span><span class="p">)</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">migrate_players</span><span class="p">()</span>
+
+		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Migrating maps...&#39;</span><span class="p">)</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">migrate_maps</span><span class="p">()</span>
+
+		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Migrating records...&#39;</span><span class="p">)</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">migrate_local_records</span><span class="p">()</span>
+
+		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Migrating karma...&#39;</span><span class="p">)</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">migrate_karma</span><span class="p">()</span>
+
+		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Migrating times...&#39;</span><span class="p">)</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">migrate_times</span><span class="p">()</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">migrate_players</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span> <span class="k">as</span> <span class="n">cursor</span><span class="p">:</span>
+			<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM players&#39;</span><span class="p">)</span>
+			<span class="k">for</span> <span class="n">s_player</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">():</span>
+				<span class="c1"># Check if we already have this player in our database. If we have, ignore and print message.</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="n">player</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Player</span><span class="o">.</span><span class="n">get_by_login</span><span class="p">(</span><span class="n">s_player</span><span class="p">[</span><span class="s1">&#39;Login&#39;</span><span class="p">])</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">player_cache</span><span class="p">[</span><span class="n">player</span><span class="o">.</span><span class="n">login</span><span class="p">]</span> <span class="o">=</span> <span class="n">player</span>
+
+					<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Player with login </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> already exists, skipping..&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s_player</span><span class="p">[</span><span class="s1">&#39;Login&#39;</span><span class="p">]))</span>
+					<span class="k">continue</span>
+				<span class="k">except</span><span class="p">:</span>
+					<span class="c1"># Not found, create it:</span>
+					<span class="n">player</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Player</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+						<span class="n">login</span><span class="o">=</span><span class="n">s_player</span><span class="p">[</span><span class="s1">&#39;Login&#39;</span><span class="p">],</span> <span class="n">nickname</span><span class="o">=</span><span class="n">s_player</span><span class="p">[</span><span class="s1">&#39;NickName&#39;</span><span class="p">]</span>
+					<span class="p">)</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">player_cache</span><span class="p">[</span><span class="n">player</span><span class="o">.</span><span class="n">login</span><span class="p">]</span> <span class="o">=</span> <span class="n">player</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">migrate_maps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span> <span class="k">as</span> <span class="n">cursor</span><span class="p">:</span>
+			<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM maps&#39;</span><span class="p">)</span>
+			<span class="k">for</span> <span class="n">s_map</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">():</span>
+				<span class="c1"># Check if we already have this player in our database. If we have, ignore and print message.</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="n">map_instance</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Map</span><span class="o">.</span><span class="n">get_by_uid</span><span class="p">(</span><span class="n">s_map</span><span class="p">[</span><span class="s1">&#39;Uid&#39;</span><span class="p">])</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">map_cache</span><span class="p">[</span><span class="n">map_instance</span><span class="o">.</span><span class="n">uid</span><span class="p">]</span> <span class="o">=</span> <span class="n">map_instance</span>
+
+					<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Map with uid </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> already exists, skipping..&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s_map</span><span class="p">[</span><span class="s1">&#39;Uid&#39;</span><span class="p">]))</span>
+					<span class="k">continue</span>
+				<span class="k">except</span><span class="p">:</span>
+					<span class="c1"># Not found, create it:</span>
+					<span class="c1"># HACK: We don&#39;t know the file yet. Empty string to fill until pyplanet has started next time.</span>
+					<span class="n">map_instance</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Map</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+						<span class="n">uid</span><span class="o">=</span><span class="n">s_map</span><span class="p">[</span><span class="s1">&#39;Uid&#39;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="n">s_map</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">author_login</span><span class="o">=</span><span class="n">s_map</span><span class="p">[</span><span class="s1">&#39;Author&#39;</span><span class="p">],</span>
+						<span class="n">environment</span><span class="o">=</span><span class="n">s_map</span><span class="p">[</span><span class="s1">&#39;Environment&#39;</span><span class="p">]</span>
+					<span class="p">)</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">map_cache</span><span class="p">[</span><span class="n">map_instance</span><span class="o">.</span><span class="n">uid</span><span class="p">]</span> <span class="o">=</span> <span class="n">map_instance</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">migrate_local_records</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="s1">&#39;local_records&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">apps</span><span class="p">:</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Skipping local records. App not activated!&#39;</span><span class="p">)</span>
+			<span class="k">return</span>
+
+		<span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span> <span class="k">as</span> <span class="n">cursor</span><span class="p">:</span>
+			<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+				<span class="s1">&#39;SELECT records.*, maps.Uid, players.Login &#39;</span>
+				<span class="s1">&#39;FROM records, maps, players &#39;</span>
+				<span class="s1">&#39;WHERE records.MapId = maps.Id AND records.PlayerId = players.Id&#39;</span>
+			<span class="p">)</span>
+			<span class="k">for</span> <span class="n">s_record</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">():</span>
+				<span class="c1"># Get map + player</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="nb">map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_cache</span><span class="p">[</span><span class="n">s_record</span><span class="p">[</span><span class="s1">&#39;Uid&#39;</span><span class="p">]]</span> <span class="k">if</span> <span class="n">s_record</span><span class="p">[</span><span class="s1">&#39;Uid&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_cache</span> <span class="k">else</span> <span class="k">await</span> <span class="n">Map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">uid</span><span class="o">=</span><span class="n">s_record</span><span class="p">[</span><span class="s1">&#39;Uid&#39;</span><span class="p">])</span>
+					<span class="n">player</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_cache</span><span class="p">[</span><span class="n">s_record</span><span class="p">[</span><span class="s1">&#39;Login&#39;</span><span class="p">]]</span> <span class="k">if</span> <span class="n">s_record</span><span class="p">[</span><span class="s1">&#39;Login&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_cache</span> <span class="k">else</span> <span class="k">await</span> <span class="n">Player</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">=</span><span class="n">s_record</span><span class="p">[</span><span class="s1">&#39;Login&#39;</span><span class="p">])</span>
+				<span class="k">except</span><span class="p">:</span>
+					<span class="c1"># Skip.</span>
+					<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Can</span><span class="se">\&#39;</span><span class="s1">t convert record, map or player not found. Skipping...&#39;</span><span class="p">)</span>
+					<span class="k">continue</span>
+
+				<span class="k">try</span><span class="p">:</span>
+					<span class="k">await</span> <span class="n">LocalRecord</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">,</span> <span class="n">player</span><span class="o">=</span><span class="n">player</span><span class="p">)</span>
+					<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Record with uid </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> and player </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> already exists, skipping..&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">map</span><span class="o">.</span><span class="n">uid</span><span class="p">,</span> <span class="n">player</span><span class="o">.</span><span class="n">login</span><span class="p">))</span>
+				<span class="k">except</span><span class="p">:</span>
+					<span class="k">await</span> <span class="n">LocalRecord</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+						<span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">,</span> <span class="n">player</span><span class="o">=</span><span class="n">player</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="n">s_record</span><span class="p">[</span><span class="s1">&#39;Score&#39;</span><span class="p">],</span> <span class="n">checkpoints</span><span class="o">=</span><span class="n">s_record</span><span class="p">[</span><span class="s1">&#39;Checkpoints&#39;</span><span class="p">],</span>
+						<span class="n">created_at</span><span class="o">=</span><span class="n">s_record</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">],</span> <span class="n">updated_at</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+					<span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">migrate_karma</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="s1">&#39;karma&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">apps</span><span class="p">:</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Skipping karma. App not activated!&#39;</span><span class="p">)</span>
+			<span class="k">return</span>
+
+		<span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span> <span class="k">as</span> <span class="n">cursor</span><span class="p">:</span>
+			<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+				<span class="s1">&#39;SELECT rs_karma.*, maps.Uid, players.Login &#39;</span>
+				<span class="s1">&#39;FROM rs_karma, maps, players &#39;</span>
+				<span class="s1">&#39;WHERE rs_karma.MapId = maps.Id AND rs_karma.PlayerId = players.Id&#39;</span>
+			<span class="p">)</span>
+			<span class="k">for</span> <span class="n">s_karma</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">():</span>
+				<span class="c1"># Get map + player</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="nb">map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_cache</span><span class="p">[</span><span class="n">s_karma</span><span class="p">[</span><span class="s1">&#39;Uid&#39;</span><span class="p">]]</span> <span class="k">if</span> <span class="n">s_karma</span><span class="p">[</span><span class="s1">&#39;Uid&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_cache</span> <span class="k">else</span> <span class="k">await</span> <span class="n">Map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">uid</span><span class="o">=</span><span class="n">s_karma</span><span class="p">[</span><span class="s1">&#39;Uid&#39;</span><span class="p">])</span>
+					<span class="n">player</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_cache</span><span class="p">[</span><span class="n">s_karma</span><span class="p">[</span><span class="s1">&#39;Login&#39;</span><span class="p">]]</span> <span class="k">if</span> <span class="n">s_karma</span><span class="p">[</span><span class="s1">&#39;Login&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_cache</span> <span class="k">else</span> <span class="k">await</span> <span class="n">Player</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">=</span><span class="n">s_karma</span><span class="p">[</span><span class="s1">&#39;Login&#39;</span><span class="p">])</span>
+				<span class="k">except</span><span class="p">:</span>
+					<span class="c1"># Skip.</span>
+					<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Can</span><span class="se">\&#39;</span><span class="s1">t convert karma, map or player not found. Skipping...&#39;</span><span class="p">)</span>
+					<span class="k">continue</span>
+
+				<span class="k">if</span> <span class="n">s_karma</span><span class="p">[</span><span class="s1">&#39;Score&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+					<span class="k">continue</span>
+
+				<span class="k">try</span><span class="p">:</span>
+					<span class="k">await</span> <span class="n">Karma</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">,</span> <span class="n">player</span><span class="o">=</span><span class="n">player</span><span class="p">)</span>
+					<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Karma with uid </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> and player </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> already exists, skipping..&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">map</span><span class="o">.</span><span class="n">uid</span><span class="p">,</span> <span class="n">player</span><span class="o">.</span><span class="n">login</span><span class="p">))</span>
+				<span class="k">except</span><span class="p">:</span>
+					<span class="k">await</span> <span class="n">Karma</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+						<span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">,</span> <span class="n">player</span><span class="o">=</span><span class="n">player</span><span class="p">,</span> <span class="n">score</span><span class="o">=-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">s_karma</span><span class="p">[</span><span class="s1">&#39;Score&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">1</span><span class="p">,</span>
+						<span class="n">updated_at</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+					<span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">migrate_times</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span> <span class="k">as</span> <span class="n">cursor</span><span class="p">:</span>
+			<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+				<span class="s1">&#39;SELECT rs_times.*, maps.Uid, players.Login &#39;</span>
+				<span class="s1">&#39;FROM rs_times, maps, players &#39;</span>
+				<span class="s1">&#39;WHERE rs_times.MapId = maps.Id AND rs_times.PlayerId = players.Id&#39;</span>
+			<span class="p">)</span>
+			<span class="k">for</span> <span class="n">s_time</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">():</span>
+				<span class="c1"># Get map + player</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="nb">map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_cache</span><span class="p">[</span><span class="n">s_time</span><span class="p">[</span><span class="s1">&#39;Uid&#39;</span><span class="p">]]</span> <span class="k">if</span> <span class="n">s_time</span><span class="p">[</span><span class="s1">&#39;Uid&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_cache</span> <span class="k">else</span> <span class="k">await</span> <span class="n">Map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">uid</span><span class="o">=</span><span class="n">s_time</span><span class="p">[</span><span class="s1">&#39;Uid&#39;</span><span class="p">])</span>
+					<span class="n">player</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_cache</span><span class="p">[</span><span class="n">s_time</span><span class="p">[</span><span class="s1">&#39;Login&#39;</span><span class="p">]]</span> <span class="k">if</span> <span class="n">s_time</span><span class="p">[</span><span class="s1">&#39;Login&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_cache</span> <span class="k">else</span> <span class="k">await</span> <span class="n">Player</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">=</span><span class="n">s_time</span><span class="p">[</span><span class="s1">&#39;Login&#39;</span><span class="p">])</span>
+				<span class="k">except</span><span class="p">:</span>
+					<span class="c1"># Skip.</span>
+					<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Can</span><span class="se">\&#39;</span><span class="s1">t convert time, map or player not found. Skipping...&#39;</span><span class="p">)</span>
+					<span class="k">continue</span>
+
+				<span class="k">if</span> <span class="n">s_time</span><span class="p">[</span><span class="s1">&#39;Score&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+					<span class="k">continue</span>
+
+				<span class="k">try</span><span class="p">:</span>
+					<span class="k">await</span> <span class="n">Score</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+						<span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">,</span> <span class="n">player</span><span class="o">=</span><span class="n">player</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="n">s_time</span><span class="p">[</span><span class="s1">&#39;Score&#39;</span><span class="p">],</span> <span class="n">created_at</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">s_time</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+					<span class="p">)</span>
+					<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Score with uid </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1">, player </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1">, score </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> at </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> already exists, skipping..&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+						<span class="nb">map</span><span class="o">.</span><span class="n">uid</span><span class="p">,</span> <span class="n">player</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="n">s_time</span><span class="p">[</span><span class="s1">&#39;Score&#39;</span><span class="p">],</span> <span class="n">s_time</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">],</span>
+					<span class="p">))</span>
+				<span class="k">except</span><span class="p">:</span>
+					<span class="k">await</span> <span class="n">Score</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+						<span class="nb">map</span><span class="o">=</span><span class="nb">map</span><span class="p">,</span> <span class="n">player</span><span class="o">=</span><span class="n">player</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="n">s_time</span><span class="p">[</span><span class="s1">&#39;Score&#39;</span><span class="p">],</span> <span class="n">checkpoints</span><span class="o">=</span><span class="n">s_time</span><span class="p">[</span><span class="s1">&#39;Checkpoints&#39;</span><span class="p">],</span>
+						<span class="n">created_at</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">s_time</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]),</span>
+					<span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

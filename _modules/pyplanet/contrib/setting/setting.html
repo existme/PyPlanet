@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.contrib.setting.setting &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.contrib.setting.setting</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/contrib/setting/setting" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.contrib.setting.setting</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">asyncio</span> <span class="k">import</span> <span class="n">iscoroutinefunction</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.apps.core.pyplanet.models.setting</span> <span class="k">import</span> <span class="n">Setting</span> <span class="k">as</span> <span class="n">SettingModel</span>
+<span class="kn">from</span> <span class="nn">pyplanet.contrib.setting.exceptions</span> <span class="k">import</span> <span class="n">TypeUnknownException</span><span class="p">,</span> <span class="n">SerializationException</span><span class="p">,</span> <span class="n">SettingException</span>
+
+
+<div class="viewcode-block" id="Setting"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.Setting">[docs]</a><span class="k">class</span> <span class="nc">Setting</span><span class="p">:</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	The setting class is for defining a setting for the end-user. </span>
+<span class="sd">	This setting can be changed with /settings and //settings.</span>
+<span class="sd">	</span>
+<span class="sd">	With this class you can define or manage your setting that is going to be public for all other apps and end-user.</span>
+
+<span class="sd">	You can get notified of changes with the ``change_target`` in the init of this class. Point this to a method (async or sync)</span>
+<span class="sd">	with the following params: ``old_value`` and ``new_value``.</span>
+<span class="sd">	</span>
+<span class="sd">	Example:</span>
+<span class="sd">		</span>
+<span class="sd">	.. code-block:: python</span>
+<span class="sd">	</span>
+<span class="sd">		my_setting = Setting(</span>
+<span class="sd">			&#39;dedimania_code&#39;, &#39;Dedimania Server Code&#39;, Setting.CAT_KEYS, type=str,</span>
+<span class="sd">			description=&#39;The secret dedimania code. Get one at $lhttp://dedimania.net/tm2stats/?do=register&#39;,</span>
+<span class="sd">			default=None</span>
+<span class="sd">		)</span>
+<span class="sd">		</span>
+<span class="sd">		my_other_setting = Setting(</span>
+<span class="sd">			&#39;sample_boolean&#39;, &#39;Booleans for the win!&#39;, Setting.CAT_BEHAVIOUR, type=bool, description=&#39;Example&#39;,</span>
+<span class="sd">		)</span>
+<span class="sd">	</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">CAT_GENERAL</span> <span class="o">=</span> <span class="s1">&#39;General&#39;</span>
+	<span class="n">CAT_KEYS</span> <span class="o">=</span> <span class="s1">&#39;Keys&#39;</span>
+	<span class="n">CAT_DESIGN</span> <span class="o">=</span> <span class="s1">&#39;Design&#39;</span>
+	<span class="n">CAT_POSITION</span> <span class="o">=</span> <span class="s1">&#39;Position&#39;</span>
+	<span class="n">CAT_BEHAVIOUR</span> <span class="o">=</span> <span class="s1">&#39;Behaviour&#39;</span>
+	<span class="n">CAT_FEATURES</span> <span class="o">=</span> <span class="s1">&#39;Features&#39;</span>
+	<span class="n">CAT_OTHER</span> <span class="o">=</span> <span class="s1">&#39;Other&#39;</span>
+	<span class="n">ALL_CATEGORIES</span> <span class="o">=</span> <span class="p">[</span><span class="n">CAT_GENERAL</span><span class="p">,</span> <span class="n">CAT_DESIGN</span><span class="p">,</span> <span class="n">CAT_POSITION</span><span class="p">,</span> <span class="n">CAT_BEHAVIOUR</span><span class="p">,</span> <span class="n">CAT_FEATURES</span><span class="p">,</span> <span class="n">CAT_KEYS</span><span class="p">,</span> <span class="n">CAT_OTHER</span><span class="p">]</span>
+
+<div class="viewcode-block" id="Setting.__init__"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.Setting.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+		<span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">category</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">description</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+		<span class="n">change_target</span><span class="o">=</span><span class="kc">None</span>
+	<span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create setting with properties.</span>
+<span class="sd">		</span>
+<span class="sd">		:param key: Key of setting, this is mainly only used for the backend and for referencing the setting. </span>
+<span class="sd">					You should keep this unique in your app!</span>
+<span class="sd">		:param name: Name of the setting that will be displayed as a small label to the player.</span>
+<span class="sd">		:param category: Category from Categories.*. Must be provided!</span>
+<span class="sd">		:param type: Type of value to expect, use python types here. str by default.</span>
+<span class="sd">		:param description: Description to provide help and instructions to the player.</span>
+<span class="sd">		:param choices: List or tuple with choices, only when wanting to restrict values to selected options.</span>
+<span class="sd">		:param default: Default value if not provided from database. This will be returned. Defaults to None.</span>
+<span class="sd">		:param change_target: Target method to call when the setting value has been changed.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">category</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ALL_CATEGORIES</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">SettingException</span><span class="p">(</span><span class="s1">&#39;Invalid category. Must be an category in the Categories static class.&#39;</span><span class="p">)</span>
+		<span class="c1"># Prepare property for app specific setting. Will be injected by the register command.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">app_label</span> <span class="o">=</span> <span class="kc">None</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">category</span> <span class="o">=</span> <span class="n">category</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="n">default</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="nb">type</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">choices</span> <span class="o">=</span> <span class="n">choices</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">change_target</span> <span class="o">=</span> <span class="n">change_target</span>
+
+		<span class="c1"># Prepare the model instance here. This will be filled once it&#39;s fetched for the first time (or inited).</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_instance</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.initiate_setting"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.Setting.initiate_setting">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">initiate_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Initiate database record for setting.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="k">await</span> <span class="n">SettingModel</span><span class="o">.</span><span class="n">get_or_create_from_info</span><span class="p">(</span>
+			<span class="n">key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">app</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">app_label</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
+			<span class="n">value</span><span class="o">=</span><span class="kc">None</span>
+		<span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.unserialize_value"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.Setting.unserialize_value">[docs]</a>	<span class="k">def</span> <span class="nf">unserialize_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Unserialize the datastorage value to the python value, based on the type of the setting.</span>
+<span class="sd">		</span>
+<span class="sd">		:param value: Value from database.</span>
+<span class="sd">		:return: Python value.</span>
+<span class="sd">		:raise pyplanet.contrib.setting.exceptions.SerializationException: SerializationException</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">default</span>
+
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+				<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">int</span><span class="p">:</span>
+				<span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">float</span><span class="p">:</span>
+				<span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">bool</span><span class="p">:</span>
+				<span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">list</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">set</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">dict</span><span class="p">:</span>
+				<span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">TypeUnknownException</span><span class="p">(</span><span class="s1">&#39;The type </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> is unknown!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">))</span>
+		<span class="k">except</span> <span class="n">TypeUnknownException</span><span class="p">:</span>
+			<span class="k">raise</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">SerializationException</span><span class="p">(</span><span class="s1">&#39;Error with unserialization of the setting </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)))</span> <span class="kn">from</span> <span class="nn">e</span></div>
+
+<div class="viewcode-block" id="Setting.serialize_value"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.Setting.serialize_value">[docs]</a>	<span class="k">def</span> <span class="nf">serialize_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Serialize the python value to the data store value, based on the type of the setting.</span>
+
+<span class="sd">		:param value: Python Value.</span>
+<span class="sd">		:return: Database Value</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="c1"># Always set to Null, so we get the default value back.</span>
+		<span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">value</span>
+
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">choices</span> <span class="ow">and</span> <span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">choices</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">SerializationException</span><span class="p">(</span><span class="s1">&#39;Value given is not in the predefined choices!&#39;</span><span class="p">)</span>
+
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">int</span><span class="p">:</span>
+				<span class="n">value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">float</span><span class="p">:</span>
+				<span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">bool</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+					<span class="n">value</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="k">pass</span>
+
+		<span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">SerializationException</span><span class="p">(</span>
+				<span class="s1">&#39;Your given value is not of the type you specified! </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> != </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+			<span class="p">)</span>
+
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">list</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">set</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">dict</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">type_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get the name of the specified type in string format, suited for displaying to end-user.</span>
+<span class="sd">		</span>
+<span class="sd">		:return: User friendly name of type.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s1">&#39;string&#39;</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">int</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s1">&#39;integer&#39;</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">float</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s1">&#39;float&#39;</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">bool</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s1">&#39;boolean&#39;</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">list</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">set</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">dict</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s1">&#39;list/dict&#39;</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s1">&#39;unknown&#39;</span>
+
+<div class="viewcode-block" id="Setting.get_value"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.Setting.get_value">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">refresh</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get the value or the default value for the setting model.</span>
+
+<span class="sd">		:param refresh: Force a refresh of the value.</span>
+<span class="sd">		:return: Value in the desired type and unserialized from database/storage.</span>
+<span class="sd">		:raise: NotFound / SerializationException</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">or</span> <span class="n">refresh</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="n">model</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_model</span><span class="p">()</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">unserialize_value</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="Setting.set_value"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.Setting.set_value">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">set_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Set the value, this will serialize and save the setting to the data storage.</span>
+<span class="sd">		</span>
+<span class="sd">		:param value: Python value input.</span>
+<span class="sd">		:raise: NotFound / SerializationException</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">old_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+
+		<span class="n">model</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_model</span><span class="p">()</span>
+		<span class="n">model</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">serialize_value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">await</span> <span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+		<span class="c1"># Call the change target.</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">change_target</span> <span class="ow">and</span> <span class="n">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">change_target</span><span class="p">):</span>
+			<span class="k">if</span> <span class="n">iscoroutinefunction</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">change_target</span><span class="p">):</span>
+				<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">change_target</span><span class="p">(</span><span class="n">old_value</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">change_target</span><span class="p">(</span><span class="n">old_value</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.clear"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.Setting.clear">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Clear the value in the data storage. This will set the value to None, and will return the default value on</span>
+<span class="sd">		request of data. </span>
+<span class="sd">		</span>
+<span class="sd">		:raise: NotFound / SerializationException</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Setting.get_model"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.Setting.get_model">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get the model for the setting. This will return the model instance or raise an exception when not found.</span>
+<span class="sd">		</span>
+<span class="sd">		:return: Model instance</span>
+<span class="sd">		:raise: NotFound</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="k">await</span> <span class="n">SettingModel</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">app</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">app_label</span><span class="p">)</span></div>
+
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

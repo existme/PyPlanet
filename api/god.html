@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyplanet.god &mdash; PyPlanet 0.2.1 documentation</title>
+  <title>pyplanet.god &mdash; PyPlanet 0.3.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet 0.2.1 documentation" href="../index.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../index.html"/>
         <link rel="up" title="API Documentation" href="index.html"/>
         <link rel="next" title="pyplanet.contrib.map" href="contrib_map.html"/>
         <link rel="prev" title="pyplanet.core.events" href="core_events.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.3.0
               </div>
             
           
@@ -130,6 +130,7 @@
 <li class="toctree-l2"><a class="reference internal" href="contrib_setting.html">pyplanet.contrib.setting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_mode.html">pyplanet.contrib.mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_converter.html">pyplanet.contrib.converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_chat.html">pyplanet.contrib.chat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">pyplanet.utils</a></li>
 </ul>
 </li>
@@ -215,7 +216,7 @@
 </div>
 <span class="target" id="module-pyplanet.god.pool"></span><dl class="class">
 <dt id="pyplanet.god.pool.EnvironmentPool">
-<em class="property">class </em><code class="descclassname">pyplanet.god.pool.</code><code class="descname">EnvironmentPool</code><span class="sig-paren">(</span><em>pool_names</em>, <em>max_restarts=0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.god.pool.EnvironmentPool" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyplanet.god.pool.</code><code class="descname">EnvironmentPool</code><span class="sig-paren">(</span><em>pool_names</em>, <em>max_restarts=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/god/pool.html#EnvironmentPool"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.god.pool.EnvironmentPool" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages the pool instances for the current environment/installation.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -223,13 +224,13 @@
 </div>
 <dl class="method">
 <dt id="pyplanet.god.pool.EnvironmentPool.populate">
-<code class="descname">populate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.god.pool.EnvironmentPool.populate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">populate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/god/pool.html#EnvironmentPool.populate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.god.pool.EnvironmentPool.populate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Populate the pool instance processes, (prepares the processes).</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pyplanet.god.pool.EnvironmentPool.restart">
-<code class="descname">restart</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.god.pool.EnvironmentPool.restart" title="Permalink to this definition">¶</a></dt>
+<code class="descname">restart</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/god/pool.html#EnvironmentPool.restart"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.god.pool.EnvironmentPool.restart" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restart single process, or all if no name is given.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -243,19 +244,19 @@
 
 <dl class="method">
 <dt id="pyplanet.god.pool.EnvironmentPool.shutdown">
-<code class="descname">shutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.god.pool.EnvironmentPool.shutdown" title="Permalink to this definition">¶</a></dt>
+<code class="descname">shutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/god/pool.html#EnvironmentPool.shutdown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.god.pool.EnvironmentPool.shutdown" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shutdown all processes.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pyplanet.god.pool.EnvironmentPool.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.god.pool.EnvironmentPool.start" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/god/pool.html#EnvironmentPool.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.god.pool.EnvironmentPool.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start all processes.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pyplanet.god.pool.EnvironmentPool.watchdog">
-<code class="descname">watchdog</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.god.pool.EnvironmentPool.watchdog" title="Permalink to this definition">¶</a></dt>
+<code class="descname">watchdog</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/god/pool.html#EnvironmentPool.watchdog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.god.pool.EnvironmentPool.watchdog" title="Permalink to this definition">¶</a></dt>
 <dd><p>Watch all the processes. (Blocking method!).</p>
 </dd></dl>
 
@@ -263,7 +264,7 @@
 
 <span class="target" id="module-pyplanet.god.process"></span><dl class="class">
 <dt id="pyplanet.god.process.InstanceProcess">
-<em class="property">class </em><code class="descclassname">pyplanet.god.process.</code><code class="descname">InstanceProcess</code><span class="sig-paren">(</span><em>queue</em>, <em>environment_name='default'</em>, <em>pool=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.god.process.InstanceProcess" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyplanet.god.process.</code><code class="descname">InstanceProcess</code><span class="sig-paren">(</span><em>queue</em>, <em>environment_name='default'</em>, <em>pool=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/god/process.html#InstanceProcess"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.god.process.InstanceProcess" title="Permalink to this definition">¶</a></dt>
 <dd><p>The InstanceProcess is the encapsulation around the real controller instance.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -291,19 +292,19 @@
 
 <dl class="method">
 <dt id="pyplanet.god.process.InstanceProcess.is_alive">
-<code class="descname">is_alive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.god.process.InstanceProcess.is_alive" title="Permalink to this definition">¶</a></dt>
+<code class="descname">is_alive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/god/process.html#InstanceProcess.is_alive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.god.process.InstanceProcess.is_alive" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call process method is_alive()</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pyplanet.god.process.InstanceProcess.shutdown">
-<code class="descname">shutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.god.process.InstanceProcess.shutdown" title="Permalink to this definition">¶</a></dt>
+<code class="descname">shutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/god/process.html#InstanceProcess.shutdown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.god.process.InstanceProcess.shutdown" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shutdown (terminate) process.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pyplanet.god.process.InstanceProcess.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.god.process.InstanceProcess.start" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/god/process.html#InstanceProcess.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.god.process.InstanceProcess.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the process.</p>
 </dd></dl>
 
@@ -361,7 +362,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.1',
+            VERSION:'0.3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

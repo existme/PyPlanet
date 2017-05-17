@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyplanet.contrib.setting &mdash; PyPlanet 0.2.1 documentation</title>
+  <title>pyplanet.contrib.setting &mdash; PyPlanet 0.3.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet 0.2.1 documentation" href="../index.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../index.html"/>
         <link rel="up" title="API Documentation" href="index.html"/>
         <link rel="next" title="pyplanet.contrib.mode" href="contrib_mode.html"/>
         <link rel="prev" title="pyplanet.contrib.permission" href="contrib_permission.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.3.0
               </div>
             
           
@@ -130,6 +130,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">pyplanet.contrib.setting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_mode.html">pyplanet.contrib.mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_converter.html">pyplanet.contrib.converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_chat.html">pyplanet.contrib.chat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">pyplanet.utils</a></li>
 </ul>
 </li>
@@ -211,7 +212,7 @@
 <span id="pyplanet-contrib-setting"></span><h1>pyplanet.contrib.setting<a class="headerlink" href="#module-pyplanet.contrib.setting.manager" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="pyplanet.contrib.setting.manager.AppSettingManager">
-<em class="property">class </em><code class="descclassname">pyplanet.contrib.setting.manager.</code><code class="descname">AppSettingManager</code><span class="sig-paren">(</span><em>instance</em>, <em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.manager.AppSettingManager" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyplanet.contrib.setting.manager.</code><code class="descname">AppSettingManager</code><span class="sig-paren">(</span><em>instance</em>, <em>app</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#AppSettingManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.manager.AppSettingManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>The local app setting manager is the one you should use to register settings to inside of your app.</p>
 <p>You can use this manager like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyplanet.contrib.setting</span> <span class="kn">import</span> <span class="n">Setting</span>    
@@ -231,7 +232,7 @@ documentation.</p>
 </div>
 <dl class="method">
 <dt id="pyplanet.contrib.setting.manager.AppSettingManager.get_all">
-<code class="descname">get_all</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.manager.AppSettingManager.get_all" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_all</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#AppSettingManager.get_all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.manager.AppSettingManager.get_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieve a list of settings, with prefetched values, so get_value is almost instant (or use ._value, not recommended).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -247,14 +248,14 @@ documentation.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.manager.AppSettingManager.get_categories">
-<code class="descname">get_categories</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.manager.AppSettingManager.get_categories" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_categories</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#AppSettingManager.get_categories"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.manager.AppSettingManager.get_categories" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all the categories we have registered.
 Returns a dict with label as key, and count + name as values.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.manager.AppSettingManager.get_setting">
-<code class="descname">get_setting</code><span class="sig-paren">(</span><em>key</em>, <em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.manager.AppSettingManager.get_setting" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_setting</code><span class="sig-paren">(</span><em>key</em>, <em>prefetch_values=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#AppSettingManager.get_setting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.manager.AppSettingManager.get_setting" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get setting by key and optionally fetch the value if not yet fetched.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -278,7 +279,7 @@ Returns a dict with label as key, and count + name as values.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.manager.AppSettingManager.register">
-<code class="descname">register</code><span class="sig-paren">(</span><em>*settings</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.manager.AppSettingManager.register" title="Permalink to this definition">¶</a></dt>
+<code class="descname">register</code><span class="sig-paren">(</span><em>*settings</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#AppSettingManager.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.manager.AppSettingManager.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register your setting(s). This will create default values when the setting has not yet been inited before.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -294,7 +295,7 @@ Returns a dict with label as key, and count + name as values.</p>
 
 <dl class="class">
 <dt id="pyplanet.contrib.setting.manager.GlobalSettingManager">
-<em class="property">class </em><code class="descclassname">pyplanet.contrib.setting.manager.</code><code class="descname">GlobalSettingManager</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.manager.GlobalSettingManager" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyplanet.contrib.setting.manager.</code><code class="descname">GlobalSettingManager</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#GlobalSettingManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.manager.GlobalSettingManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Global Setting manager is available at the instance. <code class="docutils literal"><span class="pre">instance.setting_manager</span></code>.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -303,7 +304,7 @@ Returns a dict with label as key, and count + name as values.</p>
 </div>
 <dl class="method">
 <dt id="pyplanet.contrib.setting.manager.GlobalSettingManager.create_app_manager">
-<code class="descname">create_app_manager</code><span class="sig-paren">(</span><em>app_config</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.manager.GlobalSettingManager.create_app_manager" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create_app_manager</code><span class="sig-paren">(</span><em>app_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#GlobalSettingManager.create_app_manager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.manager.GlobalSettingManager.create_app_manager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create app setting manager.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -321,7 +322,7 @@ Returns a dict with label as key, and count + name as values.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.manager.GlobalSettingManager.get_all">
-<code class="descname">get_all</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.manager.GlobalSettingManager.get_all" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_all</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#GlobalSettingManager.get_all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.manager.GlobalSettingManager.get_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieve a list of settings, with prefetched values, so get_value is almost instant (or use ._value, not recommended).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -337,7 +338,7 @@ Returns a dict with label as key, and count + name as values.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.manager.GlobalSettingManager.get_app_manager">
-<code class="descname">get_app_manager</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.manager.GlobalSettingManager.get_app_manager" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_app_manager</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#GlobalSettingManager.get_app_manager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.manager.GlobalSettingManager.get_app_manager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the app manager for a specified app label or config instance.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -355,7 +356,7 @@ Returns a dict with label as key, and count + name as values.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.manager.GlobalSettingManager.get_apps">
-<code class="descname">get_apps</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.manager.GlobalSettingManager.get_apps" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_apps</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#GlobalSettingManager.get_apps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.manager.GlobalSettingManager.get_apps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all the app label + names for all the settings we can find in our registry.
 Returns a dict with label as key, and count + name as values.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -372,7 +373,7 @@ Returns a dict with label as key, and count + name as values.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.manager.GlobalSettingManager.get_categories">
-<code class="descname">get_categories</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.manager.GlobalSettingManager.get_categories" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_categories</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#GlobalSettingManager.get_categories"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.manager.GlobalSettingManager.get_categories" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all the categories we have registered.
 Returns a dict with label as key, and count + name as values.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -389,7 +390,7 @@ Returns a dict with label as key, and count + name as values.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.manager.GlobalSettingManager.get_setting">
-<code class="descname">get_setting</code><span class="sig-paren">(</span><em>app_label</em>, <em>key</em>, <em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.manager.GlobalSettingManager.get_setting" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_setting</code><span class="sig-paren">(</span><em>app_label</em>, <em>key</em>, <em>prefetch_values=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#GlobalSettingManager.get_setting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.manager.GlobalSettingManager.get_setting" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get setting by key and optionally fetch the value if not yet fetched.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -423,16 +424,27 @@ Returns a dict with label as key, and count + name as values.</p>
 <span class="target" id="module-pyplanet.contrib.setting"></span><p>The setting contrib contains code for managing and providing settings contexts.</p>
 <dl class="class">
 <dt id="pyplanet.contrib.setting.Setting">
-<em class="property">class </em><code class="descclassname">pyplanet.contrib.setting.</code><code class="descname">Setting</code><span class="sig-paren">(</span><em>key: str</em>, <em>name: str</em>, <em>category: str</em>, <em>type=&lt;class 'str'&gt;</em>, <em>description: str = None</em>, <em>choices=None</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.Setting" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyplanet.contrib.setting.</code><code class="descname">Setting</code><span class="sig-paren">(</span><em>key: str</em>, <em>name: str</em>, <em>category: str</em>, <em>type=&lt;class 'str'&gt;</em>, <em>description: str = None</em>, <em>choices=None</em>, <em>default=None</em>, <em>change_target=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/setting.html#Setting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.Setting" title="Permalink to this definition">¶</a></dt>
 <dd><p>The setting class is for defining a setting for the end-user. 
 This setting can be changed with /settings and //settings.</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Provide examples.</p>
+<p>With this class you can define or manage your setting that is going to be public for all other apps and end-user.</p>
+<p>You can get notified of changes with the <code class="docutils literal"><span class="pre">change_target</span></code> in the init of this class. Point this to a method (async or sync)
+with the following params: <code class="docutils literal"><span class="pre">old_value</span></code> and <code class="docutils literal"><span class="pre">new_value</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_setting</span> <span class="o">=</span> <span class="n">Setting</span><span class="p">(</span>
+        <span class="s1">&#39;dedimania_code&#39;</span><span class="p">,</span> <span class="s1">&#39;Dedimania Server Code&#39;</span><span class="p">,</span> <span class="n">Setting</span><span class="o">.</span><span class="n">CAT_KEYS</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;The secret dedimania code. Get one at $lhttp://dedimania.net/tm2stats/?do=register&#39;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="bp">None</span>
+<span class="p">)</span>
+
+<span class="n">my_other_setting</span> <span class="o">=</span> <span class="n">Setting</span><span class="p">(</span>
+        <span class="s1">&#39;sample_boolean&#39;</span><span class="p">,</span> <span class="s1">&#39;Booleans for the win!&#39;</span><span class="p">,</span> <span class="n">Setting</span><span class="o">.</span><span class="n">CAT_BEHAVIOUR</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">bool</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Example&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
 </div>
 <dl class="method">
 <dt id="pyplanet.contrib.setting.Setting.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>key: str</em>, <em>name: str</em>, <em>category: str</em>, <em>type=&lt;class 'str'&gt;</em>, <em>description: str = None</em>, <em>choices=None</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.Setting.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>key: str</em>, <em>name: str</em>, <em>category: str</em>, <em>type=&lt;class 'str'&gt;</em>, <em>description: str = None</em>, <em>choices=None</em>, <em>default=None</em>, <em>change_target=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/setting.html#Setting.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.Setting.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create setting with properties.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -447,6 +459,7 @@ You should keep this unique in your app!</li>
 <li><strong>description</strong> &#8211; Description to provide help and instructions to the player.</li>
 <li><strong>choices</strong> &#8211; List or tuple with choices, only when wanting to restrict values to selected options.</li>
 <li><strong>default</strong> &#8211; Default value if not provided from database. This will be returned. Defaults to None.</li>
+<li><strong>change_target</strong> &#8211; Target method to call when the setting value has been changed.</li>
 </ul>
 </td>
 </tr>
@@ -462,7 +475,7 @@ You should keep this unique in your app!</li>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.Setting.clear">
-<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.Setting.clear" title="Permalink to this definition">¶</a></dt>
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/setting.html#Setting.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.Setting.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear the value in the data storage. This will set the value to None, and will return the default value on
 request of data.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -477,7 +490,7 @@ request of data.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.Setting.get_model">
-<code class="descname">get_model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.Setting.get_model" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/setting.html#Setting.get_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.Setting.get_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the model for the setting. This will return the model instance or raise an exception when not found.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -493,7 +506,7 @@ request of data.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.Setting.get_value">
-<code class="descname">get_value</code><span class="sig-paren">(</span><em>refresh=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.Setting.get_value" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_value</code><span class="sig-paren">(</span><em>refresh=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/setting.html#Setting.get_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.Setting.get_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the value or the default value for the setting model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -511,13 +524,13 @@ request of data.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.Setting.initiate_setting">
-<code class="descname">initiate_setting</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.Setting.initiate_setting" title="Permalink to this definition">¶</a></dt>
+<code class="descname">initiate_setting</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/setting.html#Setting.initiate_setting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.Setting.initiate_setting" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initiate database record for setting.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.Setting.serialize_value">
-<code class="descname">serialize_value</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.Setting.serialize_value" title="Permalink to this definition">¶</a></dt>
+<code class="descname">serialize_value</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/setting.html#Setting.serialize_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.Setting.serialize_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Serialize the python value to the data store value, based on the type of the setting.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -533,7 +546,7 @@ request of data.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.Setting.set_value">
-<code class="descname">set_value</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.Setting.set_value" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_value</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/setting.html#Setting.set_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.Setting.set_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the value, this will serialize and save the setting to the data storage.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -563,7 +576,7 @@ request of data.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.Setting.unserialize_value">
-<code class="descname">unserialize_value</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.Setting.unserialize_value" title="Permalink to this definition">¶</a></dt>
+<code class="descname">unserialize_value</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/setting.html#Setting.unserialize_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.Setting.unserialize_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unserialize the datastorage value to the python value, based on the type of the setting.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -583,7 +596,7 @@ request of data.</p>
 
 <dl class="class">
 <dt id="pyplanet.contrib.setting.GlobalSettingManager">
-<em class="property">class </em><code class="descclassname">pyplanet.contrib.setting.</code><code class="descname">GlobalSettingManager</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyplanet.contrib.setting.</code><code class="descname">GlobalSettingManager</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#GlobalSettingManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Global Setting manager is available at the instance. <code class="docutils literal"><span class="pre">instance.setting_manager</span></code>.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -592,7 +605,7 @@ request of data.</p>
 </div>
 <dl class="method">
 <dt id="pyplanet.contrib.setting.GlobalSettingManager.create_app_manager">
-<code class="descname">create_app_manager</code><span class="sig-paren">(</span><em>app_config</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.create_app_manager" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create_app_manager</code><span class="sig-paren">(</span><em>app_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#GlobalSettingManager.create_app_manager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.create_app_manager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create app setting manager.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -610,7 +623,7 @@ request of data.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.GlobalSettingManager.get_all">
-<code class="descname">get_all</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.get_all" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_all</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#GlobalSettingManager.get_all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.get_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieve a list of settings, with prefetched values, so get_value is almost instant (or use ._value, not recommended).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -626,7 +639,7 @@ request of data.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.GlobalSettingManager.get_app_manager">
-<code class="descname">get_app_manager</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.get_app_manager" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_app_manager</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#GlobalSettingManager.get_app_manager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.get_app_manager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the app manager for a specified app label or config instance.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -644,7 +657,7 @@ request of data.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.GlobalSettingManager.get_apps">
-<code class="descname">get_apps</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.get_apps" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_apps</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#GlobalSettingManager.get_apps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.get_apps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all the app label + names for all the settings we can find in our registry.
 Returns a dict with label as key, and count + name as values.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -661,7 +674,7 @@ Returns a dict with label as key, and count + name as values.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.GlobalSettingManager.get_categories">
-<code class="descname">get_categories</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.get_categories" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_categories</code><span class="sig-paren">(</span><em>prefetch_values=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#GlobalSettingManager.get_categories"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.get_categories" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all the categories we have registered.
 Returns a dict with label as key, and count + name as values.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -678,7 +691,7 @@ Returns a dict with label as key, and count + name as values.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.setting.GlobalSettingManager.get_setting">
-<code class="descname">get_setting</code><span class="sig-paren">(</span><em>app_label</em>, <em>key</em>, <em>prefetch_values=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.get_setting" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_setting</code><span class="sig-paren">(</span><em>app_label</em>, <em>key</em>, <em>prefetch_values=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/setting/manager.html#GlobalSettingManager.get_setting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.GlobalSettingManager.get_setting" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get setting by key and optionally fetch the value if not yet fetched.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -712,19 +725,19 @@ Returns a dict with label as key, and count + name as values.</p>
 <span class="target" id="module-pyplanet.contrib.setting.exceptions"></span><p>Exceptions for Setting Manager.</p>
 <dl class="exception">
 <dt id="pyplanet.contrib.setting.exceptions.SerializationException">
-<em class="property">exception </em><code class="descclassname">pyplanet.contrib.setting.exceptions.</code><code class="descname">SerializationException</code><a class="headerlink" href="#pyplanet.contrib.setting.exceptions.SerializationException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">pyplanet.contrib.setting.exceptions.</code><code class="descname">SerializationException</code><a class="reference internal" href="../_modules/pyplanet/contrib/setting/exceptions.html#SerializationException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.exceptions.SerializationException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Setting value (un)serialization problems</p>
 </dd></dl>
 
 <dl class="exception">
 <dt id="pyplanet.contrib.setting.exceptions.SettingException">
-<em class="property">exception </em><code class="descclassname">pyplanet.contrib.setting.exceptions.</code><code class="descname">SettingException</code><a class="headerlink" href="#pyplanet.contrib.setting.exceptions.SettingException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">pyplanet.contrib.setting.exceptions.</code><code class="descname">SettingException</code><a class="reference internal" href="../_modules/pyplanet/contrib/setting/exceptions.html#SettingException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.exceptions.SettingException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract setting exception.</p>
 </dd></dl>
 
 <dl class="exception">
 <dt id="pyplanet.contrib.setting.exceptions.TypeUnknownException">
-<em class="property">exception </em><code class="descclassname">pyplanet.contrib.setting.exceptions.</code><code class="descname">TypeUnknownException</code><a class="headerlink" href="#pyplanet.contrib.setting.exceptions.TypeUnknownException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">pyplanet.contrib.setting.exceptions.</code><code class="descname">TypeUnknownException</code><a class="reference internal" href="../_modules/pyplanet/contrib/setting/exceptions.html#TypeUnknownException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.setting.exceptions.TypeUnknownException" title="Permalink to this definition">¶</a></dt>
 <dd><p>The type is unknown.</p>
 </dd></dl>
 
@@ -774,7 +787,7 @@ Returns a dict with label as key, and count + name as values.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.1',
+            VERSION:'0.3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

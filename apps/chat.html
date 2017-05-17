@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chat Messages &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../index.html"/>
+        <link rel="up" title="App Development" href="index.html"/>
+        <link rel="next" title="Dedicated/Script methods" href="gbx.html"/>
+        <link rel="prev" title="Migrations" href="migrations.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib/transactions.html">Transactions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">App Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Apps Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lifecycle.html">Life Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create.html">Create app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context (UI + Settings)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_instance.html">Contrib + Core access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrations.html">Migrations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Chat Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gbx.html">Dedicated/Script methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#useful-references">Useful references</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">App Development</a> &raquo;</li>
+        
+      <li>Chat Messages</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/apps/chat.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chat-messages">
+<h1>Chat Messages<a class="headerlink" href="#chat-messages" title="Permalink to this headline">¶</a></h1>
+<p>We implemented an abstraction that will provide auto multicall and auto prefixing for you. You can use the following
+statements for example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Send chat message to all players.</span>
+<span class="n">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">)</span>
+
+<span class="c1"># Send chat message to specific player or multiple players.</span>
+<span class="n">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">,</span> <span class="s1">&#39;player_login&#39;</span><span class="p">)</span>  <span class="c1"># Sends to single player.</span>
+<span class="n">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">,</span> <span class="s1">&#39;player_login&#39;</span><span class="p">,</span> <span class="n">player_instance</span><span class="p">)</span>  <span class="c1"># Sends to both players.</span>
+
+<span class="c1"># Execute in chain (Multicall).</span>
+<span class="n">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+  <span class="s1">&#39;global_message&#39;</span><span class="p">,</span>
+  <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">,</span> <span class="s1">&#39;player_login&#39;</span><span class="p">),</span>
+  <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span><span class="s1">&#39;Test2&#39;</span><span class="p">,</span> <span class="s1">&#39;player_login2&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="c1"># You can combine this with other calls in a GBX multicall:</span>
+<span class="n">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">gbx</span><span class="o">.</span><span class="n">multicall</span><span class="p">(</span>
+  <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">gbx</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s1">&#39;SetServerName&#39;</span><span class="p">,</span> <span class="s1">&#39;Test&#39;</span><span class="p">),</span>
+  <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span><span class="s1">&#39;Test2&#39;</span><span class="p">,</span> <span class="s1">&#39;player_login2&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gbx.html" class="btn btn-neutral float-right" title="Dedicated/Script methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="migrations.html" class="btn btn-neutral" title="Migrations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

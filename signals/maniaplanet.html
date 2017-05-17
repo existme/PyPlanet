@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Maniaplanet &mdash; PyPlanet 0.2.1 documentation</title>
+  <title>Maniaplanet &mdash; PyPlanet 0.3.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet 0.2.1 documentation" href="../index.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../index.html"/>
         <link rel="up" title="Signals (callbacks)" href="index.html"/>
         <link rel="next" title="Shootmania" href="shootmania.html"/>
         <link rel="prev" title="Signals (callbacks)" href="index.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.3.0
               </div>
             
           
@@ -1260,6 +1260,70 @@ manialink</strong>!</p>
 </dd></dl>
 
 <dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.other.channel_progression_end">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.other.</code><code class="descname">channel_progression_end</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.other.channel_progression_end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Signal sent when channel progression sequence ends.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">maniaplanet:channel_progression_end</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent when the channel progression sequence ends.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Maniaplanet.ChannelProgression_End</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> &#8211; Time when callback has been sent.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.other.channel_progression_start">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.other.</code><code class="descname">channel_progression_start</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.other.channel_progression_start" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Signal sent when channel progression sequence starts.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">maniaplanet:channel_progression_start</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Callback sent when the channel progression sequence starts.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Original Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><cite>Script</cite> Maniaplanet.ChannelProgression_Start</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> &#8211; Time when callback has been sent.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="pyplanet.apps.core.maniaplanet.callbacks.other.server_chat">
+<code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.other.</code><code class="descname">server_chat</code><em class="property"> = &lt;pyplanet.core.events.dispatcher.Signal object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.other.server_chat" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Signal:</th><td class="field-body">Server send a chat message.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Code:</th><td class="field-body"><code class="docutils literal"><span class="pre">maniaplanet:server_chat</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">Custom signal called when the server outputs a message.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Origin Callback:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">None (via Chat callback).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
 <dt id="pyplanet.apps.core.maniaplanet.callbacks.other.vote_updated">
 <code class="descclassname">pyplanet.apps.core.maniaplanet.callbacks.other.</code><code class="descname">vote_updated</code><em class="property"> = &lt;pyplanet.core.events.callback.Callback object&gt;</em><a class="headerlink" href="#pyplanet.apps.core.maniaplanet.callbacks.other.vote_updated" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
@@ -1338,7 +1402,7 @@ manialink</strong>!</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.1',
+            VERSION:'0.3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

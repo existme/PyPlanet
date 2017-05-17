@@ -1,0 +1,519 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.utils.gbxparser &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.utils.gbxparser</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/utils/gbxparser" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.utils.gbxparser</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">struct</span>
+<span class="kn">from</span> <span class="nn">asyncio</span> <span class="k">import</span> <span class="n">iscoroutinefunction</span>
+
+<span class="kn">import</span> <span class="nn">aiofiles</span>
+
+
+<div class="viewcode-block" id="GbxException"><a class="viewcode-back" href="../../../api/utils.html#pyplanet.utils.gbxparser.GbxException">[docs]</a><span class="k">class</span> <span class="nc">GbxException</span><span class="p">(</span><span class="ne">BaseException</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Exception with parsing the Gbx file.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">pass</span></div>
+
+
+<span class="k">class</span> <span class="nc">_LookBackUtils</span><span class="p">:</span>
+	<span class="n">PREDEFINED_STRINGS</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="mi">11</span><span class="p">:</span> <span class="s1">&#39;Valley&#39;</span><span class="p">,</span>
+		<span class="mi">12</span><span class="p">:</span> <span class="s1">&#39;Canyon&#39;</span><span class="p">,</span>
+		<span class="mi">13</span><span class="p">:</span> <span class="s1">&#39;Lagoon&#39;</span><span class="p">,</span>
+		<span class="mi">17</span><span class="p">:</span> <span class="s1">&#39;TMCommon&#39;</span><span class="p">,</span>
+		<span class="mi">202</span><span class="p">:</span> <span class="s1">&#39;Storm&#39;</span><span class="p">,</span>
+		<span class="mi">299</span><span class="p">:</span> <span class="s1">&#39;SMCommon&#39;</span><span class="p">,</span>
+		<span class="mi">10003</span><span class="p">:</span> <span class="s1">&#39;Common&#39;</span><span class="p">,</span>
+	<span class="p">}</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buffer</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="n">buffer</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">store</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="kc">None</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">read_string</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">length</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;L&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+		<span class="k">return</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;</span><span class="si">{}</span><span class="s1">s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">length</span><span class="p">),</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">length</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">read_lookback_string</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="c1"># We should see the lookback version right now.</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;L&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+		<span class="c1"># Get the index.</span>
+		<span class="n">idx</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;L&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+		<span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+
+		<span class="c1"># Check if this will be the first occurrence.</span>
+		<span class="k">if</span> <span class="n">idx</span> <span class="o">&amp;</span> <span class="mh">0xc0000000</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">idx</span> <span class="o">&amp;</span> <span class="mh">0x3fffffff</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_string</span><span class="p">()</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+			<span class="k">return</span> <span class="n">value</span>
+
+		<span class="c1"># Check if idx is telling us that it&#39;s empty.</span>
+		<span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="mh">0xffffffff</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s1">&#39;&#39;</span>
+
+		<span class="c1"># Check if it&#39;s a predefined value.</span>
+		<span class="k">if</span> <span class="n">idx</span> <span class="o">&amp;</span> <span class="mh">0x3fffffff</span> <span class="o">==</span> <span class="n">idx</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">PREDEFINED_STRINGS</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+		<span class="c1"># Get from local store.</span>
+		<span class="n">idx</span> <span class="o">&amp;=</span> <span class="mh">0x3fffffff</span>
+		<span class="k">if</span> <span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">GbxException</span><span class="p">(</span><span class="s1">&#39;String not found in lookback list!. Offset: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">tell</span><span class="p">))</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="p">[</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+
+	<span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">store</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="k">class</span> <span class="nc">_AsyncBufferProxy</span><span class="p">:</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buffer</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		:param buffer: Buffer</span>
+<span class="sd">		:type buffer: io.BufferedIOBase</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="n">buffer</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">seek</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">whence</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">SEEK_CUR</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="n">whence</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">tell</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="GbxParser"><a class="viewcode-back" href="../../../api/utils.html#pyplanet.utils.gbxparser.GbxParser">[docs]</a><span class="k">class</span> <span class="nc">GbxParser</span><span class="p">:</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Async GBX Map Information Parser.</span>
+<span class="sd">	</span>
+<span class="sd">	Author: Toffe.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Initiate a parser with either a file path or buffer.</span>
+
+<span class="sd">		:param file: File path.</span>
+<span class="sd">		:param buffer: Buffer</span>
+<span class="sd">		:type file: str</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">file</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;File should be a string, pointing to the file you want to load.&#39;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">file</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">buffer</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;File or buffer is required!&#39;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span>
+
+		<span class="k">if</span> <span class="n">buffer</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">iscoroutinefunction</span><span class="p">(</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="n">buffer</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="n">_AsyncBufferProxy</span><span class="p">(</span><span class="n">buffer</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="n">_AsyncBufferProxy</span><span class="p">(</span><span class="n">buffer</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">strings</span> <span class="o">=</span> <span class="n">_LookBackUtils</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">)</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">header</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">header_xml</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">header_length</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">header_chunk_count</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">header_chunks</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">parse_thumb</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">parse_header_xml</span> <span class="o">=</span> <span class="kc">False</span>
+
+<div class="viewcode-block" id="GbxParser.seek"><a class="viewcode-back" href="../../../api/utils.html#pyplanet.utils.gbxparser.GbxParser.seek">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">seek</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">offset</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		We need to override the second param to move from the current position.</span>
+
+<span class="sd">		:param offset: offset to move away.</span>
+<span class="sd">		:type offset: int</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="n">io</span><span class="o">.</span><span class="n">SEEK_CUR</span><span class="p">)</span></div>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">thumb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header_xml</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">parse_thumb</span> <span class="o">=</span> <span class="n">thumb</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">parse_header_xml</span> <span class="o">=</span> <span class="n">header_xml</span>
+
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="p">:</span>
+			<span class="k">async</span> <span class="k">with</span> <span class="n">aiofiles</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">strings</span> <span class="o">=</span> <span class="n">_LookBackUtils</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">)</span>
+				<span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__parse</span><span class="p">()</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">:</span>
+			<span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__parse</span><span class="p">()</span>
+		<span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;No buffer or file given at init.&#39;</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">__parse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="c1"># Skip until class reference.</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+		<span class="c1"># Read class ID.</span>
+		<span class="n">class_id</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;I&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+		<span class="k">if</span> <span class="n">class_id</span> <span class="o">!=</span> <span class="p">((</span><span class="mh">0x3</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="mh">0x43</span> <span class="o">&lt;&lt;</span> <span class="mi">12</span><span class="p">)):</span>
+			<span class="k">raise</span> <span class="n">GbxException</span><span class="p">(</span><span class="s1">&#39;Gbx file has no valid parser, only maps are supported right now.&#39;</span><span class="p">)</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__parse_header</span><span class="p">())</span>
+
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">__parse_header</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">header_length</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;I&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">header_chunk_count</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;I&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">header_chunks</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">header</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+		<span class="c1"># Save header data from binary.</span>
+		<span class="k">for</span> <span class="n">nr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">header_chunk_count</span><span class="p">):</span>
+			<span class="n">chunk_id</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;I&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+			<span class="n">chunk_size</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;I&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">header_chunks</span><span class="p">[</span><span class="n">chunk_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">chunk_size</span> <span class="o">&amp;</span> <span class="o">~</span><span class="mh">0x80000000</span>
+
+		<span class="c1"># Parse all header chunks.</span>
+		<span class="k">for</span> <span class="n">chunk_id</span><span class="p">,</span> <span class="n">chunk_size</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">header_chunks</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__parse_chunk</span><span class="p">(</span><span class="n">chunk_id</span><span class="p">,</span> <span class="n">chunk_size</span><span class="p">))</span>
+
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">__parse_chunk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chunk_id</span><span class="p">,</span> <span class="n">chunk_size</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">chunk_id</span> <span class="o">==</span> <span class="mh">0x03043002</span><span class="p">:</span>
+			<span class="n">version</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;B&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+			<span class="n">time_bronze</span><span class="p">,</span> <span class="n">time_silver</span><span class="p">,</span> <span class="n">time_gold</span><span class="p">,</span> <span class="n">time_author</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;LLLL&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
+			<span class="n">price</span><span class="p">,</span> <span class="n">is_multilap</span><span class="p">,</span> <span class="n">map_type</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;LLL&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
+			<span class="n">is_multilap</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">is_multilap</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">False</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+			<span class="n">author_score</span><span class="p">,</span> <span class="n">editor</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;LL&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
+			<span class="n">editor</span> <span class="o">=</span> <span class="s1">&#39;simple&#39;</span> <span class="k">if</span> <span class="n">editor</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="s1">&#39;advanced&#39;</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+			<span class="n">checkpoints</span><span class="p">,</span> <span class="n">laps</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;LL&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
+			<span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+				<span class="n">time_bronze</span><span class="o">=</span><span class="n">time_bronze</span><span class="p">,</span> <span class="n">time_silver</span><span class="o">=</span><span class="n">time_silver</span><span class="p">,</span> <span class="n">time_gold</span><span class="o">=</span><span class="n">time_gold</span><span class="p">,</span> <span class="n">time_author</span><span class="o">=</span><span class="n">time_author</span><span class="p">,</span>
+				<span class="n">price</span><span class="o">=</span><span class="n">price</span><span class="p">,</span> <span class="n">is_multilap</span><span class="o">=</span><span class="n">is_multilap</span><span class="p">,</span> <span class="n">map_type</span><span class="o">=</span><span class="n">map_type</span><span class="p">,</span> <span class="n">author_score</span><span class="o">=</span><span class="n">author_score</span><span class="p">,</span> <span class="n">editor</span><span class="o">=</span><span class="n">editor</span><span class="p">,</span>
+				<span class="n">checkpoints</span><span class="o">=</span><span class="n">checkpoints</span><span class="p">,</span> <span class="n">laps</span><span class="o">=</span><span class="n">laps</span>
+			<span class="p">)</span>
+
+		<span class="k">elif</span> <span class="n">chunk_id</span> <span class="o">==</span> <span class="mh">0x03043003</span><span class="p">:</span>
+			<span class="n">version</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;B&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+			<span class="n">uid</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_lookback_string</span><span class="p">()</span>
+			<span class="n">environment</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_lookback_string</span><span class="p">()</span>
+			<span class="n">author_login</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_lookback_string</span><span class="p">()</span>
+			<span class="n">name</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_string</span><span class="p">()</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_string</span><span class="p">()</span> <span class="c1"># Unknown, mostly empty.</span>
+			<span class="n">mood</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_lookback_string</span><span class="p">()</span>
+			<span class="n">decoration_env_id</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_lookback_string</span><span class="p">()</span>
+			<span class="n">decoration_env_author</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_lookback_string</span><span class="p">()</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="mi">16</span><span class="p">)</span>
+			<span class="n">map_type</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_string</span><span class="p">()</span>
+			<span class="n">map_style</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_string</span><span class="p">()</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+			<span class="n">title_id</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_lookback_string</span><span class="p">()</span>
+			<span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+				<span class="n">uid</span><span class="o">=</span><span class="n">uid</span><span class="p">,</span> <span class="n">environment</span><span class="o">=</span><span class="n">environment</span><span class="p">,</span> <span class="n">author_login</span><span class="o">=</span><span class="n">author_login</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">mood</span><span class="o">=</span><span class="n">mood</span><span class="p">,</span>
+				<span class="n">decoration_env_id</span><span class="o">=</span><span class="n">decoration_env_id</span><span class="p">,</span> <span class="n">decoration_env_author</span><span class="o">=</span><span class="n">decoration_env_author</span><span class="p">,</span>
+				<span class="n">map_type</span><span class="o">=</span><span class="n">map_type</span><span class="p">,</span> <span class="n">map_style</span><span class="o">=</span><span class="n">map_style</span><span class="p">,</span> <span class="n">title_id</span><span class="o">=</span><span class="n">title_id</span>
+			<span class="p">)</span>
+
+		<span class="k">elif</span> <span class="n">chunk_id</span> <span class="o">==</span> <span class="mh">0x03043004</span><span class="p">:</span>
+			<span class="n">version</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;B&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">chunk_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+		<span class="k">elif</span> <span class="n">chunk_id</span> <span class="o">==</span> <span class="mh">0x03043005</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">header_xml</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_string</span><span class="p">()</span>
+
+		<span class="k">elif</span> <span class="n">chunk_id</span> <span class="o">==</span> <span class="mh">0x03043007</span><span class="p">:</span>
+			<span class="n">has_thumb</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;L&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))[</span><span class="mi">0</span><span class="p">])</span>
+			<span class="n">comment</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="n">thumb</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="k">if</span> <span class="n">has_thumb</span><span class="p">:</span>
+				<span class="n">thumb_size</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;L&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+				<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="c1"># Skip XML thumb tag.</span>
+				<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_thumb</span><span class="p">:</span>
+					<span class="n">thumb</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;</span><span class="si">{}</span><span class="s1">s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">thumb_size</span><span class="p">),</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">thumb_size</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">thumb_size</span><span class="p">)</span>
+				<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">16</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># &lt;/Thumbnail.jpg&gt;&lt;/Comments&gt;</span>
+
+				<span class="n">comment_size</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;L&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+				<span class="k">if</span> <span class="n">comment_size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+					<span class="n">comment</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;</span><span class="si">{}</span><span class="s1">s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">comment_size</span><span class="p">),</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">comment_size</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+				<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="c1"># &lt;/Comments&gt;</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">chunk_size</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span>
+
+			<span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">has_thumb</span><span class="o">=</span><span class="n">has_thumb</span><span class="p">,</span> <span class="n">thumb</span><span class="o">=</span><span class="n">thumb</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="n">comment</span><span class="p">)</span>
+
+		<span class="k">elif</span> <span class="n">chunk_id</span> <span class="o">==</span> <span class="mh">0x03043008</span><span class="p">:</span>
+			<span class="n">version</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;L&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+			<span class="n">author_version</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;L&#39;</span><span class="p">,</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+			<span class="n">author_login</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_string</span><span class="p">()</span>
+			<span class="n">author_nickname</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_string</span><span class="p">()</span>
+			<span class="n">author_zone</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_string</span><span class="p">()</span>
+			<span class="n">author_extra</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">read_string</span><span class="p">()</span>
+			<span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+				<span class="n">author_version</span><span class="o">=</span><span class="n">author_version</span><span class="p">,</span> <span class="n">author_login</span><span class="o">=</span><span class="n">author_login</span><span class="p">,</span> <span class="n">author_nickname</span><span class="o">=</span><span class="n">author_nickname</span><span class="p">,</span>
+				<span class="n">author_zone</span><span class="o">=</span><span class="n">author_zone</span><span class="p">,</span> <span class="n">author_extra</span><span class="o">=</span><span class="n">author_extra</span>
+			<span class="p">)</span>
+		<span class="k">return</span> <span class="nb">dict</span><span class="p">()</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

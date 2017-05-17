@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.core.storage.drivers.asyncssh &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../../index.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.core.storage.drivers.asyncssh</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/core/storage/drivers/asyncssh" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.core.storage.drivers.asyncssh</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">asyncssh</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">async_generator</span>
+<span class="kn">import</span> <span class="nn">asyncio_extras</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.core.storage</span> <span class="k">import</span> <span class="n">StorageDriver</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="SFTPDriver"><a class="viewcode-back" href="../../../../../api/core_storage.html#pyplanet.core.storage.drivers.asyncssh.SFTPDriver">[docs]</a><span class="k">class</span> <span class="nc">SFTPDriver</span><span class="p">(</span><span class="n">StorageDriver</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	SFTP storage driver is using the asyncssh module to access storage that is situated remotely.</span>
+<span class="sd">	</span>
+<span class="sd">	.. warning::</span>
+<span class="sd">	</span>
+<span class="sd">		This driver is not ready for production use!!</span>
+<span class="sd">	</span>
+<span class="sd">	:option HOST: Hostname of destinotion server.</span>
+<span class="sd">	:option PORT: Port destinotion server.</span>
+<span class="sd">	:option USERNAME: Username of the user account.</span>
+<span class="sd">	:option PASSWORD: Password of the user account. (optional if you use public/private keys).</span>
+<span class="sd">	:option KNOWN_HOSTS: File to the Known Hosts file.</span>
+<span class="sd">	:option CLIENT_KEYS: Array with client private keys.</span>
+<span class="sd">	:option PASSPHRASE: Passphrase to unlock private key(s).</span>
+<span class="sd">	:option KWARGS: Any other options that will be passed to ``asyncssh``.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span>
+
+		<span class="c1"># Extract config to local vars.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;HOST&#39;</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;PORT&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="s1">&#39;PORT&#39;</span> <span class="ow">in</span> <span class="n">config</span> <span class="k">else</span> <span class="mi">22</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;USERNAME&#39;</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;PASSWORD&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;PASSWORD&#39;</span> <span class="ow">in</span> <span class="n">config</span> <span class="k">else</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">known_hosts</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;KNOWN_HOSTS&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;KNOWN_HOSTS&#39;</span> <span class="ow">in</span> <span class="n">config</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;KNOWN_HOSTS&#39;</span><span class="p">],</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">client_keys</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;CLIENT_KEYS&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;CLIENT_KEYS&#39;</span> <span class="ow">in</span> <span class="n">config</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;CLIENT_KEYS&#39;</span><span class="p">],</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">passphrase</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;PASSPHRASE&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;PASSPHRASE&#39;</span> <span class="ow">in</span> <span class="n">config</span> <span class="k">else</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;KWARGS&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;KWARGS&#39;</span> <span class="ow">in</span> <span class="n">config</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;KWARGS&#39;</span><span class="p">],</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="nb">dict</span><span class="p">()</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+			<span class="n">host</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">,</span> <span class="n">known_hosts</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">known_hosts</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="p">,</span>
+			<span class="n">client_keys</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client_keys</span><span class="p">,</span> <span class="n">passphrase</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">passphrase</span><span class="p">,</span>
+		<span class="p">)</span>
+
+	<span class="nd">@asyncio_extras</span><span class="o">.</span><span class="n">async_contextmanager</span>
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">ssh</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncssh</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+			<span class="n">host</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">,</span> <span class="n">known_hosts</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">known_hosts</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="p">,</span>
+			<span class="n">client_keys</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client_keys</span><span class="p">,</span> <span class="n">passphrase</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">passphrase</span><span class="p">,</span>
+		<span class="p">)</span><span class="o">.</span><span class="fm">__aenter__</span><span class="p">()</span>
+		<span class="k">await</span> <span class="n">async_generator</span><span class="o">.</span><span class="n">yield_</span><span class="p">(</span><span class="n">ssh</span><span class="p">)</span>
+		<span class="k">await</span> <span class="n">ssh</span><span class="o">.</span><span class="fm">__aexit__</span><span class="p">()</span>
+
+	<span class="nd">@asyncio_extras</span><span class="o">.</span><span class="n">async_contextmanager</span>
+<div class="viewcode-block" id="SFTPDriver.connect_sftp"><a class="viewcode-back" href="../../../../../api/core_storage.html#pyplanet.core.storage.drivers.asyncssh.SFTPDriver.connect_sftp">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">connect_sftp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get sftp client.</span>
+<span class="sd">		</span>
+<span class="sd">		:return: Sftp client.</span>
+<span class="sd">		:rtype: asyncssh.SFTPClient</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">ssh</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span><span class="o">.</span><span class="fm">__aenter__</span><span class="p">()</span>
+		<span class="n">sftp</span> <span class="o">=</span> <span class="k">await</span> <span class="n">ssh</span><span class="o">.</span><span class="n">start_sftp_client</span><span class="p">()</span><span class="o">.</span><span class="fm">__aenter__</span><span class="p">()</span>
+		<span class="k">await</span> <span class="n">async_generator</span><span class="o">.</span><span class="n">yield_</span><span class="p">(</span><span class="n">sftp</span><span class="p">)</span>
+		<span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="fm">__aexit__</span><span class="p">()</span>
+		<span class="k">await</span> <span class="n">ssh</span><span class="o">.</span><span class="fm">__aexit__</span><span class="p">()</span></div>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">chmod</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_sftp</span><span class="p">()</span> <span class="k">as</span> <span class="n">sftp</span><span class="p">:</span>
+			<span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">mode</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">chown</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">uid</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">gid</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_sftp</span><span class="p">()</span> <span class="k">as</span> <span class="n">sftp</span><span class="p">:</span>
+			<span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="n">chown</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">uid</span><span class="p">,</span> <span class="n">gid</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">pass</span>
+
+	<span class="nd">@asyncio_extras</span><span class="o">.</span><span class="n">async_contextmanager</span>
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="n">sftp</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_sftp</span><span class="p">()</span><span class="o">.</span><span class="fm">__aenter__</span><span class="p">()</span>
+		<span class="n">fh</span> <span class="o">=</span> <span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="n">mode</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="fm">__aenter__</span><span class="p">()</span>
+		<span class="k">await</span> <span class="n">async_generator</span><span class="o">.</span><span class="n">yield_</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
+		<span class="k">await</span> <span class="n">fh</span><span class="o">.</span><span class="fm">__aexit__</span><span class="p">()</span>
+		<span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="fm">__aexit__</span><span class="p">()</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">remotepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">localpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_sftp</span><span class="p">()</span> <span class="k">as</span> <span class="n">sftp</span><span class="p">:</span>
+			<span class="k">return</span> <span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">remotepath</span><span class="p">),</span> <span class="n">localpath</span><span class="p">,</span> <span class="n">preserve</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">follow_symlinks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">localpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">remotepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_sftp</span><span class="p">()</span> <span class="k">as</span> <span class="n">sftp</span><span class="p">:</span>
+			<span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">localpath</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">remotepath</span><span class="p">),</span> <span class="n">preserve</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">follow_symlinks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">listdir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_sftp</span><span class="p">()</span> <span class="k">as</span> <span class="n">sftp</span><span class="p">:</span>
+			<span class="k">return</span> <span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">mkdir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="mi">511</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_sftp</span><span class="p">()</span> <span class="k">as</span> <span class="n">sftp</span><span class="p">:</span>
+			<span class="n">attrs</span> <span class="o">=</span> <span class="n">asyncssh</span><span class="o">.</span><span class="n">SFTPAttrs</span><span class="p">()</span>
+			<span class="n">attrs</span><span class="o">.</span><span class="n">permissions</span> <span class="o">=</span> <span class="n">mode</span>
+			<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+				<span class="n">attrs</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+			<span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">attrs</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_sftp</span><span class="p">()</span> <span class="k">as</span> <span class="n">sftp</span><span class="p">:</span>
+			<span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">rename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oldpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">newpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_sftp</span><span class="p">()</span> <span class="k">as</span> <span class="n">sftp</span><span class="p">:</span>
+			<span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">oldpath</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">newpath</span><span class="p">))</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">rmdir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_sftp</span><span class="p">()</span> <span class="k">as</span> <span class="n">sftp</span><span class="p">:</span>
+			<span class="k">async</span> <span class="k">def</span> <span class="nf">rm</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+				<span class="k">if</span> <span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+					<span class="n">files</span> <span class="o">=</span> <span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">file</span><span class="p">))</span>
+					<span class="k">for</span> <span class="n">subfile</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+						<span class="k">await</span> <span class="n">rm</span><span class="p">(</span><span class="n">subfile</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+			<span class="k">await</span> <span class="n">rm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">stat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_sftp</span><span class="p">()</span> <span class="k">as</span> <span class="n">sftp</span><span class="p">:</span>
+			<span class="k">return</span> <span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">symlink</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">dest</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_sftp</span><span class="p">()</span> <span class="k">as</span> <span class="n">sftp</span><span class="p">:</span>
+			<span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="n">symlink</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">source</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">dest</span><span class="p">))</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">exists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_sftp</span><span class="p">()</span> <span class="k">as</span> <span class="n">sftp</span><span class="p">:</span>
+			<span class="k">return</span> <span class="k">await</span> <span class="n">sftp</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">touch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_sftp</span><span class="p">()</span> <span class="k">as</span> <span class="n">sftp</span><span class="p">:</span>
+			<span class="k">async</span> <span class="k">with</span> <span class="n">sftp</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+				<span class="k">await</span> <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">openable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">True</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyplanet.core.instance &mdash; PyPlanet 0.2.1 documentation</title>
+  <title>pyplanet.core.instance &mdash; PyPlanet 0.3.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet 0.2.1 documentation" href="../index.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../index.html"/>
         <link rel="up" title="API Documentation" href="index.html"/>
         <link rel="next" title="pyplanet.core.ui" href="core_ui.html"/>
         <link rel="prev" title="pyplanet.core.exceptions" href="core_exceptions.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.3.0
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mx.html">ManiaExchange</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/live_rankings.html">Live Rankings</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
 <ul class="current">
@@ -130,6 +131,7 @@
 <li class="toctree-l2"><a class="reference internal" href="contrib_setting.html">pyplanet.contrib.setting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_mode.html">pyplanet.contrib.mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_converter.html">pyplanet.contrib.converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_chat.html">pyplanet.contrib.chat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">pyplanet.utils</a></li>
 </ul>
 </li>
@@ -211,13 +213,15 @@
 <span id="pyplanet-core-instance"></span><h1>pyplanet.core.instance<a class="headerlink" href="#module-pyplanet.core.instance" title="Permalink to this headline">¶</a></h1>
 <dl class="data">
 <dt id="pyplanet.core.instance.Controller">
-<code class="descclassname">pyplanet.core.instance.</code><code class="descname">Controller</code><em class="property"> = &lt;pyplanet.core.instance._Controller object&gt;</em><a class="headerlink" href="#pyplanet.core.instance.Controller" title="Permalink to this definition">¶</a></dt>
-<dd><p>Controller access point to prevent circular imports. This is a lazy provided way to get the instance from anywhere!</p>
+<code class="descclassname">pyplanet.core.instance.</code><code class="descname">Controller</code><em class="property"> = &lt;pyplanet.core.controller._Controller object&gt;</em><a class="headerlink" href="#pyplanet.core.instance.Controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Controller access point to prevent circular imports. This is a lazy provided way to get the instance from anywhere!
+:type Controller: pyplanet.core.Controller
+:type: pyplanet.core.Controller</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="pyplanet.core.instance.Instance">
-<em class="property">class </em><code class="descclassname">pyplanet.core.instance.</code><code class="descname">Instance</code><span class="sig-paren">(</span><em>process_name</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.instance.Instance" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyplanet.core.instance.</code><code class="descname">Instance</code><span class="sig-paren">(</span><em>process_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/core/instance.html#Instance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.core.instance.Instance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Controller Instance. The very base of the controller, containing class instances of all core components.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -230,7 +234,7 @@
 <li><a class="reference internal" href="apps.html#module-pyplanet.apps" title="pyplanet.apps"><strong>apps</strong></a> &#8211; Apps component.</li>
 <li><strong>gbx</strong> &#8211; Gbx component.</li>
 <li><strong>db</strong> &#8211; Database component.</li>
-<li><a class="reference internal" href="core_storage.html#module-pyplanet.core.storage.storage" title="pyplanet.core.storage.storage"><strong>storage</strong></a> &#8211; Storage component.</li>
+<li><a class="reference internal" href="core_storage.html#module-pyplanet.core.storage" title="pyplanet.core.storage"><strong>storage</strong></a> &#8211; Storage component.</li>
 <li><strong>signal_manager</strong> &#8211; Signal Manager.</li>
 <li><strong>ui_manager</strong> &#8211; UI Manager (global). Please use the APP context UI manager instead!</li>
 <li><strong>map_manager</strong> &#8211; Contrib: Map Manager.</li>
@@ -260,7 +264,7 @@
 
 <dl class="method">
 <dt id="pyplanet.core.instance.Instance.start">
-<code class="descname">start</code><span class="sig-paren">(</span><em>run_forever=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.core.instance.Instance.start" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start</code><span class="sig-paren">(</span><em>run_forever=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/core/instance.html#Instance.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.core.instance.Instance.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start wrapper.</p>
 </dd></dl>
 
@@ -312,7 +316,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.1',
+            VERSION:'0.3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

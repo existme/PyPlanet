@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.core.instance &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.core.instance</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/core/instance" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.core.instance</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">.controller</span> <span class="k">import</span> <span class="n">Controller</span> <span class="k">as</span> <span class="n">_Controller</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet</span> <span class="k">import</span> <span class="n">__version__</span> <span class="k">as</span> <span class="n">version</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.apps</span> <span class="k">import</span> <span class="n">Apps</span>
+<span class="kn">from</span> <span class="nn">pyplanet.conf</span> <span class="k">import</span> <span class="n">settings</span>
+<span class="kn">from</span> <span class="nn">pyplanet.core</span> <span class="k">import</span> <span class="n">signals</span>
+<span class="kn">from</span> <span class="nn">pyplanet.core.events</span> <span class="k">import</span> <span class="n">SignalManager</span>
+<span class="kn">from</span> <span class="nn">pyplanet.core.db.database</span> <span class="k">import</span> <span class="n">Database</span>
+<span class="kn">from</span> <span class="nn">pyplanet.core.game</span> <span class="k">import</span> <span class="n">Game</span>
+<span class="kn">from</span> <span class="nn">pyplanet.core.gbx</span> <span class="k">import</span> <span class="n">GbxClient</span>
+<span class="kn">from</span> <span class="nn">pyplanet.core.exceptions</span> <span class="k">import</span> <span class="n">ImproperlyConfigured</span>
+<span class="kn">from</span> <span class="nn">pyplanet.core.storage.storage</span> <span class="k">import</span> <span class="n">Storage</span>
+<span class="kn">from</span> <span class="nn">pyplanet.core.ui</span> <span class="k">import</span> <span class="n">GlobalUIManager</span>
+<span class="kn">from</span> <span class="nn">pyplanet.utils</span> <span class="k">import</span> <span class="n">memleak</span><span class="p">,</span> <span class="n">releases</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.contrib.map</span> <span class="k">import</span> <span class="n">MapManager</span>
+<span class="kn">from</span> <span class="nn">pyplanet.contrib.player</span> <span class="k">import</span> <span class="n">PlayerManager</span>
+<span class="kn">from</span> <span class="nn">pyplanet.contrib.command</span> <span class="k">import</span> <span class="n">CommandManager</span>
+<span class="kn">from</span> <span class="nn">pyplanet.contrib.permission</span> <span class="k">import</span> <span class="n">PermissionManager</span>
+<span class="kn">from</span> <span class="nn">pyplanet.contrib.setting</span> <span class="k">import</span> <span class="n">GlobalSettingManager</span>
+<span class="kn">from</span> <span class="nn">pyplanet.contrib.mode</span> <span class="k">import</span> <span class="n">ModeManager</span>
+<span class="kn">from</span> <span class="nn">pyplanet.contrib.chat</span> <span class="k">import</span> <span class="n">ChatManager</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Instance"><a class="viewcode-back" href="../../../api/core_instance.html#pyplanet.core.instance.Instance">[docs]</a><span class="k">class</span> <span class="nc">Instance</span><span class="p">:</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Controller Instance. The very base of the controller, containing class instances of all core components.</span>
+<span class="sd">	</span>
+<span class="sd">	:ivar process_name: Process and pool name.</span>
+<span class="sd">	:ivar loop: AsyncIO Event Loop.</span>
+<span class="sd">	:ivar game: Game Information class.</span>
+<span class="sd">	:ivar apps: Apps component.</span>
+<span class="sd">	:ivar gbx: Gbx component.</span>
+<span class="sd">	:ivar db: Database component.</span>
+<span class="sd">	:ivar storage: Storage component.</span>
+<span class="sd">	:ivar signal_manager: Signal Manager.</span>
+<span class="sd">	:ivar ui_manager: UI Manager (global). Please use the APP context UI manager instead!</span>
+<span class="sd">	</span>
+<span class="sd">	:ivar map_manager: Contrib: Map Manager.</span>
+<span class="sd">	:ivar player_manager: Contrib: Player Manager.</span>
+<span class="sd">	:ivar permission_manager: Contrib: Permission Manager.</span>
+<span class="sd">	:ivar command_manager: Contrib: Command Manager.</span>
+<span class="sd">	:ivar setting_manager: Contrib: Setting Manager. Please use the APP context setting manager instead!</span>
+<span class="sd">	:ivar mode_manager: Contrib. Mode Manager.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">process_name</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		The actual instance of the controller.</span>
+<span class="sd">		</span>
+<span class="sd">		:param process_name: EnvironmentProcess class specific for this process.</span>
+<span class="sd">		:type process_name: str</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="c1"># Initiate all the core components.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">process_name</span> <span class="o">=</span> 		<span class="n">process_name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">loop</span> <span class="o">=</span> 				<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">game</span> <span class="o">=</span>					<span class="n">Game</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">gbx</span> <span class="o">=</span> 					<span class="n">GbxClient</span><span class="o">.</span><span class="n">create_from_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">settings</span><span class="o">.</span><span class="n">DEDICATED</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">process_name</span><span class="p">])</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> 					<span class="n">Database</span><span class="o">.</span><span class="n">create_from_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">settings</span><span class="o">.</span><span class="n">DATABASES</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">process_name</span><span class="p">])</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">storage</span> <span class="o">=</span>				<span class="n">Storage</span><span class="o">.</span><span class="n">create_from_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">settings</span><span class="o">.</span><span class="n">STORAGE</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">process_name</span><span class="p">])</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">signal_manager</span> <span class="o">=</span> 		<span class="n">SignalManager</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ui_manager</span> <span class="o">=</span>			<span class="n">GlobalUIManager</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">apps</span> <span class="o">=</span> 				<span class="n">Apps</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+		<span class="c1"># Contrib components.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">map_manager</span> <span class="o">=</span>				<span class="n">MapManager</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">player_manager</span> <span class="o">=</span>			<span class="n">PlayerManager</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">permission_manager</span> <span class="o">=</span>		<span class="n">PermissionManager</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">command_manager</span> <span class="o">=</span>			<span class="n">CommandManager</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">setting_manager</span> <span class="o">=</span>			<span class="n">GlobalSettingManager</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">mode_manager</span> <span class="o">=</span>				<span class="n">ModeManager</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">chat_manager</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chat</span> <span class="o">=</span> <span class="n">ChatManager</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+		<span class="c1"># Populate apps.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">populate</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">MANDATORY_APPS</span><span class="p">,</span> <span class="n">in_order</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">populate</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">APPS</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">process_name</span><span class="p">])</span>
+		<span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ImproperlyConfigured</span><span class="p">(</span>
+				<span class="s1">&#39;One of the pool names doesn</span><span class="se">\&#39;</span><span class="s1">t reflect into the APPS setting! You must &#39;</span>
+				<span class="s1">&#39;declare the apps per pool! (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+			<span class="p">)</span>
+
+<div class="viewcode-block" id="Instance.start"><a class="viewcode-back" href="../../../api/core_instance.html#pyplanet.core.instance.Instance.start">[docs]</a>	<span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">run_forever</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Start wrapper.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="c1"># Start memleak checker.</span>
+			<span class="n">memleak</span><span class="o">.</span><span class="n">checker</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+			<span class="c1"># Initiate instance</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_start</span><span class="p">())</span>
+
+			<span class="c1"># Run forever.</span>
+			<span class="k">if</span> <span class="n">run_forever</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">run_forever</span><span class="p">()</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+			<span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+			<span class="k">raise</span></div>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">performance_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Gives back a boolean, True if we are in performance mode.</span>
+<span class="sd">		</span>
+<span class="sd">		:return: Performance mode boolean.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_manager</span><span class="o">.</span><span class="n">performance_mode</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">__fire_signal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">signal</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Fire signal with given name to all listeners.</span>
+<span class="sd">		</span>
+<span class="sd">		:param signal: Signal to fire on.</span>
+<span class="sd">		:type signal: pyplanet.core.events.dispatcher.Signal</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">await</span> <span class="n">signal</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">instance</span><span class="o">=</span><span class="bp">self</span><span class="p">))</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		The start coroutine is executed when the process is ready to create connection to the gbx protocol, database,</span>
+<span class="sd">		other services and finally start the apps.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="c1"># Make sure we start the Gbx connection, authenticate, set api version and stuff.</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__fire_signal</span><span class="p">(</span><span class="n">signals</span><span class="o">.</span><span class="n">pyplanet_start_gbx_before</span><span class="p">)</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">gbx</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__fire_signal</span><span class="p">(</span><span class="n">signals</span><span class="o">.</span><span class="n">pyplanet_start_gbx_after</span><span class="p">)</span>
+
+		<span class="c1"># Initiate the database connection, discover apps assets,models etc.</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__fire_signal</span><span class="p">(</span><span class="n">signals</span><span class="o">.</span><span class="n">pyplanet_start_db_before</span><span class="p">)</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>				<span class="c1"># Connect and initial state.</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span> 			<span class="c1"># Discover apps models.</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">initiate</span><span class="p">()</span> 			<span class="c1"># Execute migrations and initial tasks.</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>     		<span class="c1"># Check for incompatible apps and remove them.</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>				<span class="c1"># Initiate apps</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">ui_manager</span><span class="o">.</span><span class="n">on_start</span><span class="p">()</span>    <span class="c1"># Initiate UI manager.</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__fire_signal</span><span class="p">(</span><span class="n">signals</span><span class="o">.</span><span class="n">pyplanet_start_db_after</span><span class="p">)</span>
+
+		<span class="c1"># Start the core contribs.</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">setting_manager</span><span class="o">.</span><span class="n">on_start</span><span class="p">()</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_manager</span><span class="o">.</span><span class="n">on_start</span><span class="p">()</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_manager</span><span class="o">.</span><span class="n">on_start</span><span class="p">()</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">permission_manager</span><span class="o">.</span><span class="n">on_start</span><span class="p">()</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">command_manager</span><span class="o">.</span><span class="n">on_start</span><span class="p">()</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode_manager</span><span class="o">.</span><span class="n">on_start</span><span class="p">()</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">chat_manager</span><span class="o">.</span><span class="n">on_start</span><span class="p">()</span>
+
+		<span class="c1"># Start the apps, call the on_ready, resulting in apps user logic to be started.</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_header</span><span class="p">()</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__fire_signal</span><span class="p">(</span><span class="n">signals</span><span class="o">.</span><span class="n">pyplanet_start_apps_before</span><span class="p">)</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__fire_signal</span><span class="p">(</span><span class="n">signals</span><span class="o">.</span><span class="n">pyplanet_start_apps_after</span><span class="p">)</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_footer</span><span class="p">()</span>
+
+		<span class="c1"># Finish signalling and send finish signal.</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">signal_manager</span><span class="o">.</span><span class="n">finish_start</span><span class="p">()</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__fire_signal</span><span class="p">(</span><span class="n">signals</span><span class="o">.</span><span class="n">pyplanet_start_after</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">print_header</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span><span class="s1">&#39;$fff$o$w⏳$z$fff Loading...&#39;</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+		<span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">print_footer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span>
+			<span class="s1">&#39;</span><span class="se">\uf1e6</span><span class="s1"> $o$FD4Py$369Planet$z$o$s$fff v</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="se">\uf013</span><span class="s1"> $z$s $369|$FD4 &#39;</span>
+			<span class="s1">&#39;$l[http://pypla.net]Site$l $369|$FD4 &#39;</span>
+			<span class="s1">&#39;$l[https://github.com/PyPlanet]Github$l $369|$FD4 &#39;</span>
+			<span class="s1">&#39;$l[http://pypla.net]Docs$l&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">version</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">apps</span><span class="p">)),</span>
+			<span class="n">raw</span><span class="o">=</span><span class="kc">True</span>
+		<span class="p">)</span>
+
+		<span class="c1"># TODO: Write analytics util for this. Fire every admin connect (random admin connect). Fetch new version x hours.</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">releases</span><span class="o">.</span><span class="n">UpdateChecker</span><span class="o">.</span><span class="n">init_checker</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="k">pass</span>  <span class="c1"># Completely ignore errors while checking for the latest version.</span></div>
+
+
+<span class="n">Controller</span> <span class="o">=</span> <span class="n">_Controller</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Controller access point to prevent circular imports. This is a lazy provided way to get the instance from anywhere!</span>
+<span class="sd">:type Controller: pyplanet.core.Controller</span>
+<span class="sd">:type: pyplanet.core.Controller</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyplanet.contrib.map &mdash; PyPlanet 0.2.1 documentation</title>
+  <title>pyplanet.contrib.map &mdash; PyPlanet 0.3.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet 0.2.1 documentation" href="../index.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../index.html"/>
         <link rel="up" title="API Documentation" href="index.html"/>
         <link rel="next" title="pyplanet.contrib.player" href="contrib_player.html"/>
         <link rel="prev" title="pyplanet.god" href="god.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.3.0
               </div>
             
           
@@ -130,6 +130,7 @@
 <li class="toctree-l2"><a class="reference internal" href="contrib_setting.html">pyplanet.contrib.setting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_mode.html">pyplanet.contrib.mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_converter.html">pyplanet.contrib.converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_chat.html">pyplanet.contrib.chat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">pyplanet.utils</a></li>
 </ul>
 </li>
@@ -212,7 +213,7 @@
 <p>The map contrib will provide map list and information to the apps and core.</p>
 <dl class="class">
 <dt id="pyplanet.contrib.map.MapManager">
-<em class="property">class </em><code class="descclassname">pyplanet.contrib.map.</code><code class="descname">MapManager</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.map.MapManager" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyplanet.contrib.map.</code><code class="descname">MapManager</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/map/manager.html#MapManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.map.MapManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Map Manager. Manages the current map pool and the current and next map.</p>
 <div class="admonition-todo admonition" id="index-0">
 <p class="first admonition-title">Todo</p>
@@ -224,7 +225,7 @@
 </div>
 <dl class="method">
 <dt id="pyplanet.contrib.map.MapManager.add_map">
-<code class="descname">add_map</code><span class="sig-paren">(</span><em>filename</em>, <em>insert=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.map.MapManager.add_map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_map</code><span class="sig-paren">(</span><em>filename</em>, <em>insert=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/map/manager.html#MapManager.add_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.map.MapManager.add_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add or insert map to current online playlist.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -262,7 +263,7 @@
 
 <dl class="method">
 <dt id="pyplanet.contrib.map.MapManager.get_map">
-<code class="descname">get_map</code><span class="sig-paren">(</span><em>uid=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.map.MapManager.get_map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_map</code><span class="sig-paren">(</span><em>uid=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/map/manager.html#MapManager.get_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.map.MapManager.get_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get map instance by uid.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -278,7 +279,7 @@
 
 <dl class="method">
 <dt id="pyplanet.contrib.map.MapManager.handle_map_change">
-<code class="descname">handle_map_change</code><span class="sig-paren">(</span><em>info</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.map.MapManager.handle_map_change" title="Permalink to this definition">¶</a></dt>
+<code class="descname">handle_map_change</code><span class="sig-paren">(</span><em>info</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/map/manager.html#MapManager.handle_map_change"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.map.MapManager.handle_map_change" title="Permalink to this definition">¶</a></dt>
 <dd><p>This will be called from the glue that creates the signal &#8216;maniaplanet:map_begin&#8217; or &#8216;map_end&#8217;.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -325,7 +326,7 @@ loaded matchsettings. This list should be up-to-date.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.map.MapManager.playlist_has_map">
-<code class="descname">playlist_has_map</code><span class="sig-paren">(</span><em>uid</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.map.MapManager.playlist_has_map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">playlist_has_map</code><span class="sig-paren">(</span><em>uid</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/map/manager.html#MapManager.playlist_has_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.map.MapManager.playlist_has_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if our current playlist has a map with the UID given.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -339,9 +340,23 @@ loaded matchsettings. This list should be up-to-date.</p>
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="pyplanet.contrib.map.MapManager.previous_map">
+<code class="descname">previous_map</code><a class="headerlink" href="#pyplanet.contrib.map.MapManager.previous_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>The previously played map, or None if not known!</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">pyplanet.apps.core.maniaplanet.models.Map</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="pyplanet.contrib.map.MapManager.remove_map">
-<code class="descname">remove_map</code><span class="sig-paren">(</span><em>map</em>, <em>delete_file=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.map.MapManager.remove_map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_map</code><span class="sig-paren">(</span><em>map</em>, <em>delete_file=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/map/manager.html#MapManager.remove_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.map.MapManager.remove_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove and optionally delete file from server and playlist.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -365,7 +380,7 @@ loaded matchsettings. This list should be up-to-date.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.map.MapManager.save_matchsettings">
-<code class="descname">save_matchsettings</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.map.MapManager.save_matchsettings" title="Permalink to this definition">¶</a></dt>
+<code class="descname">save_matchsettings</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/map/manager.html#MapManager.save_matchsettings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.map.MapManager.save_matchsettings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save the current playlist and configuration to the matchsettings file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -383,7 +398,7 @@ loaded matchsettings. This list should be up-to-date.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.map.MapManager.set_current_map">
-<code class="descname">set_current_map</code><span class="sig-paren">(</span><em>map</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.map.MapManager.set_current_map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_current_map</code><span class="sig-paren">(</span><em>map</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/map/manager.html#MapManager.set_current_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.map.MapManager.set_current_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the current map and jump to it.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -397,7 +412,7 @@ loaded matchsettings. This list should be up-to-date.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.map.MapManager.set_next_map">
-<code class="descname">set_next_map</code><span class="sig-paren">(</span><em>map</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.map.MapManager.set_next_map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_next_map</code><span class="sig-paren">(</span><em>map</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/map/manager.html#MapManager.set_next_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.map.MapManager.set_next_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the next map. This will prepare the manager to set the next map and will communicate the next map to the
 dedicated server.</p>
 <p>The Map parameter can be a map instance or the UID of the map.</p>
@@ -413,7 +428,7 @@ dedicated server.</p>
 
 <dl class="method">
 <dt id="pyplanet.contrib.map.MapManager.upload_map">
-<code class="descname">upload_map</code><span class="sig-paren">(</span><em>fh</em>, <em>filename</em>, <em>insert=True</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.contrib.map.MapManager.upload_map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">upload_map</code><span class="sig-paren">(</span><em>fh</em>, <em>filename</em>, <em>insert=True</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/contrib/map/manager.html#MapManager.upload_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.map.MapManager.upload_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Upload and add/insert the map to the current online playlist.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -444,19 +459,19 @@ dedicated server.</p>
 
 <span class="target" id="module-pyplanet.contrib.map.exceptions"></span><dl class="exception">
 <dt id="pyplanet.contrib.map.exceptions.MapException">
-<em class="property">exception </em><code class="descclassname">pyplanet.contrib.map.exceptions.</code><code class="descname">MapException</code><a class="headerlink" href="#pyplanet.contrib.map.exceptions.MapException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">pyplanet.contrib.map.exceptions.</code><code class="descname">MapException</code><a class="reference internal" href="../_modules/pyplanet/contrib/map/exceptions.html#MapException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.map.exceptions.MapException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generic map exception by manager.</p>
 </dd></dl>
 
 <dl class="exception">
 <dt id="pyplanet.contrib.map.exceptions.MapIncompatible">
-<em class="property">exception </em><code class="descclassname">pyplanet.contrib.map.exceptions.</code><code class="descname">MapIncompatible</code><a class="headerlink" href="#pyplanet.contrib.map.exceptions.MapIncompatible" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">pyplanet.contrib.map.exceptions.</code><code class="descname">MapIncompatible</code><a class="reference internal" href="../_modules/pyplanet/contrib/map/exceptions.html#MapIncompatible"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.map.exceptions.MapIncompatible" title="Permalink to this definition">¶</a></dt>
 <dd><p>The map you want to add/insert/upload is invalid and not suited for the current server config.</p>
 </dd></dl>
 
 <dl class="exception">
 <dt id="pyplanet.contrib.map.exceptions.MapNotFound">
-<em class="property">exception </em><code class="descclassname">pyplanet.contrib.map.exceptions.</code><code class="descname">MapNotFound</code><a class="headerlink" href="#pyplanet.contrib.map.exceptions.MapNotFound" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">pyplanet.contrib.map.exceptions.</code><code class="descname">MapNotFound</code><a class="reference internal" href="../_modules/pyplanet/contrib/map/exceptions.html#MapNotFound"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.contrib.map.exceptions.MapNotFound" title="Permalink to this definition">¶</a></dt>
 <dd><p>Map not found</p>
 </dd></dl>
 
@@ -506,7 +521,7 @@ dedicated server.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.1',
+            VERSION:'0.3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

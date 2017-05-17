@@ -1,0 +1,498 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.core.ui.components.manialink &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../../index.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.core.ui.components.manialink</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/core/ui/components/manialink" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.core.ui.components.manialink</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">uuid</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">asyncio</span> <span class="k">import</span> <span class="n">iscoroutinefunction</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.core.events</span> <span class="k">import</span> <span class="n">SignalManager</span>
+<span class="kn">from</span> <span class="nn">pyplanet.core.ui.exceptions</span> <span class="k">import</span> <span class="n">ManialinkMemoryLeakException</span>
+<span class="kn">from</span> <span class="nn">pyplanet.core.ui.template</span> <span class="k">import</span> <span class="n">Template</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">_ManiaLink</span><span class="p">:</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+		<span class="bp">self</span><span class="p">,</span> <span class="n">manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hide_click</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+		<span class="n">player_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">throw_exceptions</span><span class="o">=</span><span class="kc">False</span>
+	<span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create manialink (USE THE MANAGER CREATE, DONT INIT DIRECTLY!</span>
+<span class="sd">		</span>
+<span class="sd">		:param manager: Manager instance. use your app manager.</span>
+<span class="sd">		:param id: Unique manialink id. Could be set later, must be set before displaying.</span>
+<span class="sd">		:param version: Version of manialink.</span>
+<span class="sd">		:param body: Body of manialink, not including manialink tags!!</span>
+<span class="sd">		:param template: Template instance.</span>
+<span class="sd">		:param timeout: Timeout to display, hide after the timeout is reached. Seconds.</span>
+<span class="sd">		:param hide_click: Hide manialink when click is fired on button.</span>
+<span class="sd">		:param data: Data to render. Could also be set later on or controlled separate from this instance.</span>
+<span class="sd">		:param player_data: Dict with player login and for value the player specific variables. Dont fill this to have</span>
+<span class="sd">		a global manialink instead of per person.</span>
+<span class="sd">		:param throw_exceptions: Throw exceptions during handling and executing of action handlers.</span>
+<span class="sd">		:type manager: pyplanet.core.ui.AppUIManager</span>
+<span class="sd">		:type template: pyplanet.core.ui.template.Template</span>
+<span class="sd">		:type id: str</span>
+<span class="sd">		:type version: str</span>
+<span class="sd">		:type timeout: int</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">manager</span> <span class="o">=</span> <span class="n">manager</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span> <span class="ow">or</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="n">version</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="n">body</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_template</span> <span class="o">=</span> <span class="n">template</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">hide_click</span> <span class="o">=</span> <span class="n">hide_click</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="k">if</span> <span class="n">data</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">player_data</span> <span class="o">=</span> <span class="n">player_data</span> <span class="k">if</span> <span class="n">player_data</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">player_data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">throw_exceptions</span> <span class="o">=</span> <span class="kc">False</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">receivers</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_is_global_shown</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_is_player_shown</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>  <span class="c1"># Holds per player login a boolean if the ml is shown.</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">__register_listener</span> <span class="o">=</span> <span class="kc">False</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">is_global</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_data</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_template</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player_login</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">player_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Render template. Will render template and return body.</span>
+<span class="sd">		</span>
+<span class="sd">		:param player_login: Render data only for player, set to None to globally render (and ignore player_data).</span>
+<span class="sd">		:param data: Data to append.</span>
+<span class="sd">		:param player_data: Data to append.</span>
+<span class="sd">		:param template: Template instance to use.</span>
+<span class="sd">		:type template: pyplanet.core.ui.template.Template</span>
+<span class="sd">		:return: Body, rendered manialink + script.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">data</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">player_data</span><span class="p">:</span>
+			<span class="n">player_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_data</span> <span class="ow">or</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">template</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">Template</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_template</span> <span class="o">=</span> <span class="n">template</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">template</span><span class="p">:</span>
+			<span class="n">template</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_template</span><span class="p">()</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">Template</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Can</span><span class="se">\&#39;</span><span class="s1">t render, no template is given!&#39;</span><span class="p">)</span>
+
+		<span class="c1"># Combine data (global + user specific).</span>
+		<span class="n">payload_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">player_login</span><span class="p">:</span>
+			<span class="n">payload_data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">player_login</span><span class="p">,</span> <span class="nb">dict</span><span class="p">()))</span>
+
+		<span class="c1"># Render and save in content.</span>
+		<span class="k">return</span> <span class="k">await</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="o">**</span><span class="n">payload_data</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player_logins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Display the manialink. Will also render if no body is given. Will show per player or global. depending on </span>
+<span class="sd">		the data given and stored!</span>
+<span class="sd">		</span>
+<span class="sd">		:param player_logins: Only display to the list of player logins given.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">player_logins</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">login</span> <span class="ow">in</span> <span class="n">player_logins</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_is_player_shown</span><span class="p">[</span><span class="n">login</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_is_global_shown</span> <span class="o">=</span> <span class="kc">True</span>
+
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__register_listener</span><span class="p">:</span>
+			<span class="c1"># Register handle</span>
+			<span class="n">SignalManager</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="s1">&#39;maniaplanet:manialink_answer&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__register_listener</span> <span class="o">=</span> <span class="kc">True</span>
+
+		<span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player_logins</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">hide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player_logins</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Hide manialink globally of only for the logins given in parameter.</span>
+<span class="sd">		</span>
+<span class="sd">		:param player_logins: Only hide for list of players, None for all players on the server.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">player_logins</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">login</span> <span class="ow">in</span> <span class="n">player_logins</span><span class="p">:</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_player_shown</span><span class="p">[</span><span class="n">login</span><span class="p">]</span>
+				<span class="k">except</span><span class="p">:</span>
+					<span class="k">pass</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_is_global_shown</span> <span class="o">=</span> <span class="kc">False</span>
+
+		<span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player_logins</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">subscribe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Subscribe to a action given by the manialink.</span>
+<span class="sd">		</span>
+<span class="sd">		:param action: Action name.</span>
+<span class="sd">		:param target: Target method.</span>
+<span class="sd">		:return: </span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">action</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">receivers</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">receivers</span><span class="p">[</span><span class="n">action</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">receivers</span><span class="p">[</span><span class="n">action</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">action</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">):</span>
+			<span class="k">return</span>
+
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_global_shown</span> <span class="ow">and</span> <span class="n">player</span><span class="o">.</span><span class="n">login</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_player_shown</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+			<span class="c1"># Ignore if id is unique (uuid4)</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">uuid</span><span class="o">.</span><span class="n">UUID</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+			<span class="k">except</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">ManialinkMemoryLeakException</span><span class="p">(</span>
+					<span class="s1">&#39;Old view instance (ml-id: </span><span class="si">{}</span><span class="s1">) is not yet destroyed, but is receiving player callbacks!, &#39;</span>
+					<span class="s1">&#39;Make sure you are not removing old view instances with .destroy() and del variable! &#39;</span>
+					<span class="s1">&#39;Potential Memory Leak!! Should be fixed asap!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+				<span class="p">)</span>
+
+		<span class="n">action_name</span> <span class="o">=</span> <span class="n">action</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="p">:]</span>
+		<span class="k">if</span> <span class="n">action_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">receivers</span><span class="p">:</span>
+			<span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle_catch_all</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">action_name</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+
+		<span class="c1"># Call receivers.</span>
+		<span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">receivers</span><span class="p">[</span><span class="n">action_name</span><span class="p">]:</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">iscoroutinefunction</span><span class="p">(</span><span class="n">rec</span><span class="p">):</span>
+					<span class="k">await</span> <span class="n">rec</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">rec</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+			<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+				<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">throw_exceptions</span><span class="p">:</span>
+					<span class="k">raise</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;Exception has been silenced in ManiaLink Action receiver:&#39;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="n">e</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">handle_catch_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Override this class to handle all other actions related to this view/manialink.</span>
+<span class="sd">		</span>
+<span class="sd">		:param player: Player instance.</span>
+<span class="sd">		:param action: Action name/string</span>
+<span class="sd">		:param values: Values provided by the user client.</span>
+<span class="sd">		:param kwargs: *</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">pass</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">destroy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Destroy the Manialink with it&#39;s handlers and references.</span>
+<span class="sd">		Will also hide the Manialink for all users!</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">SignalManager</span><span class="o">.</span><span class="n">get_signal</span><span class="p">(</span><span class="s1">&#39;maniaplanet:manialink_answer&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">unregister</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+			<span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">destroy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="k">pass</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">receivers</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">player_data</span> <span class="o">=</span> <span class="kc">None</span>
+
+	<span class="k">def</span> <span class="nf">destroy_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Destroy the Manialink with it&#39;s handlers and references.</span>
+<span class="sd">		Will also hide the Manialink for all users!</span>
+<span class="sd">		</span>
+<span class="sd">		This method is sync and will call a async method (destroying of the manialink at our players) async but will not</span>
+<span class="sd">		be executed at the same time. Be aware with this one!</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">SignalManager</span><span class="o">.</span><span class="n">get_signal</span><span class="p">(</span><span class="s1">&#39;maniaplanet:manialink_answer&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">unregister</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+			<span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">destroy</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+			<span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">receivers</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">player_data</span> <span class="o">=</span> <span class="kc">None</span>
+
+	<span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">destroy_sync</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="StaticManiaLink"><a class="viewcode-back" href="../../../../../api/core_ui.html#pyplanet.core.ui.components.StaticManiaLink">[docs]</a><span class="k">class</span> <span class="nc">StaticManiaLink</span><span class="p">(</span><span class="n">_ManiaLink</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	The StaticManiaLink is mostly used in PyPlanet for general views. Please use the ``View`` classes instead of this</span>
+<span class="sd">	core ui component!</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="DynamicManiaLink"><a class="viewcode-back" href="../../../../../api/core_ui.html#pyplanet.core.ui.components.DynamicManiaLink">[docs]</a><span class="k">class</span> <span class="nc">DynamicManiaLink</span><span class="p">(</span><span class="n">_ManiaLink</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	The DynamicManiaLink is a special manialink with data-bindings and automatically updates via maniascript.</span>
+<span class="sd">	Please use the ``View`` classes instead!</span>
+<span class="sd">	</span>
+<span class="sd">	.. warning ::</span>
+<span class="sd">	</span>
+<span class="sd">		This feature is not yet implemented.</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+		<span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

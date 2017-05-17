@@ -1,0 +1,531 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.apps.config &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.apps.config</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/apps/config" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.apps.config</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.core.exceptions</span> <span class="k">import</span> <span class="n">ImproperlyConfigured</span><span class="p">,</span> <span class="n">InvalidAppModule</span>
+
+
+<div class="viewcode-block" id="_AppContext"><a class="viewcode-back" href="../../../api/apps.html#pyplanet.apps._AppContext">[docs]</a><span class="k">class</span> <span class="nc">_AppContext</span><span class="p">:</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	The app context holds instances of core/contrib components that must be managed on a per app base. Such as the UI</span>
+<span class="sd">	registration and distribution.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Initiate the App Context. Used by several core and contribs to have it&#39;s own manager instance per app.</span>
+<span class="sd">		You should always use the managers of your local app at first!</span>
+<span class="sd">		</span>
+<span class="sd">		:param app: App Config instance.</span>
+<span class="sd">		:type app: pyplanet.apps.config.AppConfig</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ui</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">ui_manager</span><span class="o">.</span><span class="n">create_app_manager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		UI Component. See :doc:`UI Classes &lt;/api/core_ui&gt;`.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">setting</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">setting_manager</span><span class="o">.</span><span class="n">create_app_manager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Setting Contrib Component. See :doc:`Setting Classes &lt;/api/contrib_setting&gt;`.</span>
+<span class="sd">		&quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="AppConfig"><a class="viewcode-back" href="../../../api/apps.html#pyplanet.apps.AppConfig">[docs]</a><span class="k">class</span> <span class="nc">AppConfig</span><span class="p">:</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	This class is the base class for the Applications metadata class. The class holds information and hooks</span>
+<span class="sd">	that will be executed after initiation for example.</span>
+<span class="sd">	</span>
+<span class="sd">	.. code-block:: python</span>
+<span class="sd">	</span>
+<span class="sd">		class MyApp(AppConfig):</span>
+
+<span class="sd">			async def on_start(self):</span>
+<span class="sd">				print(&#39;we are staring!!&#39;)</span>
+<span class="sd">	</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">label</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">human_name</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">path</span> <span class="o">=</span> <span class="kc">None</span>
+
+	<span class="n">app_dependencies</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	You can provide a list of dependencies to other apps (each entry needs to be a string of the app label!)</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">mode_dependencies</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	You can provide a list of gamemodes that are required to activate the app. Gamemodes needs to be declared as</span>
+<span class="sd">	script names.</span>
+<span class="sd">	You can override this behaviour by defining the following method in your config class</span>
+<span class="sd">	</span>
+<span class="sd">	.. code-block :: python</span>
+
+<span class="sd">		def is_mode_supported(self, mode):</span>
+<span class="sd">			return mode.startswith(&#39;TimeAttack&#39;)</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">game_dependencies</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	You can provide a list of game dependencies that needs to meet when the app is started. For example you can provide:</span>
+
+<span class="sd">	.. code-block :: python</span>
+
+<span class="sd">		game_dependencies = [&#39;trackmania&#39;]</span>
+
+<span class="sd">	You can override this behaviour by defining the following method in your config class</span>
+<span class="sd">	</span>
+<span class="sd">	.. code-block :: python</span>
+
+<span class="sd">		def is_game_supported(self, game):</span>
+<span class="sd">			return game != &#39;questmania&#39;</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app_name</span><span class="p">,</span> <span class="n">app_module</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Init app config.</span>
+<span class="sd">		</span>
+<span class="sd">		:param app_name: App Name (from module path).</span>
+<span class="sd">		:param app_module: App Module.</span>
+<span class="sd">		:param instance: Instance of controller</span>
+<span class="sd">		:type app_name: str</span>
+<span class="sd">		:type app_module: str</span>
+<span class="sd">		:type instance: pyplanet.core.instance.Instance</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="c1"># The full python module path. The postfix `*.app` is always the same!</span>
+		<span class="c1"># Example: pyplanet.contrib.apps.games.trackmania.app</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">app_name</span>
+
+		<span class="c1"># The apps root module.</span>
+		<span class="c1"># Example: pyplanet.contrib.apps.games.trackmania</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">module</span> <span class="o">=</span> <span class="n">app_module</span>
+
+		<span class="c1"># The apps registry will be injected into the app config.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">apps</span> <span class="o">=</span> <span class="kc">None</span>
+
+		<span class="c1"># Make sure we give the core attribute the default value of false. This indicates if it&#39;s an internally</span>
+		<span class="c1"># module.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">core</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+		<span class="c1"># The label can be given by the module, or automatically determinated on the last component.</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">app_name</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+
+			<span class="c1"># If the module is a core contrib module, we give the label a prefix (contrib.app).</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">core</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;core.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+
+		<span class="c1"># Human-readable name for the application eg. `MyApp`.</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;human_name&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;human_name&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">human_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+		<span class="c1"># Filesystem path to the application directory eg.</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;path&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;path&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_path_from_module</span><span class="p">(</span><span class="n">app_module</span><span class="p">)</span>
+
+		<span class="c1"># The instance and related app context managers.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">instance</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="n">_AppContext</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s1">&#39;&lt;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">ui</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		.. deprecated:: 0.0.1</span>
+<span class="sd">			Use ``context.ui`` instead.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="ne">DeprecationWarning</span><span class="p">(</span>
+			<span class="s1">&#39;AppConfig.ui is deprecated, use AppConfig.context.ui instead.&#39;</span>
+			<span class="s1">&#39;This is done to prevent collisions in future changes or feature adding.&#39;</span>
+			<span class="s1">&#39;Calling app.ui from app </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+		<span class="p">))</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">ui</span>
+
+	<span class="c1">###################################################################################################</span>
+	<span class="c1"># Lifecycle Methods</span>
+	<span class="c1">###################################################################################################</span>
+
+<div class="viewcode-block" id="AppConfig.on_init"><a class="viewcode-back" href="../../../api/apps.html#pyplanet.apps.AppConfig.on_init">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">on_init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		The on_init will be called before all apps are started (just before the on_ready). This will allow the app</span>
+<span class="sd">		to register things like commands, permissions and other things that are important and don&#39;t require other</span>
+<span class="sd">		apps to be ready.</span>
+<span class="sd">		&quot;&quot;&quot;</span></div>
+
+<div class="viewcode-block" id="AppConfig.on_start"><a class="viewcode-back" href="../../../api/apps.html#pyplanet.apps.AppConfig.on_start">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">on_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		The on_start call is being called after all apps has been started successfully. You should register any stuff </span>
+<span class="sd">		that is related to any other apps and signals like your `self` context for signals if they are classmethods.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="c1"># Deprecated: Fix the deprecated method</span>
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;on_ready&#39;</span><span class="p">):</span>
+			<span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;on_ready is deprecated, use on_start instead! app: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">))</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_ready</span><span class="p">()</span>
+		<span class="k">pass</span></div>
+
+<div class="viewcode-block" id="AppConfig.on_stop"><a class="viewcode-back" href="../../../api/apps.html#pyplanet.apps.AppConfig.on_stop">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">on_stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		The on_stop will be called before stopping the app.  </span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">pass</span></div>
+
+<div class="viewcode-block" id="AppConfig.on_destroy"><a class="viewcode-back" href="../../../api/apps.html#pyplanet.apps.AppConfig.on_destroy">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">on_destroy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		On destroy is being called when unloading the app from the memory.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">pass</span></div>
+
+	<span class="c1">###################################################################################################</span>
+
+<div class="viewcode-block" id="AppConfig.is_mode_supported"><a class="viewcode-back" href="../../../api/apps.html#pyplanet.apps.AppConfig.is_mode_supported">[docs]</a>	<span class="k">def</span> <span class="nf">is_mode_supported</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode_dependencies</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">mode</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode_dependencies</span>
+		<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="AppConfig.is_game_supported"><a class="viewcode-back" href="../../../api/apps.html#pyplanet.apps.AppConfig.is_game_supported">[docs]</a>	<span class="k">def</span> <span class="nf">is_game_supported</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">game</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">game_dependencies</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">game</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">game_dependencies</span>
+		<span class="k">return</span> <span class="kc">True</span></div>
+
+	<span class="k">def</span> <span class="nf">_path_from_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Attempt to determine app&#39;s filesystem path from its module.&quot;&quot;&quot;</span>
+		<span class="n">paths</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s1">&#39;__path__&#39;</span><span class="p">,</span> <span class="p">[]))</span>
+
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="n">filename</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s1">&#39;__file__&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">filename</span><span class="p">)]</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="c1"># Can be bugged for unknown reasons.</span>
+				<span class="n">paths</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">paths</span><span class="p">))</span>
+
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ImproperlyConfigured</span><span class="p">(</span>
+				<span class="s1">&#39;The app module </span><span class="si">{}</span><span class="s1"> has multiple filesystem locations </span><span class="si">{}</span><span class="s1">; &#39;</span>
+				<span class="s1">&#39;you must configure this app with an AppConfig subclass &#39;</span>
+				<span class="s1">&#39;with a </span><span class="se">\&#39;</span><span class="s1">path</span><span class="se">\&#39;</span><span class="s1"> class attribute.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">paths</span><span class="p">))</span>
+
+		<span class="k">elif</span> <span class="ow">not</span> <span class="n">paths</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ImproperlyConfigured</span><span class="p">(</span>
+				<span class="s1">&#39;The app module </span><span class="si">{}</span><span class="s1"> has no filesystem location, &#39;</span>
+				<span class="s1">&#39;you must configure this app with an AppConfig subclass &#39;</span>
+				<span class="s1">&#39;with a </span><span class="se">\&#39;</span><span class="s1">path</span><span class="se">\&#39;</span><span class="s1"> class attribute.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">module</span><span class="p">))</span>
+
+		<span class="k">return</span> <span class="n">paths</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+	<span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="AppConfig.import_app"><a class="viewcode-back" href="../../../api/apps.html#pyplanet.apps.AppConfig.import_app">[docs]</a>	<span class="k">def</span> <span class="nf">import_app</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+		<span class="c1"># Import the module, we need to strip down the path into namespace, file and class.</span>
+		<span class="n">module_path</span><span class="p">,</span> <span class="n">app_glue</span><span class="p">,</span> <span class="n">cls_name</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+
+		<span class="c1"># The app name (full module path to module, not the app!)</span>
+		<span class="n">app_name</span> <span class="o">=</span> <span class="n">module_path</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">module_path</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ImproperlyConfigured</span><span class="p">(</span><span class="s1">&#39;Module for your app </span><span class="si">{}</span><span class="s1"> can</span><span class="se">\&#39;</span><span class="s1">t be found!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">entry</span><span class="p">))</span>
+
+		<span class="c1"># The new style definitions works a bit different. We just import the module, search for the first class that is</span>
+		<span class="c1"># a subclass of AppConfig.</span>
+		<span class="k">if</span> <span class="n">cls_name</span><span class="o">.</span><span class="n">islower</span><span class="p">():</span>
+			<span class="n">module_path</span> <span class="o">+=</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">cls_name</span>
+			<span class="n">app_name</span> <span class="o">=</span> <span class="n">module_path</span>
+			<span class="n">cls_name</span> <span class="o">=</span> <span class="kc">None</span>
+
+		<span class="c1"># Try to load the app module, containing the class.</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">module_path</span><span class="p">)</span>
+
+			<span class="c1"># If we have a new-style module, check for the first AppConfig extending class in our module.</span>
+			<span class="c1"># See #109.</span>
+			<span class="k">if</span> <span class="n">cls_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
+					<span class="k">if</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isclass</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">AppConfig</span><span class="p">)</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">!=</span> <span class="s1">&#39;AppConfig&#39;</span><span class="p">:</span>
+						<span class="n">cls_name</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__name__</span>
+						<span class="k">break</span>
+
+			<span class="n">module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">cls_name</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ImproperlyConfigured</span><span class="p">(</span>
+				<span class="s1">&#39;Can</span><span class="se">\&#39;</span><span class="s1">t load the app </span><span class="si">{}</span><span class="s1">. Can</span><span class="se">\&#39;</span><span class="s1">t find the app config!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+			<span class="p">)</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ImproperlyConfigured</span><span class="p">(</span>
+				<span class="s1">&#39;Can</span><span class="se">\&#39;</span><span class="s1">t load the app </span><span class="si">{}</span><span class="s1">. Can</span><span class="se">\&#39;</span><span class="s1">t load the app class!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+			<span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+
+		<span class="c1"># Last check if subclass of appconfig.</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">AppConfig</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">InvalidAppModule</span><span class="p">(</span><span class="s1">&#39;Your required app </span><span class="si">{}</span><span class="s1"> couldn</span><span class="se">\&#39;</span><span class="s1">t be loaded!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">entry</span><span class="p">))</span>
+
+		<span class="c1"># Ensure app_name points to a valid module.</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">app_module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">app_name</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ImproperlyConfigured</span><span class="p">(</span>
+				<span class="s1">&#39;Can</span><span class="se">\&#39;</span><span class="s1">t import </span><span class="si">{}</span><span class="s1">. Check that </span><span class="se">\&#39;</span><span class="si">{}</span><span class="s1">.</span><span class="si">{}</span><span class="s1">.name</span><span class="se">\&#39;</span><span class="s1"> is correct.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+					<span class="n">app_name</span><span class="p">,</span> <span class="n">module_path</span><span class="p">,</span> <span class="n">cls_name</span>
+				<span class="p">)</span>
+			<span class="p">)</span>
+
+		<span class="k">return</span> <span class="n">module</span><span class="p">(</span><span class="n">app_name</span><span class="p">,</span> <span class="n">app_module</span><span class="p">,</span> <span class="n">instance</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

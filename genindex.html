@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; PyPlanet 0.2.1 documentation</title>
+  <title>Index &mdash; PyPlanet 0.3.0 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
         <link rel="index" title="Index"
               href="#"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="PyPlanet 0.2.1 documentation" href="index.html"/> 
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.3.0
               </div>
             
           
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/mx.html">ManiaExchange</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps/contrib/live_rankings.html">Live Rankings</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
 <ul>
@@ -282,6 +283,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/core_events.html#pyplanet.core.events.callback.Callback">Callback (class in pyplanet.core.events.callback)</a>
 </li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.other.channel_progression_end">channel_progression_end (in module pyplanet.apps.core.maniaplanet.callbacks.other)</a>
+</li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.other.channel_progression_start">channel_progression_start (in module pyplanet.apps.core.maniaplanet.callbacks.other)</a>
+</li>
+      <li><a href="api/contrib_chat.html#pyplanet.contrib.chat.ChatManager">ChatManager (class in pyplanet.contrib.chat)</a>
+</li>
       <li><a href="api/apps.html#pyplanet.apps.Apps.check">check() (pyplanet.apps.Apps method)</a>
 </li>
       <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.Setting.clear">clear() (pyplanet.contrib.setting.Setting method)</a>
@@ -292,10 +299,10 @@
         <li><a href="api/views.html#pyplanet.views.generics.list.ListView.close">(pyplanet.views.generics.list.ListView method)</a>
 </li>
       </ul></li>
-      <li><a href="api/contrib_command.html#pyplanet.contrib.command.Command">Command (class in pyplanet.contrib.command)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/contrib_command.html#pyplanet.contrib.command.Command">Command (class in pyplanet.contrib.command)</a>
+</li>
       <li><a href="api/contrib_command.html#pyplanet.contrib.command.CommandManager">CommandManager (class in pyplanet.contrib.command)</a>
 </li>
       <li><a href="api/core_storage.html#pyplanet.core.storage.drivers.asyncssh.SFTPDriver.connect_sftp">connect_sftp() (pyplanet.core.storage.drivers.asyncssh.SFTPDriver method)</a>
@@ -366,9 +373,11 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/god.html#pyplanet.god.pool.EnvironmentPool">EnvironmentPool (class in pyplanet.god.pool)</a>
 </li>
+      <li><a href="api/contrib_command.html#pyplanet.contrib.command.ParameterParser.errors">errors (pyplanet.contrib.command.ParameterParser attribute)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/contrib_command.html#pyplanet.contrib.command.ParameterParser.errors">errors (pyplanet.contrib.command.ParameterParser attribute)</a>
+      <li><a href="api/contrib_chat.html#pyplanet.contrib.chat.ChatManager.execute">execute() (pyplanet.contrib.chat.ChatManager method)</a>
 </li>
       <li><a href="api/god.html#pyplanet.god.process.InstanceProcess.exitcode">exitcode (pyplanet.god.process.InstanceProcess attribute)</a>
 </li>
@@ -420,6 +429,8 @@
         <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.manager.GlobalSettingManager.get_apps">(pyplanet.contrib.setting.manager.GlobalSettingManager method)</a>
 </li>
       </ul></li>
+      <li><a href="api/core_ui.html#pyplanet.core.ui.ui_properties.UIProperties.get_attribute">get_attribute() (pyplanet.core.ui.ui_properties.UIProperties method)</a>
+</li>
       <li><a href="api/core_events.html#pyplanet.core.events.manager._SignalManager.get_callback">get_callback() (pyplanet.core.events.manager._SignalManager method)</a>
 </li>
       <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.GlobalSettingManager.get_categories">get_categories() (pyplanet.contrib.setting.GlobalSettingManager method)</a>
@@ -469,6 +480,8 @@
       <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.Setting.get_value">get_value() (pyplanet.contrib.setting.Setting method)</a>
 </li>
       <li><a href="api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.get_variables">get_variables() (pyplanet.contrib.mode.ModeManager method)</a>
+</li>
+      <li><a href="api/core_ui.html#pyplanet.core.ui.ui_properties.UIProperties.get_visibility">get_visibility() (pyplanet.core.ui.ui_properties.UIProperties method)</a>
 </li>
       <li><a href="signals/trackmania.html#pyplanet.apps.core.trackmania.callbacks.give_up">give_up (in module pyplanet.apps.core.trackmania.callbacks)</a>
 </li>
@@ -754,6 +767,12 @@
         <li><a href="api/god.html#pyplanet.god.pool.EnvironmentPool.populate">(pyplanet.god.pool.EnvironmentPool method)</a>
 </li>
       </ul></li>
+      <li><a href="api/contrib_chat.html#pyplanet.contrib.chat.ChatManager.prepare">prepare() (pyplanet.contrib.chat.ChatManager method)</a>
+</li>
+      <li><a href="api/contrib_chat.html#pyplanet.contrib.chat.ChatManager.prepare_raw">prepare_raw() (pyplanet.contrib.chat.ChatManager method)</a>
+</li>
+      <li><a href="api/contrib_map.html#pyplanet.contrib.map.MapManager.previous_map">previous_map (pyplanet.contrib.map.MapManager attribute)</a>
+</li>
       <li><a href="api/core_events.html#pyplanet.core.events.dispatcher.Signal.process">process() (pyplanet.core.events.dispatcher.Signal method)</a>
 </li>
       <li><a href="api/views.html#pyplanet.views.generics.alert.PromptView">PromptView (class in pyplanet.views.generics.alert)</a>
@@ -778,10 +797,12 @@
 </li>
       <li><a href="signals/shootmania.html#module-pyplanet.apps.core.shootmania.callbacks.royal">pyplanet.apps.core.shootmania.callbacks.royal (module)</a>
 </li>
-      <li><a href="signals/trackmania.html#module-pyplanet.apps.core.trackmania.callbacks">pyplanet.apps.core.trackmania.callbacks (module)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="signals/trackmania.html#module-pyplanet.apps.core.trackmania.callbacks">pyplanet.apps.core.trackmania.callbacks (module)</a>
+</li>
+      <li><a href="api/contrib_chat.html#module-pyplanet.contrib.chat">pyplanet.contrib.chat (module)</a>
+</li>
       <li><a href="api/contrib_command.html#module-pyplanet.contrib.command">pyplanet.contrib.command (module)</a>
 </li>
       <li><a href="api/contrib_command.html#module-pyplanet.contrib.command.exceptions">pyplanet.contrib.command.exceptions (module)</a>
@@ -847,6 +868,8 @@
       <li><a href="api/core_ui.html#module-pyplanet.core.ui.loader">pyplanet.core.ui.loader (module)</a>
 </li>
       <li><a href="api/core_ui.html#module-pyplanet.core.ui.template">pyplanet.core.ui.template (module)</a>
+</li>
+      <li><a href="api/core_ui.html#module-pyplanet.core.ui.ui_properties">pyplanet.core.ui.ui_properties (module)</a>
 </li>
       <li><a href="api/god.html#module-pyplanet.god.pool">pyplanet.god.pool (module)</a>
 </li>
@@ -958,6 +981,8 @@
 </li>
       <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.Setting.serialize_value">serialize_value() (pyplanet.contrib.setting.Setting method)</a>
 </li>
+      <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.other.server_chat">server_chat (in module pyplanet.apps.core.maniaplanet.callbacks.other)</a>
+</li>
       <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.server_end">server_end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
 </li>
       <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.server_end__end">server_end__end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
@@ -965,6 +990,8 @@
       <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.server_start">server_start (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
 </li>
       <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.server_start__end">server_start__end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
+</li>
+      <li><a href="api/core_ui.html#pyplanet.core.ui.ui_properties.UIProperties.set_attribute">set_attribute() (pyplanet.core.ui.ui_properties.UIProperties method)</a>
 </li>
       <li><a href="api/contrib_map.html#pyplanet.contrib.map.MapManager.set_current_map">set_current_map() (pyplanet.contrib.map.MapManager method)</a>
 </li>
@@ -975,6 +1002,8 @@
       <li><a href="api/core_events.html#pyplanet.core.events.dispatcher.Signal.set_self">set_self() (pyplanet.core.events.dispatcher.Signal method)</a>
 </li>
       <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.Setting.set_value">set_value() (pyplanet.contrib.setting.Setting method)</a>
+</li>
+      <li><a href="api/core_ui.html#pyplanet.core.ui.ui_properties.UIProperties.set_visibility">set_visibility() (pyplanet.core.ui.ui_properties.UIProperties method)</a>
 </li>
       <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.Setting">Setting (class in pyplanet.contrib.setting)</a>
 </li>
@@ -990,10 +1019,10 @@
         <li><a href="api/god.html#pyplanet.god.process.InstanceProcess.shutdown">(pyplanet.god.process.InstanceProcess method)</a>
 </li>
       </ul></li>
-      <li><a href="api/core_events.html#pyplanet.core.events.dispatcher.Signal">Signal (class in pyplanet.core.events.dispatcher)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/core_events.html#pyplanet.core.events.dispatcher.Signal">Signal (class in pyplanet.core.events.dispatcher)</a>
+</li>
       <li><a href="api/core_events.html#pyplanet.core.events.dispatcher.Signal.Meta">Signal.Meta (class in pyplanet.core.events.dispatcher)</a>
 </li>
       <li><a href="api/core_exceptions.html#pyplanet.core.exceptions.SignalException">SignalException</a>
@@ -1098,14 +1127,18 @@
       </ul></li>
       <li><a href="api/core_ui.html#pyplanet.core.ui.exceptions.UIException">UIException</a>
 </li>
+      <li><a href="api/core_ui.html#pyplanet.core.ui.ui_properties.UIProperties">UIProperties (class in pyplanet.core.ui.ui_properties)</a>
+</li>
+      <li><a href="api/core_ui.html#pyplanet.core.ui.exceptions.UIPropertyDoesNotExist">UIPropertyDoesNotExist</a>
+</li>
       <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.unloading_map_end">unloading_map_end (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
 </li>
       <li><a href="signals/maniaplanet.html#pyplanet.apps.core.maniaplanet.callbacks.flow.unloading_map_start">unloading_map_start (in module pyplanet.apps.core.maniaplanet.callbacks.flow)</a>
 </li>
-      <li><a href="api/core_events.html#pyplanet.core.events.dispatcher.Signal.unregister">unregister() (pyplanet.core.events.dispatcher.Signal method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/core_events.html#pyplanet.core.events.dispatcher.Signal.unregister">unregister() (pyplanet.core.events.dispatcher.Signal method)</a>
+</li>
       <li><a href="api/contrib_setting.html#pyplanet.contrib.setting.Setting.unserialize_value">unserialize_value() (pyplanet.contrib.setting.Setting method)</a>
 </li>
       <li><a href="api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.update_next_settings">update_next_settings() (pyplanet.contrib.mode.ModeManager method)</a>
@@ -1149,6 +1182,8 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="signals/trackmania.html#pyplanet.apps.core.trackmania.callbacks.warmup_start_round">warmup_start_round (in module pyplanet.apps.core.trackmania.callbacks)</a>
+</li>
+      <li><a href="signals/trackmania.html#pyplanet.apps.core.trackmania.callbacks.warmup_status">warmup_status (in module pyplanet.apps.core.trackmania.callbacks)</a>
 </li>
       <li><a href="api/god.html#pyplanet.god.pool.EnvironmentPool.watchdog">watchdog() (pyplanet.god.pool.EnvironmentPool method)</a>
 </li>
@@ -1203,7 +1238,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.2.1',
+            VERSION:'0.3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -1,0 +1,537 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.contrib.setting.manager &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.contrib.setting.manager</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/contrib/setting/manager" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.contrib.setting.manager</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.apps</span> <span class="k">import</span> <span class="n">AppConfig</span>
+<span class="kn">from</span> <span class="nn">pyplanet.contrib</span> <span class="k">import</span> <span class="n">CoreContrib</span>
+<span class="kn">from</span> <span class="nn">pyplanet.contrib.setting.core_settings</span> <span class="k">import</span> <span class="n">performance_mode</span>
+<span class="kn">from</span> <span class="nn">pyplanet.contrib.setting.exceptions</span> <span class="k">import</span> <span class="n">SettingException</span>
+
+
+<span class="k">class</span> <span class="nc">_BaseSettingManager</span><span class="p">:</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Initiate, should only be done from the core instance.</span>
+<span class="sd">		</span>
+<span class="sd">		:param instance: Instance.</span>
+<span class="sd">		:type instance: pyplanet.core.instance.Instance</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_instance</span> <span class="o">=</span> <span class="n">instance</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_settings</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_app</span> <span class="o">=</span> <span class="kc">None</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">settings</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Register your setting(s). This will create default values when the setting has not yet been inited before.</span>
+
+<span class="sd">		:param settings: Setting(s) given.</span>
+<span class="sd">		:type settings: pyplanet.contrib.setting.setting._Setting</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="c1"># Check if setting has a value, then fetch it, if not, create new entry with default or none.</span>
+		<span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">initiate_setting</span><span class="p">()</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">settings</span><span class="p">])</span>
+
+		<span class="c1"># Register the setting.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_settings</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="GlobalSettingManager"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.manager.GlobalSettingManager">[docs]</a><span class="k">class</span> <span class="nc">GlobalSettingManager</span><span class="p">(</span><span class="n">_BaseSettingManager</span><span class="p">,</span> <span class="n">CoreContrib</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Global Setting manager is available at the instance. ``instance.setting_manager``.</span>
+<span class="sd">	</span>
+<span class="sd">	.. warning::</span>
+<span class="sd">	</span>
+<span class="sd">		Don&#39;t use the setting_manager for registering app settings! Use the app setting manager instead!</span>
+<span class="sd">		</span>
+<span class="sd">		Don&#39;t initiate this class yourself.</span>
+<span class="sd">	</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">app_managers</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">on_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="c1"># Register core global settings.</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">performance_mode</span><span class="p">)</span>
+
+<div class="viewcode-block" id="GlobalSettingManager.create_app_manager"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.manager.GlobalSettingManager.create_app_manager">[docs]</a>	<span class="k">def</span> <span class="nf">create_app_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app_config</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create app setting manager.</span>
+<span class="sd">		</span>
+<span class="sd">		:param app_config: App Config instance.</span>
+<span class="sd">		:type app_config: pyplanet.apps.config.AppConfig</span>
+<span class="sd">		:return: Setting Manager</span>
+<span class="sd">		:rtype: pyplanet.contrib.setting.manager.AppSettingManager</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">app_config</span><span class="o">.</span><span class="n">label</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">app_managers</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">app_managers</span><span class="p">[</span><span class="n">app_config</span><span class="o">.</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="n">AppSettingManager</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="p">,</span> <span class="n">app_config</span><span class="p">)</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">app_managers</span><span class="p">[</span><span class="n">app_config</span><span class="o">.</span><span class="n">label</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="GlobalSettingManager.get_app_manager"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.manager.GlobalSettingManager.get_app_manager">[docs]</a>	<span class="k">def</span> <span class="nf">get_app_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get the app manager for a specified app label or config instance.</span>
+<span class="sd">		</span>
+<span class="sd">		:param app: App label in string or the app config instance.</span>
+<span class="sd">		:return: App manager instance.</span>
+<span class="sd">		:rtype: pyplanet.contrib.setting.manager.AppSettingManager</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">AppConfig</span><span class="p">):</span>
+			<span class="n">app</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">label</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">app_managers</span><span class="p">[</span><span class="n">app</span><span class="p">]</span></div>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">recursive_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Retrieve all settings, of all submanagers.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">setting</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_settings</span><span class="p">:</span>
+			<span class="k">yield</span> <span class="n">setting</span>
+		<span class="k">for</span> <span class="n">app</span><span class="p">,</span> <span class="n">manager</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">app_managers</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+			<span class="k">for</span> <span class="n">setting</span> <span class="ow">in</span> <span class="n">manager</span><span class="o">.</span><span class="n">_settings</span><span class="p">:</span>
+				<span class="k">yield</span> <span class="n">setting</span>
+
+<div class="viewcode-block" id="GlobalSettingManager.get_setting"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.manager.GlobalSettingManager.get_setting">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app_label</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">prefetch_values</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get setting by key and optionally fetch the value if not yet fetched.</span>
+
+<span class="sd">		:param app_label: Namespace (mostly app label).</span>
+<span class="sd">		:param key: Key string</span>
+<span class="sd">		:param prefetch_values: Prefetch the values if not yet fetched?</span>
+<span class="sd">		:return: Setting instance.</span>
+<span class="sd">		:raise: SettingException</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">app_label</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">setting</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_settings</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+					<span class="n">setting</span> <span class="o">=</span> <span class="n">s</span>
+					<span class="k">break</span>
+
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">setting</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">SettingException</span><span class="p">(</span><span class="s1">&#39;Setting with key not found&#39;</span><span class="p">)</span>
+
+			<span class="k">if</span> <span class="n">prefetch_values</span> <span class="ow">and</span> <span class="n">setting</span><span class="o">.</span><span class="n">_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+				<span class="k">await</span> <span class="n">setting</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+			<span class="k">return</span> <span class="n">setting</span>
+		<span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_app_manager</span><span class="p">(</span><span class="n">app_label</span><span class="p">)</span><span class="o">.</span><span class="n">get_setting</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">prefetch_values</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GlobalSettingManager.get_apps"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.manager.GlobalSettingManager.get_apps">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_apps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefetch_values</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get all the app label + names for all the settings we can find in our registry.</span>
+<span class="sd">		Returns a dict with label as key, and count + name as values.</span>
+<span class="sd">		</span>
+<span class="sd">		:param prefetch_values: Prefetch the values in this call. Defaults to True.</span>
+<span class="sd">		:return: List with setting objects.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">apps</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">prefetch_values</span><span class="p">:</span>
+			<span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+				<span class="n">s</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">refresh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">recursive_settings</span>
+			<span class="p">])</span>
+
+		<span class="k">for</span> <span class="n">setting</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">recursive_settings</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">setting</span><span class="o">.</span><span class="n">app_label</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">apps</span><span class="p">:</span>
+				<span class="n">apps</span><span class="p">[</span><span class="n">setting</span><span class="o">.</span><span class="n">app_label</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+					<span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+					<span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">apps</span><span class="p">[</span><span class="n">setting</span><span class="o">.</span><span class="n">app_label</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+					<span class="n">app</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">apps</span><span class="p">[</span><span class="n">setting</span><span class="o">.</span><span class="n">app_label</span><span class="p">],</span>
+					<span class="n">settings</span><span class="o">=</span><span class="nb">list</span><span class="p">()</span>
+				<span class="p">)</span>
+			<span class="n">apps</span><span class="p">[</span><span class="n">setting</span><span class="o">.</span><span class="n">app_label</span><span class="p">][</span><span class="s1">&#39;count&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+			<span class="n">apps</span><span class="p">[</span><span class="n">setting</span><span class="o">.</span><span class="n">app_label</span><span class="p">][</span><span class="s1">&#39;settings&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">setting</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">apps</span></div>
+
+<div class="viewcode-block" id="GlobalSettingManager.get_categories"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.manager.GlobalSettingManager.get_categories">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_categories</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefetch_values</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get all the categories we have registered.</span>
+<span class="sd">		Returns a dict with label as key, and count + name as values.</span>
+<span class="sd">		</span>
+<span class="sd">		:param prefetch_values: Prefetch the values in this call. Defaults to True.</span>
+<span class="sd">		:return: List with setting objects.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">cats</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">prefetch_values</span><span class="p">:</span>
+			<span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+				<span class="n">s</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">refresh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">recursive_settings</span>
+			<span class="p">])</span>
+
+		<span class="k">for</span> <span class="n">setting</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">recursive_settings</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">setting</span><span class="o">.</span><span class="n">category</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cats</span><span class="p">:</span>
+				<span class="n">cats</span><span class="p">[</span><span class="n">setting</span><span class="o">.</span><span class="n">category</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+					<span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+					<span class="n">name</span><span class="o">=</span><span class="n">setting</span><span class="o">.</span><span class="n">category</span><span class="p">,</span>
+					<span class="n">settings</span><span class="o">=</span><span class="nb">list</span><span class="p">()</span>
+				<span class="p">)</span>
+			<span class="n">cats</span><span class="p">[</span><span class="n">setting</span><span class="o">.</span><span class="n">category</span><span class="p">][</span><span class="s1">&#39;count&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+			<span class="n">cats</span><span class="p">[</span><span class="n">setting</span><span class="o">.</span><span class="n">category</span><span class="p">][</span><span class="s1">&#39;settings&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">setting</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">cats</span></div>
+
+<div class="viewcode-block" id="GlobalSettingManager.get_all"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.manager.GlobalSettingManager.get_all">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefetch_values</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Retrieve a list of settings, with prefetched values, so get_value is almost instant (or use ._value, not recommended).</span>
+<span class="sd">		</span>
+<span class="sd">		:param prefetch_values: Prefetch the values in this call. Defaults to True.</span>
+<span class="sd">		:return: List with setting objects.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">prefetch_values</span><span class="p">:</span>
+			<span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+				<span class="n">s</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">refresh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">recursive_settings</span>
+			<span class="p">])</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">recursive_settings</span></div></div>
+
+
+<div class="viewcode-block" id="AppSettingManager"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.manager.AppSettingManager">[docs]</a><span class="k">class</span> <span class="nc">AppSettingManager</span><span class="p">(</span><span class="n">_BaseSettingManager</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	The local app setting manager is the one you should use to register settings to inside of your app.</span>
+<span class="sd">	</span>
+<span class="sd">	You can use this manager like this:</span>
+<span class="sd">	</span>
+<span class="sd">	.. code-block:: python</span>
+
+<span class="sd">		from pyplanet.contrib.setting import Setting	</span>
+<span class="sd">	</span>
+<span class="sd">		async def on_start(self):</span>
+<span class="sd">			await self.context.setting.register(</span>
+<span class="sd">				Setting(&#39;feature_a&#39;, &#39;Enable feature A&#39;, Setting.CAT_FEATURES, type=bool, description=&#39;Enable feature A&#39;),</span>
+<span class="sd">				Setting(&#39;feature_b&#39;, &#39;Enable feature B&#39;, Setting.CAT_FEATURES, type=bool, description=&#39;Enable feature B&#39;),</span>
+<span class="sd">			)</span>
+<span class="sd">			</span>
+<span class="sd">	For more information about the settings, categories, types, and all other options. Look at the ``Settings`` </span>
+<span class="sd">	documentation.</span>
+<span class="sd">	</span>
+<span class="sd">	.. warning::</span>
+<span class="sd">	</span>
+<span class="sd">		Don&#39;t initiate this class yourself.</span>
+<span class="sd">	</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">app</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Initiate app setting manager.</span>
+<span class="sd">		</span>
+<span class="sd">		:param instance: Controller instance.</span>
+<span class="sd">		:param app: App Config instance.</span>
+<span class="sd">		:type instance: pyplanet.core.instance.Instance</span>
+<span class="sd">		:type app: pyplanet.apps.config.AppConfig</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_app</span> <span class="o">=</span> <span class="n">app</span>
+
+<div class="viewcode-block" id="AppSettingManager.register"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.manager.AppSettingManager.register">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">settings</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Register your setting(s). This will create default values when the setting has not yet been inited before.</span>
+
+<span class="sd">		:param settings: Setting(s) given.</span>
+<span class="sd">		:type settings: pyplanet.contrib.setting.setting._Setting</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="c1"># Set app label on all setting objects.</span>
+		<span class="k">for</span> <span class="n">setting</span> <span class="ow">in</span> <span class="n">settings</span><span class="p">:</span>
+			<span class="n">setting</span><span class="o">.</span><span class="n">app_label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_app</span><span class="o">.</span><span class="n">label</span>
+
+		<span class="c1"># Check if setting has a value, then fetch it, if not, create new entry with default or none.</span>
+		<span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">initiate_setting</span><span class="p">()</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">settings</span><span class="p">])</span>
+
+		<span class="c1"># Register the setting.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_settings</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AppSettingManager.get_setting"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.manager.AppSettingManager.get_setting">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">prefetch_values</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get setting by key and optionally fetch the value if not yet fetched.</span>
+
+<span class="sd">		:param key: Key string</span>
+<span class="sd">		:param prefetch_values: Prefetch the values if not yet fetched?</span>
+<span class="sd">		:return: Setting instance.</span>
+<span class="sd">		:raise: SettingException</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">setting</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_settings</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+				<span class="n">setting</span> <span class="o">=</span> <span class="n">s</span>
+				<span class="k">break</span>
+
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">setting</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">SettingException</span><span class="p">(</span><span class="s1">&#39;Setting with key not found&#39;</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">prefetch_values</span> <span class="ow">and</span> <span class="n">setting</span><span class="o">.</span><span class="n">_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+			<span class="k">await</span> <span class="n">setting</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+		<span class="k">return</span> <span class="n">setting</span></div>
+
+<div class="viewcode-block" id="AppSettingManager.get_categories"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.manager.AppSettingManager.get_categories">[docs]</a>	<span class="k">def</span> <span class="nf">get_categories</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get all the categories we have registered.</span>
+<span class="sd">		Returns a dict with label as key, and count + name as values.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">cats</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">setting</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_settings</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">setting</span><span class="o">.</span><span class="n">category</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cats</span><span class="p">:</span>
+				<span class="n">cats</span><span class="p">[</span><span class="n">setting</span><span class="o">.</span><span class="n">category</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+			<span class="n">cats</span><span class="p">[</span><span class="n">setting</span><span class="o">.</span><span class="n">category</span><span class="p">][</span><span class="s1">&#39;count&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+		<span class="k">return</span> <span class="n">cats</span></div>
+
+<div class="viewcode-block" id="AppSettingManager.get_all"><a class="viewcode-back" href="../../../../api/contrib_setting.html#pyplanet.contrib.setting.manager.AppSettingManager.get_all">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefetch_values</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Retrieve a list of settings, with prefetched values, so get_value is almost instant (or use ._value, not recommended).</span>
+<span class="sd">		</span>
+<span class="sd">		:param prefetch_values: Prefetch the values in this call. Defaults to True.</span>
+<span class="sd">		:return: List with setting objects.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">prefetch_values</span><span class="p">:</span>
+			<span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+				<span class="n">s</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">refresh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_settings</span>
+			<span class="p">])</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_settings</span></div></div>
+
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

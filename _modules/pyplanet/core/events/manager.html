@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.core.events.manager &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.core.events.manager</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/core/events/manager" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.core.events.manager</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The events manager contains the class that manages custom and abstract callbacks into the system callbacks.</span>
+<span class="sd">Once a signals is registered here it could be used by string reference. This makes it easy to have dynamically signals</span>
+<span class="sd">being created by other apps in a single place so it could be used over all apps.</span>
+
+<span class="sd">For example you would create your own custom signal if you have a app for your own created game mode script that abstracts</span>
+<span class="sd">all the raw XML-RPC events into nice structured and maybe even including fetched data from external sources.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.core.events</span> <span class="k">import</span> <span class="n">Signal</span>
+
+
+<div class="viewcode-block" id="_SignalManager"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.core.events.manager._SignalManager">[docs]</a><span class="k">class</span> <span class="nc">_SignalManager</span><span class="p">:</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Signal Manager class.</span>
+<span class="sd">	</span>
+<span class="sd">	.. note::</span>
+<span class="sd">	</span>
+<span class="sd">		Access this via ``instance.signal_manager``.</span>
+<span class="sd">	</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">signals</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">callbacks</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+		<span class="c1"># Reserved signal receivers, this will be filled, and copied to real signals later on.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">reserved</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">reserved_self</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="c1">#</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">namespaces</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+		<span class="c1"># This var is used to temporary override namespaces when processing apps.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_current_namespace</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="_SignalManager.register_signal"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.core.events.manager._SignalManager.register_signal">[docs]</a>	<span class="k">def</span> <span class="nf">register_signal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="n">app</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Register a signal to be known in the signalling system.</span>
+<span class="sd">		</span>
+<span class="sd">		:param signal: Signal(s)</span>
+<span class="sd">		:param app: App context/instance.</span>
+<span class="sd">		:param callback: Will a callback handle the response (mostly raw callbacks).</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">sig</span> <span class="ow">in</span> <span class="n">signal</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">register_signal</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span>
+			<span class="k">return</span>
+
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">signal</span><span class="o">.</span><span class="n">code</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Signal code is not valid!&#39;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">signal</span><span class="o">.</span><span class="n">namespace</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_namespace</span><span class="p">:</span>
+			<span class="n">namespace</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_namespace</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">namespace</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">namespace</span>
+		<span class="n">code</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">code</span>
+
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="s1">&#39;receivers&#39;</span><span class="p">):</span>
+			<span class="n">instance</span> <span class="o">=</span> <span class="n">signal</span><span class="p">()</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">instance</span> <span class="o">=</span> <span class="n">signal</span>
+
+		<span class="n">signal_code</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">:</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">namespace</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">callback</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">callbacks</span><span class="p">[</span><span class="n">code</span><span class="p">]</span> <span class="o">=</span> <span class="n">instance</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">signals</span><span class="p">[</span><span class="n">signal_code</span><span class="p">]</span> <span class="o">=</span> <span class="n">instance</span></div>
+
+<div class="viewcode-block" id="_SignalManager.listen"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.core.events.manager._SignalManager.listen">[docs]</a>	<span class="k">def</span> <span class="nf">listen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">conditions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Register a listing client to the signal given (signal instance or string).</span>
+<span class="sd">		</span>
+<span class="sd">		:param signal: Signal instance or string: &quot;namespace:code&quot;</span>
+<span class="sd">		:param target: Target method to call.</span>
+<span class="sd">		:param conditions: Reserved for future purposes.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">Signal</span><span class="p">):</span>
+				<span class="n">signal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_signal</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
+			<span class="n">signal</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">signal</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reserved</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">reserved</span><span class="p">[</span><span class="n">signal</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">reserved</span><span class="p">[</span><span class="n">signal</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">target</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="_SignalManager.get_callback"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.core.events.manager._SignalManager.get_callback">[docs]</a>	<span class="k">def</span> <span class="nf">get_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call_name</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get signal by XML-RPC (script) callback.</span>
+<span class="sd">		</span>
+<span class="sd">		:param call_name: Callback name.</span>
+<span class="sd">		:return: Signal class or nothing.</span>
+<span class="sd">		:rtype: pyplanet.core.events.Signal</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">call_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">callbacks</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">callbacks</span><span class="p">[</span><span class="n">call_name</span><span class="p">]</span>
+		<span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;No callback registered for </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">call_name</span><span class="p">))</span>
+		<span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="_SignalManager.get_signal"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.core.events.manager._SignalManager.get_signal">[docs]</a>	<span class="k">def</span> <span class="nf">get_signal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get signal by key (namespace:code).</span>
+<span class="sd">		</span>
+<span class="sd">		:param key: namespace:code key.</span>
+<span class="sd">		:return: signal or none</span>
+<span class="sd">		:rtype: pyplanet.core.events.Signal</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">signals</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">signals</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s1">&#39;No such signal </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="_SignalManager.finish_reservations"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.core.events.manager._SignalManager.finish_reservations">[docs]</a>	<span class="k">def</span> <span class="nf">finish_reservations</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		The method will copy all reservations to the actual signals. (PRIVATE)</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">sig_name</span><span class="p">,</span> <span class="n">recs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reserved</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+			<span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">recs</span><span class="p">:</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="n">signal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_signal</span><span class="p">(</span><span class="n">sig_name</span><span class="p">)</span>
+					<span class="n">signal</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+				<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+					<span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Signal not found: </span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+						<span class="n">sig_name</span><span class="p">,</span> <span class="n">e</span>
+					<span class="p">),</span> <span class="n">exc_info</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">())</span>
+
+		<span class="k">for</span> <span class="n">sig_name</span><span class="p">,</span> <span class="n">recs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reserved_self</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+			<span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">slf</span> <span class="ow">in</span> <span class="n">recs</span><span class="p">:</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="n">signal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_signal</span><span class="p">(</span><span class="n">sig_name</span><span class="p">)</span>
+					<span class="n">signal</span><span class="o">.</span><span class="n">set_self</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">slf</span><span class="p">)</span>
+				<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+					<span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">),</span> <span class="n">exc_info</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">())</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">reserved</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">reserved_self</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="_SignalManager.init_app"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.core.events.manager._SignalManager.init_app">[docs]</a>	<span class="k">def</span> <span class="nf">init_app</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Initiate app, load all signal/callbacks files. (just import, they should register with decorators).</span>
+<span class="sd">		</span>
+<span class="sd">		:param app: App instance</span>
+<span class="sd">		:type app: pyplanet.apps.AppConfig</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_current_namespace</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">label</span>
+
+		<span class="c1"># Import the signals module.</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.signals&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+		<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+			<span class="k">pass</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_current_namespace</span> <span class="o">=</span> <span class="kc">None</span>
+
+		<span class="c1"># Import the callbacks module.</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.callbacks&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+		<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+			<span class="k">pass</span></div>
+
+<div class="viewcode-block" id="_SignalManager.finish_start"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.core.events.manager._SignalManager.finish_start">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">finish_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Finish startup the core, this will copy reservations. (PRIVATE).</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">finish_reservations</span><span class="p">()</span></div></div>
+
+<span class="n">SignalManager</span> <span class="o">=</span> <span class="n">_SignalManager</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">public_signal</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+	<span class="n">SignalManager</span><span class="o">.</span><span class="n">register_signal</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+	<span class="k">return</span> <span class="bp">cls</span>
+
+
+<span class="k">def</span> <span class="nf">public_callback</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+	<span class="n">SignalManager</span><span class="o">.</span><span class="n">register_signal</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+	<span class="k">return</span> <span class="bp">cls</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

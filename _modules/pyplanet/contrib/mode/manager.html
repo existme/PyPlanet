@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.contrib.mode.manager &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.contrib.mode.manager</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/contrib/mode/manager" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.contrib.mode.manager</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.contrib</span> <span class="k">import</span> <span class="n">CoreContrib</span>
+<span class="kn">from</span> <span class="nn">pyplanet.contrib.mode.signals</span> <span class="k">import</span> <span class="n">script_mode_changed</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ModeManager"><a class="viewcode-back" href="../../../../api/contrib_mode.html#pyplanet.contrib.mode.ModeManager">[docs]</a><span class="k">class</span> <span class="nc">ModeManager</span><span class="p">(</span><span class="n">CoreContrib</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Mode Manager manges the script, script settings and the mode UI settings of the current game mode.</span>
+<span class="sd">	</span>
+<span class="sd">	.. warning::</span>
+<span class="sd">	</span>
+<span class="sd">		Don&#39;t initiate this class yourself. Use ``instance.mode_manager`` for an static instance.</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Initiate, should only be done from the core instance.</span>
+<span class="sd">		</span>
+<span class="sd">		:param instance: Instance.</span>
+<span class="sd">		:type instance: pyplanet.core.instance.Instance</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_instance</span> <span class="o">=</span> <span class="n">instance</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_next_script</span> <span class="o">=</span> <span class="kc">None</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">_next_settings_update</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_next_variables_update</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<div class="viewcode-block" id="ModeManager.on_start"><a class="viewcode-back" href="../../../../api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.on_start">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">on_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Handle startup, just before the apps will start. We will make sure we are ready to get requests for permissions.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_current_script</span><span class="p">(</span><span class="n">refresh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+		<span class="c1"># Listeners.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">signal_manager</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="s1">&#39;maniaplanet:server_start&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_change</span><span class="p">)</span></div>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">_on_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="c1"># Making sure we set the settings + variables.</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_next_settings_update</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Setting mode settings right now!&#39;</span><span class="p">)</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_settings</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_next_settings_update</span><span class="p">)</span>
+			<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+				<span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Can</span><span class="se">\&#39;</span><span class="s1">t set the script mode settings! Error: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_next_settings_update</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_next_variables_update</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Setting mode variables right now!&#39;</span><span class="p">)</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_variables</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_next_variables_update</span><span class="p">)</span>
+			<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+				<span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Can</span><span class="se">\&#39;</span><span class="s1">t set the script mode variables! Error: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_next_variables_update</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+		<span class="c1"># Make sure we send to the signal when mode is been changed.</span>
+		<span class="n">current_script</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span>
+		<span class="n">next_script</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_script</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_current_script</span><span class="p">(</span><span class="n">refresh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">current_script</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span> <span class="ow">and</span> <span class="n">next_script</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span><span class="p">:</span>
+			<span class="k">await</span> <span class="n">script_mode_changed</span><span class="o">.</span><span class="n">send_robust</span><span class="p">({</span>
+				<span class="s1">&#39;unloaded_script&#39;</span><span class="p">:</span> <span class="n">current_script</span><span class="p">,</span> <span class="s1">&#39;loaded_script&#39;</span><span class="p">:</span> <span class="n">next_script</span>
+			<span class="p">})</span>
+
+<div class="viewcode-block" id="ModeManager.get_current_script"><a class="viewcode-back" href="../../../../api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.get_current_script">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_current_script</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">refresh</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get the current script name.</span>
+<span class="sd">		</span>
+<span class="sd">		:param refresh: Refresh from server.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">refresh</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span><span class="p">:</span>
+			<span class="n">payload</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="s1">&#39;GetScriptName&#39;</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s1">&#39;CurrentValue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+			<span class="k">if</span> <span class="s1">&#39;NextValue&#39;</span> <span class="ow">in</span> <span class="n">payload</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_next_script</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s1">&#39;NextValue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span></div>
+
+<div class="viewcode-block" id="ModeManager.get_next_script"><a class="viewcode-back" href="../../../../api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.get_next_script">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_next_script</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">refresh</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get the next script name.</span>
+<span class="sd">		</span>
+<span class="sd">		:param refresh: Refresh from server.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">refresh</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span><span class="p">:</span>
+			<span class="n">payload</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="s1">&#39;GetScriptName&#39;</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s1">&#39;CurrentValue&#39;</span><span class="p">]</span>
+			<span class="k">if</span> <span class="s1">&#39;NextValue&#39;</span> <span class="ow">in</span> <span class="n">payload</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_next_script</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s1">&#39;NextValue&#39;</span><span class="p">]</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_script</span></div>
+
+<div class="viewcode-block" id="ModeManager.get_current_script_info"><a class="viewcode-back" href="../../../../api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.get_current_script_info">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_current_script_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get the script info as a structure containing: Name, CompatibleTypes, Description, Version and the settings available.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="s1">&#39;GetModeScriptInfo&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ModeManager.set_next_script"><a class="viewcode-back" href="../../../../api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.set_next_script">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">set_next_script</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Set the next played script name (after map restart/skip).</span>
+<span class="sd">		</span>
+<span class="sd">		:param name: Name</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="s1">&#39;SetScriptName&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_next_script</span> <span class="o">=</span> <span class="n">name</span></div>
+
+<div class="viewcode-block" id="ModeManager.get_settings"><a class="viewcode-back" href="../../../../api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.get_settings">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get the current mode settings as a dictionary.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="s1">&#39;GetModeScriptSettings&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ModeManager.update_settings"><a class="viewcode-back" href="../../../../api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.update_settings">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">update_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">update_dict</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Update the current settings, merges current settings with the provided settings. Replaces by the keys you give</span>
+<span class="sd">		if the data already exists.</span>
+<span class="sd">		</span>
+<span class="sd">		:param update_dict: The dictionary with the partial updated keys and values.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">current_settings</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_settings</span><span class="p">()</span>
+		<span class="n">current_settings</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">update_dict</span><span class="p">)</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="s1">&#39;SetModeScriptSettings&#39;</span><span class="p">,</span> <span class="n">current_settings</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ModeManager.update_next_settings"><a class="viewcode-back" href="../../../../api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.update_next_settings">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">update_next_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">update_dict</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Queue setting changes for the next script (that will be active after restart).</span>
+<span class="sd">		</span>
+<span class="sd">		:param update_dict: The dictionary with the partial updated keys and values.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_next_settings_update</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_next_settings_update</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_next_settings_update</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">update_dict</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ModeManager.get_variables"><a class="viewcode-back" href="../../../../api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.get_variables">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get the mode script variables.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="s1">&#39;GetModeScriptVariables&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ModeManager.update_variables"><a class="viewcode-back" href="../../../../api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.update_variables">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">update_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">update_dict</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Update the current variables, merges current vars with the provided vars. Replaces by the keys you give</span>
+<span class="sd">		if the data already exists.</span>
+<span class="sd">		</span>
+<span class="sd">		:param update_dict: The dictionary with the partial updated keys and values.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">variables</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_variables</span><span class="p">()</span>
+		<span class="n">variables</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">update_dict</span><span class="p">)</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="s1">&#39;SetModeScriptVariables&#39;</span><span class="p">,</span> <span class="n">variables</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ModeManager.update_next_variables"><a class="viewcode-back" href="../../../../api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.update_next_variables">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">update_next_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">update_dict</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Queue variable changes for the next script (that will be active after restart).</span>
+<span class="sd">		</span>
+<span class="sd">		:param update_dict: The dictionary with the partial updated keys and values.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_next_variables_update</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_next_variables_update</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_next_variables_update</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">update_dict</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

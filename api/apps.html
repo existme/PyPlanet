@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyplanet.apps &mdash; PyPlanet 0.2.1 documentation</title>
+  <title>pyplanet.apps &mdash; PyPlanet 0.3.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet 0.2.1 documentation" href="../index.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../index.html"/>
         <link rel="up" title="API Documentation" href="index.html"/>
         <link rel="next" title="pyplanet.views" href="views.html"/>
         <link rel="prev" title="API Documentation" href="index.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.3.0
               </div>
             
           
@@ -130,6 +130,7 @@
 <li class="toctree-l2"><a class="reference internal" href="contrib_setting.html">pyplanet.contrib.setting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_mode.html">pyplanet.contrib.mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib_converter.html">pyplanet.contrib.converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib_chat.html">pyplanet.contrib.chat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">pyplanet.utils</a></li>
 </ul>
 </li>
@@ -211,32 +212,32 @@
 <span id="pyplanet-apps"></span><h1>pyplanet.apps<a class="headerlink" href="#module-pyplanet.apps" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="pyplanet.apps.Apps">
-<em class="property">class </em><code class="descclassname">pyplanet.apps.</code><code class="descname">Apps</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.Apps" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyplanet.apps.</code><code class="descname">Apps</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/apps/apps.html#Apps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.apps.Apps" title="Permalink to this definition">¶</a></dt>
 <dd><p>The apps class contains the context applications, loaded or not loaded in order of declaration or requirements
 if given by app configuration.</p>
 <p>The apps should contain a configuration class that could be loaded for reading out metadata, options and other
 useful information such as description, author, version and more.</p>
 <dl class="method">
 <dt id="pyplanet.apps.Apps.check">
-<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.Apps.check" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/apps/apps.html#Apps.check"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.apps.Apps.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check and remove unsupported apps based on the current game and script mode.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pyplanet.apps.Apps.discover">
-<code class="descname">discover</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.Apps.discover" title="Permalink to this definition">¶</a></dt>
+<code class="descname">discover</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/apps/apps.html#Apps.discover"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.apps.Apps.discover" title="Permalink to this definition">¶</a></dt>
 <dd><p>The discover function will discover all models, signals and more
 from apps in the right order.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pyplanet.apps.Apps.init">
-<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.Apps.init" title="Permalink to this definition">¶</a></dt>
+<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/apps/apps.html#Apps.init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.apps.Apps.init" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pyplanet.apps.Apps.populate">
-<code class="descname">populate</code><span class="sig-paren">(</span><em>apps</em>, <em>in_order=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.Apps.populate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">populate</code><span class="sig-paren">(</span><em>apps</em>, <em>in_order=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/apps/apps.html#Apps.populate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.apps.Apps.populate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads application into the apps registry. Once you populate, the order isn&#8217;t yet been decided.
 After all imports are done you should shuffle the apps list so it&#8217;s in the right order of execution!</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -255,16 +256,22 @@ After all imports are done you should shuffle the apps list so it&#8217;s in the
 
 <dl class="method">
 <dt id="pyplanet.apps.Apps.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.Apps.start" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/apps/apps.html#Apps.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.apps.Apps.start" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="pyplanet.apps.AppConfig">
-<em class="property">class </em><code class="descclassname">pyplanet.apps.</code><code class="descname">AppConfig</code><span class="sig-paren">(</span><em>app_name</em>, <em>app_module</em>, <em>instance</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyplanet.apps.</code><code class="descname">AppConfig</code><span class="sig-paren">(</span><em>app_name</em>, <em>app_module</em>, <em>instance</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/apps/config.html#AppConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.apps.AppConfig" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class is the base class for the Applications metadata class. The class holds information and hooks
 that will be executed after initiation for example.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">AppConfig</span><span class="p">):</span>
+
+        <span class="n">async</span> <span class="k">def</span> <span class="nf">on_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">print</span><span class="p">(</span><span class="s1">&#39;we are staring!!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 <dl class="attribute">
 <dt id="pyplanet.apps.AppConfig.app_dependencies">
 <code class="descname">app_dependencies</code><em class="property"> = None</em><a class="headerlink" href="#pyplanet.apps.AppConfig.app_dependencies" title="Permalink to this definition">¶</a></dt>
@@ -282,17 +289,17 @@ that will be executed after initiation for example.</p>
 
 <dl class="staticmethod">
 <dt id="pyplanet.apps.AppConfig.import_app">
-<em class="property">static </em><code class="descname">import_app</code><span class="sig-paren">(</span><em>entry</em>, <em>instance</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig.import_app" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">import_app</code><span class="sig-paren">(</span><em>entry</em>, <em>instance</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/apps/config.html#AppConfig.import_app"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.apps.AppConfig.import_app" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pyplanet.apps.AppConfig.is_game_supported">
-<code class="descname">is_game_supported</code><span class="sig-paren">(</span><em>game</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig.is_game_supported" title="Permalink to this definition">¶</a></dt>
+<code class="descname">is_game_supported</code><span class="sig-paren">(</span><em>game</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/apps/config.html#AppConfig.is_game_supported"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.apps.AppConfig.is_game_supported" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pyplanet.apps.AppConfig.is_mode_supported">
-<code class="descname">is_mode_supported</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig.is_mode_supported" title="Permalink to this definition">¶</a></dt>
+<code class="descname">is_mode_supported</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/apps/config.html#AppConfig.is_mode_supported"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.apps.AppConfig.is_mode_supported" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -312,13 +319,13 @@ that will be executed after initiation for example.</p>
 
 <dl class="method">
 <dt id="pyplanet.apps.AppConfig.on_destroy">
-<code class="descname">on_destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig.on_destroy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">on_destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/apps/config.html#AppConfig.on_destroy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.apps.AppConfig.on_destroy" title="Permalink to this definition">¶</a></dt>
 <dd><p>On destroy is being called when unloading the app from the memory.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pyplanet.apps.AppConfig.on_init">
-<code class="descname">on_init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig.on_init" title="Permalink to this definition">¶</a></dt>
+<code class="descname">on_init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/apps/config.html#AppConfig.on_init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.apps.AppConfig.on_init" title="Permalink to this definition">¶</a></dt>
 <dd><p>The on_init will be called before all apps are started (just before the on_ready). This will allow the app
 to register things like commands, permissions and other things that are important and don&#8217;t require other
 apps to be ready.</p>
@@ -326,14 +333,14 @@ apps to be ready.</p>
 
 <dl class="method">
 <dt id="pyplanet.apps.AppConfig.on_start">
-<code class="descname">on_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig.on_start" title="Permalink to this definition">¶</a></dt>
+<code class="descname">on_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/apps/config.html#AppConfig.on_start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.apps.AppConfig.on_start" title="Permalink to this definition">¶</a></dt>
 <dd><p>The on_start call is being called after all apps has been started successfully. You should register any stuff 
 that is related to any other apps and signals like your <cite>self</cite> context for signals if they are classmethods.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pyplanet.apps.AppConfig.on_stop">
-<code class="descname">on_stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.AppConfig.on_stop" title="Permalink to this definition">¶</a></dt>
+<code class="descname">on_stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/apps/config.html#AppConfig.on_stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.apps.AppConfig.on_stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>The on_stop will be called before stopping the app.</p>
 </dd></dl>
 
@@ -354,7 +361,7 @@ that is related to any other apps and signals like your <cite>self</cite> contex
 
 <dl class="class">
 <dt id="pyplanet.apps.config._AppContext">
-<em class="property">class </em><code class="descclassname">pyplanet.apps.config.</code><code class="descname">_AppContext</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#pyplanet.apps.config._AppContext" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyplanet.apps.config.</code><code class="descname">_AppContext</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/apps/config.html#_AppContext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.apps.config._AppContext" title="Permalink to this definition">¶</a></dt>
 <dd><p>The app context holds instances of core/contrib components that must be managed on a per app base. Such as the UI
 registration and distribution.</p>
 <dl class="attribute">
@@ -417,7 +424,7 @@ registration and distribution.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.1',
+            VERSION:'0.3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

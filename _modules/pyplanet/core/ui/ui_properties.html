@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.core.ui.ui_properties &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.core.ui.ui_properties</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/core/ui/ui_properties" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.core.ui.ui_properties</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The UI Properties will be set and hold in the class definition bellow.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">xmltodict</span> <span class="k">as</span> <span class="nn">xd</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.core.signals</span> <span class="k">import</span> <span class="n">pyplanet_start_after</span>
+<span class="kn">from</span> <span class="nn">pyplanet.core.ui.exceptions</span> <span class="k">import</span> <span class="n">UIPropertyDoesNotExist</span>
+<span class="kn">from</span> <span class="nn">pyplanet.utils.functional</span> <span class="k">import</span> <span class="n">empty</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="UIProperties"><a class="viewcode-back" href="../../../../api/core_ui.html#pyplanet.core.ui.ui_properties.UIProperties">[docs]</a><span class="k">class</span> <span class="nc">UIProperties</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Set the custom Script UI Properties.</span>
+<span class="sd">	</span>
+<span class="sd">	.. tip::</span>
+<span class="sd">	</span>
+<span class="sd">		Look at the possible UI Properties right here:</span>
+<span class="sd">		</span>
+<span class="sd">		- Trackmania: https://github.com/maniaplanet/script-xmlrpc/blob/master/XmlRpcListing.md#trackmaniauisetproperties</span>
+<span class="sd">		- Shootmania: https://github.com/maniaplanet/script-xmlrpc/blob/master/XmlRpcListing.md#shootmaniauisetproperties</span>
+<span class="sd">	</span>
+<span class="sd">	Access this class with:</span>
+
+<span class="sd">	.. code-block:: python</span>
+
+<span class="sd">		self.instance.ui_manager.properties</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">specials</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_properties&#39;</span><span class="p">,</span> <span class="s1">&#39;_instance&#39;</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		:param instance: Instance</span>
+<span class="sd">		:type instance: pyplanet.core.instance.Instance</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_instance</span> <span class="o">=</span> <span class="n">instance</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_raw</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_properties</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+	<span class="nd">@property</span>
+	<span class="k">def</span> <span class="nf">properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="s1">&#39;ui_properties&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">[</span><span class="s1">&#39;ui_properties&#39;</span><span class="p">]</span>
+		<span class="k">return</span> <span class="kc">False</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">on_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh_properties</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">signal_manager</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="n">pyplanet_start_after</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">send_properties</span><span class="p">)</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">refresh_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">game</span> <span class="o">==</span> <span class="s1">&#39;tm&#39;</span><span class="p">:</span>
+			<span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;Trackmania.UI.GetProperties&#39;</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;Shootmania.UI.GetProperties&#39;</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_raw</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="n">method</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_properties</span> <span class="o">=</span> <span class="n">xd</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_raw</span><span class="p">[</span><span class="s1">&#39;raw_1&#39;</span><span class="p">])</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_properties</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_raw</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="UIProperties.set_visibility"><a class="viewcode-back" href="../../../../api/core_ui.html#pyplanet.core.ui.ui_properties.UIProperties.set_visibility">[docs]</a>	<span class="k">def</span> <span class="nf">set_visibility</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">visible</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Set the visibility of the UI Property and don&#39;t complain about failing to set. Must be set at the start of the </span>
+<span class="sd">		app(s).</span>
+<span class="sd">		</span>
+<span class="sd">		:param element: Element name, such as notices, map_info and chat. </span>
+<span class="sd">						Full list: https://github.com/maniaplanet/script-xmlrpc/blob/master/XmlRpcListing.md#shootmaniauisetproperties</span>
+<span class="sd">		:param visible: Boolean if the element should be visible.</span>
+<span class="sd">		:return: Boolean, true if is set, false if failed to set.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_attribute</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="s1">&#39;visible&#39;</span><span class="p">,</span> <span class="n">visible</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="UIProperties.get_visibility"><a class="viewcode-back" href="../../../../api/core_ui.html#pyplanet.core.ui.ui_properties.UIProperties.get_visibility">[docs]</a>	<span class="k">def</span> <span class="nf">get_visibility</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">empty</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Set the visibility of the UI Property and don&#39;t complain about failing to set. Must be set at the start of the </span>
+<span class="sd">		app(s).</span>
+<span class="sd">		</span>
+<span class="sd">		:param element: Element name, such as notices, map_info and chat. </span>
+<span class="sd">						Full list: https://github.com/maniaplanet/script-xmlrpc/blob/master/XmlRpcListing.md#shootmaniauisetproperties</span>
+<span class="sd">		:param default: The default value, or an exception if not given.</span>
+<span class="sd">		:return: The boolean if it&#39;s visible or raise exception if not exists (or the default if default is given).</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="s1">&#39;visible&#39;</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="UIProperties.set_attribute"><a class="viewcode-back" href="../../../../api/core_ui.html#pyplanet.core.ui.ui_properties.UIProperties.set_attribute">[docs]</a>	<span class="k">def</span> <span class="nf">set_attribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">attribute</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Set an attribute of an element and silent if it&#39;s not found. Useful to change positions but unsure if it will</span>
+<span class="sd">		and still exists. Returns boolean if it&#39;s set successfully.</span>
+<span class="sd">		</span>
+<span class="sd">		:param element: Element name</span>
+<span class="sd">		:param attribute: Attribute name</span>
+<span class="sd">		:param value: New value of the attribute.</span>
+<span class="sd">		:return: Boolean if it&#39;s set correctly.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">if</span> <span class="n">element</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">properties</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">if</span> <span class="s1">&#39;@</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">properties</span><span class="p">[</span><span class="n">element</span><span class="p">]:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">properties</span><span class="p">[</span><span class="n">element</span><span class="p">][</span><span class="s1">&#39;@</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attribute</span><span class="p">)]</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="UIProperties.get_attribute"><a class="viewcode-back" href="../../../../api/core_ui.html#pyplanet.core.ui.ui_properties.UIProperties.get_attribute">[docs]</a>	<span class="k">def</span> <span class="nf">get_attribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">attribute</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">empty</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Get an attribute value of an element.</span>
+<span class="sd">		</span>
+<span class="sd">		:param element: Element name</span>
+<span class="sd">		:param attribute: Attribute name</span>
+<span class="sd">		:param default: Default if not found.</span>
+<span class="sd">		:return: Boolean if it&#39;s set correctly.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">default</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">empty</span><span class="p">:</span>
+				<span class="k">return</span> <span class="n">default</span>
+			<span class="k">raise</span> <span class="n">UIPropertyDoesNotExist</span><span class="p">(</span><span class="s1">&#39;UI Properties are not present&#39;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">element</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">properties</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">default</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">empty</span><span class="p">:</span>
+				<span class="k">return</span> <span class="n">default</span>
+			<span class="k">raise</span> <span class="n">UIPropertyDoesNotExist</span><span class="p">(</span><span class="s1">&#39;UI Properties has no element with name </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">element</span><span class="p">))</span>
+		<span class="k">if</span> <span class="s1">&#39;@</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">properties</span><span class="p">[</span><span class="n">element</span><span class="p">]:</span>
+			<span class="k">if</span> <span class="n">default</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">empty</span><span class="p">:</span>
+				<span class="k">return</span> <span class="n">default</span>
+			<span class="k">raise</span> <span class="n">UIPropertyDoesNotExist</span><span class="p">(</span><span class="s1">&#39;UI Properties has no attribute with name </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attribute</span><span class="p">))</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">properties</span><span class="p">[</span><span class="n">element</span><span class="p">][</span><span class="s1">&#39;@</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attribute</span><span class="p">)]</span></div>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">send_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span> <span class="ow">or</span> <span class="s1">&#39;ui_properties&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">:</span>
+			<span class="k">return</span>
+
+		<span class="c1"># Decide the method to use.</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">game</span> <span class="o">==</span> <span class="s1">&#39;tm&#39;</span><span class="p">:</span>
+			<span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;Trackmania.UI.SetProperties&#39;</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;Shootmania.UI.SetProperties&#39;</span>
+
+		<span class="c1"># Create XML document</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">xml</span> <span class="o">=</span> <span class="n">xd</span><span class="o">.</span><span class="n">unparse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">,</span> <span class="n">full_document</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">short_empty_elements</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+			<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Can</span><span class="se">\&#39;</span><span class="s1">t convert UI Properties to XML document! Error: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+			<span class="k">return</span>
+
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">xml</span><span class="p">,</span> <span class="n">encode_json</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">response_id</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+			<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Can</span><span class="se">\&#39;</span><span class="s1">t send UI Properties! Error: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+			<span class="k">return</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

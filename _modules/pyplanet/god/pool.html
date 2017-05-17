@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.god.pool &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.god.pool</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/god/pool" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.god.pool</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">watchdog.observers</span> <span class="k">import</span> <span class="n">Observer</span>
+<span class="kn">from</span> <span class="nn">logging.handlers</span> <span class="k">import</span> <span class="n">QueueListener</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.utils.livereload</span> <span class="k">import</span> <span class="n">LiveReload</span>
+<span class="kn">from</span> <span class="nn">pyplanet.god</span> <span class="k">import</span> <span class="n">process</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="EnvironmentPool"><a class="viewcode-back" href="../../../api/god.html#pyplanet.god.pool.EnvironmentPool">[docs]</a><span class="k">class</span> <span class="nc">EnvironmentPool</span><span class="p">:</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	This class manages the pool instances for the current environment/installation.</span>
+<span class="sd">	</span>
+<span class="sd">	.. warning::</span>
+<span class="sd">	</span>
+<span class="sd">		You should not have to use this class in any moment!</span>
+<span class="sd">		</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pool_names</span><span class="p">,</span> <span class="n">max_restarts</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="n">pool_names</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pool</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">max_restarts</span> <span class="o">=</span> <span class="n">max_restarts</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">dog_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">curdir</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">dog_handler</span> <span class="o">=</span> <span class="n">LiveReload</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="c1"># self.dog_observer = Observer()</span>
+		<span class="c1"># self.dog_observer.schedule(self.dog_handler, self.dog_path, recursive=True)</span>
+
+		<span class="k">if</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">get_start_method</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;fork&#39;</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+			<span class="n">root_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">log_listener</span> <span class="o">=</span> <span class="n">QueueListener</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="p">,</span> <span class="o">*</span><span class="n">root_logger</span><span class="o">.</span><span class="n">handlers</span><span class="p">)</span>
+
+		<span class="c1"># TODO: Find out how to get the watchdog + livereload working on a later moment.</span>
+		<span class="c1"># self.dog_observer.start()</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">_restarts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<div class="viewcode-block" id="EnvironmentPool.populate"><a class="viewcode-back" href="../../../api/god.html#pyplanet.god.pool.EnvironmentPool.populate">[docs]</a>	<span class="k">def</span> <span class="nf">populate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Populate the pool instance processes, (prepares the processes).</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">names</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">InstanceProcess</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="p">,</span> <span class="n">environment_name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_restarts</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="EnvironmentPool.start"><a class="viewcode-back" href="../../../api/god.html#pyplanet.god.pool.EnvironmentPool.start">[docs]</a>	<span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Start all processes.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">proc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+			<span class="n">proc</span><span class="o">.</span><span class="n">process</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="EnvironmentPool.shutdown"><a class="viewcode-back" href="../../../api/god.html#pyplanet.god.pool.EnvironmentPool.shutdown">[docs]</a>	<span class="k">def</span> <span class="nf">shutdown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Shutdown all processes.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+
+		<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">proc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+			<span class="n">proc</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span></div>
+		<span class="c1"># self.dog_observer.stop()</span>
+
+<div class="viewcode-block" id="EnvironmentPool.restart"><a class="viewcode-back" href="../../../api/god.html#pyplanet.god.pool.EnvironmentPool.restart">[docs]</a>	<span class="k">def</span> <span class="nf">restart</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Restart single process, or all if no name is given.</span>
+<span class="sd">		</span>
+<span class="sd">		:param name: Name or none for all pools.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">name</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">InstanceProcess</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="p">,</span> <span class="n">environment_name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_restarts</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">restart</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EnvironmentPool.watchdog"><a class="viewcode-back" href="../../../api/god.html#pyplanet.god.pool.EnvironmentPool.watchdog">[docs]</a>	<span class="k">def</span> <span class="nf">watchdog</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Watch all the processes. (Blocking method!).</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Starting watchdog... watching </span><span class="si">{}</span><span class="s1"> instances&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="p">)))</span>
+
+		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="n">num_alive</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">proc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+				<span class="k">if</span> <span class="n">proc</span><span class="o">.</span><span class="n">did_die</span><span class="p">:</span>
+					<span class="c1"># Process wants a restart! = exit code 50.</span>
+					<span class="k">if</span> <span class="n">proc</span><span class="o">.</span><span class="n">exitcode</span> <span class="o">==</span> <span class="mi">50</span><span class="p">:</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">restart</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+					<span class="c1"># Status changed from &#39;online&#39; to &#39;offline&#39;</span>
+					<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_restarts</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_restarts</span><span class="p">:</span>
+						<span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s1">&#39;The instance </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> just died. We will restart the instance!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">restart</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+						<span class="n">num_alive</span> <span class="o">+=</span> <span class="mi">1</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s1">&#39;The instance </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> just died. We will not restart!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">num_alive</span> <span class="o">+=</span> <span class="mi">1</span>
+
+			<span class="c1"># Check if there are still processes alive.</span>
+			<span class="k">if</span> <span class="n">num_alive</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+				<span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s1">&#39;All instances died. Quitting now...&#39;</span><span class="p">)</span>
+				<span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+			<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

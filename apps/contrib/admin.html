@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Admin &mdash; PyPlanet 0.2.1 documentation</title>
+  <title>Admin &mdash; PyPlanet 0.3.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PyPlanet 0.2.1 documentation" href="../../index.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../index.html"/>
         <link rel="next" title="Jukebox" href="jukebox.html"/>
         <link rel="prev" title="Migrating from old controller" href="../../convert/index.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.3.0
               </div>
             
           
@@ -116,6 +116,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#players">Players</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#force-player-to-spec">Force player to spec</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mute-player">Mute player</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#unmute-player">Unmute player</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#kick-player">Kick player</a></li>
@@ -145,6 +146,7 @@
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mx.html">ManiaExchange</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="live_rankings.html">Live Rankings</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
 <ul>
@@ -360,6 +362,22 @@ It&#8217;s features can be seperated in to these three areas:</p>
 </div>
 <div class="section" id="players">
 <h3>Players<a class="headerlink" href="#players" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="force-player-to-spec">
+<h4>Force player to spec<a class="headerlink" href="#force-player-to-spec" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">//forcespec</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Player login.</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Force player into spectator.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:force_spec</span></code>, requires admin level 1.</dd>
+</dl>
+</div>
 <div class="section" id="mute-player">
 <h4>Mute player<a class="headerlink" href="#mute-player" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
@@ -591,7 +609,7 @@ It&#8217;s features can be seperated in to these three areas:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.2.1',
+            VERSION:'0.3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

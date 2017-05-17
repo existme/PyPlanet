@@ -1,0 +1,581 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.core.events.dispatcher &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.core.events.dispatcher</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/core/events/dispatcher" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.core.events.dispatcher</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This file has been forked from Django and PyDispatcher.</span>
+<span class="sd">The PyDispatcher is licensed under BSD.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span> <span class="nn">weakref</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.core.exceptions</span> <span class="k">import</span> <span class="n">SignalException</span><span class="p">,</span> <span class="n">SignalGlueStop</span>
+<span class="kn">from</span> <span class="nn">pyplanet.utils.log</span> <span class="k">import</span> <span class="n">handle_exception</span>
+
+
+<span class="k">def</span> <span class="nf">_make_id</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s1">&#39;__func__&#39;</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">id</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="vm">__self__</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="vm">__func__</span><span class="p">)</span>
+	<span class="k">return</span> <span class="nb">id</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+
+
+<span class="n">NONE_ID</span> <span class="o">=</span> <span class="n">_make_id</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">NO_RECEIVERS</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Signal"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.contrib.mode.signals.Signal">[docs]</a><span class="k">class</span> <span class="nc">Signal</span><span class="p">:</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	A signal is a destination tho distribute to where multiple listeners get the message. (event distribution).</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">process_target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_caching</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create a new signal.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">process_target</span><span class="p">:</span>
+			<span class="n">process_target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">process_target</span> <span class="o">=</span> <span class="n">process_target</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">receivers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">self_refs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+
+		<span class="k">if</span> <span class="n">code</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">code</span> <span class="o">=</span> <span class="n">code</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">code</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Meta</span><span class="o">.</span><span class="n">code</span>
+
+		<span class="k">if</span> <span class="n">namespace</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">namespace</span> <span class="o">=</span> <span class="n">namespace</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">namespace</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Meta</span><span class="o">.</span><span class="n">namespace</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">use_caching</span> <span class="o">=</span> <span class="n">use_caching</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">sender_receivers_cache</span> <span class="o">=</span> <span class="n">weakref</span><span class="o">.</span><span class="n">WeakKeyDictionary</span><span class="p">()</span> <span class="k">if</span> <span class="n">use_caching</span> <span class="k">else</span> <span class="p">{}</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_dead_receivers</span> <span class="o">=</span> <span class="kc">False</span>
+
+<div class="viewcode-block" id="Signal.Meta"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.contrib.mode.signals.Signal.Meta">[docs]</a>	<span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		The meta-class contains the code of the signal, used for string notation.</span>
+<span class="sd">		An optional namespace could be given to override the app label namespace.</span>
+<span class="sd">		</span>
+<span class="sd">		.. warning::</span>
+<span class="sd">		</span>
+<span class="sd">			Only change or access this if you override the ``Signal`` class in your own class.</span>
+<span class="sd">		</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">code</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="n">namespace</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="Signal.process"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.contrib.mode.signals.Signal.process">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		This method processed data into abstract data. You can give your own function in the init of the Signal or</span>
+<span class="sd">		override the method.</span>
+<span class="sd">		</span>
+<span class="sd">		:param data: Raw data input</span>
+<span class="sd">		:return: Parsed data output</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="Signal.has_listeners"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.contrib.mode.signals.Signal.has_listeners">[docs]</a>	<span class="k">def</span> <span class="nf">has_listeners</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Has the signal listeners.</span>
+<span class="sd">		</span>
+<span class="sd">		:return:</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_live_receivers</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="Signal.set_self"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.contrib.mode.signals.Signal.set_self">[docs]</a>	<span class="k">def</span> <span class="nf">set_self</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">receiver</span><span class="p">,</span> <span class="n">slf</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Set the self instance on a receiver.</span>
+<span class="sd">		</span>
+<span class="sd">		.. deprecated:: 0.0.1</span>
+<span class="sd">		</span>
+<span class="sd">		:param receiver: Receiver function.</span>
+<span class="sd">		:param slf: Self instance</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span>
+			<span class="n">lookup_key</span> <span class="o">=</span> <span class="n">_make_id</span><span class="p">(</span><span class="n">receiver</span><span class="p">)</span>
+			<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">receivers</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">lookup_key</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+					<span class="n">ref</span> <span class="o">=</span> <span class="n">weakref</span><span class="o">.</span><span class="n">ref</span>
+					<span class="n">slf</span> <span class="o">=</span> <span class="n">ref</span><span class="p">(</span><span class="n">slf</span><span class="p">)</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">self_refs</span><span class="p">[</span><span class="n">lookup_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">slf</span>
+					<span class="k">return</span>
+			<span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Receiver is not yet known! You registered too early!&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Signal.register"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.contrib.mode.signals.Signal.register">[docs]</a>	<span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">receiver</span><span class="p">,</span> <span class="n">weak</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dispatch_uid</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Connect receiver to sender for signal.</span>
+<span class="sd">		</span>
+<span class="sd">		:param receiver: A function or an instance method which is to receive signals. Receivers must be hashable objects.</span>
+<span class="sd">			If weak is True, then receiver must be weak referenceable.Receivers must be able to accept keyword arguments.</span>
+<span class="sd">			If a receiver is connected with a dispatch_uid argument, it</span>
+<span class="sd">			will not be added if another receiver was already connected with that dispatch_uid.</span>
+<span class="sd">					</span>
+<span class="sd">		:param weak: Whether to use weak references to the receiver. By default, the</span>
+<span class="sd">			module will attempt to use weak references to the receiver</span>
+<span class="sd">			objects. If this parameter is false, then strong references will</span>
+<span class="sd">			be used.</span>
+<span class="sd">		</span>
+<span class="sd">		:param dispatch_uid: An identifier used to uniquely identify a particular instance of</span>
+<span class="sd">			a receiver. This will usually be a string, though it may be anything hashable.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">dispatch_uid</span><span class="p">:</span>
+			<span class="n">lookup_key</span> <span class="o">=</span> <span class="n">dispatch_uid</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">lookup_key</span> <span class="o">=</span> <span class="n">_make_id</span><span class="p">(</span><span class="n">receiver</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">weak</span><span class="p">:</span>
+			<span class="n">ref</span> <span class="o">=</span> <span class="n">weakref</span><span class="o">.</span><span class="n">ref</span>
+			<span class="n">receiver_object</span> <span class="o">=</span> <span class="n">receiver</span>
+
+			<span class="c1"># Check for bound methods.</span>
+			<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">receiver</span><span class="p">,</span> <span class="s1">&#39;__self__&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">receiver</span><span class="p">,</span> <span class="s1">&#39;__func__&#39;</span><span class="p">):</span>
+				<span class="n">ref</span> <span class="o">=</span> <span class="n">weakref</span><span class="o">.</span><span class="n">WeakMethod</span>
+				<span class="n">receiver_object</span> <span class="o">=</span> <span class="n">receiver</span><span class="o">.</span><span class="vm">__self__</span>
+			<span class="n">receiver</span> <span class="o">=</span> <span class="n">ref</span><span class="p">(</span><span class="n">receiver</span><span class="p">)</span>
+			<span class="n">weakref</span><span class="o">.</span><span class="n">finalize</span><span class="p">(</span><span class="n">receiver_object</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remove_receiver</span><span class="p">)</span>
+
+		<span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_clear_dead_receivers</span><span class="p">()</span>
+			<span class="k">for</span> <span class="n">rec_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">receivers</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">rec_key</span> <span class="o">==</span> <span class="n">lookup_key</span><span class="p">:</span>
+					<span class="k">break</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">receivers</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">lookup_key</span><span class="p">,</span> <span class="n">receiver</span><span class="p">))</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">sender_receivers_cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Signal.unregister"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.contrib.mode.signals.Signal.unregister">[docs]</a>	<span class="k">def</span> <span class="nf">unregister</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">receiver</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dispatch_uid</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Disconnect receiver from sender for signal.</span>
+<span class="sd">		If weak references are used, disconnect need not be called. The receiver</span>
+<span class="sd">		will be removed from dispatch automatically.</span>
+<span class="sd">		</span>
+<span class="sd">		:param receiver: The registered receiver to disconnect. May be none if dispatch_uid is specified.</span>
+<span class="sd">		:param dispatch_uid: the unique identifier of the receiver to disconnect</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">dispatch_uid</span><span class="p">:</span>
+			<span class="n">lookup_key</span> <span class="o">=</span> <span class="n">dispatch_uid</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">lookup_key</span> <span class="o">=</span> <span class="n">_make_id</span><span class="p">(</span><span class="n">receiver</span><span class="p">)</span>
+
+		<span class="n">disconnected</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_clear_dead_receivers</span><span class="p">()</span>
+			<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">receivers</span><span class="p">)):</span>
+				<span class="p">(</span><span class="n">rec_key</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">receivers</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+				<span class="k">if</span> <span class="n">rec_key</span> <span class="o">==</span> <span class="n">lookup_key</span><span class="p">:</span>
+					<span class="n">disconnected</span> <span class="o">=</span> <span class="kc">True</span>
+					<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">receivers</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+					<span class="k">if</span> <span class="n">rec_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">self_refs</span><span class="p">:</span>
+						<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">self_refs</span><span class="p">[</span><span class="n">rec_key</span><span class="p">]</span>
+					<span class="k">break</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">sender_receivers_cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+		<span class="k">return</span> <span class="n">disconnected</span></div>
+
+	<span class="nd">@staticmethod</span>
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">execute_receiver</span><span class="p">(</span><span class="n">receiver</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">ignore_exceptions</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">iscoroutinefunction</span><span class="p">(</span><span class="n">receiver</span><span class="p">):</span>
+				<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+					<span class="k">return</span> <span class="n">receiver</span><span class="p">,</span> <span class="k">await</span> <span class="n">receiver</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+				<span class="k">return</span> <span class="n">receiver</span><span class="p">,</span> <span class="k">await</span> <span class="n">receiver</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+				<span class="k">return</span> <span class="n">receiver</span><span class="p">,</span> <span class="n">receiver</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+			<span class="k">return</span> <span class="n">receiver</span><span class="p">,</span> <span class="n">receiver</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">ignore_exceptions</span><span class="p">:</span>
+				<span class="k">raise</span>
+
+			<span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">SignalException</span><span class="p">(</span>
+				<span class="s1">&#39;Signal receiver </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> =&gt; </span><span class="si">{}</span><span class="s1"> thrown an exception!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">receiver</span><span class="o">.</span><span class="vm">__module__</span><span class="p">,</span> <span class="n">receiver</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+			<span class="p">),</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+			<span class="c1"># Handle, will send to sentry if it&#39;s related to the core/contrib apps.</span>
+			<span class="n">handle_exception</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">receiver</span><span class="o">.</span><span class="vm">__module__</span><span class="p">,</span> <span class="n">receiver</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+
+			<span class="c1"># Log the actual exception.</span>
+			<span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span>
+			<span class="k">return</span> <span class="n">receiver</span><span class="p">,</span> <span class="n">exc</span>
+
+<div class="viewcode-block" id="Signal.send"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.contrib.mode.signals.Signal.send">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">catch_exceptions</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">gather</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Send signal with source.</span>
+<span class="sd">		If any receiver raises an error, the error propagates back through send,</span>
+<span class="sd">		terminating the dispatch loop. So it&#39;s possible that all receivers</span>
+<span class="sd">		won&#39;t be called if an error is raised.</span>
+
+<span class="sd">		:param source: The data to be send to the processor which produces data that will be send to the receivers.</span>
+<span class="sd">		:param raw: Optional bool parameter to just send the source to the receivers without any processing.</span>
+<span class="sd">		:param catch_exceptions: Catch and return the exceptions.</span>
+<span class="sd">		:param gather: Execute multiple receivers at the same time (parallel). On by default!</span>
+
+<span class="sd">		:return: Return a list of tuple pairs [(receiver, response), ... ].</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">raw</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">kwargs</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_target</span><span class="p">(</span><span class="n">signal</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span>
+			<span class="k">except</span> <span class="n">SignalGlueStop</span><span class="p">:</span>
+				<span class="c1"># Stop calling the receivers when our glue says we should!</span>
+				<span class="k">return</span> <span class="p">[]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="o">**</span><span class="n">source</span><span class="p">,</span> <span class="n">signal</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">receivers</span><span class="p">:</span>
+			<span class="k">return</span> <span class="p">[]</span>
+
+		<span class="c1"># Prepare the responses from the calls.</span>
+		<span class="n">responses</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="n">gather_list</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">receiver</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_live_receivers</span><span class="p">():</span>
+			<span class="c1"># Dereference the weak reference.</span>
+			<span class="n">slf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">self_refs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">slf</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">slf</span><span class="p">,</span> <span class="n">weakref</span><span class="o">.</span><span class="n">ReferenceType</span><span class="p">):</span>
+				<span class="n">slf</span> <span class="o">=</span> <span class="n">slf</span><span class="p">()</span>
+			<span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">slf</span><span class="p">]</span> <span class="k">if</span> <span class="n">slf</span> <span class="k">else</span> <span class="p">[]</span>
+
+			<span class="c1"># Execute the receiver.</span>
+			<span class="n">coro</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute_receiver</span><span class="p">(</span><span class="n">receiver</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">ignore_exceptions</span><span class="o">=</span><span class="n">catch_exceptions</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">gather</span><span class="p">:</span>
+				<span class="n">gather_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coro</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="k">await</span> <span class="n">coro</span><span class="p">)</span>
+
+		<span class="c1"># If gather, wait on the asyncio.gather operation and return the responses from there.</span>
+		<span class="k">if</span> <span class="n">gather</span><span class="p">:</span>
+			<span class="k">return</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">gather_list</span><span class="p">)</span>
+
+		<span class="c1"># Done, respond with all the results</span>
+		<span class="k">return</span> <span class="n">responses</span></div>
+
+<div class="viewcode-block" id="Signal.send_robust"><a class="viewcode-back" href="../../../../api/core_events.html#pyplanet.contrib.mode.signals.Signal.send_robust">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">send_robust</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">gather</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Send signal from sender to all connected receivers catching errors.</span>
+<span class="sd">		</span>
+<span class="sd">		:param source: The data to be send to the processor which produces data that will be send to the receivers.</span>
+<span class="sd">		:param raw: Optional bool parameter to just send the source to the receivers without any processing.</span>
+<span class="sd">		:param gather: Execute multiple receivers at the same time (parallel). On by default!</span>
+
+<span class="sd">		:return: Return a list of tuple pairs [(receiver, response), ... ].</span>
+<span class="sd">			If any receiver raises an error (specifically any subclass of Exception), </span>
+<span class="sd">			return the error instance as the result for that receiver.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">raw</span><span class="p">,</span> <span class="n">catch_exceptions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">gather</span><span class="o">=</span><span class="n">gather</span><span class="p">)</span></div>
+
+	<span class="k">def</span> <span class="nf">_clear_dead_receivers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dead_receivers</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_dead_receivers</span> <span class="o">=</span> <span class="kc">False</span>
+			<span class="n">new_receivers</span> <span class="o">=</span> <span class="p">[]</span>
+			<span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">receivers</span><span class="p">:</span>
+				<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rec</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">weakref</span><span class="o">.</span><span class="n">ReferenceType</span><span class="p">)</span> <span class="ow">and</span> <span class="n">rec</span><span class="p">[</span><span class="mi">1</span><span class="p">]()</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="k">continue</span>
+				<span class="n">new_receivers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">receivers</span> <span class="o">=</span> <span class="n">new_receivers</span>
+
+	<span class="k">def</span> <span class="nf">_live_receivers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Filter sequence of receivers to get resolved, live receivers.</span>
+<span class="sd">		This checks for weak references and resolves them, then returning only</span>
+<span class="sd">		live receivers.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="c1"># We don&#39;t use the sender. Set it to none.</span>
+		<span class="n">sender</span> <span class="o">=</span> <span class="kc">None</span>
+
+		<span class="n">receivers</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_caching</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dead_receivers</span><span class="p">:</span>
+			<span class="n">receivers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sender_receivers_cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sender</span><span class="p">)</span>
+			<span class="c1"># We could end up here with NO_RECEIVERS even if we do check this case in</span>
+			<span class="c1"># .send() prior to calling _live_receivers() due to concurrent .send() call.</span>
+			<span class="k">if</span> <span class="n">receivers</span> <span class="ow">is</span> <span class="n">NO_RECEIVERS</span><span class="p">:</span>
+				<span class="k">return</span> <span class="p">[]</span>
+
+		<span class="k">if</span> <span class="n">receivers</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_clear_dead_receivers</span><span class="p">()</span>
+				<span class="n">receivers</span> <span class="o">=</span> <span class="p">[]</span>
+				<span class="k">for</span> <span class="n">receiverkey</span><span class="p">,</span> <span class="n">receiver</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">receivers</span><span class="p">:</span>
+					<span class="n">receivers</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">receiverkey</span><span class="p">,</span> <span class="n">receiver</span><span class="p">))</span>
+				<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_caching</span><span class="p">:</span>
+					<span class="k">if</span> <span class="ow">not</span> <span class="n">receivers</span><span class="p">:</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">sender_receivers_cache</span><span class="p">[</span><span class="n">sender</span><span class="p">]</span> <span class="o">=</span> <span class="n">NO_RECEIVERS</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="c1"># Note, we must cache the weakref versions.</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">sender_receivers_cache</span><span class="p">[</span><span class="n">sender</span><span class="p">]</span> <span class="o">=</span> <span class="n">receivers</span>
+		<span class="n">non_weak_receivers</span> <span class="o">=</span> <span class="p">[]</span>
+
+		<span class="k">for</span> <span class="n">receiver</span> <span class="ow">in</span> <span class="n">receivers</span><span class="p">:</span>
+			<span class="n">key</span> <span class="o">=</span> <span class="n">receiver</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+			<span class="n">receiver</span> <span class="o">=</span> <span class="n">receiver</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+			<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">receiver</span><span class="p">,</span> <span class="n">weakref</span><span class="o">.</span><span class="n">ReferenceType</span><span class="p">):</span>
+				<span class="c1"># Dereference the weak reference.</span>
+				<span class="n">receiver</span> <span class="o">=</span> <span class="n">receiver</span><span class="p">()</span>
+				<span class="k">if</span> <span class="n">receiver</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="n">non_weak_receivers</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="n">receiver</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">non_weak_receivers</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="n">receiver</span><span class="p">))</span>
+		<span class="k">return</span> <span class="n">non_weak_receivers</span>
+
+	<span class="k">def</span> <span class="nf">_remove_receiver</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="c1"># The list must be marked as dead. And will be cleaned in the next registry or call.</span>
+		<span class="c1"># We can&#39;t directly remove because GC is always running when lock is preserved.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_dead_receivers</span> <span class="o">=</span> <span class="kc">True</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

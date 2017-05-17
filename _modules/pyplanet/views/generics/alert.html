@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyplanet.views.generics.alert &mdash; PyPlanet 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PyPlanet
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/upgrading.html">Upgrading PyPlanet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../convert/index.html">Migrating from old controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Apps Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/jukebox.html">Jukebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/karma.html">Karma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/local_records.html">Local Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/dedimania.html">Dedimania Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mapinfo.html">Map Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/mx.html">ManiaExchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/contrib/live_rankings.html">Live Rankings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../architecture/index.html">Architecture &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apps/index.html">App Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../signals/index.html">Signals (callbacks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/index.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About PyPlanet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support, Bug report &amp; Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">Todo (docs)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PyPlanet</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pyplanet.views.generics.alert</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/PyPlanet/pyplanet/blob/master/docs/source/_modules/pyplanet/views/generics/alert" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyplanet.views.generics.alert</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="kn">from</span> <span class="nn">pyplanet.views</span> <span class="k">import</span> <span class="n">TemplateView</span>
+
+
+<div class="viewcode-block" id="AlertView"><a class="viewcode-back" href="../../../../api/views.html#pyplanet.views.generics.alert.AlertView">[docs]</a><span class="k">class</span> <span class="nc">AlertView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	The AlertView can be used to show several generic alerts to a player. You can use 3 different sizes, and adjust the</span>
+<span class="sd">	message text.</span>
+<span class="sd">	</span>
+<span class="sd">	The 3 sizes:</span>
+<span class="sd">	sm, md and lg.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;core.views/generics/alert.xml&#39;</span>
+
+	<span class="n">SIZES</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+		<span class="n">sm</span><span class="o">=</span><span class="p">{</span>
+			<span class="s1">&#39;top__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;0 17&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;top__size&#39;</span><span class="p">:</span> <span class="s1">&#39;126.5 8&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;box__size&#39;</span><span class="p">:</span> <span class="s1">&#39;120 25&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;bottom__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;0 -12&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;bottom__size&#39;</span><span class="p">:</span> <span class="s1">&#39;120 2&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;text__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;-47.5 6.25&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;text__size&#39;</span><span class="p">:</span> <span class="s1">&#39;100 4&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;button_0__pos__left&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">32</span><span class="p">,</span>
+			<span class="s1">&#39;button_0__pos__top&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span>
+			<span class="s1">&#39;button_1__pos__left&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+			<span class="s1">&#39;button_1__pos__top&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span>
+		<span class="p">},</span>
+		<span class="n">md</span><span class="o">=</span><span class="p">{</span>
+			<span class="s1">&#39;top__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;0 30&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;top__size&#39;</span><span class="p">:</span> <span class="s1">&#39;156.5 8&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;box__size&#39;</span><span class="p">:</span> <span class="s1">&#39;150 50&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;bottom__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;0 -24&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;bottom__size&#39;</span><span class="p">:</span> <span class="s1">&#39;150 2&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;text__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;-67.5 6.25&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;text__size&#39;</span><span class="p">:</span> <span class="s1">&#39;135 24&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;button_0__pos__left&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">32</span><span class="p">,</span>
+			<span class="s1">&#39;button_0__pos__top&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">14</span><span class="p">,</span>
+			<span class="s1">&#39;button_1__pos__left&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+			<span class="s1">&#39;button_1__pos__top&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">14</span><span class="p">,</span>
+		<span class="p">},</span>
+		<span class="n">lg</span><span class="o">=</span><span class="p">{</span>
+			<span class="s1">&#39;top__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;0 55&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;top__size&#39;</span><span class="p">:</span> <span class="s1">&#39;206.5 8&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;box__size&#39;</span><span class="p">:</span> <span class="s1">&#39;200 100&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;bottom__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;0 -50&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;bottom__size&#39;</span><span class="p">:</span> <span class="s1">&#39;200 2&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;text__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;-92.5 6.25&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;text__size&#39;</span><span class="p">:</span> <span class="s1">&#39;185 74&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;button_0__pos__left&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">52</span><span class="p">,</span>
+			<span class="s1">&#39;button_0__pos__top&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">40</span><span class="p">,</span>
+			<span class="s1">&#39;button_1__pos__left&#39;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
+			<span class="s1">&#39;button_1__pos__top&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">40</span><span class="p">,</span>
+		<span class="p">},</span>
+	<span class="p">)</span>
+
+<div class="viewcode-block" id="AlertView.__init__"><a class="viewcode-back" href="../../../../api/views.html#pyplanet.views.generics.alert.AlertView.__init__">[docs]</a>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+		<span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;md&#39;</span><span class="p">,</span> <span class="n">buttons</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span>
+	<span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Create an AlertView instance.</span>
+<span class="sd">		</span>
+<span class="sd">		:param message: The message to display to the end-user, Use ``\\n`` for new lines. You can use symbols from FontAwesome</span>
+<span class="sd">						by using Unicode escaped strings.</span>
+<span class="sd">		:param size: Size to use, this parameter should be a string, and one of the following choices:</span>
+<span class="sd">					 &#39;sm&#39;, &#39;md&#39; or &#39;lg. Defaults to &#39;md&#39;.</span>
+<span class="sd">		:param buttons: Buttons to display, Should be an array with dictionary which contain: name.</span>
+<span class="sd">		:param manager: UI Manager to use, You should always keep this undefined unless you know what your doing!</span>
+<span class="sd">		:param target: Target coroutine method called as handle of button clicks.</span>
+<span class="sd">		</span>
+<span class="sd">		:type message: str</span>
+<span class="sd">		:type title: str</span>
+<span class="sd">		:type size: str</span>
+<span class="sd">		:type buttons: list</span>
+<span class="sd">		:type manager: pyplanet.core.ui._BaseUIManager</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="kn">from</span> <span class="nn">pyplanet.core</span> <span class="k">import</span> <span class="n">Controller</span>
+
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">manager</span> <span class="ow">or</span> <span class="n">Controller</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">ui_manager</span><span class="p">)</span>
+		<span class="n">sizes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SIZES</span><span class="p">[</span><span class="n">size</span><span class="p">]</span>
+
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">buttons</span><span class="p">:</span>
+			<span class="n">buttons</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;OK&#39;</span><span class="p">}]</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+			<span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+			<span class="n">buttons</span><span class="o">=</span><span class="n">buttons</span><span class="p">,</span>
+			<span class="n">sizes</span><span class="o">=</span><span class="n">sizes</span><span class="p">,</span>
+		<span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">:</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="AlertView.close"><a class="viewcode-back" href="../../../../api/views.html#pyplanet.views.generics.alert.AlertView.close">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Close the alert.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="n">player_logins</span><span class="o">=</span><span class="p">[</span><span class="n">player</span><span class="o">.</span><span class="n">login</span><span class="p">])</span></div></div>
+
+
+<div class="viewcode-block" id="PromptView"><a class="viewcode-back" href="../../../../api/views.html#pyplanet.views.generics.alert.PromptView">[docs]</a><span class="k">class</span> <span class="nc">PromptView</span><span class="p">(</span><span class="n">AlertView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	The PromptView is like the AlertView but can ask for a text entry.</span>
+<span class="sd">	</span>
+<span class="sd">	The 3 sizes:</span>
+<span class="sd">	sm, md and lg.</span>
+<span class="sd">	</span>
+<span class="sd">	You can listen for the results of the players input with the ``wait_for_input()`` async handler (future).</span>
+<span class="sd">	Example:</span>
+<span class="sd">		</span>
+<span class="sd">	.. code-block:: python</span>
+<span class="sd">	</span>
+<span class="sd">		prompt = PromptView(&#39;Please enter your name&#39;)</span>
+<span class="sd">		await prompt.display([&#39;login&#39;])</span>
+<span class="sd">		</span>
+<span class="sd">		user_input = await prompt.wait_for_input()</span>
+<span class="sd">		print(user_input)</span>
+<span class="sd">		</span>
+<span class="sd">		</span>
+<span class="sd">	You can do validations before it&#39;s okay with giving a function to the argument ``validator``. Example:</span>
+<span class="sd">	</span>
+<span class="sd">	.. code-block:: python</span>
+<span class="sd">	</span>
+<span class="sd">		def my_validator(value):</span>
+<span class="sd">			try:</span>
+<span class="sd">				int(value)</span>
+<span class="sd">				return True, None</span>
+<span class="sd">			except:</span>
+<span class="sd">				return False, &#39;Value should be an integer!&#39;</span>
+<span class="sd">	</span>
+<span class="sd">		prompt = PromptView(&#39;Please enter your name&#39;, validator=my_validator)</span>
+<span class="sd">		await prompt.display([&#39;login&#39;])</span>
+<span class="sd">		</span>
+<span class="sd">		user_input = await prompt.wait_for_input()</span>
+<span class="sd">		print(user_input)</span>
+<span class="sd">	</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;core.views/generics/prompt.xml&#39;</span>
+
+	<span class="n">SIZES</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+		<span class="n">sm</span><span class="o">=</span><span class="p">{</span>
+			<span class="s1">&#39;top__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;0 24&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;top__size&#39;</span><span class="p">:</span> <span class="s1">&#39;126.5 8&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;box__size&#39;</span><span class="p">:</span> <span class="s1">&#39;120 40&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;bottom__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;0 -20&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;bottom__size&#39;</span><span class="p">:</span> <span class="s1">&#39;120 2&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;text__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;-47.5 11&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;text__size&#39;</span><span class="p">:</span> <span class="s1">&#39;100 4&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;input__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;0 0&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;input__size&#39;</span><span class="p">:</span> <span class="s1">&#39;100 7&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;button_0__pos__left&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">32</span><span class="p">,</span>
+			<span class="s1">&#39;button_0__pos__top&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">12</span><span class="p">,</span>
+			<span class="s1">&#39;button_1__pos__left&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+			<span class="s1">&#39;button_1__pos__top&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">12</span><span class="p">,</span>
+		<span class="p">},</span>
+		<span class="n">md</span><span class="o">=</span><span class="p">{</span>
+			<span class="s1">&#39;top__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;0 38&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;top__size&#39;</span><span class="p">:</span> <span class="s1">&#39;156.5 8&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;box__size&#39;</span><span class="p">:</span> <span class="s1">&#39;150 67&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;bottom__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;0 -34&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;bottom__size&#39;</span><span class="p">:</span> <span class="s1">&#39;150 2&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;text__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;-67.5 11&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;text__size&#39;</span><span class="p">:</span> <span class="s1">&#39;135 24&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;input__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;0 -10&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;input__size&#39;</span><span class="p">:</span> <span class="s1">&#39;135 7&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;button_0__pos__left&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">32</span><span class="p">,</span>
+			<span class="s1">&#39;button_0__pos__top&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">24</span><span class="p">,</span>
+			<span class="s1">&#39;button_1__pos__left&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+			<span class="s1">&#39;button_1__pos__top&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">24</span><span class="p">,</span>
+		<span class="p">},</span>
+		<span class="n">lg</span><span class="o">=</span><span class="p">{</span>
+			<span class="s1">&#39;top__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;0 67&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;top__size&#39;</span><span class="p">:</span> <span class="s1">&#39;206.5 8&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;box__size&#39;</span><span class="p">:</span> <span class="s1">&#39;200 125&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;bottom__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;0 -62&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;bottom__size&#39;</span><span class="p">:</span> <span class="s1">&#39;200 2&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;text__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;-92.5 11&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;text__size&#39;</span><span class="p">:</span> <span class="s1">&#39;185 74&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;input__pos&#39;</span><span class="p">:</span> <span class="s1">&#39;0 -40&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;input__size&#39;</span><span class="p">:</span> <span class="s1">&#39;185 7&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;button_0__pos__left&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">52</span><span class="p">,</span>
+			<span class="s1">&#39;button_0__pos__top&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">52</span><span class="p">,</span>
+			<span class="s1">&#39;button_1__pos__left&#39;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
+			<span class="s1">&#39;button_1__pos__top&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">52</span><span class="p">,</span>
+		<span class="p">},</span>
+	<span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;md&#39;</span><span class="p">,</span> <span class="n">buttons</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">validator</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">buttons</span><span class="p">,</span> <span class="n">manager</span><span class="p">)</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="n">default</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">validator</span> <span class="o">=</span> <span class="n">validator</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">validate_input</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">input_future</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Future</span><span class="p">()</span>
+
+<div class="viewcode-block" id="PromptView.wait_for_input"><a class="viewcode-back" href="../../../../api/views.html#pyplanet.views.generics.alert.PromptView.wait_for_input">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">wait_for_input</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		Wait for input and return it.</span>
+<span class="sd">		</span>
+<span class="sd">		:return: Returns the string value of the user.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_future</span></div>
+
+	<span class="k">def</span> <span class="nf">validate_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">value</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;Empty value given!&#39;</span>
+		<span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span>
+
+	<span class="k">async</span> <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+		<span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default</span>
+		<span class="k">if</span> <span class="s1">&#39;prompt_value&#39;</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="s1">&#39;prompt_value&#39;</span><span class="p">]</span>
+
+		<span class="n">valid</span><span class="p">,</span> <span class="n">message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">validator</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">valid</span><span class="p">:</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">input_future</span><span class="o">.</span><span class="n">set_result</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">input_future</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
+			<span class="k">return</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">message</span>
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">display</span><span class="p">([</span><span class="n">player</span><span class="o">.</span><span class="n">login</span><span class="p">])</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, PyPlanet (Tom Valk).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
