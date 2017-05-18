@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyplanet.views &mdash; PyPlanet 0.3.0 documentation</title>
+  <title>pyplanet.views &mdash; PyPlanet 0.3.1 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../index.html"/>
+    <link rel="top" title="PyPlanet 0.3.1 documentation" href="../index.html"/>
         <link rel="up" title="API Documentation" href="index.html"/>
         <link rel="next" title="pyplanet.core.exceptions" href="core_exceptions.html"/>
         <link rel="prev" title="pyplanet.apps" href="apps.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.3.0
+                0.3.1
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/mx.html">ManiaExchange</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apps/contrib/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/contrib/live_rankings.html">Live Rankings</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
 <ul class="current">
@@ -218,7 +219,7 @@
 <h2>pyplanet.views<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-pyplanet.views.base"></span><dl class="class">
 <dt id="pyplanet.views.base.View">
-<em class="property">class </em><code class="descclassname">pyplanet.views.base.</code><code class="descname">View</code><span class="sig-paren">(</span><em>manager=None</em>, <em>id=None</em>, <em>version='3'</em>, <em>body=None</em>, <em>template=None</em>, <em>timeout=0</em>, <em>hide_click=False</em>, <em>data=None</em>, <em>player_data=None</em>, <em>throw_exceptions=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/views/base.html#View"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.views.base.View" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyplanet.views.base.</code><code class="descname">View</code><span class="sig-paren">(</span><em>manager=None</em>, <em>id=None</em>, <em>version='3'</em>, <em>body=None</em>, <em>template=None</em>, <em>timeout=0</em>, <em>hide_click=False</em>, <em>data=None</em>, <em>player_data=None</em>, <em>disable_alt_menu=False</em>, <em>throw_exceptions=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/views/base.html#View"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.views.base.View" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base view. The base view will inherit from <code class="docutils literal"><span class="pre">StaticManiaLink</span></code> class.</p>
 <dl class="method">
 <dt id="pyplanet.views.base.View.destroy">
@@ -336,7 +337,7 @@ the data given and stored!</p>
 
 <span class="target" id="module-pyplanet.views.template"></span><dl class="class">
 <dt id="pyplanet.views.template.TemplateView">
-<em class="property">class </em><code class="descclassname">pyplanet.views.template.</code><code class="descname">TemplateView</code><span class="sig-paren">(</span><em>manager=None</em>, <em>id=None</em>, <em>version='3'</em>, <em>body=None</em>, <em>template=None</em>, <em>timeout=0</em>, <em>hide_click=False</em>, <em>data=None</em>, <em>player_data=None</em>, <em>throw_exceptions=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/views/template.html#TemplateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.views.template.TemplateView" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pyplanet.views.template.</code><code class="descname">TemplateView</code><span class="sig-paren">(</span><em>manager=None</em>, <em>id=None</em>, <em>version='3'</em>, <em>body=None</em>, <em>template=None</em>, <em>timeout=0</em>, <em>hide_click=False</em>, <em>data=None</em>, <em>player_data=None</em>, <em>disable_alt_menu=False</em>, <em>throw_exceptions=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyplanet/views/template.html#TemplateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyplanet.views.template.TemplateView" title="Permalink to this definition">¶</a></dt>
 <dd><p>The TemplateView will provide a view based on a XML template (ManiaLink for example).
 The view contains some class properties that are required to work. Those are described bellow.</p>
 <p>To use the TemplateView. Initiate it in your own View class, and override one of the following methods:</p>
@@ -744,7 +745,7 @@ enough time to provide a transition time, we are going to create a separate solu
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.3.0',
+            VERSION:'0.3.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

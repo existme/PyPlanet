@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyplanet.core.ui.components.manialink &mdash; PyPlanet 0.3.0 documentation</title>
+  <title>pyplanet.core.ui.components.manialink &mdash; PyPlanet 0.3.1 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../../search.html"/>
-    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../../../../index.html"/>
+    <link rel="top" title="PyPlanet 0.3.1 documentation" href="../../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../../index.html"/> 
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.3.0
+                0.3.1
               </div>
             
           
@@ -205,7 +205,7 @@
 <span class="k">class</span> <span class="nc">_ManiaLink</span><span class="p">:</span>
 	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
 		<span class="bp">self</span><span class="p">,</span> <span class="n">manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hide_click</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-		<span class="n">player_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">throw_exceptions</span><span class="o">=</span><span class="kc">False</span>
+		<span class="n">player_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">disable_alt_menu</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">throw_exceptions</span><span class="o">=</span><span class="kc">False</span>
 	<span class="p">):</span>
 		<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">		Create manialink (USE THE MANAGER CREATE, DONT INIT DIRECTLY!</span>
@@ -237,6 +237,7 @@
 		<span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="k">if</span> <span class="n">data</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="nb">dict</span><span class="p">()</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">player_data</span> <span class="o">=</span> <span class="n">player_data</span> <span class="k">if</span> <span class="n">player_data</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">player_data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="nb">dict</span><span class="p">()</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">throw_exceptions</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">disable_alt_menu</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">disable_alt_menu</span><span class="p">)</span>
 
 		<span class="bp">self</span><span class="o">.</span><span class="n">receivers</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">_is_global_shown</span> <span class="o">=</span> <span class="kc">False</span>
@@ -467,7 +468,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../../',
-            VERSION:'0.3.0',
+            VERSION:'0.3.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

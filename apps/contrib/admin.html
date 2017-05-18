@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Admin &mdash; PyPlanet 0.3.0 documentation</title>
+  <title>Admin &mdash; PyPlanet 0.3.1 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PyPlanet 0.3.0 documentation" href="../../index.html"/>
+    <link rel="top" title="PyPlanet 0.3.1 documentation" href="../../index.html"/>
         <link rel="next" title="Jukebox" href="jukebox.html"/>
         <link rel="prev" title="Migrating from old controller" href="../../convert/index.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.3.0
+                0.3.1
               </div>
             
           
@@ -123,6 +123,13 @@
 <li class="toctree-l4"><a class="reference internal" href="#ban-player">Ban player</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#unban-player">Unban player</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#change-user-admin-level">Change user admin level</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#game-flow">Game Flow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#force-round-to-end">Force round to end</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#force-warmup-round-to-end">Force WarmUp round to end</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#force-warmup-to-an-end">Force WarmUp to an end</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-rounds-points-points-repartition">Set rounds points (Points repartition)</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#server">Server</a><ul>
@@ -476,6 +483,64 @@ It&#8217;s features can be seperated in to these three areas:</p>
 </dl>
 </div>
 </div>
+<div class="section" id="game-flow">
+<h3>Game Flow<a class="headerlink" href="#game-flow" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="force-round-to-end">
+<h4>Force round to end<a class="headerlink" href="#force-round-to-end" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">//endround</span></code></dd>
+<dt>Parameters:</dt>
+<dd>None</dd>
+<dt>Functionality:</dt>
+<dd>Force the trackmania round to an end.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:end_round</span></code>, requires admin level 2.</dd>
+</dl>
+</div>
+<div class="section" id="force-warmup-round-to-end">
+<h4>Force WarmUp round to end<a class="headerlink" href="#force-warmup-round-to-end" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">//endwuround</span></code></dd>
+<dt>Parameters:</dt>
+<dd>None</dd>
+<dt>Functionality:</dt>
+<dd>Force the trackmania WarmUp round to an end.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:end_round</span></code>, requires admin level 2.</dd>
+</dl>
+</div>
+<div class="section" id="force-warmup-to-an-end">
+<h4>Force WarmUp to an end<a class="headerlink" href="#force-warmup-to-an-end" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">//endwu</span></code></dd>
+<dt>Parameters:</dt>
+<dd>None</dd>
+<dt>Functionality:</dt>
+<dd>Force the whole WarmUp to an end.</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:end_round</span></code>, requires admin level 2.</dd>
+</dl>
+</div>
+<div class="section" id="set-rounds-points-points-repartition">
+<h4>Set rounds points (Points repartition)<a class="headerlink" href="#set-rounds-points-points-repartition" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Command:</dt>
+<dd><code class="docutils literal"><span class="pre">//pointsrepartition</span></code> / <code class="docutils literal"><span class="pre">//pointsrep</span></code></dd>
+<dt>Parameters:</dt>
+<dd><ul class="first last simple">
+<li>Points per place, top to bottom, separated with either spaces or commas.</li>
+</ul>
+</dd>
+<dt>Functionality:</dt>
+<dd>Set the rounds points (points per player and place it ends in an round).</dd>
+<dt>Required permission:</dt>
+<dd><code class="docutils literal"><span class="pre">admin:points_repartition</span></code>, requires admin level 2.</dd>
+</dl>
+</div>
+</div>
 <div class="section" id="server">
 <h3>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="set-server-name">
@@ -609,7 +674,7 @@ It&#8217;s features can be seperated in to these three areas:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.3.0',
+            VERSION:'0.3.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
