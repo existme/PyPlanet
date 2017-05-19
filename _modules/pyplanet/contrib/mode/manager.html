@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyplanet.contrib.mode.manager &mdash; PyPlanet 0.3.1 documentation</title>
+  <title>pyplanet.contrib.mode.manager &mdash; PyPlanet 0.3.2 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="PyPlanet 0.3.1 documentation" href="../../../../index.html"/>
+    <link rel="top" title="PyPlanet 0.3.2 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.3.1
+                0.3.2
               </div>
             
           
@@ -248,14 +248,12 @@
 			<span class="bp">self</span><span class="o">.</span><span class="n">_next_variables_update</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 
 		<span class="c1"># Make sure we send to the signal when mode is been changed.</span>
-		<span class="n">current_script</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span>
-		<span class="n">next_script</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_script</span>
-		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_current_script</span><span class="p">(</span><span class="n">refresh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-		<span class="k">if</span> <span class="n">current_script</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span> <span class="ow">and</span> <span class="n">next_script</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span><span class="p">:</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_script</span><span class="p">:</span>
 			<span class="k">await</span> <span class="n">script_mode_changed</span><span class="o">.</span><span class="n">send_robust</span><span class="p">({</span>
-				<span class="s1">&#39;unloaded_script&#39;</span><span class="p">:</span> <span class="n">current_script</span><span class="p">,</span> <span class="s1">&#39;loaded_script&#39;</span><span class="p">:</span> <span class="n">next_script</span>
+				<span class="s1">&#39;unloaded_script&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span><span class="p">,</span> <span class="s1">&#39;loaded_script&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_script</span>
 			<span class="p">})</span>
+
+		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_current_script</span><span class="p">(</span><span class="n">refresh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <div class="viewcode-block" id="ModeManager.get_current_script"><a class="viewcode-back" href="../../../../api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.get_current_script">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_current_script</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">refresh</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 		<span class="sd">&quot;&quot;&quot;</span>
@@ -278,9 +276,9 @@
 <span class="sd">		&quot;&quot;&quot;</span>
 		<span class="k">if</span> <span class="n">refresh</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span><span class="p">:</span>
 			<span class="n">payload</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="s1">&#39;GetScriptName&#39;</span><span class="p">)</span>
-			<span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s1">&#39;CurrentValue&#39;</span><span class="p">]</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_current_script</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s1">&#39;CurrentValue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 			<span class="k">if</span> <span class="s1">&#39;NextValue&#39;</span> <span class="ow">in</span> <span class="n">payload</span><span class="p">:</span>
-				<span class="bp">self</span><span class="o">.</span><span class="n">_next_script</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s1">&#39;NextValue&#39;</span><span class="p">]</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_next_script</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s1">&#39;NextValue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_script</span></div>
 
 <div class="viewcode-block" id="ModeManager.get_current_script_info"><a class="viewcode-back" href="../../../../api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.get_current_script_info">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_current_script_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -296,7 +294,7 @@
 <span class="sd">		:param name: Name</span>
 <span class="sd">		&quot;&quot;&quot;</span>
 		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="s1">&#39;SetScriptName&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-		<span class="bp">self</span><span class="o">.</span><span class="n">_next_script</span> <span class="o">=</span> <span class="n">name</span></div>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_next_script</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="ModeManager.get_settings"><a class="viewcode-back" href="../../../../api/contrib_mode.html#pyplanet.contrib.mode.ModeManager.get_settings">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 		<span class="sd">&quot;&quot;&quot;</span>
@@ -387,7 +385,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'0.3.1',
+            VERSION:'0.3.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
