@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyplanet.contrib.map.manager &mdash; PyPlanet 0.3.2 documentation</title>
+  <title>pyplanet.contrib.map.manager &mdash; PyPlanet 0.3.3 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="PyPlanet 0.3.2 documentation" href="../../../../index.html"/>
+    <link rel="top" title="PyPlanet 0.3.3 documentation" href="../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../index.html"/> 
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.3.2
+                0.3.3
               </div>
             
           
@@ -206,20 +206,20 @@
 <div class="viewcode-block" id="MapManager"><a class="viewcode-back" href="../../../../api/contrib_map.html#pyplanet.contrib.map.MapManager">[docs]</a><span class="k">class</span> <span class="nc">MapManager</span><span class="p">(</span><span class="n">CoreContrib</span><span class="p">):</span>
 	<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">	Map Manager. Manages the current map pool and the current and next map.</span>
-<span class="sd">	</span>
+
 <span class="sd">	.. todo::</span>
-<span class="sd">	</span>
+
 <span class="sd">		Write introduction.</span>
-<span class="sd">		</span>
+
 <span class="sd">	.. warning::</span>
-<span class="sd">	</span>
+
 <span class="sd">		Don&#39;t initiate this class yourself.</span>
 
 <span class="sd">	&quot;&quot;&quot;</span>
 	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
 		<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">		Initiate, should only be done from the core instance.</span>
-<span class="sd">		</span>
+
 <span class="sd">		:param instance: Instance.</span>
 <span class="sd">		:type instance: pyplanet.core.instance.Instance</span>
 <span class="sd">		&quot;&quot;&quot;</span>
@@ -254,7 +254,7 @@
 <div class="viewcode-block" id="MapManager.handle_map_change"><a class="viewcode-back" href="../../../../api/contrib_map.html#pyplanet.contrib.map.MapManager.handle_map_change">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">handle_map_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">info</span><span class="p">):</span>
 		<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">		This will be called from the glue that creates the signal &#39;maniaplanet:map_begin&#39; or &#39;map_end&#39;.</span>
-<span class="sd">		</span>
+
 <span class="sd">		:param info: Mapinfo in dict.</span>
 <span class="sd">		:return: Map instance.</span>
 <span class="sd">		:rtype: pyplanet.apps.core.maniaplanet.models.map.Map</span>
@@ -306,7 +306,7 @@
 <div class="viewcode-block" id="MapManager.get_map"><a class="viewcode-back" href="../../../../api/contrib_map.html#pyplanet.contrib.map.MapManager.get_map">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 		<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">		Get map instance by uid.</span>
-<span class="sd">		</span>
+
 <span class="sd">		:param uid: By uid (pk).</span>
 <span class="sd">		:return: Player or exception if not found</span>
 <span class="sd">		&quot;&quot;&quot;</span>
@@ -318,7 +318,7 @@
 <div class="viewcode-block" id="MapManager.get_map_by_index"><a class="viewcode-back" href="../../../../api/contrib_map.html#pyplanet.contrib.map.MapManager.get_map_by_index">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">get_map_by_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 		<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">		Get map instance by index id (primary key).</span>
-<span class="sd">		</span>
+
 <span class="sd">		:param index: Primary key index.</span>
 <span class="sd">		:return: Map instance or raise exception.</span>
 <span class="sd">		&quot;&quot;&quot;</span>
@@ -331,7 +331,7 @@
 	<span class="k">def</span> <span class="nf">next_map</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 		<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">		The next scheduled map.</span>
-<span class="sd">		</span>
+
 <span class="sd">		:rtype: pyplanet.apps.core.maniaplanet.models.Map</span>
 <span class="sd">		&quot;&quot;&quot;</span>
 		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_map</span>
@@ -340,9 +340,9 @@
 		<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">		Set the next map. This will prepare the manager to set the next map and will communicate the next map to the</span>
 <span class="sd">		dedicated server.</span>
-<span class="sd">		</span>
+
 <span class="sd">		The Map parameter can be a map instance or the UID of the map.</span>
-<span class="sd">		</span>
+
 <span class="sd">		:param map: Map instance or UID string.</span>
 <span class="sd">		:type map: pyplanet.apps.core.maniaplanet.models.Map, str</span>
 <span class="sd">		&quot;&quot;&quot;</span>
@@ -350,14 +350,17 @@
 			<span class="nb">map</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_map</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="n">Map</span><span class="p">):</span>
 			<span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;When setting the map, you should give an Map instance!&#39;</span><span class="p">)</span>
-		<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="s1">&#39;SetNextMapIdent&#39;</span><span class="p">,</span> <span class="nb">map</span><span class="o">.</span><span class="n">uid</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nb">map</span><span class="o">.</span><span class="n">file</span><span class="p">:</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="s1">&#39;ChooseNextMap&#39;</span><span class="p">,</span> <span class="nb">map</span><span class="o">.</span><span class="n">file</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="s1">&#39;SetNextMapIdent&#39;</span><span class="p">,</span> <span class="nb">map</span><span class="o">.</span><span class="n">uid</span><span class="p">)</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">_next_map</span> <span class="o">=</span> <span class="nb">map</span></div>
 
 	<span class="nd">@property</span>
 	<span class="k">def</span> <span class="nf">current_map</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 		<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">		The current map, database model instance.</span>
-<span class="sd">		</span>
+
 <span class="sd">		:rtype: pyplanet.apps.core.maniaplanet.models.Map</span>
 <span class="sd">		&quot;&quot;&quot;</span>
 		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_map</span>
@@ -366,8 +369,8 @@
 	<span class="k">def</span> <span class="nf">previous_map</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 		<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">		The previously played map, or None if not known!</span>
-<span class="sd">		</span>
-<span class="sd">		:rtype: pyplanet.apps.core.maniaplanet.models.Map </span>
+
+<span class="sd">		:rtype: pyplanet.apps.core.maniaplanet.models.Map</span>
 <span class="sd">		&quot;&quot;&quot;</span>
 		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_previous_map</span>
 
@@ -376,15 +379,15 @@
 		<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">		Get the maps that are currently loaded on the server. The list should contain model instances of the currently</span>
 <span class="sd">		loaded matchsettings. This list should be up-to-date.</span>
-<span class="sd">		</span>
-<span class="sd">		:rtype: list </span>
+
+<span class="sd">		:rtype: list</span>
 <span class="sd">		&quot;&quot;&quot;</span>
 		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maps</span>
 
 <div class="viewcode-block" id="MapManager.set_current_map"><a class="viewcode-back" href="../../../../api/contrib_map.html#pyplanet.contrib.map.MapManager.set_current_map">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">set_current_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="p">):</span>
 		<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">		Set the current map and jump to it.</span>
-<span class="sd">		</span>
+
 <span class="sd">		:param map: Map instance or uid.</span>
 <span class="sd">		&quot;&quot;&quot;</span>
 		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
@@ -410,7 +413,7 @@
 <div class="viewcode-block" id="MapManager.add_map"><a class="viewcode-back" href="../../../../api/contrib_map.html#pyplanet.contrib.map.MapManager.add_map">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">add_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">insert</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 		<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">		Add or insert map to current online playlist.</span>
-<span class="sd">		</span>
+
 <span class="sd">		:param filename: Load from filename relative to the &#39;Maps&#39; directory on the dedicated host server.</span>
 <span class="sd">		:param insert: Insert after the current map, this will make it play directly after the current map. True by default.</span>
 <span class="sd">		:type filename: str</span>
@@ -438,7 +441,7 @@
 <div class="viewcode-block" id="MapManager.upload_map"><a class="viewcode-back" href="../../../../api/contrib_map.html#pyplanet.contrib.map.MapManager.upload_map">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">upload_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fh</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">insert</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 		<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">		Upload and add/insert the map to the current online playlist.</span>
-<span class="sd">		</span>
+
 <span class="sd">		:param fh: File handler, bytesio object or any readable context.</span>
 <span class="sd">		:param filename: The filename when saving on the server. Must include the map.gbx! Relative to &#39;Maps&#39; folder.</span>
 <span class="sd">		:param insert: Insert after the current map, this will make it play directly after the current map. True by default.</span>
@@ -464,7 +467,7 @@
 <div class="viewcode-block" id="MapManager.remove_map"><a class="viewcode-back" href="../../../../api/contrib_map.html#pyplanet.contrib.map.MapManager.remove_map">[docs]</a>	<span class="k">async</span> <span class="k">def</span> <span class="nf">remove_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">delete_file</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 		<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">		Remove and optionally delete file from server and playlist.</span>
-<span class="sd">		</span>
+
 <span class="sd">		:param map: Map instance or filename in string.</span>
 <span class="sd">		:param delete_file: Boolean to decide if we are going to remove the file from the server too. Defaults to False.</span>
 <span class="sd">		:type delete_file: bool</span>
@@ -479,9 +482,13 @@
 		<span class="k">try</span><span class="p">:</span>
 			<span class="n">success</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">gbx</span><span class="p">(</span><span class="s1">&#39;RemoveMap&#39;</span><span class="p">,</span> <span class="nb">map</span><span class="p">)</span>
 			<span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+				<span class="n">the_map</span> <span class="o">=</span> <span class="kc">None</span>
 				<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maps</span><span class="p">:</span>
 					<span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">file</span> <span class="o">==</span> <span class="nb">map</span><span class="p">:</span>
-						<span class="bp">self</span><span class="o">.</span><span class="n">_maps</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+						<span class="n">the_map</span> <span class="o">=</span> <span class="n">m</span>
+						<span class="k">break</span>
+				<span class="k">if</span> <span class="n">the_map</span><span class="p">:</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">_maps</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">the_map</span><span class="p">)</span>
 		<span class="k">except</span> <span class="n">Fault</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 			<span class="k">if</span> <span class="s1">&#39;unknown&#39;</span> <span class="ow">in</span> <span class="n">e</span><span class="o">.</span><span class="n">faultString</span><span class="p">:</span>
 				<span class="k">raise</span> <span class="n">MapNotFound</span><span class="p">(</span><span class="s1">&#39;Dedicated can</span><span class="se">\&#39;</span><span class="s1">t find map. Already removed?&#39;</span><span class="p">)</span>
@@ -565,7 +572,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'0.3.2',
+            VERSION:'0.3.3',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
